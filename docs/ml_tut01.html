@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iris flower classification &#8212; Supervised Classification Problems - A Basic Tutorial</title>
+    <title>Iris flower classification &#8212; The Europlanet Machine Learning Book</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -80,7 +80,7 @@
       <img src="_static/Europlanet_Machine_Learning_Logo_Standard.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Supervised Classification Problems - A Basic Tutorial</h1>
+      <h1 class="site-logo" id="site-title">The Europlanet Machine Learning Book</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -91,7 +91,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Supervised Classification Problems - A Basic Tutorial
+   The Europlanet Machine Learning Book
   </a>
  </li>
 </ul>
@@ -354,15 +354,34 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_15490</span><span class="o">/</span><span class="mf">3874959458.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_61176</span><span class="o">/</span><span class="mf">3874959458.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span> <span class="c1"># K neareast neighbours algorithm</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span> <span class="c1"># logistic regression algorithm</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span> <span class="c1"># decision tree algorithm</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span> <span class="c1"># for evaluating the model</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">epn</span><span class="o">-</span><span class="n">ml</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2"> </span>
+<span class="ne">----&gt; </span><span class="mi">6</span><span class="s2"> from ._classes import BaseDecisionTree</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> from ._classes import DecisionTreeClassifier</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> from ._classes import DecisionTreeRegressor</span>
+
+<span class="s2">~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/sklearn/tree/_classes.py in &lt;module&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span><span class="s2"> from ..utils.validation import check_is_fitted</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="s2"> </span>
+<span class="ne">---&gt; </span><span class="mi">42</span><span class="s2"> from ._criterion import Criterion</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span><span class="s2"> from ._splitter import Splitter</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="s2"> from ._tree import DepthFirstTreeBuilder</span>
+
+<span class="nn">sklearn/tree/_criterion.pyx</span> in <span class="ni">init sklearn.tree._criterion</span><span class="nt">()</span>
+
+<span class="nn">sklearn/tree/_splitter.pyx</span> in <span class="ni">init sklearn.tree._splitter</span><span class="nt">()</span>
+
+<span class="nn">~/miniconda3/envs/epn-ml-book/lib/python3.9/importlib/_bootstrap.py</span> in <span class="ni">parent</span><span class="nt">(self)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1383,7 +1402,7 @@ Iris-versicolor       0.93      1.00      0.97        14
     <footer class="footer">
   <p>
     
-      Durch Ute Amerstorfer<br/>
+      Durch The Europlanet ML Team<br/>
     
         &copy; Urheberrechte © 2021.<br/>
   </p>
