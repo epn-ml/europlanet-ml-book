@@ -3,7 +3,7 @@ The Europlanet Machine Learning Book
 
 Welcome to our machine learning (ML) book. This book is compiled as part of the work package "JRA4 ML - Machine Learning Solutions for Data Analysis and Exploitation in Planetary Science" in the frame of the EU project "Europlanet 2024 Research Infrastructure" (Europlanet 2024 RI).
 
-We recommend setting up a virtual environment for the exercises in this tutorial.
+We recommend setting up a virtual environment for the exercises in this book.
 
 
 ```{attention}
