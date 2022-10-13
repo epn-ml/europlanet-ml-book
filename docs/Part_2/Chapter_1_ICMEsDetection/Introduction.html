@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Automatic Detection of Interplanetary Coronal Mass Ejections in In-Situ Solar Wind Data &#8212; The Europlanet Machine Learning Book</title>
+    <title>1. Introduction &#8212; The Europlanet Machine Learning Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -121,7 +121,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification.html">
-   2. Iris flower classification - supervised classification
+   2. Supervised classification
   </a>
  </li>
  <li class="toctree-l1">
@@ -138,7 +138,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Automatic Detection of Interplanetary Coronal Mass Ejections in In-Situ Solar Wind Data
+   1. Introduction
   </a>
  </li>
  <li class="toctree-l1">
@@ -234,7 +234,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Automatic Detection of Interplanetary Coronal Mass Ejections in In-Situ Solar Wind Data</h1>
+                <h1>Introduction</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -245,9 +245,31 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="automatic-detection-of-interplanetary-coronal-mass-ejections-in-in-situ-solar-wind-data">
-<h1><span class="section-number">1. </span>Automatic Detection of Interplanetary Coronal Mass Ejections in In-Situ Solar Wind Data<a class="headerlink" href="#automatic-detection-of-interplanetary-coronal-mass-ejections-in-in-situ-solar-wind-data" title="Permalink to this headline">¶</a></h1>
-<p>General introduction to the science case.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This chapter is about the science case proposed by the Space Research Institute (IWF) of the Austrian Academy of Sciences, entitled “Detection and classification of ICMEs in in situ solar wind data”.</p>
+<p>The publication about this project can be found <a class="reference external" href="https://doi.org/10.1029/2022SW003149">here</a>:</p>
+<ul class="simple">
+<li><p>Rüdisser H.T., Windisch A., Amerstorfer U.V., Möstl C., Amerstorfer T., Bailey R.L., and Reiss M.A. (2022), Automatic detection of interplanetary coronal mass ejections in solar wind in situ data, Space Weather 20, e2022SW003149, doi:10.1029/2022SW003149.</p></li>
+</ul>
+<p><strong>Useful links and resources</strong></p>
+<ol class="simple">
+<li><p>In situ solar wind data (only numbers in numpy structured arrays): <a class="reference external" href="https://doi.org/10.6084/m9.figshare.12058065.v7">https://doi.org/10.6084/m9.figshare.12058065.v7</a></p></li>
+<li><p>The same in situ solar wind data as datetime objects in recarrays: <a class="reference external" href="https://doi.org/10.6084/m9.figshare.11973693.v7">https://doi.org/10.6084/m9.figshare.11973693.v7</a></p></li>
+<li><p>Jupyther notebook for reading the data of (2) and from an ICME catalogue (first two code cells): <a class="reference external" href="https://github.com/cmoestl/heliocats/blob/master/cme_rate.ipynb">https://github.com/cmoestl/heliocats/blob/master/cme_rate.ipynb</a></p></li>
+<li><p>To install the conda environment to run the code for (3): <a class="reference external" href="https://github.com/cmoestl/heliocats/blob/master/README.md">https://github.com/cmoestl/heliocats/blob/master/README.md</a></p></li>
+<li><p>The ICMECAT catalogue in different formats (see section below ICME CATALOGUE v2.0): <a class="reference external" href="https://helioforecast.space/icmecat">https://helioforecast.space/icmecat</a></p></li>
+<li><p>Solar wind forecast: <a class="reference external" href="https://helioforecast.space/solarwind">https://helioforecast.space/solarwind</a></p></li>
+</ol>
+<p><strong>Further literature:</strong></p>
+<ul class="simple">
+<li><p>Luhmann J.G., Gopalswamy N., Jian L.K., and Lugaz N. (2020), ICME evolution in the inner heliosphere, Solar Phys. 295:61, doi:s11207-020-01624-0</p></li>
+<li><p>Möstl C., Farrugia C.J., Temmer M., Miklenic C., Veronig A.M., Galvin A.B., Leitner M., and Biernat H.K. (2009), Linking Remote Imagery of a Coronal Mass Ejection to Its In Situ Signatures at 1 AU,
+Astrophys. J. Lett. 705, L180-L185, doi:10.1088/0004-637X/705/2/L180</p></li>
+<li><p>Möstl C., Temmer M., Rollett T., Farrugia C.J., Liu Y., Veronig, A.M., Leitner M., Galvin, A.B., and Biernat H.K. (2010), STEREO and Wind observations of a fast ICME flank triggering a prolonged geomagnetic storm on 5-7 April 2010, Geophys. Res. Letters 37, L24103, doi:10.1029/2010GL045175</p></li>
+<li><p>Richardson I.G. (2018), Solar wind stream interaction regions throughout the heliosphere, Living Reviews in Solar Physics 15, doi:10.1007/s41116-017-0011-z</p></li>
+<li><p>Zurbuchen T.H. and Richardson I.G. (2006), In-Situ Solar Wind and Magnetic Field Signatures of Interplanetary Coronal Mass Ejections, Space Sci. Rec. 123, 31-43, doi:10.1007/s11214-006-9010-4</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
