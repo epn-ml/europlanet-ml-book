@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Iris flower classification &#8212; The Europlanet Machine Learning Book</title>
+    <title>2. Iris flower classification - supervised classification &#8212; The Europlanet Machine Learning Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. Introduction" href="../Chapter_2_SupervisedRegression/Introduction.html" />
-    <link rel="prev" title="1. Introduction" href="Introduction.html" />
+    <link rel="next" title="3. Supervised regression" href="../Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html" />
+    <link rel="prev" title="1. Introduction" href="../Introduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,36 +110,29 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  2. A Basic Tutorial about Supervised Classification
+  2. Basic Tutorials
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Introduction.html">
+  <a class="reference internal" href="../Introduction.html">
    1. Introduction
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Iris flower classification
+   2. Iris flower classification - supervised classification
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  3. A Basic Tutorial about Supervised Regression
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Chapter_2_SupervisedRegression/Introduction.html">
-   1. Introduction
+  <a class="reference internal" href="../Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html">
+   3. Supervised regression
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  4. Automatic Detection of ICMEs
+  3. Automatic Detection of ICMEs
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -256,54 +249,49 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2. Iris flower classification
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#iris-data-set">
-   3. Iris data set
+   2.1. Iris data set
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#splitting-into-training-and-test-set">
-   4. Splitting into training and test set
+   2.2. Splitting into training and test set
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting-the-data">
-   5. Plotting the data
+   2.3. Plotting the data
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#correlation-and-feature-selection">
-   6. Correlation and feature selection
+   2.4. Correlation and feature selection
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#algorithms">
-   7. Algorithms
+   2.5. Algorithms
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#support-vector-machine-svm">
-     7.1. Support Vector Machine - SVM
+     2.5.1. Support Vector Machine - SVM
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#logistic-regression">
-     7.2. Logistic Regression
+     2.5.2. Logistic Regression
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#decision-tree">
-     7.3. Decision Tree
+     2.5.3. Decision Tree
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#k-nearest-neighbors">
-     7.4. K-nearest Neighbors
+     2.5.4. K-nearest Neighbors
     </a>
    </li>
   </ul>
@@ -318,7 +306,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Iris flower classification</h1>
+                <h1>Iris flower classification - supervised classification</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -328,54 +316,49 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2. Iris flower classification
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#iris-data-set">
-   3. Iris data set
+   2.1. Iris data set
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#splitting-into-training-and-test-set">
-   4. Splitting into training and test set
+   2.2. Splitting into training and test set
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting-the-data">
-   5. Plotting the data
+   2.3. Plotting the data
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#correlation-and-feature-selection">
-   6. Correlation and feature selection
+   2.4. Correlation and feature selection
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#algorithms">
-   7. Algorithms
+   2.5. Algorithms
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#support-vector-machine-svm">
-     7.1. Support Vector Machine - SVM
+     2.5.1. Support Vector Machine - SVM
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#logistic-regression">
-     7.2. Logistic Regression
+     2.5.2. Logistic Regression
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#decision-tree">
-     7.3. Decision Tree
+     2.5.3. Decision Tree
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#k-nearest-neighbors">
-     7.4. K-nearest Neighbors
+     2.5.4. K-nearest Neighbors
     </a>
    </li>
   </ul>
@@ -389,8 +372,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="iris-flower-classification">
-<h1><span class="section-number">2. </span>Iris flower classification<a class="headerlink" href="#iris-flower-classification" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="iris-flower-classification-supervised-classification">
+<h1><span class="section-number">2. </span>Iris flower classification - supervised classification<a class="headerlink" href="#iris-flower-classification-supervised-classification" title="Permalink to this headline">¶</a></h1>
 <p>In this ML tutorial, we will explore probably the most famous data set for data analysis - the Iris data set (also known as the “Hello, world” of machine learning).</p>
 <p>The Iris data set is basically a table with four numbers (the width and the length of the sepals and petals), the so-called “features” or “attributes”, and the name of the specific Iris species or classes. It consists of 150 instances.</p>
 <p>In this tutorial, we want to train a model to predict the class given the features (i.e. width and length of sepals and petals). We can also say, the “target variable”, or the desired output, is the species of the Iris. This model should perform within a given accuracy for new data.</p>
@@ -415,9 +398,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="iris-data-set">
-<h1><span class="section-number">3. </span>Iris data set<a class="headerlink" href="#iris-data-set" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="iris-data-set">
+<h2><span class="section-number">2.1. </span>Iris data set<a class="headerlink" href="#iris-data-set" title="Permalink to this headline">¶</a></h2>
 <p>Now we need our data set, which is available online on the UC Irvine Machine Learning Repository. We define the path and insert this path in the command <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> from the pandas package. We also specify the names of the columns in the <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> command. This organizes the output a bit better and we can access the individual columns via these names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -611,8 +593,8 @@ Name: class, dtype: int64
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="splitting-into-training-and-test-set">
-<h1><span class="section-number">4. </span>Splitting into training and test set<a class="headerlink" href="#splitting-into-training-and-test-set" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="splitting-into-training-and-test-set">
+<h2><span class="section-number">2.2. </span>Splitting into training and test set<a class="headerlink" href="#splitting-into-training-and-test-set" title="Permalink to this headline">¶</a></h2>
 <p>Ok, now we know a bit more about the data set. We see that there are no missing data, no NaNs or other corrupted data points. Next, let’s split our data set into training and test sets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -663,17 +645,17 @@ Name: class, dtype: int64
     </tr>
     <tr>
       <th>mean</th>
-      <td>5.846667</td>
-      <td>3.066667</td>
-      <td>3.745714</td>
-      <td>1.199048</td>
+      <td>5.911429</td>
+      <td>3.005714</td>
+      <td>3.896190</td>
+      <td>1.248571</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>0.826492</td>
-      <td>0.441733</td>
-      <td>1.774284</td>
-      <td>0.777508</td>
+      <td>0.834279</td>
+      <td>0.445237</td>
+      <td>1.713797</td>
+      <td>0.735385</td>
     </tr>
     <tr>
       <th>min</th>
@@ -684,28 +666,28 @@ Name: class, dtype: int64
     </tr>
     <tr>
       <th>25%</th>
-      <td>5.100000</td>
+      <td>5.200000</td>
       <td>2.800000</td>
       <td>1.600000</td>
-      <td>0.300000</td>
+      <td>0.400000</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>5.800000</td>
+      <td>5.900000</td>
       <td>3.000000</td>
-      <td>4.200000</td>
+      <td>4.500000</td>
       <td>1.300000</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>6.400000</td>
-      <td>3.400000</td>
+      <td>6.500000</td>
+      <td>3.200000</td>
       <td>5.100000</td>
-      <td>1.900000</td>
+      <td>1.800000</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>7.900000</td>
+      <td>7.700000</td>
       <td>4.400000</td>
       <td>6.900000</td>
       <td>2.500000</td>
@@ -755,51 +737,51 @@ Name: class, dtype: int64
     </tr>
     <tr>
       <th>mean</th>
-      <td>5.835556</td>
-      <td>3.024444</td>
-      <td>3.788889</td>
-      <td>1.197778</td>
+      <td>5.684444</td>
+      <td>3.166667</td>
+      <td>3.437778</td>
+      <td>1.082222</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>0.841037</td>
-      <td>0.417327</td>
-      <td>1.760710</td>
-      <td>0.737159</td>
+      <td>0.799987</td>
+      <td>0.386711</td>
+      <td>1.857331</td>
+      <td>0.821110</td>
     </tr>
     <tr>
       <th>min</th>
       <td>4.300000</td>
-      <td>2.300000</td>
+      <td>2.500000</td>
       <td>1.000000</td>
       <td>0.100000</td>
     </tr>
     <tr>
       <th>25%</th>
       <td>5.100000</td>
-      <td>2.800000</td>
-      <td>1.600000</td>
-      <td>0.300000</td>
+      <td>2.900000</td>
+      <td>1.500000</td>
+      <td>0.200000</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>5.800000</td>
-      <td>3.000000</td>
-      <td>4.500000</td>
+      <td>5.600000</td>
+      <td>3.100000</td>
+      <td>4.100000</td>
       <td>1.300000</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>6.400000</td>
-      <td>3.200000</td>
+      <td>6.300000</td>
+      <td>3.400000</td>
       <td>5.100000</td>
       <td>1.800000</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>7.700000</td>
-      <td>4.200000</td>
-      <td>6.700000</td>
+      <td>7.900000</td>
+      <td>4.100000</td>
+      <td>6.400000</td>
       <td>2.500000</td>
     </tr>
   </tbody>
@@ -813,9 +795,9 @@ Name: class, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-setosa        36
-Iris-versicolor    35
-Iris-virginica     34
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-versicolor    39
+Iris-virginica     36
+Iris-setosa        30
 Name: class, dtype: int64
 </pre></div>
 </div>
@@ -838,9 +820,9 @@ in <code class="docutils literal notranslate"><span class="pre">train_test_split
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-versicolor    35
-Iris-setosa        35
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-setosa        35
 Iris-virginica     35
+Iris-versicolor    35
 Name: class, dtype: int64
 </pre></div>
 </div>
@@ -898,28 +880,28 @@ Name: class, dtype: int64
     </tr>
     <tr>
       <th>mean</th>
-      <td>5.022857</td>
-      <td>3.405714</td>
-      <td>1.462857</td>
-      <td>0.237143</td>
+      <td>4.951429</td>
+      <td>3.397143</td>
+      <td>1.474286</td>
+      <td>0.245714</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>0.349020</td>
-      <td>0.387255</td>
-      <td>0.168184</td>
-      <td>0.103144</td>
+      <td>0.352613</td>
+      <td>0.394436</td>
+      <td>0.188403</td>
+      <td>0.112047</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>4.400000</td>
+      <td>4.300000</td>
       <td>2.300000</td>
       <td>1.000000</td>
       <td>0.100000</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>4.800000</td>
+      <td>4.750000</td>
       <td>3.100000</td>
       <td>1.400000</td>
       <td>0.200000</td>
@@ -933,15 +915,15 @@ Name: class, dtype: int64
     </tr>
     <tr>
       <th>75%</th>
-      <td>5.200000</td>
+      <td>5.100000</td>
       <td>3.650000</td>
-      <td>1.550000</td>
+      <td>1.600000</td>
       <td>0.300000</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>5.800000</td>
-      <td>4.200000</td>
+      <td>5.700000</td>
+      <td>4.400000</td>
       <td>1.900000</td>
       <td>0.600000</td>
     </tr>
@@ -950,8 +932,8 @@ Name: class, dtype: int64
 </div></div></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="plotting-the-data">
-<h1><span class="section-number">5. </span>Plotting the data<a class="headerlink" href="#plotting-the-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plotting-the-data">
+<h2><span class="section-number">2.3. </span>Plotting the data<a class="headerlink" href="#plotting-the-data" title="Permalink to this headline">¶</a></h2>
 <p>Now let’s make some plots to get a better feeling for the Iris data.</p>
 <p>First, we will make two scatter plots - the sepal length versus the sepal width, and the petal length versus the petal width. We will also color the species differently.</p>
 <div class="cell docutils container">
@@ -1041,8 +1023,8 @@ For the last plot, let’s plot a so called violin plot.</p>
 </div>
 <p>And again, we recognize that Iris setosa has the lowest values for petal lengths and widths.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="correlation-and-feature-selection">
-<h1><span class="section-number">6. </span>Correlation and feature selection<a class="headerlink" href="#correlation-and-feature-selection" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="correlation-and-feature-selection">
+<h2><span class="section-number">2.4. </span>Correlation and feature selection<a class="headerlink" href="#correlation-and-feature-selection" title="Permalink to this headline">¶</a></h2>
 <p>Correlation between the features plays an important role. If there are many correlated features, then it is not advised to take all of the features for training the algorithm, since this reduces the accuracy of the model. Feature selection before training an algorithm is a very important step.</p>
 <p>Let’s have a look at the correlation matrix for our training data set. To get the correlation, we use the method <code class="docutils literal notranslate"><span class="pre">corr</span></code> on our data set. To plot the correlation matrix, we use <code class="docutils literal notranslate"><span class="pre">heatmap</span></code> from the <em>seaborn</em> package.</p>
 <div class="cell docutils container">
@@ -1054,9 +1036,9 @@ For the last plot, let’s plot a so called violin plot.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sepal_length    1.000000
-petal_length    0.872070
-petal_width     0.815461
-sepal_width    -0.090292
+petal_length    0.880195
+petal_width     0.823188
+sepal_width    -0.052798
 Name: sepal_length, dtype: float64
 </pre></div>
 </div>
@@ -1079,8 +1061,8 @@ Name: sepal_length, dtype: float64
 <p>We see that the sepal features are not correlated with each other, whereas the petal features are. High correlation between features presents redundant information, which increases the dimensionality without providing valuable information. This usually reduces the accuracy of a trained model.</p>
 <p>As a first step, let’s train the model with all of the features. Then we make a selection of the features and investigate the effects on the outcome.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="algorithms">
-<h1><span class="section-number">7. </span>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="algorithms">
+<h2><span class="section-number">2.5. </span>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
 <p>Pythons’s <em>sklearn</em> provides many algorithms for different purposes. We show here only a few of the available algorithms suitable for classification problem.</p>
 <p>First, let’s specify the feature vector, usually denoted with X (= independent variables), and the label vector, usually denoted with y (= dependent variables).</p>
 <div class="cell docutils container">
@@ -1107,7 +1089,7 @@ Name: sepal_length, dtype: float64
 <p>Next, let’s train our models and make some predictions.</p>
 <p>To train the model, we will use the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method. This will be done on the training data, X_train, and the training output, y_train. To make a prediction with the trained model, we will then use the <code class="docutils literal notranslate"><span class="pre">predict</span></code> method, which will be done on the test data, X_test.</p>
 <div class="section" id="support-vector-machine-svm">
-<h2><span class="section-number">7.1. </span>Support Vector Machine - SVM<a class="headerlink" href="#support-vector-machine-svm" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.5.1. </span>Support Vector Machine - SVM<a class="headerlink" href="#support-vector-machine-svm" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_svm</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span> <span class="c1"># specify the model/algorithm</span>
@@ -1116,7 +1098,7 @@ Name: sepal_length, dtype: float64
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy (SVM)&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">)))</span>
 
-<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">cv_score_svm</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model_svm</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1"> (</span><span class="si">%f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy cross-validation (standard deviation)&#39;</span><span class="p">,</span> <span class="n">cv_score_svm</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">cv_score_svm</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
@@ -1125,32 +1107,7 @@ Name: sepal_length, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (SVM): 0.977778
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_65845</span><span class="o">/</span><span class="mf">1998379179.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy (SVM)&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">)))</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">cv_score_svm</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model_svm</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
-
-<span class="nn">~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/sklearn/model_selection/_split.py</span> in <span class="ni">__init__</span><span class="nt">(self, n_splits, shuffle, random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">646</span> 
-<span class="g g-Whitespace">    </span><span class="mi">647</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">648</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="n">n_splits</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="n">shuffle</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">649</span> 
-<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="k">def</span> <span class="nf">_make_test_folds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-
-<span class="nn">~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/sklearn/model_selection/_split.py</span> in <span class="ni">__init__</span><span class="nt">(self, n_splits, shuffle, random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span> 
-<span class="g g-Whitespace">    </span><span class="mi">295</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">shuffle</span> <span class="ow">and</span> <span class="n">random_state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># None is the default</span>
-<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>                 <span class="s2">&quot;Setting a random_state has no effect since shuffle is &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span>                 <span class="s2">&quot;False. You should leave &quot;</span>
-
-<span class="ne">ValueError</span>: Setting a random_state has no effect since shuffle is False. You should leave random_state to its default (None), or set shuffle=True.
+accuracy cross-validation (standard deviation): 0.961905 (0.055533)
 </pre></div>
 </div>
 </div>
@@ -1169,8 +1126,8 @@ Name: sepal_length, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[15  0  0]
- [ 0 14  1]
- [ 0  1 14]]
+ [ 0 15  1]
+ [ 0  0 14]]
 </pre></div>
 </div>
 </div>
@@ -1185,7 +1142,7 @@ Name: sepal_length, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x101020898&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial_SupervisedClassification_49_1.png" src="../../_images/Tutorial_SupervisedClassification_49_1.png" />
@@ -1194,6 +1151,52 @@ Name: sepal_length, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_pred_svm</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
+
+    Iris-setosa       1.00      1.00      1.00        15
+Iris-versicolor       1.00      0.94      0.97        16
+ Iris-virginica       0.93      1.00      0.97        14
+
+       accuracy                           0.98        45
+      macro avg       0.98      0.98      0.98        45
+   weighted avg       0.98      0.98      0.98        45
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="logistic-regression">
+<h3><span class="section-number">2.5.2. </span>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">model_lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_lr</span> <span class="o">=</span> <span class="n">model_lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy (Logistic Regression)&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lr</span><span class="p">)))</span>
+
+<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">cv_score_lr</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model_lr</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1"> (</span><span class="si">%f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy cross-validation (standard deviation)&#39;</span><span class="p">,</span> <span class="n">cv_score_lr</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">cv_score_lr</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (Logistic Regression): 0.955556
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy cross-validation (standard deviation): 0.961905 (0.035635)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_pred_lr</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1212,52 +1215,8 @@ Iris-versicolor       0.93      0.93      0.93        15
 </div>
 </div>
 </div>
-<div class="section" id="logistic-regression">
-<h2><span class="section-number">7.2. </span>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">model_lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">y_pred_lr</span> <span class="o">=</span> <span class="n">model_lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy (Logistic Regression)&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lr</span><span class="p">)))</span>
-
-<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">cv_score_lr</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model_lr</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1"> (</span><span class="si">%f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy cross-validation (standard deviation)&#39;</span><span class="p">,</span> <span class="n">cv_score_lr</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">cv_score_lr</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (Logistic Regression): 0.977778
-accuracy cross-validation (standard deviation): 0.961905 (0.019048)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_pred_lr</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
-
-    Iris-setosa       1.00      1.00      1.00        15
-Iris-versicolor       0.93      1.00      0.97        14
- Iris-virginica       1.00      0.94      0.97        16
-
-       accuracy                           0.98        45
-      macro avg       0.98      0.98      0.98        45
-   weighted avg       0.98      0.98      0.98        45
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 <div class="section" id="decision-tree">
-<h2><span class="section-number">7.3. </span>Decision Tree<a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.5.3. </span>Decision Tree<a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
@@ -1266,15 +1225,15 @@ Iris-versicolor       0.93      1.00      0.97        14
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy (Decision Tree)&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_dt</span><span class="p">)))</span>
 
-<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">cv_score_dt</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model_dt</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1"> (</span><span class="si">%f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy cross-validation (standard deviation)&#39;</span><span class="p">,</span> <span class="n">cv_score_dt</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">cv_score_dt</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (Decision Tree): 0.977778
-accuracy cross-validation (standard deviation): 0.933333 (0.057143)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (Decision Tree): 0.955556
+accuracy cross-validation (standard deviation): 0.942857 (0.035635)
 </pre></div>
 </div>
 </div>
@@ -1289,19 +1248,19 @@ accuracy cross-validation (standard deviation): 0.933333 (0.057143)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
 
     Iris-setosa       1.00      1.00      1.00        15
-Iris-versicolor       0.93      1.00      0.97        14
- Iris-virginica       1.00      0.94      0.97        16
+Iris-versicolor       0.93      0.93      0.93        15
+ Iris-virginica       0.93      0.93      0.93        15
 
-       accuracy                           0.98        45
-      macro avg       0.98      0.98      0.98        45
-   weighted avg       0.98      0.98      0.98        45
+       accuracy                           0.96        45
+      macro avg       0.96      0.96      0.96        45
+   weighted avg       0.96      0.96      0.96        45
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="k-nearest-neighbors">
-<h2><span class="section-number">7.4. </span>K-nearest Neighbors<a class="headerlink" href="#k-nearest-neighbors" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.5.4. </span>K-nearest Neighbors<a class="headerlink" href="#k-nearest-neighbors" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span> <span class="c1"># default: n_neighbors = 5</span>
@@ -1310,15 +1269,15 @@ Iris-versicolor       0.93      1.00      0.97        14
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy (K-nearest Neighbors)&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">)))</span>
 
-<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">cv_score_knn</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model_knn</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1"> (</span><span class="si">%f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy cross-validation (standard deviation)&#39;</span><span class="p">,</span> <span class="n">cv_score_knn</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">cv_score_knn</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (K-nearest Neighbors): 0.977778
-accuracy cross-validation (standard deviation): 0.942857 (0.046657)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (K-nearest Neighbors): 1.000000
+accuracy cross-validation (standard deviation): 0.971429 (0.038095)
 </pre></div>
 </div>
 </div>
@@ -1333,12 +1292,12 @@ accuracy cross-validation (standard deviation): 0.942857 (0.046657)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
 
     Iris-setosa       1.00      1.00      1.00        15
-Iris-versicolor       0.93      1.00      0.97        14
- Iris-virginica       1.00      0.94      0.97        16
+Iris-versicolor       1.00      1.00      1.00        15
+ Iris-virginica       1.00      1.00      1.00        15
 
-       accuracy                           0.98        45
-      macro avg       0.98      0.98      0.98        45
-   weighted avg       0.98      0.98      0.98        45
+       accuracy                           1.00        45
+      macro avg       1.00      1.00      1.00        45
+   weighted avg       1.00      1.00      1.00        45
 </pre></div>
 </div>
 </div>
@@ -1351,7 +1310,7 @@ Iris-versicolor       0.93      1.00      0.97        14
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy (K-nearest Neighbors)&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">)))</span>
 
-<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">cv_score_knn</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model_knn</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1"> (</span><span class="si">%f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;accuracy cross-validation (standard deviation)&#39;</span><span class="p">,</span> <span class="n">cv_score_knn</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">cv_score_knn</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
 </pre></div>
@@ -1359,7 +1318,7 @@ Iris-versicolor       0.93      1.00      0.97        14
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (K-nearest Neighbors): 0.977778
-accuracy cross-validation (standard deviation): 0.952381 (0.042592)
+accuracy cross-validation (standard deviation): 0.961905 (0.035635)
 </pre></div>
 </div>
 </div>
@@ -1374,8 +1333,8 @@ accuracy cross-validation (standard deviation): 0.952381 (0.042592)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
 
     Iris-setosa       1.00      1.00      1.00        15
-Iris-versicolor       0.93      1.00      0.97        14
- Iris-virginica       1.00      0.94      0.97        16
+Iris-versicolor       1.00      0.94      0.97        16
+ Iris-virginica       0.93      1.00      0.97        14
 
        accuracy                           0.98        45
       macro avg       0.98      0.98      0.98        45
@@ -1394,8 +1353,8 @@ Iris-versicolor       0.93      1.00      0.97        14
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[15  0  0]
- [ 0 14  0]
- [ 0  1 15]]
+ [ 0 15  1]
+ [ 0  0 14]]
 </pre></div>
 </div>
 </div>
@@ -1410,10 +1369,11 @@ Iris-versicolor       0.93      1.00      0.97        14
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x111b03208&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial_SupervisedClassification_63_1.png" src="../../_images/Tutorial_SupervisedClassification_63_1.png" />
+</div>
 </div>
 </div>
 </div>
@@ -1444,17 +1404,17 @@ Iris-versicolor       0.93      1.00      0.97        14
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Introduction.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Introduction.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Chapter_2_SupervisedRegression/Introduction.html" title="next page">
+    <a class='right-next' id="next-link" href="../Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Supervised regression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

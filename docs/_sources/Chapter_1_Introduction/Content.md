@@ -1,12 +1,11 @@
 # Introduction
 
-## Table of content
+## Table of content (in progress)
 
 * Chapter 1: Introduction
-* Chapter 2: A Basic Tutorial about Supervised Classification
-* Chapter 3: A Basic Tutorial about Supervised Regression
-* Chapter 4: Automatic Detection of ICMEs
-* Chapter 5: Automatic Detection of Boundaries around Mercury
+* Chapter 2: Basic Tutorials
+* Chapter 3: Automatic Detection of ICMEs
+* Chapter 4: Automatic Detection of Boundaries around Mercury
 
 ## Prerequisites
 

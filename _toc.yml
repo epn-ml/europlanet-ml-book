@@ -5,16 +5,13 @@ parts:
   numbered: True
   chapters:
   - file: Chapter_1_Introduction/Content
-- caption: 2. A Basic Tutorial about Supervised Classification
+- caption: 2. Basic Tutorials
   numbered: True
   chapters:
-  - file: Part_1/Chapter_1_SupervisedClassification/Introduction
+  - file: Part_1/Introduction
   - file: Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification
-- caption: 3. A Basic Tutorial about Supervised Regression
-  numbered: True
-  chapters:
-  - file: Part_1/Chapter_2_SupervisedRegression/Introduction
-- caption: 4. Automatic Detection of ICMEs
+  - file: Part_1/Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression
+- caption: 3. Automatic Detection of ICMEs
   numbered: True
   chapters:
   - file: Part_2/Chapter_1_ICMEsDetection/Introduction
