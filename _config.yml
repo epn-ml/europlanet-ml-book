@@ -5,6 +5,13 @@ title: The Europlanet Machine Learning Book
 author: The Europlanet ML Team
 logo: Europlanet_Machine_Learning_Logo_Standard.png
 
+#######################################################################################
+# HTML-specific settings
+html:
+  use_multitoc_numbering: false
+
+###########################################################################
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:

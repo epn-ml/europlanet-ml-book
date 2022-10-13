@@ -1,5 +1,24 @@
 format: jb-book
-root: intro
-chapters:
-- file: content
-- file: ml_tut01
+root: Foreword
+parts:
+- caption: 1. Introduction
+  numbered: True
+  chapters:
+  - file: Chapter_1_Introduction/Content
+- caption: 2. A Basic Tutorial about Supervised Classification
+  numbered: True
+  chapters:
+  - file: Part_1/Chapter_1_SupervisedClassification/Introduction
+  - file: Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification
+- caption: 3. A Basic Tutorial about Supervised Regression
+  numbered: True
+  chapters:
+  - file: Part_1/Chapter_2_SupervisedRegression/Introduction
+- caption: 4. Automatic Detection of ICMEs
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_1_ICMEsDetection/Introduction
+  - file: Part_2/Chapter_1_ICMEsDetection/ScienceBackground
+  - file: Part_2/Chapter_1_ICMEsDetection/MLPipeline
+  - file: Part_2/Chapter_1_ICMEsDetection/Results
+  - file: Part_2/Chapter_1_ICMEsDetection/Summary

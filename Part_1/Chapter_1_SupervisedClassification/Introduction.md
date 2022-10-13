@@ -1,5 +1,4 @@
-Some introductory words
-==========================
+# Introduction
 
 This very basic tutorial covers a supervised classification problem. First, let's briefly discuss some general terms and approaches.
 

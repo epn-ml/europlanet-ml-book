@@ -1,0 +1,32 @@
+{
+	/*"folders":
+	[
+		{
+			"path": "Chapter_1_ICMEsDetection",
+		},
+	],*/
+	/*"folders":
+	[
+		{
+			"path": "/Users/uteamerstorfer/Documents/Arbeit/EUROPLANET/Deliverables/D10.3/fraud-detection-handbook/Chapter_1_BookContent"
+		}
+	],*/
+	/*"folders":
+	[
+		{
+			"path": "Chapter_2_ICMEsDetection",
+		},
+	],*/
+	"folders":
+	[
+		{
+			"path": "Chapter_1_Introduction",
+		},
+		{
+			"path": "Part_1",
+		},
+		{
+			"path": "Part_2"
+		},
+	],
+}
