@@ -138,7 +138,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Part_2/Chapter_1_ICMEsDetection/Introduction.html">
-   1. Automatic Detection of Interplanetary Coronal Mass Ejections in In-Situ Solar Wind Data
+   1. Introduction
   </a>
  </li>
  <li class="toctree-l1">
@@ -148,7 +148,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../Part_2/Chapter_1_ICMEsDetection/MLPipeline.html">
-   3. Machine Learning
+   3. Machine learning pipeline
   </a>
  </li>
  <li class="toctree-l1">
@@ -159,6 +159,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../Part_2/Chapter_1_ICMEsDetection/Summary.html">
    5. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../References/bibliography.html">
+   1. References
   </a>
  </li>
 </ul>
@@ -645,51 +657,51 @@ Name: class, dtype: int64
     </tr>
     <tr>
       <th>mean</th>
-      <td>5.843810</td>
-      <td>3.068571</td>
-      <td>3.759048</td>
-      <td>1.213333</td>
+      <td>5.830476</td>
+      <td>3.093333</td>
+      <td>3.736190</td>
+      <td>1.218095</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>0.792868</td>
-      <td>0.449212</td>
-      <td>1.734142</td>
-      <td>0.750905</td>
+      <td>0.775232</td>
+      <td>0.445979</td>
+      <td>1.722315</td>
+      <td>0.771709</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>4.400000</td>
-      <td>2.200000</td>
-      <td>1.000000</td>
+      <td>4.300000</td>
+      <td>2.000000</td>
+      <td>1.100000</td>
       <td>0.100000</td>
     </tr>
     <tr>
       <th>25%</th>
       <td>5.200000</td>
       <td>2.800000</td>
-      <td>1.600000</td>
-      <td>0.400000</td>
+      <td>1.500000</td>
+      <td>0.300000</td>
     </tr>
     <tr>
       <th>50%</th>
       <td>5.800000</td>
       <td>3.000000</td>
-      <td>4.400000</td>
+      <td>4.300000</td>
       <td>1.300000</td>
     </tr>
     <tr>
       <th>75%</th>
       <td>6.400000</td>
-      <td>3.300000</td>
+      <td>3.400000</td>
       <td>5.100000</td>
       <td>1.800000</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>7.700000</td>
+      <td>7.900000</td>
       <td>4.400000</td>
-      <td>6.900000</td>
+      <td>6.700000</td>
       <td>2.500000</td>
     </tr>
   </tbody>
@@ -737,51 +749,51 @@ Name: class, dtype: int64
     </tr>
     <tr>
       <th>mean</th>
-      <td>5.842222</td>
-      <td>3.020000</td>
-      <td>3.757778</td>
-      <td>1.164444</td>
+      <td>5.873333</td>
+      <td>2.962222</td>
+      <td>3.811111</td>
+      <td>1.153333</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>0.914402</td>
-      <td>0.397492</td>
-      <td>1.853190</td>
-      <td>0.798623</td>
+      <td>0.948779</td>
+      <td>0.392711</td>
+      <td>1.878009</td>
+      <td>0.749424</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>4.300000</td>
-      <td>2.000000</td>
-      <td>1.100000</td>
-      <td>0.100000</td>
+      <td>4.400000</td>
+      <td>2.200000</td>
+      <td>1.000000</td>
+      <td>0.200000</td>
     </tr>
     <tr>
       <th>25%</th>
       <td>5.000000</td>
-      <td>2.800000</td>
-      <td>1.500000</td>
+      <td>2.700000</td>
+      <td>1.600000</td>
       <td>0.200000</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>5.800000</td>
+      <td>6.000000</td>
       <td>3.000000</td>
-      <td>4.300000</td>
+      <td>4.400000</td>
       <td>1.300000</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>6.400000</td>
-      <td>3.300000</td>
-      <td>5.100000</td>
-      <td>1.900000</td>
+      <td>6.500000</td>
+      <td>3.200000</td>
+      <td>5.600000</td>
+      <td>1.800000</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>7.900000</td>
+      <td>7.700000</td>
       <td>3.800000</td>
-      <td>6.700000</td>
+      <td>6.900000</td>
       <td>2.500000</td>
     </tr>
   </tbody>
@@ -795,9 +807,9 @@ Name: class, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-versicolor    39
-Iris-setosa        34
-Iris-virginica     32
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-virginica     35
+Iris-setosa        35
+Iris-versicolor    35
 Name: class, dtype: int64
 </pre></div>
 </div>
@@ -820,9 +832,9 @@ in <code class="docutils literal notranslate"><span class="pre">train_test_split
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-setosa        35
-Iris-versicolor    35
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-versicolor    35
 Iris-virginica     35
+Iris-setosa        35
 Name: class, dtype: int64
 </pre></div>
 </div>
@@ -880,43 +892,43 @@ Name: class, dtype: int64
     </tr>
     <tr>
       <th>mean</th>
-      <td>5.031429</td>
-      <td>3.422857</td>
-      <td>1.437143</td>
-      <td>0.231429</td>
+      <td>5.040000</td>
+      <td>3.420000</td>
+      <td>1.454286</td>
+      <td>0.237143</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>0.400567</td>
-      <td>0.439308</td>
-      <td>0.141600</td>
-      <td>0.090005</td>
+      <td>0.349117</td>
+      <td>0.341105</td>
+      <td>0.168633</td>
+      <td>0.094202</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>4.300000</td>
-      <td>2.300000</td>
-      <td>1.100000</td>
+      <td>4.400000</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
       <td>0.100000</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>4.750000</td>
-      <td>3.100000</td>
-      <td>1.350000</td>
-      <td>0.200000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>5.100000</td>
-      <td>3.400000</td>
+      <td>4.800000</td>
+      <td>3.150000</td>
       <td>1.400000</td>
       <td>0.200000</td>
     </tr>
     <tr>
+      <th>50%</th>
+      <td>5.000000</td>
+      <td>3.400000</td>
+      <td>1.500000</td>
+      <td>0.200000</td>
+    </tr>
+    <tr>
       <th>75%</th>
-      <td>5.400000</td>
-      <td>3.750000</td>
+      <td>5.200000</td>
+      <td>3.550000</td>
       <td>1.500000</td>
       <td>0.300000</td>
     </tr>
@@ -924,8 +936,8 @@ Name: class, dtype: int64
       <th>max</th>
       <td>5.800000</td>
       <td>4.400000</td>
-      <td>1.700000</td>
-      <td>0.400000</td>
+      <td>1.900000</td>
+      <td>0.500000</td>
     </tr>
   </tbody>
 </table>
@@ -1036,9 +1048,9 @@ For the last plot, let’s plot a so called violin plot.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sepal_length    1.000000
-petal_length    0.841497
-petal_width     0.794415
-sepal_width     0.006311
+petal_length    0.871488
+petal_width     0.819590
+sepal_width    -0.102527
 Name: sepal_length, dtype: float64
 </pre></div>
 </div>
@@ -1106,8 +1118,8 @@ Name: sepal_length, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (SVM): 0.977778
-accuracy cross-validation (standard deviation): 0.961905 (0.055533)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (SVM): 0.933333
+accuracy cross-validation (standard deviation): 0.971429 (0.023328)
 </pre></div>
 </div>
 </div>
@@ -1126,8 +1138,8 @@ accuracy cross-validation (standard deviation): 0.961905 (0.055533)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[15  0  0]
- [ 0 14  0]
- [ 0  1 15]]
+ [ 0 13  1]
+ [ 0  2 14]]
 </pre></div>
 </div>
 </div>
@@ -1158,12 +1170,12 @@ accuracy cross-validation (standard deviation): 0.961905 (0.055533)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
 
     Iris-setosa       1.00      1.00      1.00        15
-Iris-versicolor       0.93      1.00      0.97        14
- Iris-virginica       1.00      0.94      0.97        16
+Iris-versicolor       0.87      0.93      0.90        14
+ Iris-virginica       0.93      0.88      0.90        16
 
-       accuracy                           0.98        45
-      macro avg       0.98      0.98      0.98        45
-   weighted avg       0.98      0.98      0.98        45
+       accuracy                           0.93        45
+      macro avg       0.93      0.93      0.93        45
+   weighted avg       0.93      0.93      0.93        45
 </pre></div>
 </div>
 </div>
@@ -1186,10 +1198,10 @@ Iris-versicolor       0.93      1.00      0.97        14
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (Logistic Regression): 0.977778
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (Logistic Regression): 0.955556
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy cross-validation (standard deviation): 0.952381 (0.073771)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy cross-validation (standard deviation): 0.952381 (0.030117)
 </pre></div>
 </div>
 </div>
@@ -1204,12 +1216,12 @@ Iris-versicolor       0.93      1.00      0.97        14
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
 
     Iris-setosa       1.00      1.00      1.00        15
-Iris-versicolor       0.93      1.00      0.97        14
- Iris-virginica       1.00      0.94      0.97        16
+Iris-versicolor       0.93      0.93      0.93        15
+ Iris-virginica       0.93      0.93      0.93        15
 
-       accuracy                           0.98        45
-      macro avg       0.98      0.98      0.98        45
-   weighted avg       0.98      0.98      0.98        45
+       accuracy                           0.96        45
+      macro avg       0.96      0.96      0.96        45
+   weighted avg       0.96      0.96      0.96        45
 </pre></div>
 </div>
 </div>
@@ -1232,8 +1244,8 @@ Iris-versicolor       0.93      1.00      0.97        14
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (Decision Tree): 0.955556
-accuracy cross-validation (standard deviation): 0.933333 (0.071270)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (Decision Tree): 0.933333
+accuracy cross-validation (standard deviation): 0.933333 (0.064594)
 </pre></div>
 </div>
 </div>
@@ -1248,12 +1260,12 @@ accuracy cross-validation (standard deviation): 0.933333 (0.071270)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
 
     Iris-setosa       1.00      1.00      1.00        15
-Iris-versicolor       0.93      0.93      0.93        15
- Iris-virginica       0.93      0.93      0.93        15
+Iris-versicolor       0.93      0.88      0.90        16
+ Iris-virginica       0.87      0.93      0.90        14
 
-       accuracy                           0.96        45
-      macro avg       0.96      0.96      0.96        45
-   weighted avg       0.96      0.96      0.96        45
+       accuracy                           0.93        45
+      macro avg       0.93      0.93      0.93        45
+   weighted avg       0.93      0.93      0.93        45
 </pre></div>
 </div>
 </div>
@@ -1276,8 +1288,8 @@ Iris-versicolor       0.93      0.93      0.93        15
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (K-nearest Neighbors): 0.977778
-accuracy cross-validation (standard deviation): 0.952381 (0.060234)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (K-nearest Neighbors): 0.911111
+accuracy cross-validation (standard deviation): 0.971429 (0.023328)
 </pre></div>
 </div>
 </div>
@@ -1292,12 +1304,12 @@ accuracy cross-validation (standard deviation): 0.952381 (0.060234)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
 
     Iris-setosa       1.00      1.00      1.00        15
-Iris-versicolor       0.93      1.00      0.97        14
- Iris-virginica       1.00      0.94      0.97        16
+Iris-versicolor       0.80      0.92      0.86        13
+ Iris-virginica       0.93      0.82      0.87        17
 
-       accuracy                           0.98        45
-      macro avg       0.98      0.98      0.98        45
-   weighted avg       0.98      0.98      0.98        45
+       accuracy                           0.91        45
+      macro avg       0.91      0.92      0.91        45
+   weighted avg       0.92      0.91      0.91        45
 </pre></div>
 </div>
 </div>
@@ -1317,8 +1329,8 @@ Iris-versicolor       0.93      1.00      0.97        14
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (K-nearest Neighbors): 0.977778
-accuracy cross-validation (standard deviation): 0.933333 (0.071270)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (K-nearest Neighbors): 0.933333
+accuracy cross-validation (standard deviation): 0.961905 (0.035635)
 </pre></div>
 </div>
 </div>
@@ -1333,12 +1345,12 @@ accuracy cross-validation (standard deviation): 0.933333 (0.071270)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 precision    recall  f1-score   support
 
     Iris-setosa       1.00      1.00      1.00        15
-Iris-versicolor       0.93      1.00      0.97        14
- Iris-virginica       1.00      0.94      0.97        16
+Iris-versicolor       0.93      0.88      0.90        16
+ Iris-virginica       0.87      0.93      0.90        14
 
-       accuracy                           0.98        45
-      macro avg       0.98      0.98      0.98        45
-   weighted avg       0.98      0.98      0.98        45
+       accuracy                           0.93        45
+      macro avg       0.93      0.93      0.93        45
+   weighted avg       0.93      0.93      0.93        45
 </pre></div>
 </div>
 </div>
@@ -1353,8 +1365,8 @@ Iris-versicolor       0.93      1.00      0.97        14
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[15  0  0]
- [ 0 14  0]
- [ 0  1 15]]
+ [ 0 14  2]
+ [ 0  1 13]]
 </pre></div>
 </div>
 </div>
@@ -1427,7 +1439,6 @@ Iris-versicolor       0.93      1.00      0.97        14
     
       Durch The Europlanet ML Team<br/>
     
-        &copy; Urheberrechte © 2021.<br/>
   </p>
 </footer>
 </main>

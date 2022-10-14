@@ -17,41 +17,166 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-model_svm = svm.SVC(gamma='auto') # specify the model/algorithm
-model_svm.fit(X_train, y_train) # train the model with the training data
-y_pred_svm = model_svm.predict(X_test) # make the prediction with the test data
-
-print('%s: %f' %('accuracy (SVM)', metrics.accuracy_score(y_test, y_pred_svm)))
-
-kfold = StratifiedKFold(n_splits=5, random_state=1, shuffle=False)
-cv_score_svm = cross_val_score(model_svm, X_train, y_train, scoring='accuracy', cv=kfold)
-
-print('%s: %f (%f)' %('accuracy cross-validation (standard deviation)', cv_score_svm.mean(), cv_score_svm.std()))
+path_to_data = 'http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class']
+iris = pd.read_csv(path_to_data, names = columns)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
-[0;32m/var/folders/x3/2bzh843n0tv469w6l6sd8sq00000gn/T/ipykernel_65845/1998379179.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      5[0m [0mprint[0m[0;34m([0m[0;34m'%s: %f'[0m [0;34m%[0m[0;34m([0m[0;34m'accuracy (SVM)'[0m[0;34m,[0m [0mmetrics[0m[0;34m.[0m[0maccuracy_score[0m[0;34m([0m[0my_test[0m[0;34m,[0m [0my_pred_svm[0m[0;34m)[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m [0;34m[0m[0m
-[0;32m----> 7[0;31m [0mkfold[0m [0;34m=[0m [0mStratifiedKFold[0m[0;34m([0m[0mn_splits[0m[0;34m=[0m[0;36m5[0m[0;34m,[0m [0mrandom_state[0m[0;34m=[0m[0;36m1[0m[0;34m,[0m [0mshuffle[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      8[0m [0mcv_score_svm[0m [0;34m=[0m [0mcross_val_score[0m[0;34m([0m[0mmodel_svm[0m[0;34m,[0m [0mX_train[0m[0;34m,[0m [0my_train[0m[0;34m,[0m [0mscoring[0m[0;34m=[0m[0;34m'accuracy'[0m[0;34m,[0m [0mcv[0m[0;34m=[0m[0mkfold[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      9[0m [0;34m[0m[0m
+[0;31mgaierror[0m                                  Traceback (most recent call last)
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/urllib/request.py[0m in [0;36mdo_open[0;34m(self, http_class, req, **http_conn_args)[0m
+[1;32m   1345[0m             [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1346[0;31m                 h.request(req.get_method(), req.selector, req.data, headers,
+[0m[1;32m   1347[0m                           encode_chunked=req.has_header('Transfer-encoding'))
 
-[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/sklearn/model_selection/_split.py[0m in [0;36m__init__[0;34m(self, n_splits, shuffle, random_state)[0m
-[1;32m    646[0m [0;34m[0m[0m
-[1;32m    647[0m     [0;32mdef[0m [0m__init__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mn_splits[0m[0;34m=[0m[0;36m5[0m[0;34m,[0m [0;34m*[0m[0;34m,[0m [0mshuffle[0m[0;34m=[0m[0;32mFalse[0m[0;34m,[0m [0mrandom_state[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 648[0;31m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0mn_splits[0m[0;34m=[0m[0mn_splits[0m[0;34m,[0m [0mshuffle[0m[0;34m=[0m[0mshuffle[0m[0;34m,[0m [0mrandom_state[0m[0;34m=[0m[0mrandom_state[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    649[0m [0;34m[0m[0m
-[1;32m    650[0m     [0;32mdef[0m [0m_make_test_folds[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mX[0m[0;34m,[0m [0my[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/http/client.py[0m in [0;36mrequest[0;34m(self, method, url, body, headers, encode_chunked)[0m
+[1;32m   1278[0m         [0;34m"""Send a complete request to the server."""[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1279[0;31m         [0mself[0m[0;34m.[0m[0m_send_request[0m[0;34m([0m[0mmethod[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0mbody[0m[0;34m,[0m [0mheaders[0m[0;34m,[0m [0mencode_chunked[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1280[0m [0;34m[0m[0m
 
-[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/sklearn/model_selection/_split.py[0m in [0;36m__init__[0;34m(self, n_splits, shuffle, random_state)[0m
-[1;32m    294[0m [0;34m[0m[0m
-[1;32m    295[0m         [0;32mif[0m [0;32mnot[0m [0mshuffle[0m [0;32mand[0m [0mrandom_state[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m  [0;31m# None is the default[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 296[0;31m             raise ValueError(
-[0m[1;32m    297[0m                 [0;34m"Setting a random_state has no effect since shuffle is "[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    298[0m                 [0;34m"False. You should leave "[0m[0;34m[0m[0;34m[0m[0m
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/http/client.py[0m in [0;36m_send_request[0;34m(self, method, url, body, headers, encode_chunked)[0m
+[1;32m   1324[0m             [0mbody[0m [0;34m=[0m [0m_encode[0m[0;34m([0m[0mbody[0m[0;34m,[0m [0;34m'body'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1325[0;31m         [0mself[0m[0;34m.[0m[0mendheaders[0m[0;34m([0m[0mbody[0m[0;34m,[0m [0mencode_chunked[0m[0;34m=[0m[0mencode_chunked[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1326[0m [0;34m[0m[0m
 
-[0;31mValueError[0m: Setting a random_state has no effect since shuffle is False. You should leave random_state to its default (None), or set shuffle=True.
-ValueError: Setting a random_state has no effect since shuffle is False. You should leave random_state to its default (None), or set shuffle=True.
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/http/client.py[0m in [0;36mendheaders[0;34m(self, message_body, encode_chunked)[0m
+[1;32m   1273[0m             [0;32mraise[0m [0mCannotSendHeader[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1274[0;31m         [0mself[0m[0;34m.[0m[0m_send_output[0m[0;34m([0m[0mmessage_body[0m[0;34m,[0m [0mencode_chunked[0m[0;34m=[0m[0mencode_chunked[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1275[0m [0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/http/client.py[0m in [0;36m_send_output[0;34m(self, message_body, encode_chunked)[0m
+[1;32m   1033[0m         [0;32mdel[0m [0mself[0m[0;34m.[0m[0m_buffer[0m[0;34m[[0m[0;34m:[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1034[0;31m         [0mself[0m[0;34m.[0m[0msend[0m[0;34m([0m[0mmsg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1035[0m [0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/http/client.py[0m in [0;36msend[0;34m(self, data)[0m
+[1;32m    973[0m             [0;32mif[0m [0mself[0m[0;34m.[0m[0mauto_open[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 974[0;31m                 [0mself[0m[0;34m.[0m[0mconnect[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    975[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/http/client.py[0m in [0;36mconnect[0;34m(self)[0m
+[1;32m    944[0m         [0;34m"""Connect to the host and port specified in __init__."""[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 945[0;31m         self.sock = self._create_connection(
+[0m[1;32m    946[0m             (self.host,self.port), self.timeout, self.source_address)
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/socket.py[0m in [0;36mcreate_connection[0;34m(address, timeout, source_address)[0m
+[1;32m    822[0m     [0merr[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 823[0;31m     [0;32mfor[0m [0mres[0m [0;32min[0m [0mgetaddrinfo[0m[0;34m([0m[0mhost[0m[0;34m,[0m [0mport[0m[0;34m,[0m [0;36m0[0m[0;34m,[0m [0mSOCK_STREAM[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    824[0m         [0maf[0m[0;34m,[0m [0msocktype[0m[0;34m,[0m [0mproto[0m[0;34m,[0m [0mcanonname[0m[0;34m,[0m [0msa[0m [0;34m=[0m [0mres[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/socket.py[0m in [0;36mgetaddrinfo[0;34m(host, port, family, type, proto, flags)[0m
+[1;32m    953[0m     [0maddrlist[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 954[0;31m     [0;32mfor[0m [0mres[0m [0;32min[0m [0m_socket[0m[0;34m.[0m[0mgetaddrinfo[0m[0;34m([0m[0mhost[0m[0;34m,[0m [0mport[0m[0;34m,[0m [0mfamily[0m[0;34m,[0m [0mtype[0m[0;34m,[0m [0mproto[0m[0;34m,[0m [0mflags[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    955[0m         [0maf[0m[0;34m,[0m [0msocktype[0m[0;34m,[0m [0mproto[0m[0;34m,[0m [0mcanonname[0m[0;34m,[0m [0msa[0m [0;34m=[0m [0mres[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mgaierror[0m: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+[0;31mURLError[0m                                  Traceback (most recent call last)
+[0;32m/var/folders/x3/2bzh843n0tv469w6l6sd8sq00000gn/T/ipykernel_70235/2582098591.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mpath_to_data[0m [0;34m=[0m [0;34m'http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0mcolumns[0m [0;34m=[0m [0;34m[[0m[0;34m'sepal_length'[0m[0;34m,[0m [0;34m'sepal_width'[0m[0;34m,[0m [0;34m'petal_length'[0m[0;34m,[0m [0;34m'petal_width'[0m[0;34m,[0m [0;34m'class'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m [0miris[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0mpath_to_data[0m[0;34m,[0m [0mnames[0m [0;34m=[0m [0mcolumns[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/util/_decorators.py[0m in [0;36mwrapper[0;34m(*args, **kwargs)[0m
+[1;32m    309[0m                     [0mstacklevel[0m[0;34m=[0m[0mstacklevel[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    310[0m                 )
+[0;32m--> 311[0;31m             [0;32mreturn[0m [0mfunc[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    312[0m [0;34m[0m[0m
+[1;32m    313[0m         [0;32mreturn[0m [0mwrapper[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/parsers/readers.py[0m in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)[0m
+[1;32m    678[0m     [0mkwds[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0mkwds_defaults[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    679[0m [0;34m[0m[0m
+[0;32m--> 680[0;31m     [0;32mreturn[0m [0m_read[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    681[0m [0;34m[0m[0m
+[1;32m    682[0m [0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/parsers/readers.py[0m in [0;36m_read[0;34m(filepath_or_buffer, kwds)[0m
+[1;32m    573[0m [0;34m[0m[0m
+[1;32m    574[0m     [0;31m# Create the parser.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 575[0;31m     [0mparser[0m [0;34m=[0m [0mTextFileReader[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0;34m**[0m[0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    576[0m [0;34m[0m[0m
+[1;32m    577[0m     [0;32mif[0m [0mchunksize[0m [0;32mor[0m [0miterator[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/parsers/readers.py[0m in [0;36m__init__[0;34m(self, f, engine, **kwds)[0m
+[1;32m    931[0m [0;34m[0m[0m
+[1;32m    932[0m         [0mself[0m[0;34m.[0m[0mhandles[0m[0;34m:[0m [0mIOHandles[0m [0;34m|[0m [0;32mNone[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 933[0;31m         [0mself[0m[0;34m.[0m[0m_engine[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_make_engine[0m[0;34m([0m[0mf[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mengine[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    934[0m [0;34m[0m[0m
+[1;32m    935[0m     [0;32mdef[0m [0mclose[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/parsers/readers.py[0m in [0;36m_make_engine[0;34m(self, f, engine)[0m
+[1;32m   1215[0m             [0;31m# "Union[str, PathLike[str], ReadCsvBuffer[bytes], ReadCsvBuffer[str]]"[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1216[0m             [0;31m# , "str", "bool", "Any", "Any", "Any", "Any", "Any"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1217[0;31m             self.handles = get_handle(  # type: ignore[call-overload]
+[0m[1;32m   1218[0m                 [0mf[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1219[0m                 [0mmode[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/common.py[0m in [0;36mget_handle[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)[0m
+[1;32m    668[0m [0;34m[0m[0m
+[1;32m    669[0m     [0;31m# open URLs[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 670[0;31m     ioargs = _get_filepath_or_buffer(
+[0m[1;32m    671[0m         [0mpath_or_buf[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    672[0m         [0mencoding[0m[0;34m=[0m[0mencoding[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/common.py[0m in [0;36m_get_filepath_or_buffer[0;34m(filepath_or_buffer, encoding, compression, mode, storage_options)[0m
+[1;32m    337[0m         [0;31m# assuming storage_options is to be interpreted as headers[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    338[0m         [0mreq_info[0m [0;34m=[0m [0murllib[0m[0;34m.[0m[0mrequest[0m[0;34m.[0m[0mRequest[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0mheaders[0m[0;34m=[0m[0mstorage_options[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 339[0;31m         [0;32mwith[0m [0murlopen[0m[0;34m([0m[0mreq_info[0m[0;34m)[0m [0;32mas[0m [0mreq[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    340[0m             [0mcontent_encoding[0m [0;34m=[0m [0mreq[0m[0;34m.[0m[0mheaders[0m[0;34m.[0m[0mget[0m[0;34m([0m[0;34m"Content-Encoding"[0m[0;34m,[0m [0;32mNone[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    341[0m             [0;32mif[0m [0mcontent_encoding[0m [0;34m==[0m [0;34m"gzip"[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/common.py[0m in [0;36murlopen[0;34m(*args, **kwargs)[0m
+[1;32m    237[0m     [0;32mimport[0m [0murllib[0m[0;34m.[0m[0mrequest[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    238[0m [0;34m[0m[0m
+[0;32m--> 239[0;31m     [0;32mreturn[0m [0murllib[0m[0;34m.[0m[0mrequest[0m[0;34m.[0m[0murlopen[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    240[0m [0;34m[0m[0m
+[1;32m    241[0m [0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/urllib/request.py[0m in [0;36murlopen[0;34m(url, data, timeout, cafile, capath, cadefault, context)[0m
+[1;32m    212[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    213[0m         [0mopener[0m [0;34m=[0m [0m_opener[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 214[0;31m     [0;32mreturn[0m [0mopener[0m[0;34m.[0m[0mopen[0m[0;34m([0m[0murl[0m[0;34m,[0m [0mdata[0m[0;34m,[0m [0mtimeout[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    215[0m [0;34m[0m[0m
+[1;32m    216[0m [0;32mdef[0m [0minstall_opener[0m[0;34m([0m[0mopener[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/urllib/request.py[0m in [0;36mopen[0;34m(self, fullurl, data, timeout)[0m
+[1;32m    515[0m [0;34m[0m[0m
+[1;32m    516[0m         [0msys[0m[0;34m.[0m[0maudit[0m[0;34m([0m[0;34m'urllib.Request'[0m[0;34m,[0m [0mreq[0m[0;34m.[0m[0mfull_url[0m[0;34m,[0m [0mreq[0m[0;34m.[0m[0mdata[0m[0;34m,[0m [0mreq[0m[0;34m.[0m[0mheaders[0m[0;34m,[0m [0mreq[0m[0;34m.[0m[0mget_method[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 517[0;31m         [0mresponse[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_open[0m[0;34m([0m[0mreq[0m[0;34m,[0m [0mdata[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    518[0m [0;34m[0m[0m
+[1;32m    519[0m         [0;31m# post-process response[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/urllib/request.py[0m in [0;36m_open[0;34m(self, req, data)[0m
+[1;32m    532[0m [0;34m[0m[0m
+[1;32m    533[0m         [0mprotocol[0m [0;34m=[0m [0mreq[0m[0;34m.[0m[0mtype[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 534[0;31m         result = self._call_chain(self.handle_open, protocol, protocol +
+[0m[1;32m    535[0m                                   '_open', req)
+[1;32m    536[0m         [0;32mif[0m [0mresult[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/urllib/request.py[0m in [0;36m_call_chain[0;34m(self, chain, kind, meth_name, *args)[0m
+[1;32m    492[0m         [0;32mfor[0m [0mhandler[0m [0;32min[0m [0mhandlers[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    493[0m             [0mfunc[0m [0;34m=[0m [0mgetattr[0m[0;34m([0m[0mhandler[0m[0;34m,[0m [0mmeth_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 494[0;31m             [0mresult[0m [0;34m=[0m [0mfunc[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    495[0m             [0;32mif[0m [0mresult[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    496[0m                 [0;32mreturn[0m [0mresult[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/urllib/request.py[0m in [0;36mhttp_open[0;34m(self, req)[0m
+[1;32m   1373[0m [0;34m[0m[0m
+[1;32m   1374[0m     [0;32mdef[0m [0mhttp_open[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mreq[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1375[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mdo_open[0m[0;34m([0m[0mhttp[0m[0;34m.[0m[0mclient[0m[0;34m.[0m[0mHTTPConnection[0m[0;34m,[0m [0mreq[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1376[0m [0;34m[0m[0m
+[1;32m   1377[0m     [0mhttp_request[0m [0;34m=[0m [0mAbstractHTTPHandler[0m[0;34m.[0m[0mdo_request_[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/epn-ml-book/lib/python3.9/urllib/request.py[0m in [0;36mdo_open[0;34m(self, http_class, req, **http_conn_args)[0m
+[1;32m   1347[0m                           encode_chunked=req.has_header('Transfer-encoding'))
+[1;32m   1348[0m             [0;32mexcept[0m [0mOSError[0m [0;32mas[0m [0merr[0m[0;34m:[0m [0;31m# timeout error[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1349[0;31m                 [0;32mraise[0m [0mURLError[0m[0;34m([0m[0merr[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1350[0m             [0mr[0m [0;34m=[0m [0mh[0m[0;34m.[0m[0mgetresponse[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1351[0m         [0;32mexcept[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mURLError[0m: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>
 
