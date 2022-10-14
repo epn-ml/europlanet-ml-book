@@ -1,6 +1,6 @@
 # Introduction
 
-In this first part of our book, we will briefly present two basic tutorials - one about supervised classification and one about supervised regression. As already stated in the Foreword to this book, these tutorials (as well as the other chapters about the ML pipelines for our science cases) are not intended for complete newcomers to machine learning. There are very good introductions, tutorials, books, etc. about ML available and we won't repeat those here.
+In this first part of our book, we will briefly present two basic tutorials - one about supervised classification and one about supervised regression. As already stated in the Introduction to this book, these tutorials (as well as the other chapters about the ML pipelines for our science cases) are not intended for complete newcomers to machine learning. There are very good introductions, tutorials, books, etc. about ML available and we won't repeat those here.
 
 However, we still want to provide some basic concepts and thus we decided to put the following two tutorials into this book.
 

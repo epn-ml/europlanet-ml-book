@@ -147,18 +147,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="MLPipeline.html">
-   3. Machine learning pipeline
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Results.html">
-   4. Results
+  <a class="reference internal" href="Tutorial-ICMEs/MachineLearningPipeline.html">
+   3. Machine Learning Pipeline for Automated Detection of ICMEs
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Summary.html">
-   5. Summary and Discussion
+   4. Summary and Discussion
   </a>
  </li>
 </ul>
@@ -254,6 +249,11 @@
    1.2. Main aim
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brief-summary-of-our-approach">
+   1.3. Brief summary of our approach
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -284,6 +284,11 @@
    1.2. Main aim
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brief-summary-of-our-approach">
+   1.3. Brief summary of our approach
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -311,6 +316,16 @@
 <h2><span class="section-number">1.2. </span>Main aim<a class="headerlink" href="#main-aim" title="Permalink to this headline">¶</a></h2>
 <p>The main aim of this science case is to develop/implement an algorithm to automatically detect ICME signatures in in situ solar wind data.</p>
 <p>Interplanetary coronal mass ejections (ICMEs) are one of the main drivers for space weather disturbances. In the past, different machine learning approaches have been used to automatically detect events in existing time series resulting from solar wind in situ data (e.g., Nguyen et al., 2019). However, classification, early detection and ultimately forecasting still remain challenging when faced with the large amount of data from different instruments. While CNNs are often used to discover objects or patterns in images or data series, there are two main problems when facing our specific task: high duration variability and a rather ambiguous definition of start and end time.</p>
+</div>
+<div class="section" id="brief-summary-of-our-approach">
+<h2><span class="section-number">1.3. </span>Brief summary of our approach<a class="headerlink" href="#brief-summary-of-our-approach" title="Permalink to this headline">¶</a></h2>
+<p>The first step in this science case was the reimplementation of a model proposed by <span id="id1">Nguyen <em>et al.</em> [<a class="reference internal" href="../../References/bibliography.html#id3">2019</a>]</span>, which had previously been tested on WIND data and achieved a maximum recall and precision of around 84%.</p>
+<p>After the reimplementation of this model, the model was tested on STEREO-A and STEREO-B data as well as on WIND data. All three contain less variables than the original data set used by Nguyen et al. At a similar recall as for the original set, the precision for all three datasets was only around 30% and the accuracy in delivering start and end times was limited.</p>
+<p>The next step was to align all three data sets in order to process more training data for a combined model. It was tested on held out datasets for WIND, STEREO-A and STEREO-B. Surprisingly, this did not sufficiently improve performance and lead us to explore other approaches.</p>
+<p>Starting from the reimplementation, a post processing step based on YOLO v5 (ultralytics) was investigated, in order to improve performance. Even though first results seemed promising, the idea was later discarded due to unsatisfactory results and the laborious pipeline. Since the ultimate goal is an explicit and widely applicable pipeline, it was decided to abandon the general approach of using multiple basic neural networks and the similarity measure used by <span id="id2">Nguyen <em>et al.</em> [<a class="reference internal" href="../../References/bibliography.html#id3">2019</a>]</span> completely and compose it as a segmentation problem instead.</p>
+<p>We proposed a pipeline using a UNet <span id="id3">[<a class="reference internal" href="../../References/bibliography.html#id6">Ronneberger <em>et al.</em>, 2015</a>]</span> including residual blocks, squeeze and excitation blocks, Atrous Spatial Pyramidal Pooling (ASPP) and attention blocks, similar to the ResUNet++ <span id="id4">[<a class="reference internal" href="../../References/bibliography.html#id5">Jha <em>et al.</em>, 2019</a>]</span>, for the automatic detection of ICMEs. Comparing it to our first results, we find that our model outperforms the baseline regarding GPU usage, training time and robustness to missing features, thus making it more usable for other data sets, as well as the three aligned data sets. The relatively fast training allows straightforward tuning of hyperparameters. Our proposed pipeline can be used for any time series segmentation problem. The straightforward implementation allows a simple extension to a multi-class classification problem and paves the way to include corotating interaction regions into the range of detectable phenomena within our pipeline.</p>
+<p>The pipeline is open source and can be found on <a class="reference external" href="https://github.com/epn-ml/IWF-ICMEs">GitHub</a>.</p>
+<p>In the following, we present a tutorial for the pipeline, which can also be found on <a class="reference external" href="https://github.com/epn-ml/Tutorial_IWF-ICMEs">GitHub</a>.</p>
 <p><strong>Useful links and resources</strong></p>
 <ol class="simple">
 <li><p>In situ solar wind data (only numbers in numpy structured arrays): <a class="reference external" href="https://doi.org/10.6084/m9.figshare.12058065.v7">https://doi.org/10.6084/m9.figshare.12058065.v7</a></p></li>

@@ -16,6 +16,9 @@ parts:
   chapters:
   - file: Part_2/Chapter_1_ICMEsDetection/Introduction
   - file: Part_2/Chapter_1_ICMEsDetection/ScienceBackground
-  - file: Part_2/Chapter_1_ICMEsDetection/MLPipeline
-  - file: Part_2/Chapter_1_ICMEsDetection/Results
+  - file: Part_2/Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline
   - file: Part_2/Chapter_1_ICMEsDetection/Summary
+- caption: References
+  numbered: True
+  chapters:
+  - file: References/bibliography
