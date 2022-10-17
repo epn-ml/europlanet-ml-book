@@ -25,6 +25,13 @@ parts:
   - file: Part_2/Chapter_2_MercuryBoundaries/ScienceBackground
   - file: Part_2/Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer
   - file: Part_2/Chapter_2_MercuryBoundaries/Summary
+- caption: 5. Automatic Detection of Boundaries around Earth
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_3_EarthBoundaries/Introduction
+  - file: Part_2/Chapter_3_EarthBoundaries/ScienceBackground
+  - file: Part_2/Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline
+  - file: Part_2/Chapter_3_EarthBoundaries/Summary
 - caption: References
   numbered: True
   chapters:
