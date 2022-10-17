@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Introduction &#8212; The Europlanet Machine Learning Book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. Science Background - Boundaries around Mercury" href="ScienceBackground.html" />
+    <link rel="prev" title="4. Summary and Discussion" href="../Chapter_1_ICMEsDetection/Summary.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/Europlanet_Machine_Learning_Logo_Standard.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Europlanet Machine Learning Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Foreword.html">
+   The Europlanet Machine Learning Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1. Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_Introduction/Content.html">
+   1. Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2. Basic Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Part_1/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification.html">
+   2. Supervised classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Part_1/Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html">
+   3. Supervised regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3. Automatic Detection of ICMEs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Chapter_1_ICMEsDetection/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Chapter_1_ICMEsDetection/ScienceBackground.html">
+   2. Science Background - Interplanetary Coronal Mass Ejections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline.html">
+   3. Machine Learning Pipeline for Automated Detection of ICMEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Chapter_1_ICMEsDetection/Summary.html">
+   4. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  4. Automatic Detection of Boundaries around Mercury
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ScienceBackground.html">
+   2. Science Background - Boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-MercuryBoundaries/Magnetometer.html">
+   3. Determination of bow-shock and magnetopause crossings in Mercurys Magnetosphere using MESSENGER data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Summary.html">
+   4. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../References/bibliography.html">
+   1. References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Part_2/Chapter_2_MercuryBoundaries/Introduction.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description-of-the-science-case">
+   1.1. Description of the science case
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-aim">
+   1.2. Main aim
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brief-summary-of-our-approach">
+   1.3. Brief summary of our approach
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset">
+     1.3.1. Dataset
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-processing">
+     1.3.2. Pre-processing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description-of-the-science-case">
+   1.1. Description of the science case
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-aim">
+   1.2. Main aim
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brief-summary-of-our-approach">
+   1.3. Brief summary of our approach
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset">
+     1.3.1. Dataset
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-processing">
+     1.3.2. Pre-processing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This chapter is about the science case proposed “Search for magnetopause/shockwave crossings on Mercury based on MESSENGER data”, proposed by the Moscow State University (SINP/LMSU).</p>
+<p>The publication about this project can be found <a class="reference external" href="https://2022.ecmlpkdd.org/wp-content/uploads/2022/09/sub_1177.pdf">here</a>:</p>
+<ul class="simple">
+<li><p>Julka S., Kirschstein N., Granitzer M., Lavrukhin A., and Amerstorfer U. (2022), Deep Active Learning for Detection of Mercury’s
+Bow Shock and Magnetopause Crossings, Proceedings ECMl PKDD 2022.</p></li>
+</ul>
+<div class="section" id="description-of-the-science-case">
+<h2><span class="section-number">1.1. </span>Description of the science case<a class="headerlink" href="#description-of-the-science-case" title="Permalink to this headline">¶</a></h2>
+<p>The interplanetary medium is filled with the solar wind and the interplanetary magnetic field (IMF). When the supersonic solar wind plasma flow finds an obstacle on its way out, such as a magnetosphere, a shock wave arises upstream of the obstacle. In case of a magnetospheric interaction it is called the bow shock. The bow shock slows the solar wind to subsonic speeds, so that the solar wind can flow around the magnetopause, which is the surface enclosing the magnetosphere. The magnetosphere is the region, where the inner planetary magnetic field plays the main role.</p>
+<p>The magnetopause boundary is determined by the equation of balance of the magnetic field and plasma pressure sum inside and outside of the magnetopause:</p>
+<p>IMF pressure + solar wind plasma pressure = planetary and magnetospheric magnetic field pressure + magnetospheric plasma pressure</p>
+<p>In the case of Mercury, in front of the magnetopause the solar wind ram pressure, and inside it the magnetospheric magnetic field pressure play the main roles. Mercury’s weak internal magnetic field, combined with its proximity to the Sun, means that the magnetosphere of the innermost planet is small and highly dynamic. Specifically, the magnetopause subsolar standoff distance is estimated to be 1.4 – 1.6 RM, where RM is the radius of Mercury. Sometimes, during a high-density plasma flow, the magnetopause can appear closer to the Hermean surface, or even disappear. The bow shock changes its shape and stands closer or farther from the planet in response to variations in the solar wind speed and, to a lesser extent, IMF direction. The magnetopause location and shape are determined principally by the pressure exerted on the magnetopause by the shocked solar wind plasma, which scales with the solar wind ram pressure, balanced by the magnetospheric magnetic ﬁeld pressure.</p>
+</div>
+<div class="section" id="main-aim">
+<h2><span class="section-number">1.2. </span>Main aim<a class="headerlink" href="#main-aim" title="Permalink to this headline">¶</a></h2>
+<p>The MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) spacecraft has completed over 4000 orbits around Mercury. The initial orbit had a 200 km periapsis altitude, 82.5 inclination, 15300 km apoapsis altitude, and 12 h period. The MESSENGER’s orbit around Mercury was approximately ﬁxed in inertial space so that the orbit completes a local time rotation once every Mercury year (88 Earth days). The periapsis altitude and latitude of the orbit also drifted during every Mercury year, and the MESSENGER orbit varied between two extremes, the dawn-dusk terminator and noon-midnight orbits.</p>
+<p>During each orbit, MESSENGER typically spent 1–2 h inside the magnetosphere; the rest of the time was spent in the magnetosheath and in the interplanetary medium. The interplanetary magnetic field (IMF) magnitude assigned to each crossing can be evaluated as a 1 hour average of magnetometer (MAG) data upstream of the outermost bow shock encounter.</p>
+<p>Magnetic ﬁeld data are analyzed in Mercury solar orbital (MSO) coordinates. In MSO coordinates, X_MSO is positive sunward, Z_MSO is positive northward, Y_MSO is positive duskward and completes the right-handed system, and the origin is at the center of the planet.</p>
+<p>The goal of this case is to improve our understanding of Mercury’s magnetosphere and its dynamics. We utilise the data recorded by the MESSENGER spacecraft, which collected vast amounts of heterogeneous data during its approximately 4000 orbit voyage, most interestingly the magnetic field data from the magnetometer. A typical orbit involved passing from the interplanetary magnetic field through the bow shock, the magnetosheath, the magnetopause, the magnetosphere of Mercury, and thereupon the same sequence in reverse. Since a mercurial year is about 88 Earth days, several years’ worth of magnetometer data was recorded. This is nice because several variations in environmental configurations are recorded, which is useful to build automatic models for event recognition. The resulting data set of crossing times and positions is to be used in conjunction with the paraboloid magnetosphere model to compute the magnetic field lines in the magnetosphere; these can subsequently be used to perform modelling of trajectories of particles sputtered from the surface of the planet by space radiation.</p>
+</div>
+<div class="section" id="brief-summary-of-our-approach">
+<h2><span class="section-number">1.3. </span>Brief summary of our approach<a class="headerlink" href="#brief-summary-of-our-approach" title="Permalink to this headline">¶</a></h2>
+<p>Based on data from the mission, several global models of the magnetosphere were proposed <span id="id1">[<a class="reference internal" href="../../References/bibliography.html#id3">Johnson <em>et al.</em>, 2012</a>, <a class="reference internal" href="../../References/bibliography.html#id7">Philpott <em>et al.</em>, 2020</a>, <a class="reference internal" href="../../References/bibliography.html#id9">Winslow <em>et al.</em>, 2013</a>, <a class="reference internal" href="../../References/bibliography.html#id10">Zhong <em>et al.</em>, 2015</a>]</span>. However, they could only describe an average shape of the bow shock and magnetopause crossings and can be prone to missing the statistical nuances in the data.  Given large data, Neural Networks can be expected to approximate complex functions, which often surpass deterministic and rule-based methods, in a variety of time series tasks like classification <span id="id2">[<a class="reference internal" href="../../References/bibliography.html#id4">Ismail Fawaz <em>et al.</em>, 2019</a>]</span>, time series forecasting <span id="id3">[<a class="reference internal" href="../../References/bibliography.html#id5">Lim and Zohren, 2021</a>]</span> and rare time series event detection <span id="id4">[<a class="reference internal" href="../../References/bibliography.html#id13">Nguyen <em>et al.</em>, 2018</a>]</span>. We leverage these to develop a predictor, that can be used in real-time during orbit, to predict magnetic region for each step in a short window of observation. Figure 2 illustrates the different crossing labels for an exemplary orbit.</p>
+<p>The use of statistical neural networks allows us to explore another aspect: with the help of active learning, it is possible to add samples to the training process incrementally. With this, we can examine how the model scales its predictive capacity with increasing data, and thus study how the variations such as changing solar wind and environmental conditions affects the manifestation of boundary signatures. To begin with, different orbits can be expected to have some element of similarity in the magnetic field structure, yet would have large variations in the same segments at different conditions. It is also interesting to study what the minimal amount is for the data needed to be able to generalise these phenomena for future missions such as the BepiColombo.</p>
+<div class="section" id="dataset">
+<h3><span class="section-number">1.3.1. </span>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h3>
+<p>The dataset was manually labelled with the boundary crossings. To identify bow shocks, we first subtracted planetary dipole magnetic field components from the magnetometer measurements, computed the magnitude of the remainder attributed to external sources, applied the Savitzky-Golay filter to smooth the time profile of the remainder and computed its second derivative. The first and the last second derivative spikes as determined by z-score are assumed to be the enter and exit bow shock crossings respectively. Magnetopause boundaries were eyeballed using the cartesian components of the magnetic fields in the Mercury Solar Orbital coordinate system. During magnetopause crossings at least one of the components in the magnetogram experiences a sharp growth; the exact component depends on the spacecraft position. The beginning and ending points of this growth region are assumed to determine the magnetopause crossing edges. To supplement these, we also used the boundaries marked by <span id="id5">Philpott <em>et al.</em> [<a class="reference internal" href="../../References/bibliography.html#id7">2020</a>]</span> for a few orbits.</p>
+<p>The distribution of the different magnetic regions, after annotation, is reported in the table below. The boundaries of critical interest- Bow-shock and Magnetopause are minorities with only 3.7 and 2.3 % representation. The table highlights the data imbalance issue that requires investigating special techniques to ensure the predictor does not bias towards the overrepresented classes.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Label</p></th>
+<th class="head"><p>Region</p></th>
+<th class="head"><p>Statistical distribution (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Interplanetary magnetic field</p></td>
+<td><p>65.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Bow shock crossing</p></td>
+<td><p>3.7</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Magnetosheath</p></td>
+<td><p>14.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Magnetopause crossing</p></td>
+<td><p>2.3</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Magnetosphere</p></td>
+<td><p>14.1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pre-processing">
+<h3><span class="section-number">1.3.2. </span>Pre-processing<a class="headerlink" href="#pre-processing" title="Permalink to this headline">¶</a></h3>
+<p>As a first step in pre-processing, feature selection was performed to assess the contribution of available features in the estimation of the output. Based on statistical correlations, the Magnetic Flux features (BX_MSO. BY_MSO, BZ_MSO), Aircraft position coordinates (X_MSO, Y_MSO, Z_MSO) and planetary velocity components (VX, VY, VZ) were found to be most informative. In addition, three meta features namely EXTREMA, COSALPHA and RHO_DIPOLE were selected.</p>
+<p>In the feature preparation stage, a sliding window of variable sizes (3 seconds to 3 minutes) with a hop size of 1 second was computed on the time series signal to obtain feature vectors. Finally, the features were normalised to have mean of 0 and a standard deviation of 1. No other pre-processing, or engineering was applied in order to allow the deep learning model to engineer features implicitly.</p>
+<p>The windowed features are fed first into a block of 3 Convolutional layers with 1D filters, each followed by Batch Normalisation and ReLu activations. The activations obtained at the end of the CNN block are then passed to the Recurrent block with two layers of LSTMs. The final activations are then passed to a fully connected layer with softmax activations. The objective function used for training is Categorial cross entropy, with Adam optimizer.</p>
+<p>The window size used in these experiments is 30 seconds. Overall, the predictor achieves a macro F1 score of about 80% on the bow shock and the magnetopause crossings on a randomly sampled test of 300 orbits. None of the orbits overlap in the train and test sets.</p>
+<p>The pipeline is open source and can be found on <a class="reference external" href="https://github.com/epn-ml/Freddie">GitHub</a>.</p>
+<p>In the following, we present a tutorial for the pipeline, which can also be found on <a class="reference external" href="https://github.com/epn-ml/EPSC2021-MercuryBoundaries-workshop">GitHub</a>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Part_2/Chapter_2_MercuryBoundaries"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../Chapter_1_ICMEsDetection/Summary.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Summary and Discussion</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ScienceBackground.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Science Background - Boundaries around Mercury</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Durch The Europlanet ML Team<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

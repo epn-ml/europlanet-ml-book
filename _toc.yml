@@ -18,6 +18,13 @@ parts:
   - file: Part_2/Chapter_1_ICMEsDetection/ScienceBackground
   - file: Part_2/Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline
   - file: Part_2/Chapter_1_ICMEsDetection/Summary
+- caption: 4. Automatic Detection of Boundaries around Mercury
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_2_MercuryBoundaries/Introduction
+  - file: Part_2/Chapter_2_MercuryBoundaries/ScienceBackground
+  - file: Part_2/Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer
+  - file: Part_2/Chapter_2_MercuryBoundaries/Summary
 - caption: References
   numbered: True
   chapters:
