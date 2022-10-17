@@ -15,30 +15,56 @@ parts:
   numbered: True
   chapters:
   - file: Part_2/Chapter_1_ICMEsDetection/Introduction
-  - file: Part_2/Chapter_1_ICMEsDetection/ScienceBackground
   - file: Part_2/Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline
   - file: Part_2/Chapter_1_ICMEsDetection/Summary
 - caption: 4. Automatic Detection of Boundaries around Mercury
   numbered: True
   chapters:
   - file: Part_2/Chapter_2_MercuryBoundaries/Introduction
-  - file: Part_2/Chapter_2_MercuryBoundaries/ScienceBackground
   - file: Part_2/Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer
   - file: Part_2/Chapter_2_MercuryBoundaries/Summary
 - caption: 5. Automatic Detection of Boundaries around Earth
   numbered: True
   chapters:
   - file: Part_2/Chapter_3_EarthBoundaries/Introduction
-  - file: Part_2/Chapter_3_EarthBoundaries/ScienceBackground
   - file: Part_2/Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline
   - file: Part_2/Chapter_3_EarthBoundaries/Summary
 - caption: 6. Image Segmentation for Detecting Mounds on Mars
   numbered: True
   chapters:
   - file: Part_2/Chapter_4_MarsMounds/Introduction
-  - file: Part_2/Chapter_4_MarsMounds/ScienceBackground
   - file: Part_2/Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation
-  - file: Part_2/Chapter_4_EarthBoundaries/Summary
+  - file: Part_2/Chapter_4_MarsMounds/Summary
+- caption: 7. Landforms Detection on Mars (Pits)
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_5_MarsPits/Introduction
+  - file: Part_2/Chapter_5_MarsPits/Summary
+- caption: 8. Mars Pits Shadow Extractor (MAPS)
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_6_MarsPitsShadowExtractor/Introduction
+  - file: Part_2/Chapter_6_MarsPitsShadowExtractor/Summary
+- caption: 9. Chorus Waves
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_7_ChorusWaves/Introduction
+  - file: Part_2/Chapter_7_ChorusWaves/Summary
+- caption: 10. Classification of Meteors based on Lightcurves
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_8_MeteorClassification/Introduction
+  - file: Part_2/Chapter_8_MeteorClassification/Summary
+- caption: 11. Mercury Surface Classification
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_9_MercurySurfaceClassification/Introduction
+  - file: Part_2/Chapter_9_MercurySurfaceClassification/Summary
+- caption: 12. Mineral Identification
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_10_MineralIdentificationIntroduction
+  - file: Part_2/Chapter_10_MineralIdentification/Summary
 - caption: References
   numbered: True
   chapters:

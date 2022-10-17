@@ -7,6 +7,10 @@ The publication about this project can be found [here](https://2022.ecmlpkdd.org
 *  Julka S., Kirschstein N., Granitzer M., Lavrukhin A., and Amerstorfer U. (2022), Deep Active Learning for Detection of Mercury’s
 Bow Shock and Magnetopause Crossings, Proceedings ECMl PKDD 2022.
 
+Our ML pipeline is open source and can be found on [GitHub](https://github.com/epn-ml/Freddie).
+
+In the following, we present a tutorial for the pipeline, which can also be found on [GitHub](https://github.com/epn-ml/EPSC2021-MercuryBoundaries-workshop).
+
 ## Description of the science case
 
 The interplanetary medium is filled with the solar wind and the interplanetary magnetic field (IMF). When the supersonic solar wind plasma flow finds an obstacle on its way out, such as a magnetosphere, a shock wave arises upstream of the obstacle. In case of a magnetospheric interaction it is called the bow shock. The bow shock slows the solar wind to subsonic speeds, so that the solar wind can flow around the magnetopause, which is the surface enclosing the magnetosphere. The magnetosphere is the region, where the inner planetary magnetic field plays the main role.
@@ -62,6 +66,4 @@ The windowed features are fed first into a block of 3 Convolutional layers with 
 
 The window size used in these experiments is 30 seconds. Overall, the predictor achieves a macro F1 score of about 80% on the bow shock and the magnetopause crossings on a randomly sampled test of 300 orbits. None of the orbits overlap in the train and test sets.
 
-The pipeline is open source and can be found on [GitHub](https://github.com/epn-ml/Freddie).
 
-In the following, we present a tutorial for the pipeline, which can also be found on [GitHub](https://github.com/epn-ml/EPSC2021-MercuryBoundaries-workshop).

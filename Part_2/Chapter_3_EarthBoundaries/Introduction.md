@@ -2,6 +2,9 @@
 
 This chapter is about the science case proposed "Search for space plasmas boundary crossings", proposed by the Institute of Atmospheric Physics of Czech Academy of Sciences (IAP-CAS).
 
+In the following, we present a tutorial for an ML pipeline, which can also be found on [GitHub](https://github.com/epn-ml/Tutorial_IAP_Boundaries).
+
+
 ## Description of the science case
 
 Planetary magnetospheres create multiple sharp boundaries, such as the bow shock, where the solar wind plasma is decelerated and compressed, or the magnetopause, a transition between solar wind field and planetary field.
@@ -32,4 +35,3 @@ All Cluster data is public and can be downloaded from the [ESA Cluster Science A
 
 
 
-In the following, we present a tutorial for the pipeline, which can also be found on [GitHub](https://github.com/epn-ml/Tutorial_IAP_Boundaries).
