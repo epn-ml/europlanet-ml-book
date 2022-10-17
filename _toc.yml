@@ -32,6 +32,13 @@ parts:
   - file: Part_2/Chapter_3_EarthBoundaries/ScienceBackground
   - file: Part_2/Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline
   - file: Part_2/Chapter_3_EarthBoundaries/Summary
+- caption: 6. Image Segmentation for Detecting Mounds on Mars
+  numbered: True
+  chapters:
+  - file: Part_2/Chapter_4_MarsMounds/Introduction
+  - file: Part_2/Chapter_4_MarsMounds/ScienceBackground
+  - file: Part_2/Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation
+  - file: Part_2/Chapter_4_EarthBoundaries/Summary
 - caption: References
   numbered: True
   chapters:

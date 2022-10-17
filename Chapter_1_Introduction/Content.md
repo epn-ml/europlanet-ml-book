@@ -7,6 +7,7 @@
 * Chapter 3: Automatic Detection of ICMEs
 * Chapter 4: Automatic Detection of Boundaries around Mercury
 * Chapter 5: Automatic Detection of Boundaries around Earth
+* Chapter 6: Image Segmentation for Detecting Mounds on Mars
 
 ## Prerequisites
 

@@ -1,0 +1,1856 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Mound Classification in DTMs from Mars Arabia Terra. &#8212; The Europlanet Machine Learning Book</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1. References" href="../../../References/bibliography.html" />
+    <link rel="prev" title="2. Science Background - Boundaries around Earth" href="../ScienceBackground.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/Europlanet_Machine_Learning_Logo_Standard.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Europlanet Machine Learning Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Foreword.html">
+   The Europlanet Machine Learning Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1. Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Chapter_1_Introduction/Content.html">
+   1. Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2. Basic Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification.html">
+   2. Supervised classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html">
+   3. Supervised regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3. Automatic Detection of ICMEs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/ScienceBackground.html">
+   2. Science Background - Interplanetary Coronal Mass Ejections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline.html">
+   3. Machine Learning Pipeline for Automated Detection of ICMEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Summary.html">
+   4. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  4. Automatic Detection of Boundaries around Mercury
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/ScienceBackground.html">
+   2. Science Background - Boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer.html">
+   3. Machine learning pipeline for detection of boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/Summary.html">
+   4. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  5. Automatic Detection of Boundaries around Earth
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/ScienceBackground.html">
+   2. Science Background - Boundaries around Earth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline.html">
+   3. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/Summary.html">
+   5. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  6. Image Segmentation for Detecting Mounds on Mars
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ScienceBackground.html">
+   2. Science Background - Boundaries around Earth
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Mound Classification in DTMs from Mars Arabia Terra.
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../References/bibliography.html">
+   1. References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Part_2/Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Part_2/Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-data">
+   3.1. Load Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-out-data-with-matplotlib-s-contour">
+     3.1.1. Plot out data with Matplotlib’s ‘contour’
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-hillshade-technique-where-a-lighting-effect-is-added-to-a-map-based-on-elevation-variations-within-the-landscape">
+     3.1.2. Creating a Hillshade : technique where a lighting effect is added to a map based on elevation variations within the landscape.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualise-slope-identifies-the-steepness-at-each-cell-of-a-raster-surface">
+     3.1.3. Visualise slope:  identifies the steepness at each cell of a raster surface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-the-image-into-tiles">
+   3.2. Split the image into tiles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gdal-implementation">
+     3.2.1. GDAL implementation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rasterio-implementation">
+   3.3. Rasterio implementation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotation-script">
+   3.4. Annotation script
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-device-for-computation">
+   3.5. Define device for computation
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Mound Classification in DTMs from Mars Arabia Terra.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-data">
+   3.1. Load Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-out-data-with-matplotlib-s-contour">
+     3.1.1. Plot out data with Matplotlib’s ‘contour’
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-hillshade-technique-where-a-lighting-effect-is-added-to-a-map-based-on-elevation-variations-within-the-landscape">
+     3.1.2. Creating a Hillshade : technique where a lighting effect is added to a map based on elevation variations within the landscape.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualise-slope-identifies-the-steepness-at-each-cell-of-a-raster-surface">
+     3.1.3. Visualise slope:  identifies the steepness at each cell of a raster surface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-the-image-into-tiles">
+   3.2. Split the image into tiles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gdal-implementation">
+     3.2.1. GDAL implementation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rasterio-implementation">
+   3.3. Rasterio implementation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotation-script">
+   3.4. Annotation script
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-device-for-computation">
+   3.5. Define device for computation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="mound-classification-in-dtms-from-mars-arabia-terra">
+<h1><span class="section-number">3. </span>Mound Classification in DTMs from Mars Arabia Terra.<a class="headerlink" href="#mound-classification-in-dtms-from-mars-arabia-terra" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+<span class="c1">#Geo-libraries</span>
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+<span class="kn">import</span> <span class="nn">rasterio</span>
+<span class="kn">import</span> <span class="nn">rasterio</span> <span class="k">as</span> <span class="nn">rio</span>
+<span class="kn">from</span> <span class="nn">rasterio.plot</span> <span class="kn">import</span> <span class="n">show</span>
+<span class="kn">import</span> <span class="nn">rasterio.plot</span> <span class="k">as</span> <span class="nn">rplot</span>
+<span class="kn">import</span> <span class="nn">earthpy.spatial</span> <span class="k">as</span> <span class="nn">es</span>
+<span class="kn">from</span> <span class="nn">rasterio.plot</span> <span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">rasterio</span> <span class="kn">import</span> <span class="n">mask</span>
+<span class="kn">import</span> <span class="nn">osgeo</span>
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">osr</span>
+<span class="kn">import</span> <span class="nn">richdem</span> <span class="k">as</span> <span class="nn">rd</span>
+<span class="c1">#import gdal</span>
+<span class="c1">#import elevation </span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">rasterio.windows</span> <span class="kn">import</span> <span class="n">Window</span>
+
+
+<span class="c1">#visualisation</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1">#matrix computation/ML</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">segmentation_models_pytorch</span> <span class="k">as</span> <span class="nn">smp</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">albumentations</span> <span class="k">as</span> <span class="nn">albu</span>
+<span class="kn">from</span> <span class="nn">torch.optim.lr_scheduler</span> <span class="kn">import</span> <span class="n">ExponentialLR</span><span class="p">,</span> <span class="n">MultiStepLR</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+
+<span class="c1">#for normalising</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="c1">#utils</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Dataset</span> <span class="k">as</span> <span class="n">BaseDataset</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">FloatTensor</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span> <span class="o">=</span> <span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="ne">FutureWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Populating the interactive namespace from numpy and matplotlib
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_97248</span><span class="o">/</span><span class="mf">3907882804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;pylab&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#Geo-libraries</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">rasterio</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">rasterio</span> <span class="k">as</span> <span class="nn">rio</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;osgeo&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="load-data">
+<h2><span class="section-number">3.1. </span>Load Data<a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dem_path</span> <span class="o">=</span> <span class="s1">&#39;training_site/DEM/Low-res_DEM/&#39;</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">dem_path</span> <span class="o">+</span> <span class="s2">&quot;Firsoff_HiRISE_5_low_res.tif-adj.tif&quot;</span>
+<span class="n">gdal_data</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1">#load raster</span>
+<span class="n">gdal_band</span> <span class="o">=</span> <span class="n">gdal_data</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">nodataval</span> <span class="o">=</span> <span class="n">gdal_band</span><span class="o">.</span><span class="n">GetNoDataValue</span><span class="p">()</span>
+
+<span class="c1"># convert to a numpy array</span>
+<span class="n">data_array</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">data_array</span> <span class="o">=</span> <span class="n">gdal_band</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="c1"># data_array</span>
+
+<span class="c1"># replace missing values if necessary</span>
+<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">data_array</span> <span class="o">==</span> <span class="n">nodataval</span><span class="p">):</span>
+    <span class="n">data_array</span><span class="p">[</span><span class="n">data_array</span> <span class="o">==</span> <span class="n">nodataval</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_array</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Workshop-Mound-Segmentation_4_0.png" src="../../../_images/Workshop-Mound-Segmentation_4_0.png" />
+</div>
+</div>
+<div class="section" id="plot-out-data-with-matplotlib-s-contour">
+<h3><span class="section-number">3.1.1. </span>Plot out data with Matplotlib’s ‘contour’<a class="headerlink" href="#plot-out-data-with-matplotlib-s-contour" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">data_array</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Elevation Contours of Firsoff HiRISE 5 (low res)&quot;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Workshop-Mound-Segmentation_6_0.png" src="../../../_images/Workshop-Mound-Segmentation_6_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plot image in grayscale</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_array</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Firsoff HiRISE 5 (low res) gray scale&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="c1">#Plot a contourf graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Elevation Contourf of Firsoff HiRISE 5 (low res)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">data_array</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Workshop-Mound-Segmentation_7_0.png" src="../../../_images/Workshop-Mound-Segmentation_7_0.png" />
+<img alt="../../../_images/Workshop-Mound-Segmentation_7_1.png" src="../../../_images/Workshop-Mound-Segmentation_7_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dem</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="n">slp</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">DEMProcessing</span><span class="p">(</span><span class="n">dem_path</span> <span class="o">+</span> <span class="s2">&quot;slope.tif&quot;</span><span class="p">,</span> <span class="n">dem</span><span class="p">,</span> <span class="s2">&quot;slope&quot;</span><span class="p">,</span> <span class="n">computeEdges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slparray</span> <span class="o">=</span> <span class="n">slp</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+
+<span class="c1"># Don&#39;t use matplotlib to visualize the slope</span>
+<span class="c1"># Use richdem as shown below</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">slparray</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Workshop-Mound-Segmentation_9_0.png" src="../../../_images/Workshop-Mound-Segmentation_9_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-hillshade-technique-where-a-lighting-effect-is-added-to-a-map-based-on-elevation-variations-within-the-landscape">
+<h3><span class="section-number">3.1.2. </span>Creating a Hillshade : technique where a lighting effect is added to a map based on elevation variations within the landscape.<a class="headerlink" href="#creating-a-hillshade-technique-where-a-lighting-effect-is-added-to-a-map-based-on-elevation-variations-within-the-landscape" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hillshade</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">DEMProcessing</span><span class="p">(</span><span class="n">dem_path</span> <span class="o">+</span> <span class="s2">&quot;hillshade1.tif&quot;</span><span class="p">,</span> <span class="n">dem</span><span class="p">,</span> <span class="s2">&quot;hillshade&quot;</span><span class="p">)</span>
+<span class="n">hillshade_array</span> <span class="o">=</span> <span class="n">hillshade</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hillshade_array</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Workshop-Mound-Segmentation_11_0.png" src="../../../_images/Workshop-Mound-Segmentation_11_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="visualise-slope-identifies-the-steepness-at-each-cell-of-a-raster-surface">
+<h3><span class="section-number">3.1.3. </span>Visualise slope:  identifies the steepness at each cell of a raster surface<a class="headerlink" href="#visualise-slope-identifies-the-steepness-at-each-cell-of-a-raster-surface" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rd_dem</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">LoadGDAL</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="n">rd_slope</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">TerrainAttribute</span><span class="p">(</span><span class="n">rd_dem</span><span class="p">,</span> <span class="n">attrib</span><span class="o">=</span><span class="s2">&quot;slope_degrees&quot;</span><span class="p">)</span>
+<span class="n">rd</span><span class="o">.</span><span class="n">rdShow</span><span class="p">(</span><span class="n">rd_slope</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;magma&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># To save the result</span>
+<span class="c1"># rd.SaveGDAL(&quot;rd_slope.tif&quot;, rd_slope)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A Slope calculation (degrees)
+C Horn, B.K.P., 1981. Hill shading and the reflectance map. Proceedings of the IEEE 69, 14–47. doi:10.1109/PROC.1981.11918
+
+
+
+[                                                  ] (1% - 0.0s - 1 threads)
+[=                                                 ] (2% - 0.0s - 1 threads)
+[=                                                 ] (3% - 0.0s - 1 threads)
+[==                                                ] (4% - 0.0s - 1 threads)
+[==                                                ] (5% - 0.0s - 1 threads)
+[===                                               ] (6% - 0.0s - 1 threads)
+[===                                               ] (7% - 0.0s - 1 threads)
+[====                                              ] (8% - 0.0s - 1 threads)
+[====                                              ] (9% - 0.0s - 1 threads)
+[=====                                             ] (10% - 0.0s - 1 threads)
+[=====                                             ] (11% - 0.0s - 1 threads)
+[======                                            ] (12% - 0.0s - 1 threads)
+[======                                            ] (13% - 0.0s - 1 threads)
+[=======                                           ] (14% - 0.0s - 1 threads)
+[=======                                           ] (15% - 0.0s - 1 threads)
+[========                                          ] (16% - 0.0s - 1 threads)
+[========                                          ] (17% - 0.0s - 1 threads)
+[=========                                         ] (18% - 0.0s - 1 threads)
+[=========                                         ] (19% - 0.0s - 1 threads)
+[==========                                        ] (20% - 0.0s - 1 threads)
+[==========                                        ] (21% - 0.0s - 1 threads)
+[===========                                       ] (22% - 0.0s - 1 threads)
+[===========                                       ] (23% - 0.0s - 1 threads)
+[============                                      ] (24% - 0.0s - 1 threads)
+[============                                      ] (25% - 0.0s - 1 threads)
+[=============                                     ] (26% - 0.0s - 1 threads)
+[=============                                     ] (27% - 0.0s - 1 threads)
+[==============                                    ] (28% - 0.0s - 1 threads)
+[==============                                    ] (29% - 0.0s - 1 threads)
+[===============                                   ] (30% - 0.0s - 1 threads)
+[===============                                   ] (31% - 0.0s - 1 threads)
+[================                                  ] (32% - 0.0s - 1 threads)
+[================                                  ] (33% - 0.0s - 1 threads)
+[=================                                 ] (34% - 0.0s - 1 threads)
+[=================                                 ] (35% - 0.0s - 1 threads)
+[==================                                ] (36% - 0.0s - 1 threads)
+[==================                                ] (37% - 0.0s - 1 threads)
+[===================                               ] (38% - 0.0s - 1 threads)
+[===================                               ] (39% - 0.0s - 1 threads)
+[====================                              ] (40% - 0.0s - 1 threads)
+[====================                              ] (41% - 0.0s - 1 threads)
+[=====================                             ] (42% - 0.0s - 1 threads)
+[=====================                             ] (43% - 0.0s - 1 threads)
+[======================                            ] (44% - 0.0s - 1 threads)
+[======================                            ] (45% - 0.0s - 1 threads)
+[=======================                           ] (46% - 0.0s - 1 threads)
+[=======================                           ] (47% - 0.0s - 1 threads)
+[========================                          ] (48% - 0.0s - 1 threads)
+[========================                          ] (49% - 0.0s - 1 threads)
+[=========================                         ] (50% - 0.0s - 1 threads)
+[=========================                         ] (51% - 0.0s - 1 threads)
+[==========================                        ] (52% - 0.0s - 1 threads)
+[==========================                        ] (53% - 0.0s - 1 threads)
+[===========================                       ] (54% - 0.0s - 1 threads)
+[===========================                       ] (55% - 0.0s - 1 threads)
+[============================                      ] (56% - 0.0s - 1 threads)
+[============================                      ] (57% - 0.0s - 1 threads)
+[=============================                     ] (58% - 0.0s - 1 threads)
+[=============================                     ] (59% - 0.0s - 1 threads)
+[==============================                    ] (60% - 0.0s - 1 threads)
+[==============================                    ] (61% - 0.0s - 1 threads)
+[===============================                   ] (62% - 0.0s - 1 threads)
+[===============================                   ] (63% - 0.0s - 1 threads)
+[================================                  ] (64% - 0.0s - 1 threads)
+[================================                  ] (65% - 0.0s - 1 threads)
+[=================================                 ] (66% - 0.0s - 1 threads)
+[=================================                 ] (67% - 0.0s - 1 threads)
+[==================================                ] (68% - 0.0s - 1 threads)
+[==================================                ] (69% - 0.0s - 1 threads)
+[===================================               ] (70% - 0.0s - 1 threads)
+[===================================               ] (71% - 0.0s - 1 threads)
+[====================================              ] (72% - 0.0s - 1 threads)
+[====================================              ] (73% - 0.0s - 1 threads)
+[=====================================             ] (74% - 0.0s - 1 threads)
+[=====================================             ] (75% - 0.0s - 1 threads)
+[======================================            ] (76% - 0.0s - 1 threads)
+[======================================            ] (77% - 0.0s - 1 threads)
+[=======================================           ] (78% - 0.0s - 1 threads)
+[=======================================           ] (79% - 0.0s - 1 threads)
+[========================================          ] (80% - 0.0s - 1 threads)
+[========================================          ] (81% - 0.0s - 1 threads)
+[=========================================         ] (82% - 0.0s - 1 threads)
+[=========================================         ] (83% - 0.0s - 1 threads)
+[==========================================        ] (84% - 0.0s - 1 threads)
+[==========================================        ] (85% - 0.0s - 1 threads)
+[===========================================       ] (86% - 0.0s - 1 threads)
+[===========================================       ] (87% - 0.0s - 1 threads)
+[============================================      ] (88% - 0.0s - 1 threads)
+[============================================      ] (89% - 0.0s - 1 threads)
+[=============================================     ] (90% - 0.0s - 1 threads)
+[=============================================     ] (91% - 0.0s - 1 threads)
+[==============================================    ] (92% - 0.0s - 1 threads)
+[==============================================    ] (93% - 0.0s - 1 threads)
+[===============================================   ] (94% - 0.0s - 1 threads)
+[===============================================   ] (95% - 0.0s - 1 threads)
+[================================================  ] (96% - 0.0s - 1 threads)
+[================================================  ] (97% - 0.0s - 1 threads)
+[================================================= ] (98% - 0.0s - 1 threads)
+[================================================= ] (99% - 0.0s - 1 threads)
+t Wall-time = 0.00775209
+</pre></div>
+</div>
+<img alt="../../../_images/Workshop-Mound-Segmentation_13_1.png" src="../../../_images/Workshop-Mound-Segmentation_13_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aspect</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">TerrainAttribute</span><span class="p">(</span><span class="n">rd_dem</span><span class="p">,</span> <span class="n">attrib</span><span class="o">=</span><span class="s1">&#39;aspect&#39;</span><span class="p">)</span>
+<span class="n">rd</span><span class="o">.</span><span class="n">rdShow</span><span class="p">(</span><span class="n">aspect</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A Aspect attribute calculation
+C Horn, B.K.P., 1981. Hill shading and the reflectance map. Proceedings of the IEEE 69, 14–47. doi:10.1109/PROC.1981.11918
+
+
+
+[                                                  ] (1% - 0.0s - 1 threads)
+[=                                                 ] (2% - 0.0s - 1 threads)
+[=                                                 ] (3% - 0.0s - 1 threads)
+[==                                                ] (4% - 0.0s - 1 threads)
+[==                                                ] (5% - 0.0s - 1 threads)
+[===                                               ] (6% - 0.0s - 1 threads)
+[===                                               ] (7% - 0.0s - 1 threads)
+[====                                              ] (8% - 0.0s - 1 threads)
+[====                                              ] (9% - 0.0s - 1 threads)
+[=====                                             ] (10% - 0.0s - 1 threads)
+[=====                                             ] (11% - 0.0s - 1 threads)
+[======                                            ] (12% - 0.0s - 1 threads)
+[======                                            ] (13% - 0.0s - 1 threads)
+[=======                                           ] (14% - 0.0s - 1 threads)
+[=======                                           ] (15% - 0.0s - 1 threads)
+[========                                          ] (16% - 0.0s - 1 threads)
+[========                                          ] (17% - 0.0s - 1 threads)
+[=========                                         ] (18% - 0.0s - 1 threads)
+[=========                                         ] (19% - 0.0s - 1 threads)
+[==========                                        ] (20% - 0.0s - 1 threads)
+[==========                                        ] (21% - 0.0s - 1 threads)
+[===========                                       ] (22% - 0.0s - 1 threads)
+[===========                                       ] (23% - 0.0s - 1 threads)
+[============                                      ] (24% - 0.0s - 1 threads)
+[============                                      ] (25% - 0.0s - 1 threads)
+[=============                                     ] (26% - 0.0s - 1 threads)
+[=============                                     ] (27% - 0.0s - 1 threads)
+[==============                                    ] (28% - 0.0s - 1 threads)
+[==============                                    ] (29% - 0.0s - 1 threads)
+[===============                                   ] (30% - 0.0s - 1 threads)
+[===============                                   ] (31% - 0.0s - 1 threads)
+[================                                  ] (32% - 0.0s - 1 threads)
+[================                                  ] (33% - 0.0s - 1 threads)
+[=================                                 ] (34% - 0.0s - 1 threads)
+[=================                                 ] (35% - 0.0s - 1 threads)
+[==================                                ] (36% - 0.0s - 1 threads)
+[==================                                ] (37% - 0.0s - 1 threads)
+[===================                               ] (38% - 0.0s - 1 threads)
+[===================                               ] (39% - 0.0s - 1 threads)
+[====================                              ] (40% - 0.0s - 1 threads)
+[====================                              ] (41% - 0.0s - 1 threads)
+[=====================                             ] (42% - 0.0s - 1 threads)
+[=====================                             ] (43% - 0.0s - 1 threads)
+[======================                            ] (44% - 0.0s - 1 threads)
+[======================                            ] (45% - 0.0s - 1 threads)
+[=======================                           ] (46% - 0.0s - 1 threads)
+[=======================                           ] (47% - 0.0s - 1 threads)
+[========================                          ] (48% - 0.0s - 1 threads)
+[========================                          ] (49% - 0.0s - 1 threads)
+[=========================                         ] (50% - 0.0s - 1 threads)
+[=========================                         ] (51% - 0.0s - 1 threads)
+[==========================                        ] (52% - 0.0s - 1 threads)
+[==========================                        ] (53% - 0.0s - 1 threads)
+[===========================                       ] (54% - 0.0s - 1 threads)
+[===========================                       ] (55% - 0.0s - 1 threads)
+[============================                      ] (56% - 0.0s - 1 threads)
+[============================                      ] (57% - 0.0s - 1 threads)
+[=============================                     ] (58% - 0.0s - 1 threads)
+[=============================                     ] (59% - 0.0s - 1 threads)
+[==============================                    ] (60% - 0.0s - 1 threads)
+[==============================                    ] (61% - 0.0s - 1 threads)
+[===============================                   ] (62% - 0.0s - 1 threads)
+[===============================                   ] (63% - 0.0s - 1 threads)
+[================================                  ] (64% - 0.0s - 1 threads)
+[================================                  ] (65% - 0.0s - 1 threads)
+[=================================                 ] (66% - 0.0s - 1 threads)
+[=================================                 ] (67% - 0.0s - 1 threads)
+[==================================                ] (68% - 0.0s - 1 threads)
+[==================================                ] (69% - 0.0s - 1 threads)
+[===================================               ] (70% - 0.0s - 1 threads)
+[===================================               ] (71% - 0.0s - 1 threads)
+[====================================              ] (72% - 0.0s - 1 threads)
+[====================================              ] (73% - 0.0s - 1 threads)
+[=====================================             ] (74% - 0.0s - 1 threads)
+[=====================================             ] (75% - 0.0s - 1 threads)
+[======================================            ] (76% - 0.0s - 1 threads)
+[======================================            ] (77% - 0.0s - 1 threads)
+[=======================================           ] (78% - 0.0s - 1 threads)
+[=======================================           ] (79% - 0.0s - 1 threads)
+[========================================          ] (80% - 0.0s - 1 threads)
+[========================================          ] (81% - 0.0s - 1 threads)
+[=========================================         ] (82% - 0.0s - 1 threads)
+[=========================================         ] (83% - 0.0s - 1 threads)
+[==========================================        ] (84% - 0.0s - 1 threads)
+[==========================================        ] (85% - 0.0s - 1 threads)
+[===========================================       ] (86% - 0.0s - 1 threads)
+[===========================================       ] (87% - 0.0s - 1 threads)
+[============================================      ] (88% - 0.0s - 1 threads)
+[============================================      ] (89% - 0.0s - 1 threads)
+[=============================================     ] (90% - 0.0s - 1 threads)
+[=============================================     ] (91% - 0.0s - 1 threads)
+[==============================================    ] (92% - 0.0s - 1 threads)
+[==============================================    ] (93% - 0.0s - 1 threads)
+[===============================================   ] (94% - 0.0s - 1 threads)
+[===============================================   ] (95% - 0.0s - 1 threads)
+[================================================  ] (96% - 0.0s - 1 threads)
+[================================================  ] (97% - 0.0s - 1 threads)
+[================================================= ] (98% - 0.0s - 1 threads)
+[================================================= ] (99% - 0.0s - 1 threads)
+t Wall-time = 0.0103459
+</pre></div>
+</div>
+<img alt="../../../_images/Workshop-Mound-Segmentation_14_1.png" src="../../../_images/Workshop-Mound-Segmentation_14_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Getting som info about our DEM</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Driver: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">GetDriver</span><span class="p">()</span><span class="o">.</span><span class="n">ShortName</span><span class="p">,</span>
+                            <span class="n">dataset</span><span class="o">.</span><span class="n">GetDriver</span><span class="p">()</span><span class="o">.</span><span class="n">LongName</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size is </span><span class="si">{}</span><span class="s2"> x </span><span class="si">{}</span><span class="s2"> x </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">RasterXSize</span><span class="p">,</span>
+                                    <span class="n">dataset</span><span class="o">.</span><span class="n">RasterYSize</span><span class="p">,</span>
+                                    <span class="n">dataset</span><span class="o">.</span><span class="n">RasterCount</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Projection is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">GetProjection</span><span class="p">()))</span>
+<span class="n">geotransform</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">geotransform</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Origin = (</span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geotransform</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">geotransform</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pixel Size = (</span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geotransform</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">geotransform</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Driver: GTiff/GeoTIFF
+Size is 358 x 632 x 1
+Projection is PROJCS[&quot;unnamed&quot;,GEOGCS[&quot;Geographic Coordinate System&quot;,DATUM[&quot;D_MARS&quot;,SPHEROID[&quot;MARS&quot;,3396190,0]],PRIMEM[&quot;Reference Meridian&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]]],PROJECTION[&quot;Equirectangular&quot;],PARAMETER[&quot;standard_parallel_1&quot;,0],PARAMETER[&quot;central_meridian&quot;,0],PARAMETER[&quot;false_easting&quot;,0],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH]]
+Origin = (-534141.0, 135873.0)
+Pixel Size = (18.0, -18.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data_array_interp = np.interp(data_array, (-3200.0, -1400), (0, 255)).astype(np.uint8)</span>
+<span class="c1"># plt.figure()</span>
+<span class="c1"># plt.imshow(data_array_interp)</span>
+<span class="c1"># plt.colorbar()</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Data and label sources</span>
+
+<span class="n">mounds</span> <span class="o">=</span> <span class="s1">&#39;../training_site/mapping/polygons/mounds.shp&#39;</span>
+<span class="n">dem</span> <span class="o">=</span> <span class="s1">&#39;../training_site/DEM/High-res_DEM/Firsoff_HiRISE_5.tif-adj.tif&#39;</span>
+<span class="n">dem_lowres</span> <span class="o">=</span> <span class="s1">&#39;../training_site/DEM/Low-res_DEM/Firsoff_HiRISE_5_low_res.tif-adj.tif&#39;</span>
+<span class="n">vents</span> <span class="o">=</span> <span class="s2">&quot;../training_site/mapping/points/vent_points.shp&quot;</span> 
+
+
+<span class="c1">### remove invalid shape geometries</span>
+
+<span class="n">mound_data</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">mounds</span><span class="p">)</span>
+
+<span class="n">toremove</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">gg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mound_data</span><span class="o">.</span><span class="n">geometry</span><span class="p">):</span> <span class="c1"># seems like we have some invalid geometries, dropping them</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">gg</span><span class="o">.</span><span class="n">is_valid</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;not valid </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">toremove</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+        
+<span class="n">mound_data</span> <span class="o">=</span> <span class="n">mound_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">toremove</span><span class="p">)</span>
+<span class="n">mound_data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>not valid 56
+not valid 92
+not valid 100
+not valid 163
+not valid 200
+not valid 329
+not valid 330
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Loading DEM source.</span>
+<span class="n">dsource</span><span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span>
+<span class="n">dtm</span> <span class="o">=</span> <span class="n">dsource</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">meta</span> <span class="o">=</span> <span class="n">dsource</span><span class="o">.</span><span class="n">meta</span>
+<span class="c1">### Reprojecting the labels coordinate system to that of the original DEM.</span>
+<span class="n">mounds_corrected</span>  <span class="o">=</span> <span class="n">mound_data</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;crs&#39;</span><span class="p">])</span>
+<span class="c1">### Masking the labels. 0 for non mounds, 1 for mounds. Can be used for segmentation.</span>
+<span class="n">out_img</span><span class="p">,</span> <span class="n">out_transform</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">dsource</span><span class="p">,</span> <span class="n">shapes</span> <span class="o">=</span> <span class="n">mounds_corrected</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span> <span class="c1"># do the crop</span>
+<span class="n">out_img</span> <span class="o">=</span> <span class="n">out_img</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">nodata</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;nodata&quot;</span><span class="p">]</span>
+<span class="n">invalid_elevation</span> <span class="o">=</span> <span class="n">dtm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">nodata</span>
+<span class="n">isnan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">out_img</span><span class="p">)</span>
+<span class="n">out_img</span><span class="p">[</span><span class="n">isnan</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">out_img</span><span class="p">[</span><span class="o">~</span><span class="n">isnan</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">out_img</span><span class="p">[</span><span class="n">invalid_elevation</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="c1"># overall mask 0 non mounds, 1 mounds, np.nan unknown</span>
+<span class="n">figure</span><span class="p">()</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">out_img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f65b3111370&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/Workshop-Mound-Segmentation_18_1.png" src="../../../_images/Workshop-Mound-Segmentation_18_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split-the-image-into-tiles">
+<h2><span class="section-number">3.2. </span>Split the image into tiles<a class="headerlink" href="#split-the-image-into-tiles" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gdal-implementation">
+<h3><span class="section-number">3.2.1. </span>GDAL implementation<a class="headerlink" href="#gdal-implementation" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_extent</span><span class="p">(</span><span class="n">dataset</span><span class="p">):</span>
+
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterXSize</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterYSize</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
+    <span class="n">minx</span> <span class="o">=</span> <span class="n">transform</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">maxx</span> <span class="o">=</span> <span class="n">transform</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">cols</span> <span class="o">*</span> <span class="n">transform</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">transform</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">miny</span> <span class="o">=</span> <span class="n">transform</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">cols</span> <span class="o">*</span> <span class="n">transform</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">transform</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">maxy</span> <span class="o">=</span> <span class="n">transform</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;minX&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">minx</span><span class="p">),</span> <span class="s2">&quot;maxX&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">maxx</span><span class="p">),</span>
+            <span class="s2">&quot;minY&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">miny</span><span class="p">),</span> <span class="s2">&quot;maxY&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">maxy</span><span class="p">),</span>
+            <span class="s2">&quot;cols&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">cols</span><span class="p">),</span> <span class="s2">&quot;rows&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+            <span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">create_tiles</span><span class="p">(</span><span class="n">minx</span><span class="p">,</span> <span class="n">miny</span><span class="p">,</span> <span class="n">maxx</span><span class="p">,</span> <span class="n">maxy</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">maxx</span> <span class="o">-</span> <span class="n">minx</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">maxy</span> <span class="o">-</span> <span class="n">miny</span>
+
+    <span class="n">matrix</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+
+            <span class="n">ulx</span> <span class="o">=</span> <span class="n">minx</span> <span class="o">+</span> <span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">i</span> <span class="c1"># 10/5 * 1</span>
+            <span class="n">uly</span> <span class="o">=</span> <span class="n">miny</span> <span class="o">+</span> <span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">j</span> <span class="c1"># 10/5 * 1</span>
+
+            <span class="n">lrx</span> <span class="o">=</span> <span class="n">minx</span> <span class="o">+</span> <span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">lry</span> <span class="o">=</span> <span class="n">miny</span> <span class="o">+</span> <span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">matrix</span><span class="o">.</span><span class="n">append</span><span class="p">([[</span><span class="n">ulx</span><span class="p">,</span> <span class="n">uly</span><span class="p">],</span> <span class="p">[</span><span class="n">lrx</span><span class="p">,</span> <span class="n">lry</span><span class="p">]])</span>
+
+    <span class="k">return</span> <span class="n">matrix</span>
+
+<span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">raw_file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_name</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_downsample&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">&#39;GTiff&#39;</span><span class="p">)</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">band</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
+
+    <span class="n">extent</span> <span class="o">=</span> <span class="n">get_extent</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">extent</span><span class="p">[</span><span class="s2">&quot;cols&quot;</span><span class="p">])</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">extent</span><span class="p">[</span><span class="s2">&quot;rows&quot;</span><span class="p">])</span>
+
+    <span class="n">minx</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">extent</span><span class="p">[</span><span class="s2">&quot;minX&quot;</span><span class="p">])</span>
+    <span class="n">maxx</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">extent</span><span class="p">[</span><span class="s2">&quot;maxX&quot;</span><span class="p">])</span>
+    <span class="n">miny</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">extent</span><span class="p">[</span><span class="s2">&quot;minY&quot;</span><span class="p">])</span>
+    <span class="n">maxy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">extent</span><span class="p">[</span><span class="s2">&quot;maxY&quot;</span><span class="p">])</span>
+
+    <span class="n">width</span> <span class="o">=</span> <span class="n">maxx</span> <span class="o">-</span> <span class="n">minx</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">maxy</span> <span class="o">-</span> <span class="n">miny</span>
+
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">raw_file_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+
+    <span class="c1">#print(&quot;GCD&quot;, gcd(round(width, 0), round(height, 0)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Width&quot;</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+
+    <span class="n">tiles</span> <span class="o">=</span> <span class="n">create_tiles</span><span class="p">(</span><span class="n">minx</span><span class="p">,</span> <span class="n">miny</span><span class="p">,</span> <span class="n">maxx</span><span class="p">,</span> <span class="n">maxy</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
+    <span class="n">xOrigin</span> <span class="o">=</span> <span class="n">transform</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">yOrigin</span> <span class="o">=</span> <span class="n">transform</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">pixelWidth</span> <span class="o">=</span> <span class="n">transform</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">pixelHeight</span> <span class="o">=</span> <span class="o">-</span><span class="n">transform</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+    <span class="c1">#print(xOrigin, yOrigin)</span>
+
+    <span class="n">tile_num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">tile</span> <span class="ow">in</span> <span class="n">tiles</span><span class="p">:</span>
+
+        <span class="n">minx</span> <span class="o">=</span> <span class="n">tile</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">maxx</span> <span class="o">=</span> <span class="n">tile</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">miny</span> <span class="o">=</span> <span class="n">tile</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">maxy</span> <span class="o">=</span> <span class="n">tile</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">p1</span> <span class="o">=</span> <span class="p">(</span><span class="n">minx</span><span class="p">,</span> <span class="n">maxy</span><span class="p">)</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">)</span>
+
+        <span class="n">i1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">xOrigin</span><span class="p">)</span> <span class="o">/</span> <span class="n">pixelWidth</span><span class="p">)</span>
+        <span class="n">j1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">yOrigin</span> <span class="o">-</span> <span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="o">/</span> <span class="n">pixelHeight</span><span class="p">)</span>
+        <span class="n">i2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">xOrigin</span><span class="p">)</span> <span class="o">/</span> <span class="n">pixelWidth</span><span class="p">)</span>
+        <span class="n">j2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">yOrigin</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">pixelHeight</span><span class="p">)</span>
+
+        <span class="c1">#print(i1, j1)</span>
+        <span class="c1">#print(i2, j2)</span>
+
+        <span class="n">new_cols</span> <span class="o">=</span> <span class="n">i2</span><span class="o">-</span><span class="n">i1</span>
+        <span class="n">new_rows</span> <span class="o">=</span> <span class="n">j2</span><span class="o">-</span><span class="n">j1</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">band</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">j1</span><span class="p">,</span> <span class="n">new_cols</span><span class="p">,</span> <span class="n">new_rows</span><span class="p">)</span>
+
+        <span class="c1">#print data</span>
+
+        <span class="n">new_x</span> <span class="o">=</span> <span class="n">xOrigin</span> <span class="o">+</span> <span class="n">i1</span><span class="o">*</span><span class="n">pixelWidth</span>
+        <span class="n">new_y</span> <span class="o">=</span> <span class="n">yOrigin</span> <span class="o">-</span> <span class="n">j1</span><span class="o">*</span><span class="n">pixelHeight</span>
+
+        <span class="c1">#print(new_x, new_y)</span>
+
+        <span class="n">new_transform</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_x</span><span class="p">,</span> <span class="n">transform</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">transform</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">new_y</span><span class="p">,</span> <span class="n">transform</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">transform</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+
+        <span class="n">output_file_base</span> <span class="o">=</span> <span class="n">raw_file_name</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tile_num</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.tif&quot;</span>
+        <span class="n">output_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">raw_file_name</span><span class="p">,</span> <span class="n">output_file_base</span><span class="p">)</span>
+
+        <span class="n">dst_ds</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span>
+                               <span class="n">new_cols</span><span class="p">,</span>
+                               <span class="n">new_rows</span><span class="p">,</span>
+                               <span class="mi">1</span><span class="p">,</span>
+                               <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float32</span><span class="p">)</span>
+
+        <span class="c1">#writting output raster</span>
+        <span class="n">dst_ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">WriteArray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="n">tif_metadata</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;minX&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">minx</span><span class="p">),</span> <span class="s2">&quot;maxX&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">maxx</span><span class="p">),</span>
+            <span class="s2">&quot;minY&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">miny</span><span class="p">),</span> <span class="s2">&quot;maxY&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">maxy</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">dst_ds</span><span class="o">.</span><span class="n">SetMetadata</span><span class="p">(</span><span class="n">tif_metadata</span><span class="p">)</span>
+
+        <span class="c1">#setting extension of output raster</span>
+        <span class="c1"># top left x, w-e pixel resolution, rotation, top left y, rotation, n-s pixel resolution</span>
+        <span class="n">dst_ds</span><span class="o">.</span><span class="n">SetGeoTransform</span><span class="p">(</span><span class="n">new_transform</span><span class="p">)</span>
+
+        <span class="n">wkt</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetProjection</span><span class="p">()</span>
+
+        <span class="c1"># setting spatial reference of output raster</span>
+        <span class="n">srs</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">()</span>
+        <span class="n">srs</span><span class="o">.</span><span class="n">ImportFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+        <span class="n">dst_ds</span><span class="o">.</span><span class="n">SetProjection</span><span class="p">(</span> <span class="n">srs</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">()</span> <span class="p">)</span>
+     
+        <span class="n">ds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dst_ds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds</span>
+        <span class="c1">#Close output raster dataset</span>
+<span class="c1">#         dst_ds = None</span>
+
+<span class="c1">#         tile_num += 1</span>
+    
+    <span class="n">dataset</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tilize</span><span class="p">(</span><span class="n">dem_source</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">dem_source</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">)):</span>
+        <span class="n">ds_richdem</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">rdarray</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">(),</span> <span class="n">no_data</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;nodata&#39;</span><span class="p">])</span>
+        <span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">&#39;GTiff&#39;</span><span class="p">)</span>
+        <span class="n">driver</span><span class="o">.</span><span class="n">CreateCopy</span><span class="p">(</span><span class="s2">&quot;tiles/</span><span class="si">{}</span><span class="s2">.tif&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="rasterio-implementation">
+<h2><span class="section-number">3.3. </span>Rasterio implementation<a class="headerlink" href="#rasterio-implementation" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">ji</span><span class="p">,</span> <span class="n">window</span> <span class="ow">in</span> <span class="n">src</span><span class="o">.</span><span class="n">block_windows</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">window</span> <span class="o">=</span> <span class="n">window</span><span class="p">,</span> <span class="n">masked</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="n">rio</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+        <span class="s2">&quot;driver&quot;</span><span class="p">:</span> <span class="s2">&quot;GTIff&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
+        <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
+        <span class="s1">&#39;transform&#39;</span><span class="p">:</span> <span class="n">rio</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">transform</span><span class="p">)})</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;tiles/&#39;</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;tiles/&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="mi">256</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tiles/tile_</span><span class="si">{}</span><span class="s1">.npy&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="n">window</span><span class="p">))</span>
+            <span class="k">with</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;tiles/tile_</span><span class="si">{}</span><span class="s1">.tif&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+                 <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="n">window</span><span class="p">))</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="annotation-script">
+<h2><span class="section-number">3.4. </span>Annotation script<a class="headerlink" href="#annotation-script" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">numbers</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;tiles&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">):</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+        <span class="n">dsource</span><span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;tiles/</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+        <span class="n">dtm</span> <span class="o">=</span> <span class="n">dsource</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="n">dsource</span><span class="o">.</span><span class="n">meta</span>
+        <span class="n">out_img</span><span class="p">,</span> <span class="n">out_transform</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">dsource</span><span class="p">,</span> <span class="n">shapes</span> <span class="o">=</span> <span class="n">mounds_corrected</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="n">crop</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> 
+        <span class="n">out_img</span> <span class="o">=</span> <span class="n">out_img</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">nodata</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;nodata&quot;</span><span class="p">]</span>
+        <span class="n">invalid_elevation</span> <span class="o">=</span> <span class="n">dtm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">nodata</span>
+        <span class="n">isnan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">out_img</span><span class="p">)</span>
+        <span class="n">out_img</span><span class="p">[</span><span class="n">isnan</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">out_img</span><span class="p">[</span><span class="o">~</span><span class="n">isnan</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">out_img</span><span class="p">[</span><span class="n">invalid_elevation</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="c1"># overall mask 0 non mounds, 1 mounds, np.nan unknown</span>
+        <span class="n">figure</span><span class="p">()</span>
+        <span class="n">imshow</span><span class="p">(</span><span class="n">out_img</span><span class="p">)</span>
+        
+            
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;labels/&#39;</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;labels/&#39;</span><span class="p">)</span>
+
+        <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">out_img</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;labels/tile_</span><span class="si">{}</span><span class="s1">.npy&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fn</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">with</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;labels/tile_</span><span class="si">{}</span><span class="s1">.tif&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fn</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+             <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Data Cache contains 3 channel feature sets already created</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Root Directory</span>
+<span class="n">Image_Path</span> <span class="o">=</span> <span class="s1">&#39;data_cache/&#39;</span>
+<span class="c1"># Inputs/Sources</span>
+<span class="n">dataframes_path</span> <span class="o">=</span> <span class="n">Image_Path</span> <span class="o">+</span> <span class="s2">&quot;DataFrames/&quot;</span>
+<span class="n">dataset_dirs_path</span> <span class="o">=</span> <span class="n">dataframes_path</span> <span class="o">+</span> <span class="s1">&#39;three_channel_dataset.csv&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">albumentations</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Dataset</span> <span class="k">as</span> <span class="n">BaseDataset</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">FloatTensor</span>
+
+
+<span class="k">class</span> <span class="nc">Dataset</span><span class="p">(</span><span class="n">BaseDataset</span><span class="p">):</span>    
+    <span class="n">CLASSES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;non-mound&#39;</span><span class="p">,</span> <span class="s1">&#39;mound&#39;</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+          <span class="bp">self</span><span class="p">,</span> 
+          <span class="n">dirs</span><span class="p">,</span>
+          <span class="n">classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+          <span class="n">augmentation</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dirs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+
+        <span class="c1">### convert str names to class values on masks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">class_values</span> <span class="o">=</span> <span class="n">CLASSES</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">augmentation</span> <span class="o">=</span> <span class="n">augmentation</span>
+    
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="c1">### read data</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;origin&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;tif&#39;</span><span class="p">:</span>
+            <span class="c1">### load DEM</span>
+            <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;origin&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="n">dem</span><span class="p">:</span>
+                <span class="n">dem_array</span> <span class="o">=</span> <span class="n">dem</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1">### load hillshade</span>
+            <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;hillshade&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="n">hillshade</span><span class="p">:</span>
+                <span class="n">hillshade_array</span> <span class="o">=</span> <span class="n">hillshade</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1">### load slope</span>
+            <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;slope&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="n">slope</span><span class="p">:</span>
+                <span class="n">slope_array</span> <span class="o">=</span> <span class="n">slope</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1">### load mask label</span>
+            <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;mask&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="n">mask</span><span class="p">:</span>
+                <span class="n">mask_array</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">mask_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask_array</span> <span class="o">==</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">mask_array</span><span class="p">)</span>
+            <span class="c1"># apply augmentations</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">augmentation</span><span class="p">:</span>
+                <span class="c1">### only reshaping, so applying each function separately is ok.</span>
+                <span class="n">sample1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">augmentation</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">dem_array</span><span class="p">)</span>
+                <span class="n">dem_array</span><span class="o">=</span> <span class="n">sample1</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span>
+
+                <span class="n">sample2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">augmentation</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">slope_array</span><span class="p">)</span>
+                <span class="n">slope_array</span> <span class="o">=</span> <span class="n">sample2</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span>           
+
+                <span class="n">sample3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">augmentation</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">hillshade_array</span><span class="p">)</span>
+                <span class="n">hillshade_array</span> <span class="o">=</span> <span class="n">sample3</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span>
+
+            <span class="n">input_array</span> <span class="o">=</span> <span class="p">[</span><span class="n">dem_array</span><span class="p">,</span> <span class="n">slope_array</span><span class="p">,</span> <span class="n">hillshade_array</span><span class="p">]</span>
+            <span class="n">input_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">input_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
+            <span class="n">input_array</span> <span class="o">=</span> <span class="n">FloatTensor</span><span class="p">(</span><span class="n">input_array</span><span class="p">)</span>
+            <span class="n">mask_array</span> <span class="o">=</span> <span class="n">FloatTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">mask_array</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
+        
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;origin&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;jpg&#39;</span><span class="p">:</span>
+            <span class="c1">###load the image and corresponding mask label</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;origin&#39;</span><span class="p">])</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;mask&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+            
+            <span class="c1">###convert image to numpy array</span>
+            <span class="n">input_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+            <span class="n">input_array</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+            <span class="n">mask_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+            <span class="n">mask_array</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">mask_array</span><span class="p">)</span>
+            <span class="n">mask_array</span> <span class="o">=</span> <span class="n">mask_array</span><span class="p">[</span> <span class="p">:</span> <span class="p">,</span><span class="mi">0</span><span class="p">]</span>            
+            <span class="n">input_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">input_array</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">192</span><span class="p">))</span>
+            <span class="n">mask_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">input_array</span><span class="p">,</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">192</span><span class="p">))</span>
+            <span class="n">mask_array</span> <span class="p">[</span><span class="n">mask_array</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> 
+            <span class="n">mask_array</span> <span class="p">[</span><span class="n">mask_array</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">mask_array</span> <span class="o">=</span> <span class="n">FloatTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">mask_array</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>    
+            <span class="n">input_array</span> <span class="o">=</span> <span class="n">FloatTensor</span><span class="p">(</span><span class="n">input_array</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">input_array</span><span class="p">,</span> <span class="n">mask_array</span>
+      
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Sample reshaping (X,Y) --&gt; (224,192)</span>
+<span class="k">def</span> <span class="nf">get_training_augmentation</span><span class="p">():</span>
+    <span class="n">train_transform</span> <span class="o">=</span> <span class="p">[</span><span class="n">albumentations</span><span class="o">.</span><span class="n">PadIfNeeded</span><span class="p">(</span><span class="n">min_height</span><span class="o">=</span><span class="mi">224</span><span class="p">,</span> <span class="n">min_width</span><span class="o">=</span><span class="mi">192</span><span class="p">,</span> <span class="n">always_apply</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">border_mode</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">albumentations</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span><span class="n">train_transform</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_validation_augmentation</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Add paddings to make image shape divisible by 32&quot;&quot;&quot;</span>
+    <span class="n">test_transform</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">albumentations</span><span class="o">.</span><span class="n">PadIfNeeded</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">192</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">albumentations</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span><span class="n">test_transform</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls data_cache/Annotated<span class="se">\ </span>Tiles<span class="se">\ </span>Sets/
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;16x32 Tiles&#39;  &#39;32x64 Tiles&#39;  &#39;4x8 Tiles&#39;
+&#39;2x4 Tiles&#39;    &#39;3x6 Tiles&#39;    &#39;8x16 Tiles&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ENCODER</span> <span class="o">=</span> <span class="s1">&#39;se_resnext50_32x4d&#39;</span>
+<span class="c1"># ENCODER = &#39;resnet18&#39;</span>
+<span class="c1">### use imagenet weights</span>
+<span class="n">ENCODER_WEIGHTS</span> <span class="o">=</span> <span class="s1">&#39;imagenet&#39;</span> 
+<span class="c1"># ENCODER_WEIGHTS = &#39;ssl&#39;</span>
+<span class="c1">### Sigmoid activation to obtain logits in final layer</span>
+<span class="n">ACTIVATION</span> <span class="o">=</span> <span class="s1">&#39;sigmoid&#39;</span> 
+<span class="n">CLASSES</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="c1">### altenative UNET instead of FPN</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">Unet</span><span class="p">(</span>
+    <span class="n">encoder_name</span><span class="o">=</span><span class="n">ENCODER</span><span class="p">,</span> 
+    <span class="n">encoder_weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1">#ENCODER_WEIGHTS, </span>
+    <span class="n">classes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">activation</span><span class="o">=</span><span class="n">ACTIVATION</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#train_dirs_path = &#39;data_cache/DataFrames/three_channel_train.csv&#39;</span>
+<span class="c1">### Uncomment to exclude GAN images for training</span>
+<span class="n">CLASSES</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">train_dirs_path</span> <span class="o">=</span> <span class="s1">&#39;data_cache/DataFrames/three_channel_train(NO GAN).csv&#39;</span>
+<span class="n">validate_dirs_path</span> <span class="o">=</span> <span class="s1">&#39;data_cache/DataFrames/three_channel_valid.csv&#39;</span>
+<span class="n">test_dirs_path</span> <span class="o">=</span> <span class="s1">&#39;data_cache/DataFrames/three_channel_test.csv&#39;</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">train_dirs_path</span><span class="p">,</span>
+                        <span class="n">augmentation</span><span class="o">=</span><span class="n">get_training_augmentation</span><span class="p">(),</span>                         
+                        <span class="n">classes</span><span class="o">=</span><span class="n">CLASSES</span><span class="p">)</span>
+
+
+<span class="n">valid_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">validate_dirs_path</span><span class="p">,</span>
+                        <span class="n">augmentation</span><span class="o">=</span><span class="n">get_validation_augmentation</span><span class="p">(),</span>                         
+                        <span class="n">classes</span><span class="o">=</span><span class="n">CLASSES</span><span class="p">)</span>
+
+<span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_workers</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">valid_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">valid_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_workers</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_dataset</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([3, 224, 192])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dice/F1 score - https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient</span>
+<span class="c1"># IoU/Jaccard score - https://en.wikipedia.org/wiki/Jaccard_index</span>
+
+<span class="n">loss</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">DiceLoss</span><span class="p">()</span>
+<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">smp</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">Fscore</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">([</span> 
+    <span class="nb">dict</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lr&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.001
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## utility fn to for updating learnt weights as per the scheduler.</span>
+<span class="k">def</span> <span class="nf">update_learning_rate</span><span class="p">(</span><span class="n">scheduler</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
+    <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="n">lr</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lr&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;learning rate = </span><span class="si">%.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">lr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="define-device-for-computation">
+<h2><span class="section-number">3.5. </span>Define device for computation<a class="headerlink" href="#define-device-for-computation" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span>  <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create epoch runners </span>
+<span class="c1"># it is a simple loop of iterating over dataloader`s samples</span>
+<span class="n">train_epoch</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">TrainEpoch</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> 
+    <span class="n">loss</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> 
+    <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span> 
+    <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">valid_epoch</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">ValidEpoch</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> 
+    <span class="n">loss</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> 
+    <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span> 
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># train model for 100 epochs</span>
+<span class="n">train_loss</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">valid_loss</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">train_fscore</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">valid_fscore</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">min_loss</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+<span class="n">max_score</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">state_not_changed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">scheduler1</span> <span class="o">=</span> <span class="n">ExponentialLR</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="c1">#scheduler2 = MultiStepLR(optimizer, milestones=[30,80], gamma=0.1,)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Epoch: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">train_logs</span> <span class="o">=</span> <span class="n">train_epoch</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+    <span class="n">valid_logs</span> <span class="o">=</span> <span class="n">valid_epoch</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">valid_loader</span><span class="p">)</span>
+    <span class="n">train_loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;dice_loss&#39;</span><span class="p">])</span>
+    <span class="n">valid_loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">valid_logs</span><span class="p">[</span><span class="s1">&#39;dice_loss&#39;</span><span class="p">])</span>
+    <span class="n">train_fscore</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;fscore&#39;</span><span class="p">])</span>
+    <span class="n">valid_fscore</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">valid_logs</span><span class="p">[</span><span class="s1">&#39;fscore&#39;</span><span class="p">])</span>
+    <span class="n">state_not_changed</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="n">scheduler1</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<span class="c1">#     scheduler2.step()</span>
+    <span class="c1"># do something (save model, change lr, etc.)</span>
+    <span class="k">if</span> <span class="n">min_loss</span> <span class="o">&gt;</span> <span class="n">valid_logs</span><span class="p">[</span><span class="s1">&#39;dice_loss&#39;</span><span class="p">]:</span>
+        <span class="n">min_loss</span> <span class="o">=</span> <span class="n">valid_logs</span><span class="p">[</span><span class="s1">&#39;dice_loss&#39;</span><span class="p">]</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;./best_loss_model.pth&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;best_loss_model saved!&#39;</span><span class="p">)</span>
+        <span class="n">state_not_changed</span> <span class="o">=</span> <span class="mi">0</span>
+        
+    <span class="k">if</span> <span class="n">max_score</span> <span class="o">&lt;</span> <span class="n">valid_logs</span><span class="p">[</span><span class="s1">&#39;fscore&#39;</span><span class="p">]:</span>
+        <span class="n">max_score</span> <span class="o">=</span> <span class="n">valid_logs</span><span class="p">[</span><span class="s1">&#39;fscore&#39;</span><span class="p">]</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;./best_score_model.pth&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;best_score_model saved!&#39;</span><span class="p">)</span>
+        <span class="n">state_not_changed</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Current learning rate = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lr&#39;</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;!&#39;</span><span class="p">)</span>
+<span class="c1">#         optimizer.param_groups[0][&#39;lr&#39;] /= 10</span>
+<span class="c1">#         print(&#39;Decrease decoder learning rate to &#39;+str(optimizer.param_groups[0][&#39;lr&#39;])+&#39;!&#39;)</span>
+<span class="c1">#         state_not_changed = 0</span>
+        
+    <span class="k">if</span> <span class="n">state_not_changed</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The model did not improve during the last 15 epochs&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_loss</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Validation loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">confusion_mat</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">valid_loader</span><span class="p">:</span>
+            <span class="c1"># get the inputs</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;target_mask&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+                
+                <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+                <span class="c1">#probability_class = torch.exp(output) </span>
+                <span class="n">prediction</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+                <span class="n">y_true</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+              
+                <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">y_true</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+                <span class="n">confusion_mat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">cm</span><span class="p">)</span>
+                <span class="c1">#print(&#39; cm:{}&#39;.format(cm))</span>
+                
+                <span class="c1"># performance metrics for the model</span>
+                <span class="n">score_accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">y_true</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+                <span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">y_true</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> 
+                
+                <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">y_true</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+                <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span><span class="n">tpr</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;score_accuracy:</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score_accuracy</span><span class="p">))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Receiver operating characteristic (ROC):</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">roc_auc</span><span class="p">))</span>
+            
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">confusion_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">confusion_mat</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">df_cm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;non-mound&#39;</span><span class="p">,</span> <span class="s1">&#39;mound&#39;</span><span class="p">]],</span>
+                  <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;non-mound&#39;</span><span class="p">,</span><span class="s1">&#39;mound&#39;</span><span class="p">]])</span>
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sn</span>
+<span class="n">sn</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df_cm</span><span class="p">,</span> <span class="n">annot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/Workshop-Mound-Segmentation_42_1.png" src="../../../_images/Workshop-Mound-Segmentation_42_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict_image</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="n">image_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">image</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="c1">#print(image_tensor.shape)</span>
+    <span class="n">image_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">image_tensor</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">image_tensor</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">numbers</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">reconstruct_map</span><span class="p">(</span><span class="n">tile_folder</span><span class="p">):</span>
+    <span class="n">fn_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">tile_folder</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">):</span>
+            <span class="n">fn</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+            <span class="n">fn_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">fn_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">fn_list</span><span class="p">)</span>
+    <span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tile_folder</span><span class="p">,</span><span class="n">fn</span><span class="p">))</span> <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">fn_list</span><span class="p">]</span>
+    <span class="n">merged_image</span><span class="p">,</span> <span class="n">out_transform</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">merged_image</span><span class="p">,</span> <span class="n">out_transform</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># helper function for data visualization</span>
+<span class="k">def</span> <span class="nf">visualize</span><span class="p">(</span><span class="o">**</span><span class="n">images</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;PLot images in one row.&quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">images</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># test dataset without transformations for image visualization</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">test_dirs_path</span><span class="p">,</span> 
+                           <span class="n">classes</span><span class="o">=</span><span class="n">CLASSES</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;FPN_3c_Without.pth&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">54</span><span class="p">]</span>
+<span class="c1">#for i in range(len(test_dataset)):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">idx</span><span class="p">:</span>
+<span class="c1">#     n = np.random.choice(len(test_dataset))</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">i</span>
+    <span class="n">image_vis</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">image</span><span class="p">,</span> <span class="n">gt_mask</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    
+    <span class="n">x_tensor</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">pr_mask</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">)</span>
+    <span class="n">pr_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">pr_mask</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
+
+    <span class="n">visualize</span><span class="p">(</span>
+        <span class="n">image</span><span class="o">=</span><span class="n">image_vis</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+        <span class="n">ground_truth_mask</span><span class="o">=</span><span class="n">gt_mask</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+        <span class="n">predicted_mask</span><span class="o">=</span><span class="n">pr_mask</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Workshop-Mound-Segmentation_47_0.png" src="../../../_images/Workshop-Mound-Segmentation_47_0.png" />
+<img alt="../../../_images/Workshop-Mound-Segmentation_47_1.png" src="../../../_images/Workshop-Mound-Segmentation_47_1.png" />
+<img alt="../../../_images/Workshop-Mound-Segmentation_47_2.png" src="../../../_images/Workshop-Mound-Segmentation_47_2.png" />
+<img alt="../../../_images/Workshop-Mound-Segmentation_47_3.png" src="../../../_images/Workshop-Mound-Segmentation_47_3.png" />
+<img alt="../../../_images/Workshop-Mound-Segmentation_47_4.png" src="../../../_images/Workshop-Mound-Segmentation_47_4.png" />
+<img alt="../../../_images/Workshop-Mound-Segmentation_47_5.png" src="../../../_images/Workshop-Mound-Segmentation_47_5.png" />
+<img alt="../../../_images/Workshop-Mound-Segmentation_47_6.png" src="../../../_images/Workshop-Mound-Segmentation_47_6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recall</span><span class="p">(</span><span class="n">tp</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">tp</span><span class="o">+</span><span class="n">fn</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;invalid&#39;</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">tp</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fn</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">precision</span><span class="p">(</span><span class="n">tp</span><span class="p">,</span> <span class="n">fp</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">tp</span><span class="o">+</span><span class="n">fp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;invalid&#39;</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">tp</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fp</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f1_score</span><span class="p">(</span><span class="n">tp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">tp</span><span class="o">+</span><span class="n">fp</span><span class="o">+</span><span class="n">fn</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;invalid&#39;</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">tp</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">fp</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">for_metric</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">tn</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">fn</span><span class="o">+</span><span class="n">tn</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;invalid&#39;</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">fn</span><span class="o">+</span><span class="n">tn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">## Feel free to play around with the threshold value to find what works best</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;tp&#39;</span><span class="p">,</span> <span class="s1">&#39;fp&#39;</span><span class="p">,</span> <span class="s1">&#39;tn&#39;</span><span class="p">,</span> <span class="s1">&#39;fn&#39;</span><span class="p">,</span> <span class="s1">&#39;precision&#39;</span><span class="p">,</span> <span class="s1">&#39;recall&#39;</span><span class="p">])</span>
+<span class="c1"># for i, sample in enumerate(test_dataset):</span>
+<span class="c1"># idx = [75, 256, 269, 321, 406, 415, 504]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)):</span>
+    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="c1">#.to(device)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="c1">#.to(device)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">best_model</span><span class="p">(</span><span class="n">im</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+    <span class="c1">#compute output class</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span>
+    <span class="n">pred</span><span class="p">[</span><span class="n">out</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">pred</span><span class="p">[</span><span class="n">out</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">pred</span> <span class="o">==</span> <span class="n">mask</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">correct</span><span class="o">/</span><span class="n">total</span><span class="p">)</span>
+<span class="c1">#     tp, fp, fn, tn = smp.metrics.get_stats(out, mask, mode=&#39;binary&#39;, threshold=0.5)</span>
+    <span class="c1"># Sklearn doc</span>
+    <span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">pred</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;tp&#39;</span><span class="p">,</span> <span class="s1">&#39;fp&#39;</span><span class="p">,</span> <span class="s1">&#39;tn&#39;</span><span class="p">,</span> <span class="s1">&#39;fn&#39;</span><span class="p">,</span> <span class="s1">&#39;precision&#39;</span><span class="p">,</span> <span class="s1">&#39;recall&#39;</span><span class="p">])</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;tp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">tp</span><span class="p">]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;fp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">fp</span><span class="p">]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;tn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">tn</span><span class="p">]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;fn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">fn</span><span class="p">]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;recall&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">recall</span><span class="p">(</span><span class="n">tp</span><span class="o">=</span><span class="n">tp</span><span class="p">,</span> <span class="n">fn</span><span class="o">=</span><span class="n">fn</span><span class="p">)]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;precision&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">precision</span><span class="p">(</span><span class="n">tp</span><span class="o">=</span><span class="n">tp</span><span class="p">,</span> <span class="n">fp</span><span class="o">=</span><span class="n">fp</span><span class="p">)]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ttp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;tp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">tfp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;fp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">ttn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;tn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">tfn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;fn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;tp = </span><span class="si">{</span><span class="n">ttp</span><span class="si">}</span><span class="s1">, fp = </span><span class="si">{</span><span class="n">tfp</span><span class="si">}</span><span class="s1">, tn=</span><span class="si">{</span><span class="n">ttn</span><span class="si">}</span><span class="s1">, fn =</span><span class="si">{</span><span class="n">tfn</span><span class="si">}</span><span class="s1">, precision = </span><span class="si">{</span><span class="n">precision</span><span class="p">(</span><span class="n">tp</span><span class="o">=</span><span class="n">ttp</span><span class="p">,</span> <span class="n">fp</span><span class="o">=</span><span class="n">tfp</span><span class="p">)</span><span class="si">}</span><span class="s1">, recall = </span><span class="si">{</span><span class="n">recall</span><span class="p">(</span><span class="n">tp</span><span class="o">=</span><span class="n">ttp</span><span class="p">,</span> <span class="n">fn</span><span class="o">=</span><span class="n">tfn</span><span class="p">)</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;F-Score = </span><span class="si">{</span><span class="n">f1_score</span><span class="p">(</span><span class="n">tp</span><span class="o">=</span> <span class="n">ttp</span><span class="p">,</span> <span class="n">fp</span><span class="o">=</span> <span class="n">tfp</span><span class="p">,</span> <span class="n">fn</span><span class="o">=</span> <span class="n">tfn</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tp = 1291642, fp = 384376, tn=16219260, fn =297106, precision = 0.7706611742833311, recall = 0.8129936276867068 
+F-Score = 0.7912616095609915
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Part_2/Chapter_4_MarsMounds/Tutorial-MarsMounds"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../ScienceBackground.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Science Background - Boundaries around Earth</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../../References/bibliography.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>References</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Durch The Europlanet ML Team<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

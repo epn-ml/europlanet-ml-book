@@ -1,0 +1,1350 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries &#8212; The Europlanet Machine Learning Book</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="5. Summary and Discussion" href="../Summary.html" />
+    <link rel="prev" title="2. Science Background - Boundaries around Earth" href="../ScienceBackground.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/Europlanet_Machine_Learning_Logo_Standard.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Europlanet Machine Learning Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Foreword.html">
+   The Europlanet Machine Learning Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1. Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Chapter_1_Introduction/Content.html">
+   1. Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2. Basic Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification.html">
+   2. Supervised classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html">
+   3. Supervised regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3. Automatic Detection of ICMEs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/ScienceBackground.html">
+   2. Science Background - Interplanetary Coronal Mass Ejections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline.html">
+   3. Machine Learning Pipeline for Automated Detection of ICMEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Summary.html">
+   4. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  4. Automatic Detection of Boundaries around Mercury
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/ScienceBackground.html">
+   2. Science Background - Boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer.html">
+   3. Machine learning pipeline for detection of boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/Summary.html">
+   4. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  5. Automatic Detection of Boundaries around Earth
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ScienceBackground.html">
+   2. Science Background - Boundaries around Earth
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Summary.html">
+   5. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  6. Image Segmentation for Detecting Mounds on Mars
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_4_MarsMounds/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_4_MarsMounds/ScienceBackground.html">
+   2. Science Background - Boundaries around Earth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation.html">
+   3. Mound Classification in DTMs from Mars Arabia Terra.
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../References/bibliography.html">
+   1. References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Part_2/Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Part_2/Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation">
+     3.1. Installation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-preparation">
+     3.2. Data preparation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-validation-and-test-sets">
+   4. Training, validation, and test sets
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#our-model">
+     4.1. Our model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation">
+     3.1. Installation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-preparation">
+     3.2. Data preparation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-validation-and-test-sets">
+   4. Training, validation, and test sets
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#our-model">
+     4.1. Our model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="machine-learning-pipeline-for-automatic-detection-of-magnetospheric-boundaries">
+<h1><span class="section-number">3. </span>Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries<a class="headerlink" href="#machine-learning-pipeline-for-automatic-detection-of-magnetospheric-boundaries" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2><span class="section-number">3.1. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/epn-ml/Tutorial_IAP_Boundaries.git
+python -m venv wsenv
+source wsenv/bin/activate
+cd Tutorial_IAP_Boundaries
+pip install -r requirements.txt
+ipython kernel install --user --name=wsenv
+jupyter lab
+</pre></div>
+</div>
+<p>Download saved model, dataset and labels from <a class="reference external" href="https://figshare.com/articles/dataset/Tutorial_IAP_Boundaries_Data/21153403">https://figshare.com/articles/dataset/Tutorial_IAP_Boundaries_Data/21153403</a></p>
+<p>The work package “Machine Learning Solutions for Data Analysis and Exploitation in Planetary Science” within Europlanet 2024 Research Infrastructure will develop machine learning (ML) powered data analysis and exploitation tools optimized for planetary science. <br>
+In this workshop, we will introduce a ML pipeline for the automated detection of magnetospheric boundaries in spacecraft in situ data around Earth. First, we will briefly give an overview about the physical problem. Then, we will guide the participants through the developed ML code with the help of a sample data set and discuss problems encountered during the development of the pipeline. <br></p>
+<p>Europlanet 2024 RI has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 871149. <br><br></p>
+</div>
+<div class="section" id="data-preparation">
+<h2><span class="section-number">3.2. </span>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># at first, we want to import the necessary packages</span>
+
+<span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># Don&#39;t print warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">pickle</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pds</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">preprocess</span> <span class="k">as</span> <span class="nn">pp</span>
+<span class="kn">import</span> <span class="nn">crossing</span> <span class="k">as</span> <span class="nn">cr</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># then we load the list of boundary crossings and the dataset</span>
+
+<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2006</span><span class="p">,</span><span class="mi">2007</span><span class="p">,</span><span class="mi">2008</span><span class="p">]</span>
+
+<span class="n">sc</span> <span class="o">=</span> <span class="s1">&#39;C1&#39;</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">crosslist</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">get_crosslist</span><span class="p">(</span><span class="s1">&#39;CL_BS_crossings_2002_2014.txt&#39;</span><span class="p">,</span><span class="n">sc</span><span class="p">,</span><span class="n">years</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pds</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_resampled.csv&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pds</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_97242</span><span class="o">/</span><span class="mf">2176712100.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">crosslist</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">get_crosslist</span><span class="p">(</span><span class="s1">&#39;CL_BS_crossings_2002_2014.txt&#39;</span><span class="p">,</span><span class="n">sc</span><span class="p">,</span><span class="n">years</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pds</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_resampled.csv&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pds</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> 
+
+<span class="nn">~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span> 
+<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">678</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">679</span> 
+<span class="ne">--&gt; </span><span class="mi">680</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">681</span> 
+<span class="g g-Whitespace">    </span><span class="mi">682</span> 
+
+<span class="nn">~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span> 
+<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">575</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">576</span> 
+<span class="g g-Whitespace">    </span><span class="mi">577</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">931</span> 
+<span class="g g-Whitespace">    </span><span class="mi">932</span>         <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">933</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">934</span> 
+<span class="g g-Whitespace">    </span><span class="mi">935</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1215</span>             <span class="c1"># &quot;Union[str, PathLike[str], ReadCsvBuffer[bytes], ReadCsvBuffer[str]]&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1216</span>             <span class="c1"># , &quot;str&quot;, &quot;bool&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1217</span>             <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>  <span class="c1"># type: ignore[call-overload]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1218</span>                 <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1219</span>                 <span class="n">mode</span><span class="p">,</span>
+
+<span class="nn">~/miniconda3/envs/epn-ml-book/lib/python3.9/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">787</span>         <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span>             <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">789</span>             <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span>                 <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>                 <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data_resampled.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>There appear quite large differences in magnitude of the various features. Therefore we scale our data!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scale the data</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scale</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">scale</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">data_scaled</span> <span class="o">=</span> <span class="n">pds</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="n">data_scaled</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dens</th>
+      <th>tpar</th>
+      <th>tperp</th>
+      <th>vel_gse_x</th>
+      <th>vel_gse_y</th>
+      <th>vel_gse_z</th>
+      <th>v_abs</th>
+      <th>b_gse_x</th>
+      <th>b_gse_y</th>
+      <th>b_gse_z</th>
+      <th>b_abs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2002-01-01 10:02:00</th>
+      <td>-0.027453</td>
+      <td>-0.001001</td>
+      <td>-0.001</td>
+      <td>-0.000979</td>
+      <td>-0.001048</td>
+      <td>0.000947</td>
+      <td>-0.001037</td>
+      <td>2.626536</td>
+      <td>2.409025</td>
+      <td>-1.839272</td>
+      <td>2.098737</td>
+    </tr>
+    <tr>
+      <th>2002-01-01 10:03:00</th>
+      <td>-0.027529</td>
+      <td>-0.001001</td>
+      <td>-0.001</td>
+      <td>-0.000976</td>
+      <td>-0.001043</td>
+      <td>0.000935</td>
+      <td>-0.001040</td>
+      <td>2.617199</td>
+      <td>2.377015</td>
+      <td>-1.865195</td>
+      <td>2.089613</td>
+    </tr>
+    <tr>
+      <th>2002-01-01 10:04:00</th>
+      <td>-0.027518</td>
+      <td>-0.001001</td>
+      <td>-0.001</td>
+      <td>-0.000976</td>
+      <td>-0.001042</td>
+      <td>0.000934</td>
+      <td>-0.001039</td>
+      <td>2.606989</td>
+      <td>2.338094</td>
+      <td>-1.896799</td>
+      <td>2.079298</td>
+    </tr>
+    <tr>
+      <th>2002-01-01 10:05:00</th>
+      <td>-0.027526</td>
+      <td>-0.001001</td>
+      <td>-0.001</td>
+      <td>-0.000975</td>
+      <td>-0.001044</td>
+      <td>0.000933</td>
+      <td>-0.001040</td>
+      <td>2.601780</td>
+      <td>2.302699</td>
+      <td>-1.916597</td>
+      <td>2.068956</td>
+    </tr>
+    <tr>
+      <th>2002-01-01 10:06:00</th>
+      <td>-0.027508</td>
+      <td>-0.001001</td>
+      <td>-0.001</td>
+      <td>-0.000977</td>
+      <td>-0.001044</td>
+      <td>0.000934</td>
+      <td>-0.001039</td>
+      <td>2.596544</td>
+      <td>2.267779</td>
+      <td>-1.934071</td>
+      <td>2.058333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we plot examples</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">crosslist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot_cross</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">pred</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/IAP_Pipeline_6_0.png" src="../../../_images/IAP_Pipeline_6_0.png" />
+<img alt="../../../_images/IAP_Pipeline_6_1.png" src="../../../_images/IAP_Pipeline_6_1.png" />
+<img alt="../../../_images/IAP_Pipeline_6_2.png" src="../../../_images/IAP_Pipeline_6_2.png" />
+<img alt="../../../_images/IAP_Pipeline_6_3.png" src="../../../_images/IAP_Pipeline_6_3.png" />
+<img alt="../../../_images/IAP_Pipeline_6_4.png" src="../../../_images/IAP_Pipeline_6_4.png" />
+</div>
+</div>
+<p>Let’s take a closer look at the data. We can clearly see the boundary crossing in the example plotted. But how will we translate this for our model to learn? Simply segmenting the time series into “crossing” and “no crossing” will give a HUGE data imbalance. So it does not seem to work as a classification problem. We also have to decide on how to deliver the data to a possible model. Single points? Or time frames of multiple hours?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load label</span>
+<span class="n">similarities</span> <span class="o">=</span> <span class="n">pds</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;similarities_C1_width&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">width</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">similarities</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pds</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">similarities</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We decided on a parameter between 0 and 1, that simultanously defines if a given time frame contains a bow shock crossing and how far from the center it occurs. The size of the window was chosen to be 20 minutes in order to not contain more than two crossings in one image but still include enough data to perfectly see the crossing.</p>
+<p><img alt="label" src="../../../_images/label.png" /></p>
+<p>Nevertheless, the problem of imbalanced data is not yet completely resolved. Let’s see why:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cr</span><span class="o">.</span><span class="n">crossingsperyear</span><span class="p">(</span><span class="n">crosslist</span><span class="p">,</span><span class="n">years</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2006: 46
+2007: 141
+2008: 138
+</pre></div>
+</div>
+</div>
+</div>
+<p>Given the fact that each crossing now equals 20 non-zero values, we still have a highly imbalanced dataset. So let’s take a look at when our crossings actually happen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">similarities</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">similarities</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">==</span><span class="mi">2006</span><span class="p">],</span><span class="n">similarities</span><span class="p">[</span><span class="n">similarities</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">==</span><span class="mi">2006</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdafcdc7a00&gt;]
+</pre></div>
+</div>
+<img alt="../../../_images/IAP_Pipeline_12_1.png" src="../../../_images/IAP_Pipeline_12_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="training-validation-and-test-sets">
+<h1><span class="section-number">4. </span>Training, validation, and test sets<a class="headerlink" href="#training-validation-and-test-sets" title="Permalink to this headline">¶</a></h1>
+<p>There are times where the spacecraft does not cross the bow shock for quite a while, for example when it is in the night side part of the magnetopause or too far away in the solar wind. So to simplify the problem, we will only use the times in which we expect crossings to occur. Thus, the next step is to create the training set, validation set and test set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># randomly split the data into train, test and val</span>
+
+<span class="kn">import</span> <span class="nn">window</span> <span class="k">as</span> <span class="nn">wdw</span>
+
+<span class="n">eventhours</span> <span class="o">=</span> <span class="n">wdw</span><span class="o">.</span><span class="n">geteventhours</span><span class="p">(</span><span class="n">crosslist</span><span class="p">,</span><span class="n">years</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">eventhours</span><span class="p">)</span>
+
+<span class="n">testhours</span> <span class="o">=</span> <span class="n">eventhours</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">42</span><span class="p">]</span>
+<span class="n">valhours</span> <span class="o">=</span> <span class="n">eventhours</span><span class="p">[</span><span class="mi">43</span><span class="p">:</span><span class="mi">85</span><span class="p">]</span>
+<span class="n">trainhours</span> <span class="o">=</span> <span class="n">eventhours</span><span class="p">[</span><span class="mi">85</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="n">width</span><span class="o">*</span><span class="mi">2</span>
+
+<span class="c1"># create windows</span>
+
+<span class="n">x_val_windowed</span><span class="p">,</span> <span class="n">y_val</span> <span class="o">=</span> <span class="n">wdw</span><span class="o">.</span><span class="n">createrandomwindows</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">similarities</span><span class="p">,</span><span class="n">window</span><span class="p">,</span><span class="n">valhours</span><span class="p">)</span>
+<span class="n">x_train_windowed</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">wdw</span><span class="o">.</span><span class="n">createrandomwindows</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">similarities</span><span class="p">,</span><span class="n">window</span><span class="p">,</span><span class="n">trainhours</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>windowing done%
+windowing done%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="our-model">
+<h2><span class="section-number">4.1. </span>Our model<a class="headerlink" href="#our-model" title="Permalink to this headline">¶</a></h2>
+<p>Now that the data preprocessing is done, we can start with building a model. We use a pretty simple architecture to avoid overfitting, which was adapted from <a class="reference external" href="https://github.com/gautiernguyen/Automatic-detection-of-ICMEs-at-1-AU-a-deep-learning-approach">automatic detection of interplanetary coronal mass ejections</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Conv1D</span><span class="p">,</span> <span class="n">MaxPooling1D</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">BatchNormalization</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">ModelCheckpoint</span><span class="p">,</span> <span class="n">EarlyStopping</span><span class="p">,</span> <span class="n">ReduceLROnPlateau</span><span class="p">,</span> <span class="n">LearningRateScheduler</span>
+
+<span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;savedmodel&#39;</span>
+<span class="c1">#callbacks</span>
+<span class="n">callbacks</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># reduce learning-rate when reaching plateau</span>
+<span class="n">callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">ReduceLROnPlateau</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                      <span class="n">patience</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+                      <span class="n">cooldown</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># add early stopping</span>
+<span class="n">callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">EarlyStopping</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> <span class="n">min_delta</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+                  <span class="n">patience</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ModelCheckpoint</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">save_best_only</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-19 00:32:51.097824: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-19 00:32:51.097845: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:`epsilon` argument is deprecated and will be removed, use `min_delta` instead.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">Conv1D</span><span class="p">(</span>
+    <span class="mi">20</span><span class="p">,</span>
+    <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;causal&#39;</span><span class="p">,</span>
+    <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+    <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">Conv1D</span><span class="p">(</span>
+    <span class="mi">20</span><span class="p">,</span>
+    <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;causal&#39;</span><span class="p">,</span>
+    <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+    <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">Conv1D</span><span class="p">(</span>
+    <span class="mi">20</span><span class="p">,</span>
+    <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;causal&#39;</span><span class="p">,</span>
+    <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+    <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">Conv1D</span><span class="p">(</span>
+    <span class="mi">20</span><span class="p">,</span>
+    <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;causal&#39;</span><span class="p">,</span>
+    <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+    <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">Conv1D</span><span class="p">(</span>
+    <span class="mi">20</span><span class="p">,</span>
+    <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;causal&#39;</span><span class="p">,</span>
+    <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+    <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">Conv1D</span><span class="p">(</span>
+    <span class="mi">20</span><span class="p">,</span>
+    <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;causal&#39;</span><span class="p">,</span>
+    <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+    <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">Conv1D</span><span class="p">(</span>
+    <span class="mi">20</span><span class="p">,</span>
+    <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;causal&#39;</span><span class="p">,</span>
+    <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+    <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling1D</span><span class="p">())</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling1D</span><span class="p">())</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;MeanSquaredError&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-19 00:32:51.835450: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-19 00:32:51.835471: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-19 00:32:51.835486: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (hannahruedisser-ThinkPad-T14s-Gen-2a): /proc/driver/nvidia/version does not exist
+2022-09-19 00:32:51.835662: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can start training, now that the model is built.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train_windowed</span><span class="p">,</span>
+    <span class="n">y_train</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_val_windowed</span><span class="p">,</span> <span class="n">y_val</span><span class="p">),</span>
+    <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="p">,</span>
+    <span class="c1">#sample_weight=weight_train,</span>
+    <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/600
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-19 00:32:51.946900: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>643/643 [==============================] - 1s 1ms/step - loss: 0.1617 - val_loss: 0.1178
+
+Epoch 00001: val_loss improved from inf to 0.11782, saving model to model
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-19 00:32:53.676703: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: model/assets
+Epoch 2/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.1073 - val_loss: 0.1086
+
+Epoch 00002: val_loss improved from 0.11782 to 0.10864, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 3/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.1007 - val_loss: 0.1022
+
+Epoch 00003: val_loss improved from 0.10864 to 0.10221, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 4/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0908 - val_loss: 0.0788
+
+Epoch 00004: val_loss improved from 0.10221 to 0.07877, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 5/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0736 - val_loss: 0.0685
+
+Epoch 00005: val_loss improved from 0.07877 to 0.06845, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 6/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0613 - val_loss: 0.0619
+
+Epoch 00006: val_loss improved from 0.06845 to 0.06190, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 7/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0540 - val_loss: 0.0651
+
+Epoch 00007: val_loss did not improve from 0.06190
+Epoch 8/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0468 - val_loss: 0.0592
+
+Epoch 00008: val_loss improved from 0.06190 to 0.05919, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 9/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0444 - val_loss: 0.0571
+
+Epoch 00009: val_loss improved from 0.05919 to 0.05712, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 10/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0423 - val_loss: 0.0567
+
+Epoch 00010: val_loss improved from 0.05712 to 0.05675, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 11/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0389 - val_loss: 0.0551
+
+Epoch 00011: val_loss improved from 0.05675 to 0.05513, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 12/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0374 - val_loss: 0.0563
+
+Epoch 00012: val_loss did not improve from 0.05513
+Epoch 13/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0350 - val_loss: 0.0527
+
+Epoch 00013: val_loss improved from 0.05513 to 0.05267, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 14/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0341 - val_loss: 0.0519
+
+Epoch 00014: val_loss improved from 0.05267 to 0.05187, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 15/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0326 - val_loss: 0.0515
+
+Epoch 00015: val_loss improved from 0.05187 to 0.05151, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 16/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0309 - val_loss: 0.0496
+
+Epoch 00016: val_loss improved from 0.05151 to 0.04957, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 17/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0292 - val_loss: 0.0507
+
+Epoch 00017: val_loss did not improve from 0.04957
+Epoch 18/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0275 - val_loss: 0.0488
+
+Epoch 00018: val_loss improved from 0.04957 to 0.04877, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 19/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0279 - val_loss: 0.0487
+
+Epoch 00019: val_loss improved from 0.04877 to 0.04874, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 20/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0248 - val_loss: 0.0471
+
+Epoch 00020: val_loss improved from 0.04874 to 0.04714, saving model to model
+INFO:tensorflow:Assets written to: model/assets
+Epoch 21/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0253 - val_loss: 0.0482
+
+Epoch 00021: val_loss did not improve from 0.04714
+Epoch 22/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0240 - val_loss: 0.0495
+
+Epoch 00022: val_loss did not improve from 0.04714
+Epoch 23/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0229 - val_loss: 0.0497
+
+Epoch 00023: val_loss did not improve from 0.04714
+Epoch 24/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0230 - val_loss: 0.0504
+
+Epoch 00024: val_loss did not improve from 0.04714
+Epoch 25/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0222 - val_loss: 0.0561
+
+Epoch 00025: val_loss did not improve from 0.04714
+Epoch 26/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0220 - val_loss: 0.0474
+
+Epoch 00026: val_loss did not improve from 0.04714
+Epoch 27/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0212 - val_loss: 0.0474
+
+Epoch 00027: val_loss did not improve from 0.04714
+Epoch 28/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0198 - val_loss: 0.0488
+
+Epoch 00028: val_loss did not improve from 0.04714
+Epoch 29/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0197 - val_loss: 0.0511
+
+Epoch 00029: val_loss did not improve from 0.04714
+Epoch 30/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0184 - val_loss: 0.0508
+
+Epoch 00030: val_loss did not improve from 0.04714
+Epoch 31/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0186 - val_loss: 0.0483
+
+Epoch 00031: val_loss did not improve from 0.04714
+Epoch 32/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0182 - val_loss: 0.0476
+
+Epoch 00032: val_loss did not improve from 0.04714
+Epoch 33/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0173 - val_loss: 0.0480
+
+Epoch 00033: val_loss did not improve from 0.04714
+Epoch 34/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0173 - val_loss: 0.0534
+
+Epoch 00034: val_loss did not improve from 0.04714
+Epoch 35/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0163 - val_loss: 0.0517
+
+Epoch 00035: val_loss did not improve from 0.04714
+Epoch 36/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0170 - val_loss: 0.0493
+
+Epoch 00036: val_loss did not improve from 0.04714
+Epoch 37/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0154 - val_loss: 0.0517
+
+Epoch 00037: val_loss did not improve from 0.04714
+Epoch 38/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0151 - val_loss: 0.0512
+
+Epoch 00038: val_loss did not improve from 0.04714
+Epoch 39/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0145 - val_loss: 0.0546
+
+Epoch 00039: val_loss did not improve from 0.04714
+Epoch 40/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0150 - val_loss: 0.0505
+
+Epoch 00040: val_loss did not improve from 0.04714
+Epoch 41/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0147 - val_loss: 0.0477
+
+Epoch 00041: val_loss did not improve from 0.04714
+Epoch 42/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0144 - val_loss: 0.0492
+
+Epoch 00042: val_loss did not improve from 0.04714
+Epoch 43/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0139 - val_loss: 0.0483
+
+Epoch 00043: val_loss did not improve from 0.04714
+Epoch 44/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0134 - val_loss: 0.0528
+
+Epoch 00044: val_loss did not improve from 0.04714
+Epoch 45/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0136 - val_loss: 0.0503
+
+Epoch 00045: ReduceLROnPlateau reducing learning rate to 4.999999873689376e-05.
+
+Epoch 00045: val_loss did not improve from 0.04714
+Epoch 46/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0120 - val_loss: 0.0507
+
+Epoch 00046: val_loss did not improve from 0.04714
+Epoch 47/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0116 - val_loss: 0.0488
+
+Epoch 00047: val_loss did not improve from 0.04714
+Epoch 48/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0119 - val_loss: 0.0504
+
+Epoch 00048: val_loss did not improve from 0.04714
+Epoch 49/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0115 - val_loss: 0.0506
+
+Epoch 00049: val_loss did not improve from 0.04714
+Epoch 50/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0114 - val_loss: 0.0496
+
+Epoch 00050: val_loss did not improve from 0.04714
+Epoch 51/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0115 - val_loss: 0.0516
+
+Epoch 00051: val_loss did not improve from 0.04714
+Epoch 52/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0112 - val_loss: 0.0496
+
+Epoch 00052: val_loss did not improve from 0.04714
+Epoch 53/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0113 - val_loss: 0.0506
+
+Epoch 00053: val_loss did not improve from 0.04714
+Epoch 54/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0110 - val_loss: 0.0524
+
+Epoch 00054: val_loss did not improve from 0.04714
+Epoch 55/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0109 - val_loss: 0.0514
+
+Epoch 00055: val_loss did not improve from 0.04714
+Epoch 56/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0108 - val_loss: 0.0521
+
+Epoch 00056: val_loss did not improve from 0.04714
+Epoch 57/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0108 - val_loss: 0.0520
+
+Epoch 00057: val_loss did not improve from 0.04714
+Epoch 58/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0114 - val_loss: 0.0528
+
+Epoch 00058: val_loss did not improve from 0.04714
+Epoch 59/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0109 - val_loss: 0.0527
+
+Epoch 00059: val_loss did not improve from 0.04714
+Epoch 60/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0102 - val_loss: 0.0514
+
+Epoch 00060: val_loss did not improve from 0.04714
+Epoch 61/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0107 - val_loss: 0.0503
+
+Epoch 00061: val_loss did not improve from 0.04714
+Epoch 62/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0103 - val_loss: 0.0519
+
+Epoch 00062: val_loss did not improve from 0.04714
+Epoch 63/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0100 - val_loss: 0.0517
+
+Epoch 00063: val_loss did not improve from 0.04714
+Epoch 64/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0102 - val_loss: 0.0514
+
+Epoch 00064: val_loss did not improve from 0.04714
+Epoch 65/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0097 - val_loss: 0.0528
+
+Epoch 00065: val_loss did not improve from 0.04714
+Epoch 66/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0100 - val_loss: 0.0518
+
+Epoch 00066: val_loss did not improve from 0.04714
+Epoch 67/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0100 - val_loss: 0.0535
+
+Epoch 00067: val_loss did not improve from 0.04714
+Epoch 68/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0097 - val_loss: 0.0516
+
+Epoch 00068: val_loss did not improve from 0.04714
+Epoch 69/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0103 - val_loss: 0.0519
+
+Epoch 00069: val_loss did not improve from 0.04714
+Epoch 70/600
+643/643 [==============================] - 1s 1ms/step - loss: 0.0097 - val_loss: 0.0523
+
+Epoch 00070: ReduceLROnPlateau reducing learning rate to 2.499999936844688e-05.
+
+Epoch 00070: val_loss did not improve from 0.04714
+Epoch 00070: early stopping
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7fdaa8456550&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also just load the best model trained so far and test it on some unseen data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">load_model</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_test_windowed</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">wdw</span><span class="o">.</span><span class="n">createrandomtest</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">similarities</span><span class="p">,</span><span class="n">window</span><span class="p">,</span><span class="n">testhours</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test_windowed</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_predSeries</span> <span class="o">=</span> <span class="n">pds</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">test_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">y_pred</span><span class="p">))</span>
+<span class="n">y_predSeries</span><span class="p">[</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+
+<span class="n">testlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">crosslist</span> <span class="k">if</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">crosstime</span><span class="o">.</span><span class="n">year</span><span class="p">,</span><span class="n">i</span><span class="o">.</span><span class="n">crosstime</span><span class="o">.</span><span class="n">month</span><span class="p">,</span><span class="n">i</span><span class="o">.</span><span class="n">crosstime</span><span class="o">.</span><span class="n">day</span><span class="p">,</span><span class="n">i</span><span class="o">.</span><span class="n">crosstime</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> <span class="ow">in</span> <span class="n">testhours</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>windowing done%
+54/54 [==============================] - 0s 758us/step
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">testhours</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]:</span>
+    <span class="n">cr</span><span class="o">.</span><span class="n">plot_results</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">similarities</span><span class="p">,</span><span class="n">y_predSeries</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/IAP_Pipeline_24_0.png" src="../../../_images/IAP_Pipeline_24_0.png" />
+<img alt="../../../_images/IAP_Pipeline_24_1.png" src="../../../_images/IAP_Pipeline_24_1.png" />
+<img alt="../../../_images/IAP_Pipeline_24_2.png" src="../../../_images/IAP_Pipeline_24_2.png" />
+<img alt="../../../_images/IAP_Pipeline_24_3.png" src="../../../_images/IAP_Pipeline_24_3.png" />
+<img alt="../../../_images/IAP_Pipeline_24_4.png" src="../../../_images/IAP_Pipeline_24_4.png" />
+<img alt="../../../_images/IAP_Pipeline_24_5.png" src="../../../_images/IAP_Pipeline_24_5.png" />
+<img alt="../../../_images/IAP_Pipeline_24_6.png" src="../../../_images/IAP_Pipeline_24_6.png" />
+<img alt="../../../_images/IAP_Pipeline_24_7.png" src="../../../_images/IAP_Pipeline_24_7.png" />
+<img alt="../../../_images/IAP_Pipeline_24_8.png" src="../../../_images/IAP_Pipeline_24_8.png" />
+<img alt="../../../_images/IAP_Pipeline_24_9.png" src="../../../_images/IAP_Pipeline_24_9.png" />
+</div>
+</div>
+<p>We can already see that there are some bumps where a crossing takes place, but we also missed some! We start with some postprocessing to turn the prediction into a comparable catalog.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.signal</span> <span class="k">as</span> <span class="nn">ss</span>
+<span class="kn">import</span> <span class="nn">postprocess</span>
+
+<span class="n">peaks</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">find_peaks</span><span class="p">(</span><span class="n">y_predSeries</span><span class="p">[</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">prominence</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">predlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">peaks</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">predlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cr</span><span class="o">.</span><span class="n">Crossing</span><span class="p">(</span><span class="n">y_predSeries</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+<span class="n">TP</span><span class="p">,</span> <span class="n">FN</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="n">postprocess</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">predlist</span><span class="p">,</span><span class="n">testlist</span><span class="p">,</span> <span class="n">thres</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precision is: 0.5423728813559322
+Recall is: 0.5161290322580645
+True Positives 32
+False Negatives 30
+False Positives 27
+</pre></div>
+</div>
+</div>
+</div>
+<p>We did manage to find some of the crossings, but there still is a lot of work to do:</p>
+<ul class="simple">
+<li><p>increase data</p></li>
+<li><p>use non-resampled dataset</p></li>
+<li><p>use additional features</p></li>
+<li><p>tune hyperparameters</p></li>
+<li><p>further experiment with model architecture</p></li>
+<li><p>crossvalidation</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Part_2/Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../ScienceBackground.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Science Background - Boundaries around Earth</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Summary.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Summary and Discussion</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Durch The Europlanet ML Team<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
