@@ -367,6 +367,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
 <h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>This chapter is about the science case proposed “Search for space plasmas boundary crossings”, proposed by the Institute of Atmospheric Physics of Czech Academy of Sciences (IAP-CAS).</p>
+<p>In the following, we present a tutorial for an ML pipeline, which can also be found on <a class="reference external" href="https://github.com/epn-ml/Tutorial_IAP_Boundaries">GitHub</a>.</p>
 <div class="section" id="description-of-the-science-case">
 <h2><span class="section-number">1.1. </span>Description of the science case<a class="headerlink" href="#description-of-the-science-case" title="Permalink to this headline">¶</a></h2>
 <p>Planetary magnetospheres create multiple sharp boundaries, such as the bow shock, where the solar wind plasma is decelerated and compressed, or the magnetopause, a transition between solar wind field and planetary field.</p>
@@ -377,14 +378,13 @@
 <div class="section" id="dataset">
 <h2><span class="section-number">1.2. </span>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <p>We will use a unique dataset of bow shock crossings encountered by the Cluster spacecraft over its 20 years of operation in the project. The training dataset includes 1941 bow shock crossings identified by visual inspection in magnetic field measurements from Cluster 2 between 2001 and 2013. The collection of shock crossing is a basis of a publication [Kruparova et al., 2019] where the authors present an analysis of various shock parameters calculated from the data.</p>
-<p>In the dataset for the machine learning project, we use the magnetic field data from the FGM instrument and electric field spectrograms from the WHISPER instrument, and ion energy spectrograms and plasma moments from the CIS instrument. A combination of the multiple datasets, both in image and time-series form, shall allow for unambiguous identification. An example of the above data from a shock crossing is shown in <a class="reference internal" href="../Chapter_4_MarsMounds/Introduction.html#shockexample"><span class="std std-numref">Fig. 1.2</span></a>.</p>
+<p>In the dataset for the machine learning project, we use the magnetic field data from the FGM instrument and electric field spectrograms from the WHISPER instrument, and ion energy spectrograms and plasma moments from the CIS instrument. A combination of the multiple datasets, both in image and time-series form, shall allow for unambiguous identification. An example of the above data from a shock crossing is shown in <a class="reference internal" href="#shockexample"><span class="std std-numref">Fig. 1.1</span></a>.</p>
 <div class="figure align-default" id="shockexample">
 <a class="reference internal image-reference" href="../../_images/shock_example.png"><img alt="../../_images/shock_example.png" src="../../_images/shock_example.png" style="height: 250px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">An example of a shock crossing in the data from the Cluster spacecraft. From the top to bottom, Electric field spectrogram from WHISPER, magnetic field magnitude, ion density and ion bulk flow velocity from the CIS HIA instrument, and Ion energy spectrum from CIS.</span><a class="headerlink" href="#shockexample" title="Permalink to this image">¶</a></p>
 </div>
 <p>Since Cluster is a four-spacecraft mission, the same discontinuity is crossed by multiple spacecraft in different places, and the profile is often not identical. However, the objective of the presented project is to obtain consistent timing even in the presence of some variation between the spacecraft.</p>
 <p>All Cluster data is public and can be downloaded from the <a class="reference external" href="https://csa.esac.esa.int/csa-web/">ESA Cluster Science Archive</a>.</p>
-<p>In the following, we present a tutorial for the pipeline, which can also be found on <a class="reference external" href="https://github.com/epn-ml/Tutorial_IAP_Boundaries">GitHub</a>.</p>
 </div>
 </div>
 

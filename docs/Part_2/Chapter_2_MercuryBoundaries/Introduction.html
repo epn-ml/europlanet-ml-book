@@ -406,6 +406,8 @@
 <li><p>Julka S., Kirschstein N., Granitzer M., Lavrukhin A., and Amerstorfer U. (2022), Deep Active Learning for Detection of Mercury’s
 Bow Shock and Magnetopause Crossings, Proceedings ECMl PKDD 2022.</p></li>
 </ul>
+<p>Our ML pipeline is open source and can be found on <a class="reference external" href="https://github.com/epn-ml/Freddie">GitHub</a>.</p>
+<p>In the following, we present a tutorial for the pipeline, which can also be found on <a class="reference external" href="https://github.com/epn-ml/EPSC2021-MercuryBoundaries-workshop">GitHub</a>.</p>
 <div class="section" id="description-of-the-science-case">
 <h2><span class="section-number">1.1. </span>Description of the science case<a class="headerlink" href="#description-of-the-science-case" title="Permalink to this headline">¶</a></h2>
 <p>The interplanetary medium is filled with the solar wind and the interplanetary magnetic field (IMF). When the supersonic solar wind plasma flow finds an obstacle on its way out, such as a magnetosphere, a shock wave arises upstream of the obstacle. In case of a magnetospheric interaction it is called the bow shock. The bow shock slows the solar wind to subsonic speeds, so that the solar wind can flow around the magnetopause, which is the surface enclosing the magnetosphere. The magnetosphere is the region, where the inner planetary magnetic field plays the main role.</p>
@@ -465,8 +467,6 @@ Bow Shock and Magnetopause Crossings, Proceedings ECMl PKDD 2022.</p></li>
 <p>In the feature preparation stage, a sliding window of variable sizes (3 seconds to 3 minutes) with a hop size of 1 second was computed on the time series signal to obtain feature vectors. Finally, the features were normalised to have mean of 0 and a standard deviation of 1. No other pre-processing, or engineering was applied in order to allow the deep learning model to engineer features implicitly.</p>
 <p>The windowed features are fed first into a block of 3 Convolutional layers with 1D filters, each followed by Batch Normalisation and ReLu activations. The activations obtained at the end of the CNN block are then passed to the Recurrent block with two layers of LSTMs. The final activations are then passed to a fully connected layer with softmax activations. The objective function used for training is Categorial cross entropy, with Adam optimizer.</p>
 <p>The window size used in these experiments is 30 seconds. Overall, the predictor achieves a macro F1 score of about 80% on the bow shock and the magnetopause crossings on a randomly sampled test of 300 orbits. None of the orbits overlap in the train and test sets.</p>
-<p>The pipeline is open source and can be found on <a class="reference external" href="https://github.com/epn-ml/Freddie">GitHub</a>.</p>
-<p>In the following, we present a tutorial for the pipeline, which can also be found on <a class="reference external" href="https://github.com/epn-ml/EPSC2021-MercuryBoundaries-workshop">GitHub</a>.</p>
 </div>
 </div>
 </div>
