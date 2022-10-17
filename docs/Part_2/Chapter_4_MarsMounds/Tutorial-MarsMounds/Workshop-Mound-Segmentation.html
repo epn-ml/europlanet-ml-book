@@ -348,13 +348,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-hillshade-technique-where-a-lighting-effect-is-added-to-a-map-based-on-elevation-variations-within-the-landscape">
-     3.2.2. Creating a Hillshade : technique where a lighting effect is added to a map based on elevation variations within the landscape.
+    <a class="reference internal nav-link" href="#creating-a-hillshade">
+     3.2.2. Creating a Hillshade
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualise-slope-identifies-the-steepness-at-each-cell-of-a-raster-surface">
-     3.2.3. Visualise slope:  identifies the steepness at each cell of a raster surface
+    <a class="reference internal nav-link" href="#visualise-slope">
+     3.2.3. Visualise slope
     </a>
    </li>
   </ul>
@@ -422,13 +422,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-hillshade-technique-where-a-lighting-effect-is-added-to-a-map-based-on-elevation-variations-within-the-landscape">
-     3.2.2. Creating a Hillshade : technique where a lighting effect is added to a map based on elevation variations within the landscape.
+    <a class="reference internal nav-link" href="#creating-a-hillshade">
+     3.2.2. Creating a Hillshade
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualise-slope-identifies-the-steepness-at-each-cell-of-a-raster-surface">
-     3.2.3. Visualise slope:  identifies the steepness at each cell of a raster surface
+    <a class="reference internal nav-link" href="#visualise-slope">
+     3.2.3. Visualise slope
     </a>
    </li>
   </ul>
@@ -537,7 +537,7 @@ Download the saved models: https://figshare.com/articles/software/saved_models_z
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_98417</span><span class="o">/</span><span class="mf">3907882804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_98605</span><span class="o">/</span><span class="mf">3907882804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;pylab&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#Geo-libraries</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
@@ -657,8 +657,9 @@ Download the saved models: https://figshare.com/articles/software/saved_models_z
 </div>
 </div>
 </div>
-<div class="section" id="creating-a-hillshade-technique-where-a-lighting-effect-is-added-to-a-map-based-on-elevation-variations-within-the-landscape">
-<h3><span class="section-number">3.2.2. </span>Creating a Hillshade : technique where a lighting effect is added to a map based on elevation variations within the landscape.<a class="headerlink" href="#creating-a-hillshade-technique-where-a-lighting-effect-is-added-to-a-map-based-on-elevation-variations-within-the-landscape" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="creating-a-hillshade">
+<h3><span class="section-number">3.2.2. </span>Creating a Hillshade<a class="headerlink" href="#creating-a-hillshade" title="Permalink to this headline">¶</a></h3>
+<p>This is a technique where a lighting effect is added to a map based on elevation variations within the landscape.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hillshade</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">DEMProcessing</span><span class="p">(</span><span class="n">dem_path</span> <span class="o">+</span> <span class="s2">&quot;hillshade1.tif&quot;</span><span class="p">,</span> <span class="n">dem</span><span class="p">,</span> <span class="s2">&quot;hillshade&quot;</span><span class="p">)</span>
@@ -676,8 +677,9 @@ Download the saved models: https://figshare.com/articles/software/saved_models_z
 </div>
 </div>
 </div>
-<div class="section" id="visualise-slope-identifies-the-steepness-at-each-cell-of-a-raster-surface">
-<h3><span class="section-number">3.2.3. </span>Visualise slope:  identifies the steepness at each cell of a raster surface<a class="headerlink" href="#visualise-slope-identifies-the-steepness-at-each-cell-of-a-raster-surface" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="visualise-slope">
+<h3><span class="section-number">3.2.3. </span>Visualise slope<a class="headerlink" href="#visualise-slope" title="Permalink to this headline">¶</a></h3>
+<p>This identifies the steepness at each cell of a raster surface.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rd_dem</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">LoadGDAL</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
