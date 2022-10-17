@@ -6,6 +6,7 @@
 * Chapter 2: Basic Tutorials
 * Chapter 3: Automatic Detection of ICMEs
 * Chapter 4: Automatic Detection of Boundaries around Mercury
+* Chapter 5: Automatic Detection of Boundaries around Earth
 
 ## Prerequisites
 
