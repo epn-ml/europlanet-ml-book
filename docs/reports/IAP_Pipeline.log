@@ -33,7 +33,7 @@ data.head()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/var/folders/x3/2bzh843n0tv469w6l6sd8sq00000gn/T/ipykernel_2188/2176712100.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/x3/2bzh843n0tv469w6l6sd8sq00000gn/T/ipykernel_3823/2176712100.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      7[0m [0mcrosslist[0m [0;34m=[0m [0mcr[0m[0;34m.[0m[0mget_crosslist[0m[0;34m([0m[0;34m'CL_BS_crossings_2002_2014.txt'[0m[0;34m,[0m[0msc[0m[0;34m,[0m[0myears[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      8[0m [0;34m[0m[0m
 [0;32m----> 9[0;31m [0mdata[0m [0;34m=[0m [0mpds[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m'data_resampled.csv'[0m[0;34m,[0m[0mindex_col[0m[0;34m=[0m[0;36m0[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
