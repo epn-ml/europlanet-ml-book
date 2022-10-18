@@ -1,0 +1,1497 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a 2D grid &#8212; The Europlanet Machine Learning Book</title>
+    
+  <link href="../../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../../_static/Europlanet_Machine_Learning_Logo_Standard.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Europlanet Machine Learning Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Foreword.html">
+   The Europlanet Machine Learning Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1. Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Chapter_1_Introduction/Content.html">
+   1. Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2. Basic Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Part_1/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification.html">
+   2. Supervised classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Part_1/Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html">
+   3. Supervised regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3. Automatic Detection of ICMEs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_1_ICMEsDetection/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline.html">
+   2. Machine Learning Pipeline for Automated Detection of ICMEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_1_ICMEsDetection/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  4. Automatic Detection of Boundaries around Mercury
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_2_MercuryBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer.html">
+   2. Machine learning pipeline for detection of boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_2_MercuryBoundaries/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  5. Automatic Detection of Boundaries around Earth
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_3_EarthBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline.html">
+   2. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_3_EarthBoundaries/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  6. Image Segmentation for Detecting Mounds on Mars
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_4_MarsMounds/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation.html">
+   2. Mound Classification in DTMs from Mars Arabia Terra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_4_MarsMounds/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  7. Landforms Detection on Mars (Pits)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_5_MarsPits/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_5_MarsPits/Tutorial-DeepLandforms/Tutorial_readme.html">
+   2.
+   <strong>
+    DeepLandforms tutorial
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_5_MarsPits/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  8. Mars Pits Shadow Extractor (MAPS)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_6_MarsPitsShadowExtractor/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_6_MarsPitsShadowExtractor/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  9. Chorus Waves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_7_ChorusWaves/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_7_ChorusWaves/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  10. Classification of Meteors based on Lightcurves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_8_MeteorClassification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_8_MeteorClassification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  11. Mercury Surface Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   2. 05-MESSENGER-MERCURY-SURFACE-CLASSIFICATION-UNSUPERVISED_DLR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  12. Mineral Identification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_10_MineralIdentification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_10_MineralIdentification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../References/bibliography.html">
+   1. References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../../_sources/Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/src/data/Create_2Dgrid.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/src/data/Create_2Dgrid.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Create a 2D grid
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#db-manipulation">
+   DB manipulation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#db-insert-cells">
+     DB : Insert cells
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#db-check-mascsdata">
+     DB check MASCSdata
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#db-cells-retrieval">
+     DB :  cells retrieval
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#db-multiple-query-per-cell">
+     DB :  multiple query per cell
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Create a 2D grid</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Create a 2D grid
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#db-manipulation">
+   DB manipulation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#db-insert-cells">
+     DB : Insert cells
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#db-check-mascsdata">
+     DB check MASCSdata
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#db-cells-retrieval">
+     DB :  cells retrieval
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#db-multiple-query-per-cell">
+     DB :  multiple query per cell
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="create-a-2d-grid">
+<h1>Create a 2D grid<a class="headerlink" href="#create-a-2d-grid" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.google.com/search?ei=FKOSW4GoOYaOmgX7z6nIDg&amp;q=geopandas+create+2D+grid+polygons&amp;oq=geopandas+create+2D+grid+polygons&amp;gs_l=psy-ab.3...12002.12301.0.13280.2.2.0.0.0.0.121.237.0j2.2.0....0...1c.1.64.psy-ab..0.0.0....0.lNH15BerTPI">geopandas create 2D grid polygons - Google Search</a></p></li>
+</ol>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gis.stackexchange.com/questions/269243/create-a-polygon-grid-using-with-geopandas?rq=1">python - Create a polygon grid using with Geopandas - Geographic Information Systems Stack Exchange</a></p></li>
+<li><p><a class="reference external" href="https://gis.stackexchange.com/questions/54119/creating-square-grid-polygon-shapefile-with-python">Creating square grid polygon shapefile with Python? - Geographic Information Systems Stack Exchange</a></p></li>
+<li><p><a class="reference external" href="https://gis.stackexchange.com/questions/54119/creating-square-grid-polygon-shapefile-with-python/78030">Creating square grid polygon shapefile with Python? - Geographic Information Systems Stack Exchange</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/36318145/shapefile-to-2d-grid-as-sparse-matrix">python - Shapefile to 2D grid as sparse matrix - Stack Overflow</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span> <span class="k">as</span> <span class="n">tqdm</span>
+<span class="c1"># from tqdm import tqdm</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;max_colwidth&#39;</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6197</span><span class="o">/</span><span class="mf">1853682371.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;geopandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gpd_lite_toolbox</span> <span class="k">as</span> <span class="nn">glt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_grid</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">cut</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">geopandas</span> <span class="kn">import</span> <span class="n">GeoDataFrame</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a grid, based on the shape of *gdf* and on a *height* value (in</span>
+<span class="sd">    units of *gdf*). If cut=False, the grid will not be intersected with *gdf*</span>
+<span class="sd">    (i.e it makes a grid on the bounding-box of *gdf*).</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    gdf: GeoDataFrame</span>
+<span class="sd">        The collection of polygons to be covered by the grid.</span>
+<span class="sd">    height: Integer</span>
+<span class="sd">        The dimension (will be used as height and width) of the ceils to create,</span>
+<span class="sd">        in units of *gdf*.</span>
+<span class="sd">    cut: Boolean, default True</span>
+<span class="sd">        Cut the grid to fit the shape of *gdf* (ceil partially covering it will</span>
+<span class="sd">        be truncated). If False, the returned grid will fit the bounding box</span>
+<span class="sd">        of *gdf*.</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    grid: GeoDataFrame</span>
+<span class="sd">        A collection of polygons.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span>
+    <span class="kn">from</span> <span class="nn">shapely.ops</span> <span class="kn">import</span> <span class="n">unary_union</span>
+    <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gdf</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="mi">2</span><span class="p">]]</span>
+    <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gdf</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">:]]</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">((</span><span class="n">ymax</span><span class="o">-</span><span class="n">ymin</span><span class="p">)</span> <span class="o">/</span> <span class="n">height</span><span class="p">)</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">((</span><span class="n">xmax</span><span class="o">-</span><span class="n">xmin</span><span class="p">)</span> <span class="o">/</span> <span class="n">height</span><span class="p">)</span>
+
+    <span class="n">x_left_origin</span> <span class="o">=</span> <span class="n">xmin</span>
+    <span class="n">x_right_origin</span> <span class="o">=</span> <span class="n">xmin</span> <span class="o">+</span> <span class="n">height</span>
+    <span class="n">y_top_origin</span> <span class="o">=</span> <span class="n">ymax</span>
+    <span class="n">y_bottom_origin</span> <span class="o">=</span> <span class="n">ymax</span> <span class="o">-</span> <span class="n">height</span>
+
+    <span class="n">res_geoms</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">countcols</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+        <span class="n">y_top</span> <span class="o">=</span> <span class="n">y_top_origin</span>
+        <span class="n">y_bottom</span> <span class="o">=</span> <span class="n">y_bottom_origin</span>
+        <span class="k">for</span> <span class="n">countrows</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+            <span class="n">res_geoms</span><span class="o">.</span><span class="n">append</span><span class="p">((</span>
+                <span class="p">(</span><span class="n">x_left_origin</span><span class="p">,</span> <span class="n">y_top</span><span class="p">),</span> <span class="p">(</span><span class="n">x_right_origin</span><span class="p">,</span> <span class="n">y_top</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">x_right_origin</span><span class="p">,</span> <span class="n">y_bottom</span><span class="p">),</span> <span class="p">(</span><span class="n">x_left_origin</span><span class="p">,</span> <span class="n">y_bottom</span><span class="p">)</span>
+                <span class="p">))</span>
+            <span class="n">y_top</span> <span class="o">=</span> <span class="n">y_top</span> <span class="o">-</span> <span class="n">height</span>
+            <span class="n">y_bottom</span> <span class="o">=</span> <span class="n">y_bottom</span> <span class="o">-</span> <span class="n">height</span>
+        <span class="n">x_left_origin</span> <span class="o">=</span> <span class="n">x_left_origin</span> <span class="o">+</span> <span class="n">height</span>
+        <span class="n">x_right_origin</span> <span class="o">=</span> <span class="n">x_right_origin</span> <span class="o">+</span> <span class="n">height</span>
+    <span class="k">if</span> <span class="n">cut</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span>
+            <span class="s2">&quot;geometry.type ==&#39;Polygon&#39; or geometry.type ==&#39;MultiPolygon&#39;&quot;</span><span class="p">)):</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">GeoDataFrame</span><span class="p">(</span>
+                <span class="n">geometry</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">res_geoms</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span>
+                <span class="n">crs</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">crs</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">unary_union</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">geometry</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">GeoDataFrame</span><span class="p">(</span>
+                <span class="n">geometry</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">res_geoms</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span>
+                <span class="n">crs</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">crs</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">unary_union</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span><span class="o">.</span><span class="n">convex_hull</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Polygon&#39;</span><span class="p">]</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">))]</span>
+        <span class="k">return</span> <span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">res</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">GeoDataFrame</span><span class="p">(</span>
+            <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res_geoms</span><span class="p">))],</span>
+            <span class="n">geometry</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">res_geoms</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span>
+            <span class="n">crs</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">crs</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createRectangle_widthheight</span><span class="p">(</span><span class="n">xsize</span><span class="p">,</span> <span class="n">ysize</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">srid</span><span class="o">=</span><span class="mi">4326</span><span class="p">,</span> <span class="o">**</span><span class="n">kwarg</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; createRectangle widthheight : specify (x0,y0) and (width, height)&#39;&#39;&#39;</span>
+    <span class="n">xmin</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xsize</span><span class="p">)</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">width</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">xmax</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xsize</span><span class="p">)</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">width</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">ymin</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">ysize</span><span class="p">)</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">height</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">ymax</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">ysize</span><span class="p">)</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">height</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="k">return</span> <span class="n">createRectangle_minmax</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">srid</span><span class="o">=</span><span class="n">srid</span><span class="p">,</span> <span class="n">wkt</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;wkt&#39;</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">createRectangle_minmax</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">srid</span><span class="o">=</span><span class="mi">4326</span><span class="p">,</span> <span class="n">wkt</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; createRectangle min-max : specify {x,y}{min,max}&#39;&#39;&#39;</span>
+    <span class="kn">from</span> <span class="nn">shapely</span> <span class="kn">import</span> <span class="n">geometry</span>
+    <span class="n">pointList</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">pointList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">geometry</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">))</span>
+    <span class="n">pointList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">geometry</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">))</span>
+    <span class="n">pointList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">geometry</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">))</span>
+    <span class="n">pointList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">geometry</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">))</span>
+    <span class="n">pointList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pointList</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">Polygon</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">.</span><span class="n">Polygon</span><span class="p">([[</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pointList</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">wkt</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;SRID=</span><span class="si">{}</span><span class="s1">;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">srid</span><span class="p">,</span><span class="n">Polygon</span><span class="o">.</span><span class="n">wkt</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Polygon</span>
+
+<span class="c1"># print(createRectangle_widthheight(xsize=360,))</span>
+
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;polygon&#39;</span><span class="p">:</span> <span class="n">createRectangle_minmax</span><span class="p">(</span><span class="n">xmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mi">360</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">90</span><span class="p">,</span><span class="n">wkt</span><span class="o">=</span><span class="kc">False</span><span class="p">)},)</span><span class="o">.</span><span class="n">set_geometry</span><span class="p">(</span><span class="s1">&#39;polygon&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">gdf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>polygon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>bbox</td>
+      <td>POLYGON ((0 -90, 0 90, 360 90, 360 -90, 0 -90))</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fd2481ce7b8&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/Create_2Dgrid_5_1.png" src="../../../../../_images/Create_2Dgrid_5_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gridf</span> <span class="o">=</span> <span class="n">make_grid</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cut</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">gridf</span><span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gridf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">gridf</span><span class="p">[</span><span class="s1">&#39;gid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">gridf</span><span class="p">[</span><span class="s1">&#39;short_desc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;grid_2D_0_360_-90_+90_1deg&#39;</span>
+<span class="n">gridf</span><span class="p">[</span><span class="s1">&#39;ctime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">gridf</span><span class="p">[</span><span class="s1">&#39;mtime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gridf</span><span class="p">[</span><span class="s1">&#39;ctime&#39;</span><span class="p">]</span>
+
+<span class="n">gridf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">gridf</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+<span class="c1"># gridf.rename({&#39;geoemtry&#39;:&#39;poly&#39;},axis=&#39;columns&#39;,inplace=True)</span>
+<span class="n">gridf</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;gid&#39;</span><span class="p">,</span> <span class="s1">&#39;short_desc&#39;</span><span class="p">,</span> <span class="s1">&#39;ctime&#39;</span><span class="p">,</span> <span class="s1">&#39;mtime&#39;</span><span class="p">]</span>
+<span class="n">gridf</span><span class="p">[</span><span class="s1">&#39;poly&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gridf</span><span class="p">[</span><span class="s1">&#39;poly&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;SRID=</span><span class="si">{s[srid]}</span><span class="s1">;</span><span class="si">{s[poly]}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;poly&#39;</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">wkt</span><span class="p">,</span><span class="s1">&#39;srid&#39;</span><span class="p">:</span><span class="mi">4326</span><span class="p">}))</span>
+<span class="n">gridf</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(64800, 6)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="db-manipulation">
+<h1>DB manipulation<a class="headerlink" href="#db-manipulation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import from parent directory : this is NOT NICE! but, wathever...</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span> 
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">dotenv_loader</span>
+<span class="n">db_connection_url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DATABASE_URL&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">db_connection_url</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="c1"># this connects and raise error if not.</span>
+<span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> sql
+<span class="o">%</span><span class="k">sql</span> $db_connection_url
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Connected: damo_ma@mascscat&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">find_nearest</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">array</span><span class="p">,</span> <span class="n">value</span> <span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">array</span> <span class="o">-</span> <span class="n">value</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+<span class="n">wav_grid_2nm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">260</span><span class="p">,</span><span class="mi">1052</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">wavelength_idx</span> <span class="o">=</span> <span class="n">find_nearest</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="mi">700</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wavelength_idx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>220
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="db-insert-cells">
+<h2>DB : Insert cells<a class="headerlink" href="#db-insert-cells" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># declarative_base is used for the mapping local key &lt;&gt; pg columns name</span>
+
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">DateTime</span>
+<span class="kn">from</span> <span class="nn">geoalchemy2</span> <span class="kn">import</span> <span class="n">Geometry</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.ext.declarative</span> <span class="kn">import</span> <span class="n">declarative_base</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.dialects</span> <span class="kn">import</span> <span class="n">postgresql</span>
+
+<span class="n">Base</span> <span class="o">=</span> <span class="n">declarative_base</span><span class="p">(</span><span class="n">metadata</span><span class="o">=</span><span class="n">MetaData</span><span class="p">())</span>
+
+<span class="k">class</span> <span class="nc">UserPolygon</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;userpolytest&#39;</span>
+
+    <span class="n">pid</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">gid</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">poly</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Geometry</span><span class="p">(</span><span class="n">geometry_type</span><span class="o">=</span><span class="s1">&#39;POLYGON&#39;</span><span class="p">,</span> <span class="n">srid</span><span class="o">=</span><span class="mi">4326</span><span class="p">))</span>
+    <span class="n">short_desc</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">ctime</span><span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">DateTime</span><span class="p">)</span>
+    <span class="n">mtime</span><span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">DateTime</span><span class="p">)</span>
+    <span class="n">mascspid</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;photom_iof_sp_2nm&#39;</span><span class="p">,</span> <span class="n">postgresql</span><span class="o">.</span><span class="n">ARRAY</span><span class="p">(</span><span class="n">Integer</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;&lt;PolygonID=&#39;</span><span class="si">%s</span><span class="s2">&#39;, GroupID=&#39;</span><span class="si">%s</span><span class="s2">&#39;, CreationTime=&#39;</span><span class="si">%s</span><span class="s2">&#39;, ModificationTime=&#39;</span><span class="si">%s</span><span class="s2">&#39;&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">gid</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">ctime</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">mtime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Base</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">sessionmaker</span>
+<span class="n">Session</span> <span class="o">=</span> <span class="n">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="n">userpolygon_instance</span> <span class="o">=</span> <span class="p">[</span><span class="n">UserPolygon</span><span class="p">(</span><span class="o">**</span><span class="n">tbl</span><span class="p">)</span> <span class="k">for</span> <span class="n">tbl</span> <span class="ow">in</span> <span class="n">gridf</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;geoemtry&#39;</span><span class="p">:</span><span class="s1">&#39;poly&#39;</span><span class="p">},</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">)]</span>
+
+<span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">add_all</span><span class="p">(</span><span class="n">userpolygon_instance</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="db-check-mascsdata">
+<h2>DB check MASCSdata<a class="headerlink" href="#db-check-mascsdata" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT m.pid FROM mascsdata AS m JOIN ( SELECT unnest(mascspid) as pid FROM userpolygon WHERE pid = 1546) p ON m.pid = p.pid
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sql = &quot;&quot;&quot;SELECT m.pid, software_version, spacecraft_clock_start_count,</span>
+<span class="c1"># along_track_footprint_size, packet_subseconds, partial_data,</span>
+<span class="c1"># temperature_2, temp_2, spice_version_epoch,</span>
+<span class="c1"># standard_data_product_id, spacecraft_clock_stop_count, saturation,</span>
+<span class="c1"># start_time, across_track_footprint_size, temperature_1, low_vis_wavelength_uncertainty,</span>
+<span class="c1"># incidence_angle, phase_angle,  anomalous_pixels,</span>
+<span class="c1"># stop_time, dark_saturation, sc_time, uvvs_noise_spike,</span>
+<span class="c1"># spectrum_met, product_id, spectrum_subseconds, spectrum_number,</span>
+<span class="c1"># product_creation_time, emission_angle, site_id, int_count,</span>
+<span class="c1"># uvvs_operating, detector_id, high_vis_wavelength_uncertainty,</span>
+<span class="c1"># spectrum_utc_time, solar_distance, target_name,</span>
+<span class="c1"># low_signal_level, mission_phase_name, product_version_id,</span>
+<span class="c1"># dark_scan, data_quality_index, grating_temperature,</span>
+<span class="c1"># photom_iof_sp_2nm, iof_sp_2nm</span>
+<span class="c1"># FROM mascsdata AS m </span>
+<span class="c1"># JOIN ( SELECT unnest(mascspid) as pid FROM userpolygon WHERE pid = 1546) p </span>
+<span class="c1">#     ON m.pid = p.pid&quot;&quot;&quot;</span>
+
+<span class="c1"># df = pd.read_sql(sql, engine,index_col=&#39;pid&#39;, coerce_float=True)</span>
+
+<span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT m.pid as pid, fov, software_version, spacecraft_clock_start_count,</span>
+<span class="s2">along_track_footprint_size, packet_subseconds, partial_data,</span>
+<span class="s2">temperature_2, temp_2, spice_version_epoch,</span>
+<span class="s2">standard_data_product_id, spacecraft_clock_stop_count, saturation,</span>
+<span class="s2">start_time, across_track_footprint_size, temperature_1, low_vis_wavelength_uncertainty,</span>
+<span class="s2">incidence_angle, phase_angle,  anomalous_pixels,</span>
+<span class="s2">stop_time, dark_saturation, sc_time, uvvs_noise_spike,</span>
+<span class="s2">spectrum_met, product_id, spectrum_subseconds, spectrum_number,</span>
+<span class="s2">product_creation_time, emission_angle, site_id, int_count,</span>
+<span class="s2">uvvs_operating, detector_id, high_vis_wavelength_uncertainty,</span>
+<span class="s2">spectrum_utc_time, solar_distance, target_name,</span>
+<span class="s2">low_signal_level, mission_phase_name, product_version_id,</span>
+<span class="s2">dark_scan, data_quality_index, grating_temperature,</span>
+<span class="s2">photom_iof_sp_2nm, iof_sp_2nm</span>
+<span class="s2">FROM mascsdata AS m </span>
+<span class="s2">JOIN ( SELECT unnest(mascspid) as mascspid FROM userpolygon WHERE pid = 1546) p </span>
+<span class="s2">    ON m.pid = p.mascspid&quot;&quot;&quot;</span>
+
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_postgis</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">geom_col</span><span class="o">=</span><span class="s1">&#39;fov&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;pid&#39;</span><span class="p">)</span>
+<span class="n">wavelength</span> <span class="o">=</span> <span class="mi">700</span>
+<span class="n">wavelength_idx</span> <span class="o">=</span> <span class="n">find_nearest</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">wavelength</span><span class="p">)</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;photom_iof_sp_2nm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">wavelength_idx</span><span class="p">])</span>
+<span class="n">userpolygondf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_postgis</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM userpolygon WHERE pid = 1546&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">geom_col</span><span class="o">=</span><span class="s1">&#39;poly&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;pid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;refl&#39;</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span>
+                                                <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                                <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral_r</span><span class="p">)</span>
+<span class="c1"># base.set_axis_off()</span>
+<span class="n">base</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Longitude&#39;</span><span class="p">,</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Mascs FOV in Grid Cell/ color: reflectance @700nm&#39;</span><span class="p">)</span>
+<span class="n">userpolygondf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">base</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral_r</span><span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">median</span><span class="p">()))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">base</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">base</span><span class="p">,</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fd37a94ce10&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/Create_2Dgrid_19_1.png" src="../../../../../_images/Create_2Dgrid_19_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;iof_sp_2nm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="s1">&#39;green&#39;</span> <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csv_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">8.8577512694354e+31</span><span class="p">,</span> <span class="mf">3.44348451996452e+31</span><span class="p">,</span> <span class="mf">1.73246080414006e+31</span><span class="p">,</span> <span class="mf">4.79054559548046e+30</span><span class="p">,</span> <span class="mf">0.00270102832098016</span><span class="p">,</span> <span class="mf">0.00349848704054731</span><span class="p">,</span> <span class="mf">0.00393885836643336</span><span class="p">,</span> <span class="mf">0.0040383789425349</span><span class="p">,</span> <span class="mf">0.00443049813673658</span><span class="p">,</span> <span class="mf">0.00365759042637098</span><span class="p">,</span> <span class="mf">0.00374882847420627</span><span class="p">,</span> <span class="mf">0.00422359332931827</span><span class="p">,</span> <span class="mf">0.00405255297945471</span><span class="p">,</span> <span class="mf">0.00425432536060296</span><span class="p">,</span> <span class="mf">0.00522439243538447</span><span class="p">,</span> <span class="mf">0.00583764493483395</span><span class="p">,</span> <span class="mf">0.00595037302910228</span><span class="p">,</span> <span class="mf">0.0064511779407377</span><span class="p">,</span> <span class="mf">0.00689860295739495</span><span class="p">,</span> <span class="mf">0.00688721794928132</span><span class="p">,</span> <span class="mf">0.0070012649159993</span><span class="p">,</span> <span class="mf">0.00736116641279647</span><span class="p">,</span> <span class="mf">0.00743111184815171</span><span class="p">,</span> <span class="mf">0.00694954523979937</span><span class="p">,</span> <span class="mf">0.00675898463467808</span><span class="p">,</span> <span class="mf">0.00699562581118899</span><span class="p">,</span> <span class="mf">0.00686874062975878</span><span class="p">,</span> <span class="mf">0.0067609855333686</span><span class="p">,</span> <span class="mf">0.00705623126908485</span><span class="p">,</span> <span class="mf">0.00731871640980979</span><span class="p">,</span> <span class="mf">0.00749686553804177</span><span class="p">,</span> <span class="mf">0.00773055286416209</span><span class="p">,</span> <span class="mf">0.00815817747619862</span><span class="p">,</span> <span class="mf">0.00807441718261093</span><span class="p">,</span> <span class="mf">0.0078008392780442</span><span class="p">,</span> <span class="mf">0.00774634865943621</span><span class="p">,</span> <span class="mf">0.00776153573500523</span><span class="p">,</span> <span class="mf">0.00787055163061634</span><span class="p">,</span> <span class="mf">0.00820909187720029</span><span class="p">,</span> <span class="mf">0.00867174620603009</span><span class="p">,</span> <span class="mf">0.0087397485019565</span><span class="p">,</span> <span class="mf">0.00873041233171364</span><span class="p">,</span> <span class="mf">0.00883966536121362</span><span class="p">,</span> <span class="mf">0.00910509098264705</span><span class="p">,</span> <span class="mf">0.00914245636589463</span><span class="p">,</span> <span class="mf">0.00900855481148418</span><span class="p">,</span> <span class="mf">0.00907696690425394</span><span class="p">,</span> <span class="mf">0.00882107289829509</span><span class="p">,</span> <span class="mf">0.00851591216352641</span><span class="p">,</span> <span class="mf">0.00887241300559713</span><span class="p">,</span> <span class="mf">0.0093356825735377</span><span class="p">,</span> <span class="mf">0.00906358679362398</span><span class="p">,</span> <span class="mf">0.00936397438002742</span><span class="p">,</span> <span class="mf">0.00946444145555132</span><span class="p">,</span> <span class="mf">0.00955167797093923</span><span class="p">,</span> <span class="mf">0.00920473933085702</span><span class="p">,</span> <span class="mf">0.00897955701859518</span><span class="p">,</span> <span class="mf">0.00978224968864126</span><span class="p">,</span> <span class="mf">0.0106038197171661</span><span class="p">,</span> <span class="mf">0.00957207754063431</span><span class="p">,</span> <span class="mf">0.00882524366938058</span><span class="p">,</span> <span class="mf">0.00908789288342638</span><span class="p">,</span> <span class="mf">0.0100149136491809</span><span class="p">,</span> <span class="mf">0.0102456962345481</span><span class="p">,</span> <span class="mf">0.0101362280400412</span><span class="p">,</span> <span class="mf">0.0104205808809216</span><span class="p">,</span> <span class="mf">0.0101861171561333</span><span class="p">,</span> <span class="mf">0.0110442208463707</span><span class="p">,</span> <span class="mf">0.011056745202571</span><span class="p">,</span> <span class="mf">0.0108345611514104</span><span class="p">,</span> <span class="mf">0.0104133528481079</span><span class="p">,</span> <span class="mf">0.0102022734670138</span><span class="p">,</span> <span class="mf">0.0103945231655326</span><span class="p">,</span> <span class="mf">0.0109778697166654</span><span class="p">,</span> <span class="mf">0.0110840611953928</span><span class="p">,</span> <span class="mf">0.0112622281355879</span><span class="p">,</span> <span class="mf">0.0114057821204147</span><span class="p">,</span> <span class="mf">0.0112809734047644</span><span class="p">,</span> <span class="mf">0.0112141458088183</span><span class="p">,</span> <span class="mf">0.0113567827354502</span><span class="p">,</span> <span class="mf">0.0114924969865766</span><span class="p">,</span> <span class="mf">0.0112888245545633</span><span class="p">,</span> <span class="mf">0.0111698946952657</span><span class="p">,</span> <span class="mf">0.0110543397456077</span><span class="p">,</span> <span class="mf">0.0110328556262007</span><span class="p">,</span> <span class="mf">0.0116226782479114</span><span class="p">,</span> <span class="mf">0.0123594142061614</span><span class="p">,</span> <span class="mf">0.0121531834842271</span><span class="p">,</span> <span class="mf">0.0119237562048284</span><span class="p">,</span> <span class="mf">0.0117592878397644</span><span class="p">,</span> <span class="mf">0.0118556107730391</span><span class="p">,</span> <span class="mf">0.0117888274726769</span><span class="p">,</span> <span class="mf">0.011721516223753</span><span class="p">,</span> <span class="mf">0.0119105062242979</span><span class="p">,</span> <span class="mf">0.0121124855131404</span><span class="p">,</span> <span class="mf">0.0120427717058469</span><span class="p">,</span> <span class="mf">0.0119850257767612</span><span class="p">,</span> <span class="mf">0.0120494833697493</span><span class="p">,</span> <span class="mf">0.0119910134234694</span><span class="p">,</span> <span class="mf">0.0119680262538798</span><span class="p">,</span> <span class="mf">0.0121599027733401</span><span class="p">,</span> <span class="mf">0.0120825507364382</span><span class="p">,</span> <span class="mf">0.0121096300851093</span><span class="p">,</span> <span class="mf">0.0122603980405712</span><span class="p">,</span> <span class="mf">0.0124581540645621</span><span class="p">,</span> <span class="mf">0.0126107663362395</span><span class="p">,</span> <span class="mf">0.0126686637405327</span><span class="p">,</span> <span class="mf">0.0126813895501014</span><span class="p">,</span> <span class="mf">0.0127245388760384</span><span class="p">,</span> <span class="mf">0.0129422814865334</span><span class="p">,</span> <span class="mf">0.0129302034091342</span><span class="p">,</span> <span class="mf">0.0127971563202419</span><span class="p">,</span> <span class="mf">0.0127789343316781</span><span class="p">,</span> <span class="mf">0.0131588315720189</span><span class="p">,</span> <span class="mf">0.0135519620786934</span><span class="p">,</span> <span class="mf">0.0133578266789452</span><span class="p">,</span> <span class="mf">0.0133728307408208</span><span class="p">,</span> <span class="mf">0.0134181831513503</span><span class="p">,</span> <span class="mf">0.0133708727171695</span><span class="p">,</span> <span class="mf">0.0133584216796132</span><span class="p">,</span> <span class="mf">0.0134200360652995</span><span class="p">,</span> <span class="mf">0.0136191203929233</span><span class="p">,</span> <span class="mf">0.0137529301879137</span><span class="p">,</span> <span class="mf">0.0134825470235835</span><span class="p">,</span> <span class="mf">0.0135508748496352</span><span class="p">,</span> <span class="mf">0.0138637712464368</span><span class="p">,</span> <span class="mf">0.0139376979731784</span><span class="p">,</span> <span class="mf">0.013790081282336</span><span class="p">,</span> <span class="mf">0.0139176571375195</span><span class="p">,</span> <span class="mf">0.0144986983830649</span><span class="p">,</span> <span class="mf">0.0145205552373442</span><span class="p">,</span> <span class="mf">0.0144392237350726</span><span class="p">,</span> <span class="mf">0.0142964372793782</span><span class="p">,</span> <span class="mf">0.0144914568036476</span><span class="p">,</span> <span class="mf">0.0147152946997899</span><span class="p">,</span> <span class="mf">0.0145787469437218</span><span class="p">,</span> <span class="mf">0.0144263883278807</span><span class="p">,</span> <span class="mf">0.0146683111527008</span><span class="p">,</span> <span class="mf">0.0146508576033521</span><span class="p">,</span> <span class="mf">0.014675180717532</span><span class="p">,</span> <span class="mf">0.0147963682676811</span><span class="p">,</span> <span class="mf">0.0148676472259308</span><span class="p">,</span> <span class="mf">0.0148178418629161</span><span class="p">,</span> <span class="mf">0.0147828240004571</span><span class="p">,</span> <span class="mf">0.0148331945107049</span><span class="p">,</span> <span class="mf">0.0148839126496436</span><span class="p">,</span> <span class="mf">0.0149300988548246</span><span class="p">,</span> <span class="mf">0.014920361711725</span><span class="p">,</span> <span class="mf">0.0149838164189119</span><span class="p">,</span> <span class="mf">0.0151623648591129</span><span class="p">,</span> <span class="mf">0.0153796025113343</span><span class="p">,</span> <span class="mf">0.0154340507378738</span><span class="p">,</span> <span class="mf">0.0154551721186184</span><span class="p">,</span> <span class="mf">0.0153712771974455</span><span class="p">,</span> <span class="mf">0.0155019530675134</span><span class="p">,</span> <span class="mf">0.0156496821331523</span><span class="p">,</span> <span class="mf">0.0157432006776336</span><span class="p">,</span> <span class="mf">0.015727034450352</span><span class="p">,</span> <span class="mf">0.015706026677648</span><span class="p">,</span> <span class="mf">0.0156913676612039</span><span class="p">,</span> <span class="mf">0.0156739366071783</span><span class="p">,</span> <span class="mf">0.0156286290725729</span><span class="p">,</span> <span class="mf">0.015541045062172</span><span class="p">,</span> <span class="mf">0.0155165166668515</span><span class="p">,</span> <span class="mf">0.0156560659109223</span><span class="p">,</span> <span class="mf">0.0160261568182694</span><span class="p">,</span> <span class="mf">0.0159646444728594</span><span class="p">,</span> <span class="mf">0.0159652883541725</span><span class="p">,</span> <span class="mf">0.0159915775381927</span><span class="p">,</span> <span class="mf">0.0158983214138247</span><span class="p">,</span> <span class="mf">0.0159156751486226</span><span class="p">,</span> <span class="mf">0.0160347657103586</span><span class="p">,</span> <span class="mf">0.0160770478644741</span><span class="p">,</span> <span class="mf">0.0160783408907074</span><span class="p">,</span> <span class="mf">0.016223386138958</span><span class="p">,</span> <span class="mf">0.0162578944708373</span><span class="p">,</span> <span class="mf">0.0162507914355275</span><span class="p">,</span> <span class="mf">0.0163575770021399</span><span class="p">,</span> <span class="mf">0.0165507227578818</span><span class="p">,</span> <span class="mf">0.0166970541725245</span><span class="p">,</span> <span class="mf">0.0165378215881961</span><span class="p">,</span> <span class="mf">0.0164879056776597</span><span class="p">,</span> <span class="mf">0.016663834415605</span><span class="p">,</span> <span class="mf">0.0166842787817246</span><span class="p">,</span> <span class="mf">0.0165574774824275</span><span class="p">,</span> <span class="mf">0.0165380327918287</span><span class="p">,</span> <span class="mf">0.0166276501254688</span><span class="p">,</span> <span class="mf">0.0166334594575805</span><span class="p">,</span> <span class="mf">0.0167465498443539</span><span class="p">,</span> <span class="mf">0.0166856497811239</span><span class="p">,</span> <span class="mf">0.0167434604722029</span><span class="p">,</span> <span class="mf">0.0168492228131485</span><span class="p">,</span> <span class="mf">0.0168923106786952</span><span class="p">,</span> <span class="mf">0.0169176442054759</span><span class="p">,</span> <span class="mf">0.016956904754242</span><span class="p">,</span> <span class="mf">0.0169618675852455</span><span class="p">,</span> <span class="mf">0.0167756354522947</span><span class="p">,</span> <span class="mf">0.0168088304211499</span><span class="p">,</span> <span class="mf">0.01742699272744</span><span class="p">,</span> <span class="mf">0.0176652095342093</span><span class="p">,</span> <span class="mf">0.0173588606850507</span><span class="p">,</span> <span class="mf">0.0173411589949705</span><span class="p">,</span> <span class="mf">0.0173993357822665</span><span class="p">,</span> <span class="mf">0.0174434360824572</span><span class="p">,</span> <span class="mf">0.0173453340594551</span><span class="p">,</span> <span class="mf">0.0172909985147729</span><span class="p">,</span> <span class="mf">0.0174559791756762</span><span class="p">,</span> <span class="mf">0.0175868035885219</span><span class="p">,</span> <span class="mf">0.0176914924316409</span><span class="p">,</span> <span class="mf">0.0179527841747798</span><span class="p">,</span> <span class="mf">0.018032178946102</span><span class="p">,</span> <span class="mf">0.0180796131792323</span><span class="p">,</span> <span class="mf">0.0182181075891249</span><span class="p">,</span> <span class="mf">0.0181602060384607</span><span class="p">,</span> <span class="mf">0.0180137734315068</span><span class="p">,</span> <span class="mf">0.0178787814110992</span><span class="p">,</span> <span class="mf">0.0177400058290157</span><span class="p">,</span> <span class="mf">0.0177774903078993</span><span class="p">,</span> <span class="mf">0.0176685402235958</span><span class="p">,</span> <span class="mf">0.0175220379605597</span><span class="p">,</span> <span class="mf">0.0174625792953521</span><span class="p">,</span> <span class="mf">0.0174664087804371</span><span class="p">,</span> <span class="mf">0.017356324124697</span><span class="p">,</span> <span class="mf">0.0174113768912647</span><span class="p">,</span> <span class="mf">0.0175678753709603</span><span class="p">,</span> <span class="mf">0.0177317081258507</span><span class="p">,</span> <span class="mf">0.0179506100500171</span><span class="p">,</span> <span class="mf">0.0181086761509076</span><span class="p">,</span> <span class="mf">0.0181309523118674</span><span class="p">,</span> <span class="mf">0.0181676248792269</span><span class="p">,</span> <span class="mf">0.0183759378752565</span><span class="p">,</span> <span class="mf">0.0185145568650309</span><span class="p">,</span> <span class="mf">0.0186482129998763</span><span class="p">,</span> <span class="mf">0.0186946381398097</span><span class="p">,</span> <span class="mf">0.0186190418595386</span><span class="p">,</span> <span class="mf">0.0185758223946481</span><span class="p">,</span> <span class="mf">0.0184745734919553</span><span class="p">,</span> <span class="mf">0.0184086718607068</span><span class="p">,</span> <span class="mf">0.0182759180516487</span><span class="p">,</span> <span class="mf">0.0183600366357929</span><span class="p">,</span> <span class="mf">0.0185653097978062</span><span class="p">,</span> <span class="mf">0.0185334793380529</span><span class="p">,</span> <span class="mf">0.018542104019945</span><span class="p">,</span> <span class="mf">0.0184842648085459</span><span class="p">,</span> <span class="mf">0.018591927004977</span><span class="p">,</span> <span class="mf">0.0187720283289447</span><span class="p">,</span> <span class="mf">0.0188774084603802</span><span class="p">,</span> <span class="mf">0.0189282594064235</span><span class="p">,</span> <span class="mf">0.0190699665103532</span><span class="p">,</span> <span class="mf">0.0192858488284082</span><span class="p">,</span> <span class="mf">0.0194594540635624</span><span class="p">,</span> <span class="mf">0.0194324873169992</span><span class="p">,</span> <span class="mf">0.0190905717954437</span><span class="p">,</span> <span class="mf">0.0190982951181169</span><span class="p">,</span> <span class="mf">0.018982722013913</span><span class="p">,</span> <span class="mf">0.0188200440528856</span><span class="p">,</span> <span class="mf">0.0187582874224404</span><span class="p">,</span> <span class="mf">0.018737333188883</span><span class="p">,</span> <span class="mf">0.0187821072072272</span><span class="p">,</span> <span class="mf">0.0190858379252347</span><span class="p">,</span> <span class="mf">0.0189965837814904</span><span class="p">,</span> <span class="mf">0.0189172902430694</span><span class="p">,</span> <span class="mf">0.0190706921327913</span><span class="p">,</span> <span class="mf">0.0189664010719697</span><span class="p">,</span> <span class="mf">0.0185981288928096</span><span class="p">,</span> <span class="mf">0.0185832198607901</span><span class="p">,</span> <span class="mf">0.0186865301166802</span><span class="p">,</span> <span class="mf">0.0189093581391723</span><span class="p">,</span> <span class="mf">0.0187262282197163</span><span class="p">,</span> <span class="mf">0.0187567447316567</span><span class="p">,</span> <span class="mf">0.0194024381355885</span><span class="p">,</span> <span class="mf">0.0195979176157806</span><span class="p">,</span> <span class="mf">0.0196511906946076</span><span class="p">,</span> <span class="mf">0.0198936563695886</span><span class="p">,</span> <span class="mf">0.0202336682933839</span><span class="p">,</span> <span class="mf">0.0202584410008702</span><span class="p">,</span> <span class="mf">0.0196201137343818</span><span class="p">,</span> <span class="mf">0.0190302715950331</span><span class="p">,</span> <span class="mf">0.0186268433350577</span><span class="p">,</span> <span class="mf">0.0185180373599847</span><span class="p">,</span> <span class="mf">0.0188767987268197</span><span class="p">,</span> <span class="mf">0.0190756418196328</span><span class="p">,</span> <span class="mf">0.0190699155824327</span><span class="p">,</span> <span class="mf">0.0194337264834068</span><span class="p">,</span> <span class="mf">0.0198132048660599</span><span class="p">,</span> <span class="mf">0.0196684770668128</span><span class="p">,</span> <span class="mf">0.0197002172118764</span><span class="p">,</span> <span class="mf">0.0193965898749019</span><span class="p">,</span> <span class="mf">0.0194607316034274</span><span class="p">,</span> <span class="mf">0.0198725767840092</span><span class="p">,</span> <span class="mf">0.0205518165743727</span><span class="p">,</span> <span class="mf">0.021418310875385</span><span class="p">,</span> <span class="mf">0.0212807228591288</span><span class="p">,</span> <span class="mf">0.020535978497201</span><span class="p">,</span> <span class="mf">0.0203976457027918</span><span class="p">,</span> <span class="mf">0.0210301648942174</span><span class="p">,</span> <span class="mf">0.0210315061263223</span><span class="p">,</span> <span class="mf">0.0212938665137209</span><span class="p">,</span> <span class="mf">0.0206177508018206</span><span class="p">,</span> <span class="mf">0.0218623266464664</span><span class="p">,</span> <span class="mf">0.0216788279700822</span><span class="p">,</span> <span class="mf">0.0203871757137297</span><span class="p">,</span> <span class="mf">0.0201929261735321</span><span class="p">,</span> <span class="mf">0.0210225643264756</span><span class="p">,</span> <span class="mf">0.0210265900164114</span><span class="p">,</span> <span class="mf">0.0202480062840795</span><span class="p">,</span> <span class="mf">0.0204680932614249</span><span class="p">,</span> <span class="mf">0.0196668385791737</span><span class="p">,</span> <span class="mf">0.0201811189098881</span><span class="p">,</span> <span class="mf">0.020412233738597</span><span class="p">,</span> <span class="mf">0.0208573221823954</span><span class="p">,</span> <span class="mf">0.0210537576293523</span><span class="p">,</span> <span class="mf">0.0210366829057104</span><span class="p">,</span> <span class="mf">0.0217439272672122</span><span class="p">,</span> <span class="mf">0.0212512201333602</span><span class="p">,</span> <span class="mf">0.0207825160693718</span><span class="p">,</span> <span class="mf">0.0212169975794618</span><span class="p">,</span> <span class="mf">0.0219137684310579</span><span class="p">,</span> <span class="mf">0.0217025600522446</span><span class="p">,</span> <span class="mf">0.0210123787020752</span><span class="p">,</span> <span class="mf">0.0204160616195734</span><span class="p">,</span> <span class="mf">0.0201278708674733</span><span class="p">,</span> <span class="mf">0.0209702306595793</span><span class="p">,</span> <span class="mf">0.0213245283970714</span><span class="p">,</span> <span class="mf">0.0212261079599656</span><span class="p">,</span> <span class="mf">0.0211567540126713</span><span class="p">,</span> <span class="mf">0.0213777210618627</span><span class="p">,</span> <span class="mf">0.0213161062467893</span><span class="p">,</span> <span class="mf">0.0212106340984513</span><span class="p">,</span> <span class="mf">0.0216791541337424</span><span class="p">,</span> <span class="mf">0.0199518976484318</span><span class="p">,</span> <span class="mf">0.0191203688824673</span><span class="p">,</span> <span class="mf">0.0197605139493985</span><span class="p">,</span> <span class="mf">0.0200535187862919</span><span class="p">,</span> <span class="mf">0.0202771263142548</span><span class="p">,</span> <span class="mf">0.0195263459857958</span><span class="p">,</span> <span class="mf">0.0197431551413231</span><span class="p">,</span> <span class="mf">0.0192340181680448</span><span class="p">,</span> <span class="mf">0.0194070361087688</span><span class="p">,</span> <span class="mf">0.0187847881532409</span><span class="p">,</span> <span class="mf">0.0187220083010824</span><span class="p">,</span> <span class="mf">0.0194193584670004</span><span class="p">,</span> <span class="mf">0.0203327424930528</span><span class="p">,</span> <span class="mf">0.0202895197157967</span><span class="p">,</span> <span class="mf">0.0210160955258563</span><span class="p">,</span> <span class="mf">0.0232822858708228</span><span class="p">,</span> <span class="mf">0.0247173049754616</span><span class="p">,</span> <span class="mf">0.0227067436995154</span><span class="p">,</span> <span class="mf">0.0210996212718416</span><span class="p">,</span> <span class="mf">0.0188524367914282</span><span class="p">,</span> <span class="mf">0.0165994996598657</span><span class="p">,</span> <span class="mf">0.0185835360354915</span><span class="p">,</span> <span class="mf">0.019418845718948</span><span class="p">,</span> <span class="mf">0.0194303166185032</span><span class="p">,</span> <span class="mf">0.0231573124687454</span><span class="p">,</span> <span class="mf">0.0227205152953944</span><span class="p">,</span> <span class="mf">0.023890039438845</span><span class="p">,</span> <span class="mf">0.0226664369062183</span><span class="p">,</span> <span class="mf">0.0209144788450706</span><span class="p">,</span> <span class="mf">0.0206954639534683</span><span class="p">,</span> <span class="mf">0.0206429847807573</span><span class="p">,</span> <span class="mf">0.0207000331388616</span><span class="p">,</span> <span class="mf">0.0215064592827296</span><span class="p">,</span> <span class="mf">0.0191012084272378</span><span class="p">,</span> <span class="mf">0.0180416787706268</span><span class="p">,</span> <span class="mf">0.0189197913977317</span><span class="p">,</span> <span class="mf">0.0180821658647284</span><span class="p">,</span> <span class="mf">0.0169935551081249</span><span class="p">,</span> <span class="mf">0.012649059391308</span><span class="p">,</span> <span class="mf">0.0145806009527714</span><span class="p">,</span> <span class="mf">0.0194333422880599</span><span class="p">,</span> <span class="mf">0.0143072347252228</span><span class="p">,</span> <span class="mf">0.0140718219404668</span><span class="p">,</span> <span class="mf">0.0175063861630674</span><span class="p">,</span> <span class="mf">0.0158892377577461</span><span class="p">,</span> <span class="mf">0.0139597637511731</span><span class="p">,</span> <span class="mf">0.012643962912716</span><span class="p">,</span> <span class="mf">0.0178399662457204</span><span class="p">,</span> <span class="mf">0.0131705176382566</span><span class="p">,</span> <span class="mf">0.00308852075828598</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.00356816612132478</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.00153520070085776</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.00172873015113197</span><span class="p">,</span> <span class="mf">0.0070078541277863</span><span class="p">,</span> <span class="mf">0.0156535053684571</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.00407787077873115</span><span class="p">,</span> <span class="mf">0.00242763575656386</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0121131934580362</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0120359794534794</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0140979457026343</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0118326843663701</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0076293393211339</span><span class="p">,</span> <span class="mf">0.0133309339581828</span><span class="p">,</span> <span class="mf">0.022439548910213</span><span class="p">,</span> <span class="mf">0.061168517330936</span><span class="p">,</span> <span class="mf">0.069020298254644</span><span class="p">])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;iof_sp_2nm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1546</span><span class="p">][</span><span class="s1">&#39;array&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="n">csv_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  8.85775127e+31,   3.44348452e+31,   1.73246080e+31,
+          4.79054560e+30,   2.70102832e-03,   3.49848704e-03,
+          3.93885837e-03,   4.03837894e-03,   4.43049814e-03,
+          3.65759043e-03]),
+ array([-1.]),
+ array([  8.85775127e+31,   3.44348452e+31,   1.73246080e+31,
+          4.79054560e+30,   2.70102832e-03,   3.49848704e-03,
+          3.93885837e-03,   4.03837894e-03,   4.43049814e-03,
+          3.65759043e-03]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;photom_iof_sp_2nm&#39;</span><span class="p">],</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;iof_sp_2nm&#39;</span><span class="p">],</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;iof_sp_2nm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;iof_sp_2nm mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;photom_iof_sp_2nm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;photom_iof_sp_2nm mean&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;iof_sp_2nm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;iof_sp_2nm median&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;photom_iof_sp_2nm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;photom_iof_sp_2nm median&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">270</span><span class="p">,</span><span class="mi">1050</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/Create_2Dgrid_22_0.png" src="../../../../../_images/Create_2Dgrid_22_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="db-cells-retrieval">
+<h2>DB :  cells retrieval<a class="headerlink" href="#db-cells-retrieval" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM userpolygon;&quot;</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_postgis</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">geom_col</span><span class="o">=</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;pid&#39;</span><span class="p">)</span>
+
+<span class="c1"># dataframe</span>
+<span class="c1"># df = pd.read_sql(sql, engine)</span>
+<span class="c1"># df[&#39;mascspid_len&#39;] = df[&#39;mascspid&#39;].apply(lambda x: len(x) if x else 0)</span>
+<span class="c1"># df[&#39;query&#39;] = &#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>pid</th>
+      <th>5892</th>
+      <th>62133</th>
+      <th>47183</th>
+      <th>58243</th>
+      <th>2664</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>gid</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>poly</th>
+      <td>POLYGON ((32 -42, 33 -42, 33 -43, 32 -43, 32 -42))</td>
+      <td>POLYGON ((345 57, 346 57, 346 56, 345 56, 345 57))</td>
+      <td>POLYGON ((262 67, 263 67, 263 66, 262 66, 262 67))</td>
+      <td>POLYGON ((323 -13, 324 -13, 324 -14, 323 -14, 323 -13))</td>
+      <td>POLYGON ((14 -54, 15 -54, 15 -55, 14 -55, 14 -54))</td>
+    </tr>
+    <tr>
+      <th>short_desc</th>
+      <td>grid_2D_0_360_-90_+90_1deg</td>
+      <td>grid_2D_0_360_-90_+90_1deg</td>
+      <td>grid_2D_0_360_-90_+90_1deg</td>
+      <td>grid_2D_0_360_-90_+90_1deg</td>
+      <td>grid_2D_0_360_-90_+90_1deg</td>
+    </tr>
+    <tr>
+      <th>ctime</th>
+      <td>2018-09-10 11:14:11.333883</td>
+      <td>2018-09-10 11:14:11.333883</td>
+      <td>2018-09-10 11:14:11.333883</td>
+      <td>2018-09-10 11:14:11.333883</td>
+      <td>2018-09-10 11:14:11.333883</td>
+    </tr>
+    <tr>
+      <th>mtime</th>
+      <td>2018-09-10 11:14:11.333883</td>
+      <td>2018-09-10 11:14:11.333883</td>
+      <td>2018-09-10 11:14:11.333883</td>
+      <td>2018-09-10 11:14:11.333883</td>
+      <td>2018-09-10 11:14:11.333883</td>
+    </tr>
+    <tr>
+      <th>mascspid</th>
+      <td>[3273978, 3274082, 3274097, 3274113, 3274125, 3274153, 3274181, 4538139, 4538173, 4538200, 45382...</td>
+      <td>[2914144, 2914171, 2914193, 2914209, 2914230, 3896636, 1854254, 2914059, 2914092, 2914119, 46559...</td>
+      <td>[851434, 851461, 851484, 851505, 851523, 851553, 1979516, 1979534, 1979551, 1979569, 1979588, 25...</td>
+      <td>[838732, 838748, 838765, 838783, 838803, 838820, 838837, 838852, 838869, 838883, 838899, 838917,...</td>
+      <td>[1334094, 1334111, 1334134, 1334148, 1903617, 1903637, 1903658, 1903682, 1903699, 1903714, 24043...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;mascspid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;mascspid_lenlog&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;mascspid_lenlog&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral_r</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">360</span><span class="p">],</span><span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/Create_2Dgrid_27_0.png" src="../../../../../_images/Create_2Dgrid_27_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg_function</span> <span class="o">=</span> <span class="s1">&#39;st_median&#39;</span> <span class="c1"># &#39;avg&#39;</span>
+<span class="c1"># agg_function = &#39;avg&#39;</span>
+<span class="c1"># arr_name= &#39;photom_iof_sp_2nm&#39;</span>
+<span class="n">arr_name</span><span class="o">=</span> <span class="s1">&#39;iof_sp_2nm&#39;</span>
+
+<span class="n">ext_sql_query</span><span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT p.pid ,(</span>
+<span class="s2">    SELECT ARRAY (</span>
+<span class="s2">        SELECT </span><span class="si">{}</span><span class="s2">(elem)</span>
+<span class="s2">        FROM ( </span>
+<span class="s2">            SELECT m.</span><span class="si">{}</span><span class="s2"> AS arr </span>
+<span class="s2">            FROM mascsdata AS m </span>
+<span class="s2">            WHERE m.pid = ANY(p.mascspid)</span>
+<span class="s2">        ) t , unnest(t.arr) WITH ORDINALITY x(elem, rn)</span>
+<span class="s2">        GROUP BY rn</span>
+<span class="s2">        ORDER BY rn</span>
+<span class="s2">    )</span>
+<span class="s2">)</span>
+<span class="s2">FROM userpolygon as p LIMIT 100 OFFSET 16000&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">agg_function</span><span class="p">,</span><span class="n">arr_name</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">ext_sql_query</span><span class="p">,</span><span class="n">engine</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;pid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">270</span><span class="p">,</span><span class="mi">1050</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="p">)[</span><span class="n">outcolumns</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(64800, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="s1">&#39;.csv.bz2&#39;</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">short_desc</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">agg_function</span><span class="p">,</span><span class="n">arr_name</span><span class="p">,</span><span class="n">extensions</span><span class="p">)</span>
+<span class="n">outcolumns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="s1">&#39;array&#39;</span><span class="p">]</span>
+<span class="c1"># gpd.GeoDataFrame.to_file(gdf.join(df).loc[df.index,outcolumns], outfile+&#39;.geojson&#39;, driver=&#39;GeoJSON&#39;)</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">outcolumns</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;bz2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-126-125fd824551a&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">extensions</span> <span class="o">=</span> <span class="s1">&#39;.csv.bz2&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">outfile</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">short_desc</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">agg_function</span><span class="p">,</span><span class="n">arr_name</span><span class="p">,</span><span class="n">extensions</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">outcolumns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="s1">&#39;array&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># gpd.GeoDataFrame.to_file(gdf.join(df).loc[df.index,outcolumns], outfile+&#39;.geojson&#39;, driver=&#39;GeoJSON&#39;)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">gdf</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">outcolumns</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;bz2&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gdf&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">shapely.wkt</span>
+
+<span class="c1"># outfile = &#39;grid_2D_0_360_-90_+90_1deg_avg_iof_sp_2nm&#39;</span>
+<span class="c1"># outfile = &#39;grid_2D_0_360_-90_+90_1deg_avg_photom_iof_sp_2nm&#39;</span>
+<span class="c1"># outfile = &#39;grid_2D_0_360_-90_+90_1deg_st_median_iof_sp_2nm&#39;</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="s1">&#39;grid_2D_0_360_-90_+90_1deg_st_median_photom_iof_sp_2nm&#39;</span>
+<span class="c1"># outfile = &#39;test.csv&#39;</span>
+
+<span class="k">def</span> <span class="nf">numpy_array_converter</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;[]&#39;</span><span class="p">:</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;None&#39;</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">outdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">outfile</span><span class="o">+</span><span class="s1">&#39;.csv.bz2&#39;</span><span class="p">,</span>
+                    <span class="n">converters</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;poly&#39;</span><span class="p">:</span><span class="n">shapely</span><span class="o">.</span><span class="n">wkt</span><span class="o">.</span><span class="n">loads</span><span class="p">,</span><span class="s1">&#39;array&#39;</span><span class="p">:</span><span class="n">numpy_array_converter</span><span class="p">},</span>
+                    <span class="n">dtype</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pid&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">},</span>
+                    <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;pid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outdf</span><span class="p">[</span><span class="s1">&#39;array_len&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outdf</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="k">else</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="c1"># outdf[&#39;array&#39;].shape,outdf[&#39;array&#39;].dropna().shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;epsg:4326&#39;</span><span class="p">}</span>
+<span class="n">outdf_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">outdf</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s1">&#39;poly&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength</span> <span class="o">=</span> <span class="mi">750</span>
+<span class="n">wavelength_idx</span> <span class="o">=</span> <span class="n">find_nearest</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">wavelength</span><span class="p">)</span>
+<span class="c1"># print(wavelength_idx)</span>
+<span class="c1"># outdf_gdf[&#39;refl&#39;] = outdf_gdf[&#39;array&#39;].apply(lambda x : x[wavelength_idx-10:wavelength_idx+10].mean())</span>
+<span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">wavelength_idx</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="n">wavelength_idx</span><span class="o">+</span><span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outdf_gdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.1</span><span class="p">),</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">outdf_gdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">),</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">outdf_gdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">),</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span><span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fd3696e7518&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/Create_2Dgrid_37_1.png" src="../../../../../_images/Create_2Dgrid_37_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
+<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral_r</span><span class="p">)</span> <span class="c1"># copy the default cmap</span>
+<span class="c1"># my_cmap.set_over(&#39;r&#39;, 1.0)</span>
+<span class="c1"># my_cmap.set_under(&#39;g&#39;, 1.0)</span>
+<span class="n">my_cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">outdf_gdf</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span><span class="mi">180</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+           <span class="n">interpolation</span><span class="o">=</span> <span class="s1">&#39;bilinear&#39;</span><span class="p">,</span>
+           <span class="n">norm</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">PowerNorm</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mf">0.09</span><span class="p">),</span>
+           <span class="n">cmap</span><span class="o">=</span><span class="n">my_cmap</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="s1">&#39;grid : </span><span class="si">{}</span><span class="s1"> / color : nm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span><span class="n">wavelength</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/user/mars/damo_ma/.conda/envs/gdal/lib/python3.5/site-packages/matplotlib/colors.py:1211: RuntimeWarning: invalid value encountered in less
+  res_mask = result.data &lt; 0
+/user/mars/damo_ma/.conda/envs/gdal/lib/python3.5/site-packages/matplotlib/colors.py:1218: RuntimeWarning: invalid value encountered in power
+  np.power(resdat, gamma, resdat)
+/user/mars/damo_ma/.conda/envs/gdal/lib/python3.5/site-packages/matplotlib/colors.py:504: RuntimeWarning: invalid value encountered in less
+  xa[xa &lt; 0] = -1
+</pre></div>
+</div>
+<img alt="../../../../../_images/Create_2Dgrid_38_1.png" src="../../../../../_images/Create_2Dgrid_38_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
+<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral_r</span><span class="p">)</span> <span class="c1"># copy the default cmap</span>
+<span class="c1"># my_cmap.set_over(&#39;r&#39;, 1.0)</span>
+<span class="c1"># my_cmap.set_under(&#39;g&#39;, 1.0)</span>
+<span class="c1"># my_cmap.set_bad(&#39;black&#39;, 1.0)</span>
+
+<span class="n">ax</span><span class="o">=</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">outdf_gdf</span><span class="o">.</span><span class="n">size</span><span class="o">//</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;refl&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span><span class="n">norm</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mf">0.1</span><span class="p">),</span><span class="n">cmap</span><span class="o">=</span><span class="n">my_cmap</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/user/mars/damo_ma/.conda/envs/gdal/lib/python3.5/site-packages/matplotlib/colors.py:504: RuntimeWarning: invalid value encountered in less
+  xa[xa &lt; 0] = -1
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fd3767b3fd0&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/Create_2Dgrid_39_2.png" src="../../../../../_images/Create_2Dgrid_39_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## outfile = &#39;grid_2D_0_360_-90_+90_1deg_st_median_photom_iof_sp_2nm.csv.bz2&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">270</span><span class="p">,</span><span class="mi">1050</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/Create_2Dgrid_40_0.png" src="../../../../../_images/Create_2Dgrid_40_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## outfile = &#39;grid_2D_0_360_-90_+90_1deg_avg_iof_sp_2nm.csv.bz2&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">290</span><span class="p">)</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">270</span><span class="p">,</span><span class="mi">1050</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/Create_2Dgrid_41_0.png" src="../../../../../_images/Create_2Dgrid_41_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="db-multiple-query-per-cell">
+<h2>DB :  multiple query per cell<a class="headerlink" href="#db-multiple-query-per-cell" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg_function</span> <span class="o">=</span> <span class="s1">&#39;st_median&#39;</span> <span class="c1"># &#39;avg&#39;</span>
+<span class="n">agg_query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT ARRAY (</span>
+<span class="s2">   SELECT </span><span class="si">{}</span><span class="s2">(elem)</span>
+<span class="s2">   FROM  (</span><span class="si">{}</span><span class="s2">) t , unnest(t.arr) WITH ORDINALITY x(elem, rn)</span>
+<span class="s2">   GROUP BY rn</span>
+<span class="s2">   ORDER BY rn</span>
+<span class="s2">   );&quot;&quot;&quot;</span>
+
+<span class="c1"># this create duplicates in results, I guess the double FROM m,p without JOIN!</span>
+<span class="c1"># query=&quot;&quot;&quot;WITH p AS ( SELECT * from userpolytest) SELECT m.{} AS arr FROM mascsdata AS m,p WHERE m.pid = ANY(ARRAY[{}])&quot;&quot;&quot;</span>
+
+<span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;SELECT m.</span><span class="si">{}</span><span class="s2"> AS arr FROM mascsdata AS m WHERE m.pid = ANY(ARRAY[</span><span class="si">{}</span><span class="s2">])&quot;&quot;&quot;</span>
+
+<span class="n">query_single</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;SELECT m.</span><span class="si">{}</span><span class="s2"> AS arr FROM mascsdata AS m WHERE m.pid = </span><span class="si">{}</span><span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="n">arr_name</span><span class="o">=</span> <span class="s1">&#39;photom_iof_sp_2nm&#39;</span>
+<span class="c1"># arr_name= &#39;iof_sp_2nm&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">agg_query</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">agg_function</span><span class="p">,</span> <span class="n">query</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arr_name</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SELECT ARRAY (
+   SELECT st_median(elem)
+   FROM  (SELECT m.photom_iof_sp_2nm AS arr FROM mascsdata AS m WHERE m.pid = ANY(ARRAY[[1, 2, 3]])) t , unnest(t.arr) WITH ORDINALITY x(elem, rn)
+   GROUP BY rn
+   ORDER BY rn
+   );
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try using .loc[row_indexer,col_indexer] = value instead</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;query&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;mascspid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">agg_query</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">agg_function</span><span class="p">,</span><span class="n">query</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arr_name</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;query&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;mascspid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">query_single</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arr_name</span><span class="p">,</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,[</span><span class="s1">&#39;query&#39;</span><span class="p">,</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">,</span><span class="s1">&#39;mascspid&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="s1">&#39;query&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SELECT ARRAY (
+   SELECT st_median(elem)
+   FROM  (SELECT m.photom_iof_sp_2nm AS arr FROM mascsdata AS m WHERE m.pid = ANY(ARRAY[[4459439, 4475140]])) t , unnest(t.arr) WITH ORDINALITY x(elem, rn)
+   GROUP BY rn
+   ORDER BY rn
+   );
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,[</span><span class="s1">&#39;query&#39;</span><span class="p">,</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">,</span><span class="s1">&#39;mascspid&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="s1">&#39;query&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SELECT m.photom_iof_sp_2nm AS arr FROM mascsdata AS m WHERE m.pid = 3822748
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">text</span>
+
+<span class="k">def</span> <span class="nf">get_result_file</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">sql_raw_query</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;pid&#39;</span><span class="p">:</span><span class="n">sql_raw_query</span><span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">],</span>
+             <span class="s1">&#39;array&#39;</span><span class="p">:</span><span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="n">sql_raw_query</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">sql_raw_query</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="kc">None</span><span class="p">}</span>
+
+<span class="c1"># get_result_file(engine,df.loc[0])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spectra</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">record</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">],</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;mascspid_len&#39;</span><span class="p">])</span>
+    <span class="n">spectra</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_result_file</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">record</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/src/data"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Durch The Europlanet ML Team<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

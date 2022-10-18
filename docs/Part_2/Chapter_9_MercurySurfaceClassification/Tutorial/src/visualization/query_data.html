@@ -1,0 +1,1432 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinate Reference System &#8212; The Europlanet Machine Learning Book</title>
+    
+  <link href="../../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../../_static/Europlanet_Machine_Learning_Logo_Standard.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Europlanet Machine Learning Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Foreword.html">
+   The Europlanet Machine Learning Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1. Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Chapter_1_Introduction/Content.html">
+   1. Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2. Basic Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Part_1/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification.html">
+   2. Supervised classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Part_1/Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html">
+   3. Supervised regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3. Automatic Detection of ICMEs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_1_ICMEsDetection/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline.html">
+   2. Machine Learning Pipeline for Automated Detection of ICMEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_1_ICMEsDetection/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  4. Automatic Detection of Boundaries around Mercury
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_2_MercuryBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer.html">
+   2. Machine learning pipeline for detection of boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_2_MercuryBoundaries/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  5. Automatic Detection of Boundaries around Earth
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_3_EarthBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline.html">
+   2. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_3_EarthBoundaries/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  6. Image Segmentation for Detecting Mounds on Mars
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_4_MarsMounds/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation.html">
+   2. Mound Classification in DTMs from Mars Arabia Terra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_4_MarsMounds/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  7. Landforms Detection on Mars (Pits)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_5_MarsPits/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_5_MarsPits/Tutorial-DeepLandforms/Tutorial_readme.html">
+   2.
+   <strong>
+    DeepLandforms tutorial
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_5_MarsPits/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  8. Mars Pits Shadow Extractor (MAPS)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_6_MarsPitsShadowExtractor/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_6_MarsPitsShadowExtractor/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  9. Chorus Waves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_7_ChorusWaves/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_7_ChorusWaves/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  10. Classification of Meteors based on Lightcurves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_8_MeteorClassification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_8_MeteorClassification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  11. Mercury Surface Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   2. 05-MESSENGER-MERCURY-SURFACE-CLASSIFICATION-UNSUPERVISED_DLR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  12. Mineral Identification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_10_MineralIdentification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_10_MineralIdentification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../References/bibliography.html">
+   1. References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../../_sources/Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/src/visualization/query_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/src/visualization/query_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Coordinate Reference System
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-the-data">
+   Read the data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-reflectance-data">
+   Use reflectance data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualise-the-data">
+   Visualise the Data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-effect-of-matplotlib-normaliser">
+   Bonus : Effect of Matplotlib Normaliser
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Coordinate Reference System</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Coordinate Reference System
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-the-data">
+   Read the data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-reflectance-data">
+   Use reflectance data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualise-the-data">
+   Visualise the Data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-effect-of-matplotlib-normaliser">
+   Bonus : Effect of Matplotlib Normaliser
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="coordinate-reference-system">
+<h1>Coordinate Reference System<a class="headerlink" href="#coordinate-reference-system" title="Permalink to this headline">¶</a></h1>
+<p>CRS from <a class="reference external" href="https://github.com/Melown/vts-registry/blob/master/registry/registry/srs.json">vts-registry/srs.json at master · Melown/vts-registry</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#CRS from  https://github.com/Melown/vts-registry/blob/master/registry/registry/srs.json</span>
+<span class="n">mercury_crs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;geographic-dmercury2000&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Geographic, DMercury2000 (iau2000:19900)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;srsDef&quot;</span><span class="p">:</span> <span class="s2">&quot;+proj=longlat +a=2439700 +b=2439700 +no_defs&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;geographic&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;geocentric-dmercury2000&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Geocentric, Mercury&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;srsDef&quot;</span><span class="p">:</span> <span class="s2">&quot;+proj=geocent +a=2439700 +b=2439700 +lon_0=0 +units=m +no_defs&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;cartesian&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;eqc-dmercury2000&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Equidistant Cylindrical, DMercury2000 (iau2000:19911)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;srsDef&quot;</span><span class="p">:</span> <span class="s2">&quot;+proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=2439700 +b=2439700 +units=m +no_defs&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;projected&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;merc-dmercury2000&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Mercator, DMercury2000 (iau2000:19974)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;srsDef&quot;</span><span class="p">:</span> <span class="s2">&quot;+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=2439700 +b=2439700 +units=m +no_defs&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;projected&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;steren-dmercury2000&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Polar Sterographic North, DMercury2000 (iau2000:19918)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;srsDef&quot;</span><span class="p">:</span> <span class="s2">&quot;+proj=stere +lat_0=90 +lat_ts=90 +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=2439700 +b=2439700 +units=m +no_defs&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;projected&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;steres-dmercury2000&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Polar Stereographic South, DMercury2000 (iau2000:19920)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;srsDef&quot;</span><span class="p">:</span> <span class="s2">&quot;+proj=stere +lat_0=-90 +lat_ts=-90 +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=2439700 +b=2439700 +units=m +no_defs&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;projected&quot;</span>
+<span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span>
+<span class="kn">import</span> <span class="nn">fiona</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># from tqdm import tqdm</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;max_colwidth&#39;</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6216</span><span class="o">/</span><span class="mf">4223395724.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">fiona</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;geopandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create the wavelenghts</span>
+<span class="n">wav_grid_2nm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">260</span><span class="p">,</span><span class="mi">1052</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># define find_nearest, with wav_grid_2nm as default array</span>
+<span class="c1"># note you can change the array, it is fixed at function creation time!!!</span>
+<span class="k">def</span> <span class="nf">find_nearest</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="n">array</span><span class="o">=</span><span class="n">wav_grid_2nm</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">array</span> <span class="o">-</span> <span class="n">value</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the datafile with filename structure:</span>
+<span class="c1"># [description from database]_[function applied to the spectra for each pixel]_[data array used]</span>
+<span class="c1">#     [description from database] = grid_2D_0_360_-90_+90</span>
+<span class="c1">#     [function applied to the spectra for each pixel] = avg or st_median</span>
+<span class="c1">#     [data array used] = iof_sp_2nm or photom_iof_sp_2nm</span>
+
+<span class="c1"># outfile = &#39;grid_2D_-180_+180_-90_+90_1deg_avg_iof_sp_2nm&#39;</span>
+<span class="c1"># outfile = &#39;grid_2D_-180_+180_-90_+90_1deg_avg_photom_iof_sp_2nm&#39;</span>
+<span class="c1"># outfile = &#39;grid_2D_-180_+180_-90_+90_1deg_st_median_iof_sp_2nm&#39;</span>
+<span class="c1"># outfile = &#39;grid_2D_-180_+180_-90_+90_1deg_st_median_photom_iof_sp_2nm&#39;</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="s1">&#39;grid_2D_-180_+180_-90_+90_1deg_stddev_photom_iof_sp_2nm&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write : not working!</span>
+<span class="c1"># write the Geopandas.GeoDataFrame to compressed json : Geopandas canno&#39;t handle this.</span>
+<span class="c1"># import gzip</span>
+<span class="c1"># with gzip.GzipFile(outfile+&#39;.json.gz&#39;, &#39;wb&#39;) as fout:</span>
+<span class="c1">#     fout.write(outdf_gdf[[&#39;poly&#39;, &#39;array&#39;]].to_json().encode(&#39;utf-8&#39;))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="read-the-data">
+<h1>Read the data<a class="headerlink" href="#read-the-data" title="Permalink to this headline">¶</a></h1>
+<p>The data are in a gzipped geojson to reduce size, but geopandas doesn’t like it.</p>
+<p>The function below accept a path and return a GeoDataFrame.</p>
+<p>An optional <code class="docutils literal notranslate"><span class="pre">gzipped[=True</span> <span class="pre">default]</span></code> keywords take care of compressed geojson.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read method 2 : same as 1, but in a function</span>
+<span class="k">def</span> <span class="nf">get_mascs_geojson</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">gzipped</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">json</span>
+    <span class="kn">import</span> <span class="nn">gzip</span>
+    <span class="kn">from</span> <span class="nn">geopandas</span> <span class="kn">import</span> <span class="n">GeoDataFrame</span>
+
+    <span class="k">if</span> <span class="n">gzipped</span><span class="p">:</span>
+        <span class="c1"># get the compressed geojson</span>
+        <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+            <span class="n">geodata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">fin</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># get the uncompressed geojson</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+            <span class="n">geodata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fin</span><span class="p">)</span>
+            
+    <span class="kn">import</span> <span class="nn">shapely</span> 
+    <span class="c1"># extract geometries</span>
+    <span class="n">geometries</span> <span class="o">=</span> <span class="p">[</span><span class="n">shapely</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">][</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">geodata</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]]</span>
+    <span class="c1"># extract id</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">geodata</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]]</span>
+    <span class="c1"># generate GeoDataFrame</span>
+    <span class="n">out_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">g</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">geodata</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]],</span> <span class="n">geometry</span><span class="o">=</span><span class="n">geometries</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">ids</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+    <span class="c1"># cast arrays to numpy</span>
+    <span class="n">out_gdf</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">out_gdf</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">out_gdf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outdf_gdf</span> <span class="o">=</span> <span class="n">get_mascs_geojson</span><span class="p">(</span><span class="n">outfile</span><span class="o">+</span><span class="s1">&#39;.geojson.gz&#39;</span><span class="p">,</span> <span class="n">gzipped</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># this is to be sure that the cells are ordered in natural way == reshape with numpy</span>
+<span class="n">outdf_gdf</span> <span class="o">=</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;natural_index&#39;</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+
+<span class="c1"># set Mercury Lat/Lon as crs</span>
+<span class="n">outdf_gdf</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="n">fiona</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">mercury_crs</span><span class="p">[</span><span class="s1">&#39;geographic-dmercury2000&#39;</span><span class="p">][</span><span class="s1">&#39;srsDef&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># some sample from the data, the columns are :</span>
+<span class="c1"># polygon ID frm database</span>
+<span class="c1"># calculated array of all spectra in this polygon</span>
+<span class="c1"># geometry of the polygon.</span>
+<span class="n">outdf_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>array</th>
+      <th>geometry</th>
+    </tr>
+    <tr>
+      <th>natural_index</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>[]</td>
+      <td>POLYGON ((-180 90, -179 90, -179 89, -180 89, -180 90))</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>[0.0, 0.0, 0.0162367538033, 0.0309478144351, 0.0124240007609, 0.0378531956527, 0.0444937246557, 0.0229195306147, 0.0304128979761, 0.0414760800572,...</td>
+      <td>POLYGON ((-180 89, -179 89, -179 88, -180 88, -180 89))</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>[0.0, 0.0, 0.0284595150334, 0.02527397217, 0.0248321872112, 0.0265523497074, 0.0262212433401, 0.0105058385506, 0.00586713609565, 0.0319427983335, ...</td>
+      <td>POLYGON ((-180 88, -179 88, -179 87, -180 87, -180 88))</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>[0.0, 0.0, 0.0118588949341, 0.00594579299317, 0.00681718707585, 0.00631355898295, 0.00654642411565, 0.0119017889763, 0.0178238410147, 0.0091638469...</td>
+      <td>POLYGON ((-180 87, -179 87, -179 86, -180 86, -180 87))</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>[1.52083274458e+16, 0.0, 0.0196289590987, 0.0171081303168, 0.0120329973953, 0.0155640690233, 0.0161061009743, 0.0179978200228, 0.0234204710604, 0....</td>
+      <td>POLYGON ((-180 86, -179 86, -179 85, -180 85, -180 86))</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>[1.81834346486e+16, 0.0, 0.0936709931521, 0.0678607138115, 0.061789693565, 0.0677108618282, 0.0799777070465, 0.091623242294, 0.0825835376114, 0.08...</td>
+      <td>POLYGON ((-180 85, -179 85, -179 84, -180 84, -180 85))</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>[1.52083274458e+16, 0.0, 2.8486454353e+31, 7.87698388936e+30, 0.0537697461127, 0.0626915981476, 0.0772645973164, 0.0689426517628, 0.0680400139797,...</td>
+      <td>POLYGON ((-180 84, -179 84, -179 83, -180 83, -180 84))</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>[nan, nan, 9.12194527244e+15, 0.0, 0.0112056514897, 0.00852523476787, 0.00767849297195, 0.00688512149845, 0.00772539581102, 0.00833043405604, 0.01...</td>
+      <td>POLYGON ((-180 83, -179 83, -179 82, -180 82, -180 83))</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>[nan, nan, 8.86967668651e+15, 0.0, 0.0161093656795, 0.0131557147591, 0.0117525106414, 0.0121269280995, 0.0151060071111, 0.0136942764591, 0.0147291...</td>
+      <td>POLYGON ((-180 82, -179 82, -179 81, -180 81, -180 82))</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>[nan, nan, 9.12194527244e+15, 0.0, 0.0165417488936, 0.0146619786675, 0.0160339695067, 0.0119468759738, 0.0108239910524, 0.00974669186667, 0.013183...</td>
+      <td>POLYGON ((-180 81, -179 81, -179 80, -180 80, -180 81))</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create wavelenghts columns: this create empy columns with np.nan (nice!)</span>
+<span class="c1"># use a separate df, because mixed types columns are crazy. and buggy</span>
+<span class="n">spectral_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">outdf_gdf</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">wav_grid_2nm</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="c1">## assign single wavelenght to columns, only where array vectors len !=0</span>
+<span class="n">spectral_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">wav_grid_2nm</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">outdf_gdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span><span class="s1">&#39;array&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="c1">## drop array column</span>
+<span class="n">outdf_gdf</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create x and y cols = lon and lat</span>
+<span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">x</span> <span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">y</span> <span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop outlier </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">low</span> <span class="o">=</span> <span class="mf">.02</span>
+<span class="n">high</span> <span class="o">=</span> <span class="mf">.999</span>
+<span class="n">quant_df</span> <span class="o">=</span> <span class="n">spectral_df</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">])</span>
+<span class="n">spectral_df</span> <span class="o">=</span>  <span class="n">spectral_df</span><span class="p">[</span><span class="n">spectral_df</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[(</span><span class="n">x</span><span class="o">&gt;</span><span class="n">quant_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">low</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">])</span> <span class="o">&amp;</span>\
+                                       <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">quant_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">high</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">])],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>\
+                                       
+<span class="nb">print</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(64800, 396)
+(60102, 396)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spectral_df : &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;      max : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;     mean : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   median : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;      min : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spectral_df.dropna(how=&quot;any&quot;) :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;      max : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;     mean : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   median : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;      min : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spectral_df : 
+      max :  29.8770907079
+     mean :  0.0178183744991
+   median :  0.00565902870636
+      min :  0.000625042063777
+spectral_df.dropna(how=&quot;any&quot;) :
+      max :  26.2321551226
+     mean :  0.0153950725042
+   median :  0.00612413450135
+      min :  0.000628740487291
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cut to stop_wav</span>
+<span class="c1"># iloc doesn&#39;t support int columns indexing!!!!</span>
+<span class="n">start_wav</span> <span class="o">=</span> <span class="mi">268</span> <span class="c1"># below all NaN</span>
+<span class="n">stop_wav</span>  <span class="o">=</span> <span class="mi">975</span> <span class="c1"># above a bump in NaN </span>
+
+<span class="n">spectral_df</span> <span class="o">=</span> <span class="n">spectral_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">find_nearest</span><span class="p">(</span><span class="n">start_wav</span><span class="p">):</span><span class="n">find_nearest</span><span class="p">(</span><span class="n">stop_wav</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/query_data_15_0.png" src="../../../../../_images/query_data_15_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># plot(figsize=[20,6])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>268</th>
+      <th>270</th>
+      <th>272</th>
+      <th>274</th>
+      <th>276</th>
+      <th>278</th>
+      <th>280</th>
+      <th>282</th>
+      <th>284</th>
+      <th>286</th>
+      <th>...</th>
+      <th>956</th>
+      <th>958</th>
+      <th>960</th>
+      <th>962</th>
+      <th>964</th>
+      <th>966</th>
+      <th>968</th>
+      <th>970</th>
+      <th>972</th>
+      <th>974</th>
+    </tr>
+    <tr>
+      <th>natural_index</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>63314</th>
+      <td>0.142127</td>
+      <td>0.171215</td>
+      <td>0.144867</td>
+      <td>0.129405</td>
+      <td>0.123478</td>
+      <td>0.118553</td>
+      <td>0.146263</td>
+      <td>0.136009</td>
+      <td>0.096627</td>
+      <td>0.107646</td>
+      <td>...</td>
+      <td>0.670083</td>
+      <td>0.846267</td>
+      <td>0.910276</td>
+      <td>0.905305</td>
+      <td>0.788122</td>
+      <td>0.722610</td>
+      <td>0.865373</td>
+      <td>0.766174</td>
+      <td>1.045505</td>
+      <td>1.036145</td>
+    </tr>
+    <tr>
+      <th>49753</th>
+      <td>0.001864</td>
+      <td>0.002229</td>
+      <td>0.001873</td>
+      <td>0.001768</td>
+      <td>0.002217</td>
+      <td>0.001959</td>
+      <td>0.001819</td>
+      <td>0.001705</td>
+      <td>0.001787</td>
+      <td>0.001919</td>
+      <td>...</td>
+      <td>0.013757</td>
+      <td>0.017555</td>
+      <td>0.013364</td>
+      <td>0.012949</td>
+      <td>0.013343</td>
+      <td>0.012858</td>
+      <td>0.018732</td>
+      <td>0.017374</td>
+      <td>0.014441</td>
+      <td>0.015794</td>
+    </tr>
+    <tr>
+      <th>47263</th>
+      <td>0.001237</td>
+      <td>0.001266</td>
+      <td>0.001515</td>
+      <td>0.001732</td>
+      <td>0.001982</td>
+      <td>0.001626</td>
+      <td>0.001442</td>
+      <td>0.001264</td>
+      <td>0.001077</td>
+      <td>0.001425</td>
+      <td>...</td>
+      <td>0.006777</td>
+      <td>0.007232</td>
+      <td>0.009415</td>
+      <td>0.010007</td>
+      <td>0.011932</td>
+      <td>0.008804</td>
+      <td>0.009701</td>
+      <td>0.009996</td>
+      <td>0.011713</td>
+      <td>0.011493</td>
+    </tr>
+    <tr>
+      <th>50314</th>
+      <td>0.001439</td>
+      <td>0.001748</td>
+      <td>0.001787</td>
+      <td>0.001958</td>
+      <td>0.002045</td>
+      <td>0.001786</td>
+      <td>0.001632</td>
+      <td>0.001402</td>
+      <td>0.001447</td>
+      <td>0.001400</td>
+      <td>...</td>
+      <td>0.010035</td>
+      <td>0.009342</td>
+      <td>0.009348</td>
+      <td>0.009813</td>
+      <td>0.013901</td>
+      <td>0.011085</td>
+      <td>0.011706</td>
+      <td>0.010107</td>
+      <td>0.009768</td>
+      <td>0.009367</td>
+    </tr>
+    <tr>
+      <th>11040</th>
+      <td>0.002778</td>
+      <td>0.002674</td>
+      <td>0.003027</td>
+      <td>0.002473</td>
+      <td>0.003084</td>
+      <td>0.002946</td>
+      <td>0.002535</td>
+      <td>0.002303</td>
+      <td>0.002224</td>
+      <td>0.002351</td>
+      <td>...</td>
+      <td>0.016700</td>
+      <td>0.017451</td>
+      <td>0.018391</td>
+      <td>0.017662</td>
+      <td>0.017837</td>
+      <td>0.017128</td>
+      <td>0.019586</td>
+      <td>0.020494</td>
+      <td>0.018497</td>
+      <td>0.016760</td>
+    </tr>
+    <tr>
+      <th>51998</th>
+      <td>0.002633</td>
+      <td>0.002186</td>
+      <td>0.002228</td>
+      <td>0.002611</td>
+      <td>0.002711</td>
+      <td>0.002500</td>
+      <td>0.002243</td>
+      <td>0.002282</td>
+      <td>0.002482</td>
+      <td>0.002748</td>
+      <td>...</td>
+      <td>0.014170</td>
+      <td>0.013846</td>
+      <td>0.016831</td>
+      <td>0.020489</td>
+      <td>0.026077</td>
+      <td>0.028752</td>
+      <td>0.024007</td>
+      <td>0.020049</td>
+      <td>0.018513</td>
+      <td>0.016929</td>
+    </tr>
+    <tr>
+      <th>7870</th>
+      <td>0.001509</td>
+      <td>0.001383</td>
+      <td>0.001489</td>
+      <td>0.001813</td>
+      <td>0.001478</td>
+      <td>0.001573</td>
+      <td>0.001336</td>
+      <td>0.001199</td>
+      <td>0.001197</td>
+      <td>0.001307</td>
+      <td>...</td>
+      <td>0.008053</td>
+      <td>0.008745</td>
+      <td>0.010794</td>
+      <td>0.014262</td>
+      <td>0.015415</td>
+      <td>0.013748</td>
+      <td>0.013015</td>
+      <td>0.009281</td>
+      <td>0.008518</td>
+      <td>0.008488</td>
+    </tr>
+    <tr>
+      <th>51444</th>
+      <td>0.001694</td>
+      <td>0.001648</td>
+      <td>0.002575</td>
+      <td>0.002278</td>
+      <td>0.001859</td>
+      <td>0.001800</td>
+      <td>0.001679</td>
+      <td>0.001810</td>
+      <td>0.001755</td>
+      <td>0.001716</td>
+      <td>...</td>
+      <td>0.009754</td>
+      <td>0.008693</td>
+      <td>0.010347</td>
+      <td>0.011840</td>
+      <td>0.018938</td>
+      <td>0.015570</td>
+      <td>0.014047</td>
+      <td>0.015047</td>
+      <td>0.014576</td>
+      <td>0.011534</td>
+    </tr>
+    <tr>
+      <th>28567</th>
+      <td>0.002167</td>
+      <td>0.002243</td>
+      <td>0.002700</td>
+      <td>0.002088</td>
+      <td>0.002121</td>
+      <td>0.002449</td>
+      <td>0.002355</td>
+      <td>0.001487</td>
+      <td>0.001308</td>
+      <td>0.001331</td>
+      <td>...</td>
+      <td>0.011161</td>
+      <td>0.011537</td>
+      <td>0.010664</td>
+      <td>0.011906</td>
+      <td>0.019897</td>
+      <td>0.015497</td>
+      <td>0.018783</td>
+      <td>0.015347</td>
+      <td>0.012111</td>
+      <td>0.011607</td>
+    </tr>
+    <tr>
+      <th>13542</th>
+      <td>0.002481</td>
+      <td>0.002992</td>
+      <td>0.003741</td>
+      <td>0.003119</td>
+      <td>0.003766</td>
+      <td>0.003253</td>
+      <td>0.002792</td>
+      <td>0.002605</td>
+      <td>0.002393</td>
+      <td>0.002137</td>
+      <td>...</td>
+      <td>0.016407</td>
+      <td>0.015904</td>
+      <td>0.017613</td>
+      <td>0.019918</td>
+      <td>0.023592</td>
+      <td>0.022493</td>
+      <td>0.022389</td>
+      <td>0.025466</td>
+      <td>0.023090</td>
+      <td>0.018729</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 354 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span>
+<span class="n">eq_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">spectral_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="c1"># from skimage import exposure</span>
+<span class="c1"># # Equalization</span>
+<span class="c1"># img_eq = exposure.equalize_hist(img)</span>
+
+<span class="c1"># # Adaptive Equalization</span>
+<span class="c1"># img_adapteq = exposure.equalize_adapthist(img, clip_limit=0.03)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4 µs, sys: 0 ns, total: 4 µs
+Wall time: 9.54 µs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># image his equalisation&gt; https://stackoverflow.com/questions/28518684/histogram-equalization-of-grayscale-images-with-numpy</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">24</span><span class="p">,</span><span class="mi">8</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">eq_img</span><span class="p">,</span>
+           <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;bicubic&#39;</span><span class="p">,</span>
+           <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+           <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral_r</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2417a95470&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/query_data_18_1.png" src="../../../../../_images/query_data_18_1.png" />
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="use-reflectance-data">
+<h1>Use reflectance data<a class="headerlink" href="#use-reflectance-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define 2 wavelenght2 and calculate something </span>
+<span class="n">wavelength</span> <span class="o">=</span> <span class="mi">750</span>
+<span class="n">wavelength_idx</span> <span class="o">=</span> <span class="n">find_nearest</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+<span class="n">wavelength2</span> <span class="o">=</span> <span class="mi">350</span>
+<span class="n">wavelength2_idx</span> <span class="o">=</span> <span class="n">find_nearest</span><span class="p">(</span><span class="n">wavelength2</span><span class="p">)</span>
+
+<span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="k">else</span> <span class="n">x</span><span class="p">[</span><span class="n">wavelength_idx</span><span class="p">])</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># outdf_gdf[&#39;refl&#39;] = outdf_gdf[&#39;array&#39;].apply(lambda x: np.nan if np.isnan(x).all() else np.nanmean(x[wavelength2_idx-window:wavelength2_idx+window])/np.nanmean(x[wavelength_idx-window:wavelength_idx+window]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cut some noisy data and plot the distribution </span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="c1"># those values are use in the map plot below too</span>
+<span class="n">val_min</span><span class="p">,</span> <span class="n">val_max</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="p">,</span> <span class="mf">.07</span>
+<span class="n">plot_df</span> <span class="o">=</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">val_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">val_max</span><span class="p">),</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span>
+<span class="n">plot_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plot_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span><span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f41dd15e0f0&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/query_data_21_1.png" src="../../../../../_images/query_data_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">outdf_gdf</span><span class="o">.</span><span class="n">total_bounds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+<span class="n">extent</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-180.0, 180.0, -90.0, 90.0]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="visualise-the-data">
+<h1>Visualise the Data<a class="headerlink" href="#visualise-the-data" title="Permalink to this headline">¶</a></h1>
+<p>Here we are using a trick : the regular grid is a 1D list, but could be casted to a 2D numpy array, knowing the size and given the <code class="docutils literal notranslate"><span class="pre">natural</span> <span class="pre">order</span></code> of the cell is respected.</p>
+<p>This is were the <code class="docutils literal notranslate"><span class="pre">natural_index</span></code> in the Db comes in play: the Primary Key index are random incremental integer, the <code class="docutils literal notranslate"><span class="pre">natural_index</span></code> is assigned from me to respect the casting to 2D aArray.</p>
+<p>Pro:</p>
+<ul class="simple">
+<li><p>quicker</p></li>
+<li><p>allows for image interpolation (nicer)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># here we are using matplotlib</span>
+
+<span class="c1"># bend the colormap</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral_r</span><span class="p">)</span> <span class="c1"># copy the cmap</span>
+<span class="c1"># my_cmap.set_over(&#39;b&#39;, 1.0)</span>
+<span class="n">my_cmap</span><span class="o">.</span><span class="n">set_under</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">my_cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+
+<span class="c1"># make a figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="c1"># Here we are using the numpy reshape because we now the final image shape: it is not always the case!!</span>
+<span class="c1"># This is FASTER then Geopandas.GeoDataFrame.plot!!!!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">outdf_gdf</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span><span class="mi">180</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+           <span class="n">interpolation</span><span class="o">=</span> <span class="s1">&#39;bilinear&#39;</span><span class="p">,</span>
+           <span class="n">extent</span><span class="o">=</span> <span class="n">extent</span><span class="p">,</span>
+           <span class="c1"># you can skip this, it is to bend the colormap see https://matplotlib.org/users/colormapnorms.html</span>
+           <span class="n">norm</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">PowerNorm</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="n">val_min</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">val_max</span><span class="p">),</span>
+           <span class="n">cmap</span><span class="o">=</span><span class="n">my_cmap</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="s1">&#39;grid : </span><span class="si">{}</span><span class="s1"> / color : nm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span><span class="n">wavelength</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="c1"># plt.savefig(outfile,dpi=200)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/user/mars/damo_ma/.conda/envs/gdal/lib/python3.5/site-packages/matplotlib/colors.py:1211: RuntimeWarning: invalid value encountered in less
+  res_mask = result.data &lt; 0
+/user/mars/damo_ma/.conda/envs/gdal/lib/python3.5/site-packages/matplotlib/colors.py:1218: RuntimeWarning: invalid value encountered in power
+  np.power(resdat, gamma, resdat)
+/user/mars/damo_ma/.conda/envs/gdal/lib/python3.5/site-packages/matplotlib/colors.py:504: RuntimeWarning: invalid value encountered in less
+  xa[xa &lt; 0] = -1
+</pre></div>
+</div>
+<img alt="../../../../../_images/query_data_24_1.png" src="../../../../../_images/query_data_24_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># here we are using geopandas, it is SLOW and you cannot use interpolation </span>
+<span class="c1"># bend the colormap</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral_r</span><span class="p">)</span> <span class="c1"># copy the cmap</span>
+<span class="c1"># my_cmap.set_over(&#39;b&#39;, 1.0)</span>
+<span class="n">my_cmap</span><span class="o">.</span><span class="n">set_under</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">my_cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">vmin</span><span class="o">=-</span><span class="mf">0.05</span>
+<span class="n">vmax</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;refl&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=</span><span class="n">val_min</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">val_max</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">my_cmap</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="n">extent</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">extent</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span><span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="n">extent</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">extent</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/user/mars/damo_ma/.conda/envs/gdal/lib/python3.5/site-packages/matplotlib/colors.py:504: RuntimeWarning: invalid value encountered in less
+  xa[xa &lt; 0] = -1
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(-90.0, 90.0), (-180.0, 180.0)]
+</pre></div>
+</div>
+<img alt="../../../../../_images/query_data_25_2.png" src="../../../../../_images/query_data_25_2.png" />
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="bonus-effect-of-matplotlib-normaliser">
+<h1>Bonus : Effect of Matplotlib Normaliser<a class="headerlink" href="#bonus-effect-of-matplotlib-normaliser" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cut some noisy data and plot the distribution </span>
+<span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="c1"># those values are use in the map plot below too</span>
+<span class="n">val_min</span><span class="p">,</span> <span class="n">val_max</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="p">,</span> <span class="mf">.07</span>
+<span class="n">plot_df</span> <span class="o">=</span> <span class="n">outdf_gdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">val_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">outdf_gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">val_max</span><span class="p">),</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span>
+<span class="n">plot_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Refl Column&#39;</span><span class="p">)</span>
+<span class="n">plot_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span><span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histogram of Refl Column&#39;</span><span class="p">)</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">PowerNorm</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="n">val_min</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">val_max</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">norm</span><span class="p">(</span><span class="n">plot_df</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Normaliser(Refl Column)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">plot_df</span><span class="o">.</span><span class="n">values</span><span class="p">),</span><span class="n">bins</span><span class="o">=</span><span class="mi">128</span><span class="p">);</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histogram of Normaliser(Refl Column)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5,1,&#39;Histogram of Normalise(Refl Column)&#39;)
+</pre></div>
+</div>
+<img alt="../../../../../_images/query_data_27_1.png" src="../../../../../_images/query_data_27_1.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/src/visualization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Durch The Europlanet ML Team<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

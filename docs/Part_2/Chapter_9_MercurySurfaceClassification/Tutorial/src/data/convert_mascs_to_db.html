@@ -1,0 +1,2604 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exract the feature for the DB &#8212; The Europlanet Machine Learning Book</title>
+    
+  <link href="../../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../../_static/Europlanet_Machine_Learning_Logo_Standard.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Europlanet Machine Learning Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Foreword.html">
+   The Europlanet Machine Learning Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1. Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Chapter_1_Introduction/Content.html">
+   1. Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2. Basic Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Part_1/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification.html">
+   2. Supervised classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../Part_1/Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html">
+   3. Supervised regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3. Automatic Detection of ICMEs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_1_ICMEsDetection/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline.html">
+   2. Machine Learning Pipeline for Automated Detection of ICMEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_1_ICMEsDetection/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  4. Automatic Detection of Boundaries around Mercury
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_2_MercuryBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer.html">
+   2. Machine learning pipeline for detection of boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_2_MercuryBoundaries/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  5. Automatic Detection of Boundaries around Earth
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_3_EarthBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline.html">
+   2. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_3_EarthBoundaries/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  6. Image Segmentation for Detecting Mounds on Mars
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_4_MarsMounds/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation.html">
+   2. Mound Classification in DTMs from Mars Arabia Terra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_4_MarsMounds/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  7. Landforms Detection on Mars (Pits)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_5_MarsPits/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_5_MarsPits/Tutorial-DeepLandforms/Tutorial_readme.html">
+   2.
+   <strong>
+    DeepLandforms tutorial
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_5_MarsPits/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  8. Mars Pits Shadow Extractor (MAPS)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_6_MarsPitsShadowExtractor/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_6_MarsPitsShadowExtractor/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  9. Chorus Waves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_7_ChorusWaves/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_7_ChorusWaves/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  10. Classification of Meteors based on Lightcurves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_8_MeteorClassification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_8_MeteorClassification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  11. Mercury Surface Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   2. 05-MESSENGER-MERCURY-SURFACE-CLASSIFICATION-UNSUPERVISED_DLR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  12. Mineral Identification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_10_MineralIdentification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Chapter_10_MineralIdentification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../References/bibliography.html">
+   1. References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../../_sources/Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/src/data/convert_mascs_to_db.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/src/data/convert_mascs_to_db.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#various">
+   Various
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scalar-values">
+     scalar values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vector-values">
+     vector values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#date-time">
+     date/time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process">
+   Process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-a-db">
+   Define a DB
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Exract the feature for the DB</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#various">
+   Various
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scalar-values">
+     scalar values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vector-values">
+     vector values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#date-time">
+     date/time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process">
+   Process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-a-db">
+   Define a DB
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="exract-the-feature-for-the-db">
+<h1>Exract the feature for the DB<a class="headerlink" href="#exract-the-feature-for-the-db" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">outputdict(:dict)</span></code>: Label level data, common to all measurements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">table_data(:list</span> <span class="pre">of</span> <span class="pre">dict)</span></code>: all measurements data extracted from the file, one per measurement. Comprises array+numbers</p></li>
+</ul>
+<div class="section" id="various">
+<h2>Various<a class="headerlink" href="#various" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scalar-values">
+<h3>scalar values<a class="headerlink" href="#scalar-values" title="Permalink to this headline">¶</a></h3>
+<p>Choose which columns are <code class="docutils literal notranslate"><span class="pre">ENUM</span></code>, most likely in the label level data. From Postgres &gt;= 9.1 you can add new values to enum:</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TYPE</span><span class="w"> </span><span class="n">fruit</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ENUM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;apple&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;rasberry&#39;</span><span class="p">::</span><span class="n">fruit</span><span class="p">;</span><span class="w"> </span><span class="c1">-- returns and error</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TYPE</span><span class="w"> </span><span class="n">fruit</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">VALUE</span><span class="w"> </span><span class="s1">&#39;rasberry&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;rasberry&#39;</span><span class="p">::</span><span class="n">fruit</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This should be done at DB level with sqlalchemy.</p>
+<p><strong>!! How to check if we need to insert new enum before insertion?</strong></p>
+</div>
+<div class="section" id="vector-values">
+<h3>vector values<a class="headerlink" href="#vector-values" title="Permalink to this headline">¶</a></h3>
+<p>Insert in postgres as array : use <code class="docutils literal notranslate"><span class="pre">sqlalchemy.dialects.postgresql.ARRAY</span></code> (ARRAY datatype) from <a class="reference external" href="http://docs.sqlalchemy.org/en/latest/dialects/postgresql.html?highlight=array#array-types">SQLAlchemy 1.2 Documentation</a></p>
+</div>
+<div class="section" id="date-time">
+<h3>date/time<a class="headerlink" href="#date-time" title="Permalink to this headline">¶</a></h3>
+<p>convert to python datetime objects <strong>DONE</strong></p>
+</div>
+</div>
+<div class="section" id="process">
+<h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>separate array and useful numbers from <code class="docutils literal notranslate"><span class="pre">table_data</span></code> <strong>DONE</strong></p>
+<ul class="simple">
+<li><p>add <code class="docutils literal notranslate"><span class="pre">outputdict</span></code> to it <strong>DONE</strong></p></li>
+</ul>
+</li>
+<li><p>Extract geometrical coordinates and store as WKT represenation &gt; &gt; this should result in a PostGIS obgect, see connector docs. <strong>DONE</strong></p>
+<ul class="simple">
+<li><p>most likely will be a string per measurement : Shapely objects <strong>DONE</strong></p></li>
+<li><p>maybe geoalchemy-2 could insert geo type directly?</p></li>
+</ul>
+</li>
+<li><p>Resample spectrum data <strong>DONE</strong></p>
+<ul class="simple">
+<li><p>arrange in a string &gt; this should result in a PG array, see connector docs.</p></li>
+<li><p>most likely will be a string per measurement</p></li>
+<li><p>convert to sqlalchemy.types.ARRAY, will be inserted automatically.</p></li>
+</ul>
+</li>
+<li><p>Merge 1. , 2., 3. in an unique structure:</p>
+<ul class="simple">
+<li><p>pandas.Dataframe?</p></li>
+<li><p>geopandas</p></li>
+<li><p>list of dict? maybe the best for heterogeneous values : scalar, sqlalchemy.types.ARRAY, shapely etc</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import from parent directory : this is NOT NICE! but, wathever...</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span> 
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">dotenv_loader</span>
+<span class="n">postgresql_connection_string</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DATABASE_URL&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">x3</span><span class="o">/</span><span class="mi">2</span><span class="n">bzh843n0tv469w6l6sd8sq00000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6202</span><span class="o">/</span><span class="mf">2138902297.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">dotenv_loader</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">postgresql_connection_string</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DATABASE_URL&quot;</span><span class="p">)</span>
+
+<span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Arbeit</span><span class="o">/</span><span class="n">EUROPLANET</span><span class="o">/</span><span class="n">Deliverables</span><span class="o">/</span><span class="n">D10</span><span class="mf">.3</span><span class="o">/</span><span class="n">ML</span><span class="o">-</span><span class="n">Book</span><span class="o">/</span><span class="n">ml</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">Part_2</span><span class="o">/</span><span class="n">Chapter_9_MercurySurfaceClassification</span><span class="o">/</span><span class="n">Tutorial</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">data</span><span class="o">/../</span><span class="n">dotenv_loader</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">dotenv</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">project_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">dotenv_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="s1">&#39;.env&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;dotenv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">pvl</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="c1"># from tqdm import tqdm</span>
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># useful for displaying html, images and so on</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import local functions</span>
+<span class="kn">import</span> <span class="nn">utils</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rich</span> 
+<span class="n">rich</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">utils</span><span class="p">,</span><span class="n">methods</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #000080; text-decoration-color: #000080">╭─ </span><span style="color: #000080; text-decoration-color: #000080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">module</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'utils'</span><span style="color: #000000; text-decoration-color: #000000"> from </span><span style="color: #008000; text-decoration-color: #008000">'/home/kidpixo/Documents/work/programs/europlanet-2024/ml/MESSENGER</span><span style="color: #000080; text-decoration-color: #000080">─╮</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>         <span style="color: #808000; text-decoration-color: #808000; font-style: italic">DATA_QUALITY_INDEX</span> = <span style="font-weight: bold">[</span>                                                            <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Dark Scan'</span>,                                         <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'shutter not engaged'</span>,                      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1:'</span>: <span style="color: #008000; text-decoration-color: #008000">'shutter engaged'</span>                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Temperature 1'</span>,                                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature does not exceed 15 deg C </span>      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">threshold.'</span>,                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature exceeds 15 deg C threshold but</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">less than 25 deg C threshold.'</span>,                              <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'2'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature exceeds 25 deg C threshold but</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">less than 40 deg C threshold.'</span>,                              <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'3'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature exceeds 40 deg C threshold.'</span>   <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Temperature 2'</span>,                                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature does not exceed 15 deg C </span>      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">threshold.'</span>,                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature exceeds 15 deg C threshold but</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">less than 25 deg C threshold.'</span>,                              <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'2'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature exceeds 25 deg C threshold but</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">less than 40 deg C threshold.'</span>,                              <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'3'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature exceeds 40 deg C threshold.'</span>   <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Grating Temperature'</span>,                               <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature does not exceed 15 deg C </span>      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">threshold.'</span>,                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature exceeds 15 deg C threshold but</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">less than 25 deg C threshold.'</span>,                              <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'2'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature exceeds 25 deg C threshold but</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">less than 40 deg C threshold.'</span>,                              <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'3'</span>: <span style="color: #008000; text-decoration-color: #008000">'Temperature exceeds 40 deg C threshold.'</span>   <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Anomalous Pixels'</span>,                                  <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'2'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'3'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'4'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'5'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'6'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'7'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'8'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'9'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span>                                           <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Partial Data'</span>,                                      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'No partial data.'</span>,                         <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Partial data exists.'</span>                      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Saturation'</span>,                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'No pixels saturated.'</span>,                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Saturated pixels exist.'</span>                   <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Low Signal Level'</span>,                                  <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'Signal level not below -32768 threshold.'</span>, <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Signal level below -32768 threshold.'</span>      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Low VIS Wavelength Uncertainty'</span>,                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'Uncertainty not above TBD threshold at low</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">wavelengths.'</span>,                                               <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Uncertainty above TBD threshold at low </span>    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">wavelengths.'</span>                                                <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'High VIS Wavelength Uncertainty'</span>,                   <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'Uncertainty not above TBD threshold at </span>    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">high wavelengths.'</span>,                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Uncertainty above TBD threshold at high </span>   <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">wavelengths.'</span>                                                <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'UVVS Operating'</span>,                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'UVVS is not scanning during readout.'</span>,     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'UVVS is scanning during readout.'</span>          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'UVVS Noise Spike'</span>,                                  <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'No noise spike detected.'</span>,                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Noise spike detected.'</span>                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'SPICE Version Epoch'</span>,                               <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'No SPICE'</span>, <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'Predict'</span>, <span style="color: #008000; text-decoration-color: #008000">'2'</span>: <span style="color: #008000; text-decoration-color: #008000">'Actual'</span><span style="font-weight: bold">}</span>     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span>                                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="color: #008000; text-decoration-color: #008000">'Dark Saturation'</span>,                                   <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">{</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'All pixels in data record contain at least</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">four unsaturated dark frames.'</span>,                              <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                          <span style="color: #008000; text-decoration-color: #008000">'1'</span>: <span style="color: #008000; text-decoration-color: #008000">'One or more pixels in data record contain </span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">three or fewer unsaturated dark frames.'</span>                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                      <span style="font-weight: bold">}</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">)</span>,                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'SpareO'</span>, <span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'None'</span><span style="font-weight: bold">})</span>,                               <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                  <span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'SpareP'</span>, <span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'0'</span>: <span style="color: #008000; text-decoration-color: #008000">'None'</span><span style="font-weight: bold">})</span>                                <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="font-weight: bold">]</span>                                                            <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                         <span style="color: #808000; text-decoration-color: #808000; font-style: italic">np</span> = <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">module</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'numpy'</span><span style="color: #000000; text-decoration-color: #000000"> from </span>                                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">'/home/kidpixo/miniconda3/envs/datascience/lib/python3.8/si…</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                   <span style="color: #808000; text-decoration-color: #808000; font-style: italic">operator</span> = <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">module</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'operator'</span><span style="color: #000000; text-decoration-color: #000000"> from </span>                                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #008000; text-decoration-color: #008000">'/home/kidpixo/miniconda3/envs/datascience/lib/python3.8/op…</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>              <span style="color: #808000; text-decoration-color: #808000; font-style: italic">dictextractor</span> = <span style="color: #00ffff; text-decoration-color: #00ffff; font-style: italic">def </span><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">dictextractor</span><span style="font-weight: bold">(</span>keys, dic<span style="font-weight: bold">)</span>:                                <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #808000; text-decoration-color: #808000; font-style: italic">extract_data_quality_index</span> = <span style="color: #00ffff; text-decoration-color: #00ffff; font-style: italic">def </span><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">extract_data_quality_index</span><span style="font-weight: bold">(</span>dqi<span style="font-weight: bold">)</span>:                         <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>       <span style="color: #808000; text-decoration-color: #808000; font-style: italic">extract_regridded_sp</span> = <span style="color: #00ffff; text-decoration-color: #00ffff; font-style: italic">def </span><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">extract_regridded_sp</span><span style="font-weight: bold">(</span>sp, wav_grid<span style="font-weight: bold">)</span>:                      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>        <span style="color: #808000; text-decoration-color: #808000; font-style: italic">fov_coord_extractor</span> = <span style="color: #00ffff; text-decoration-color: #00ffff; font-style: italic">def </span><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">fov_coord_extractor</span><span style="font-weight: bold">(</span>sp, <span style="color: #808000; text-decoration-color: #808000">shapelyze</span>=<span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,                  <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #808000; text-decoration-color: #808000">geoalchemy2ize</span>=<span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>, <span style="color: #808000; text-decoration-color: #808000">srid</span>=<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4326</span>, <span style="color: #808000; text-decoration-color: #808000">coordinates_names</span>=<span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span><span style="font-weight: bold">)</span>:     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>          <span style="color: #808000; text-decoration-color: #808000; font-style: italic">itemgettergeneral</span> = <span style="color: #00ffff; text-decoration-color: #00ffff; font-style: italic">def </span><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">itemgettergeneral</span><span style="font-weight: bold">(</span>keys, listdict,                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #808000; text-decoration-color: #808000">cast_to_np_array</span>=<span style="color: #ff0000; text-decoration-color: #ff0000; font-style: italic">False</span><span style="font-weight: bold">)</span>:                                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">itemgettergeneral accept a single key or a iterable? and </span>    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">extract </span>                                                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">from list of dict listdict.</span>                                  <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>              <span style="color: #808000; text-decoration-color: #808000; font-style: italic">np_to_sql_arr</span> = <span style="color: #00ffff; text-decoration-color: #00ffff; font-style: italic">def </span><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">np_to_sql_arr</span><span style="font-weight: bold">(</span>x<span style="font-weight: bold">)</span>: <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">return a tuple from iterable input x, </span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">with el &gt;= </span><span style="color: #7fbfbf; text-decoration-color: #7fbfbf; font-weight: bold">1.0e32</span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> set as </span><span style="color: #bf7fbf; text-decoration-color: #bf7fbf; font-style: italic">None</span>                                <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                 <span style="color: #808000; text-decoration-color: #808000; font-style: italic">Wavelenght</span> = <span style="color: #00ffff; text-decoration-color: #00ffff; font-style: italic">class </span><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">Wavelenght</span><span style="font-weight: bold">(</span>name, start_wav, end_wav, resolution<span style="font-weight: bold">)</span>:      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">Class to handle wavelenght structure, with useful </span>           <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">self.nearest_index method</span>                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">╰───────────────────────────────────────────────────────────────────────────────────────────╯</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is only useful during development</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="n">utils</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">utils</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wav_grid_2nm</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">Wavelenght</span><span class="p">(</span><span class="s1">&#39;uniform grid 2nm&#39;</span><span class="p">,</span><span class="mi">260</span><span class="p">,</span><span class="mi">1052</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">wav_grid_10nm</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">Wavelenght</span><span class="p">(</span><span class="s1">&#39;uniform grid 10nm&#39;</span><span class="p">,</span><span class="mi">260</span><span class="p">,</span><span class="mi">1052</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; wav_grid_2nm = </span><span class="si">{</span><span class="n">wav_grid_2nm</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;wav_grid_10nm = </span><span class="si">{</span><span class="n">wav_grid_10nm</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> wav_grid_2nm = Wavelenght(name=&quot;uniform grid 2nm&quot;,start=260,end=1052,res=2)
+wav_grid_10nm = Wavelenght(name=&quot;uniform grid 10nm&quot;,start=260,end=1052,res=10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">wav_instance</span> <span class="o">=</span> <span class="n">wav_grid_2nm</span>
+<span class="k">for</span> <span class="n">wcentr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">wcentr_index</span> <span class="o">=</span> <span class="n">wav_instance</span><span class="o">.</span><span class="n">nearest_index</span><span class="p">(</span><span class="n">wcentr</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wcentr</span><span class="si">=}</span><span class="s1"> - </span><span class="si">{</span><span class="n">wcentr_index</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">wini</span><span class="p">,</span> <span class="n">wend</span> <span class="o">=</span> <span class="n">wcentr</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="n">wcentr</span><span class="o">+</span><span class="mi">5</span>
+    <span class="n">wini_ind</span><span class="p">,</span> <span class="n">wend_ind</span> <span class="o">=</span> <span class="n">wav_instance</span><span class="o">.</span><span class="n">nearest_index</span><span class="p">(</span><span class="n">wini</span><span class="p">),</span><span class="n">wav_instance</span><span class="o">.</span><span class="n">nearest_index</span><span class="p">(</span><span class="n">wend</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wini</span><span class="si">=}</span><span class="s1"> &gt; </span><span class="si">{</span><span class="n">wend</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;photom_iof_sp_2nm[</span><span class="si">{</span><span class="n">wini_ind</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">wend_ind</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>------------------------------
+wcentr=300 - wcentr_index=20
+wini=295 &gt; wend=305
+photom_iof_sp_2nm[17:22]
+------------------------------
+wcentr=400 - wcentr_index=70
+wini=395 &gt; wend=405
+photom_iof_sp_2nm[67:72]
+------------------------------
+wcentr=500 - wcentr_index=120
+wini=495 &gt; wend=505
+photom_iof_sp_2nm[117:122]
+------------------------------
+wcentr=600 - wcentr_index=170
+wini=595 &gt; wend=605
+photom_iof_sp_2nm[167:172]
+------------------------------
+wcentr=700 - wcentr_index=220
+wini=695 &gt; wend=705
+photom_iof_sp_2nm[217:222]
+------------------------------
+wcentr=800 - wcentr_index=270
+wini=795 &gt; wend=805
+photom_iof_sp_2nm[267:272]
+------------------------------
+wcentr=900 - wcentr_index=320
+wini=895 &gt; wend=905
+photom_iof_sp_2nm[317:322]
+------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### OUTPUTS</span>
+
+<span class="n">outputkeys</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1">#  u&#39;PDS_VERSION_ID&#39;,</span>
+<span class="c1">#  u&#39;RECORD_TYPE&#39;,</span>
+<span class="c1">#  u&#39;RECORD_BYTES&#39;,</span>
+<span class="c1">#  u&#39;FILE_RECORDS&#39;,</span>
+ <span class="sa">u</span><span class="s1">&#39;PRODUCT_ID&#39;</span><span class="p">,</span>
+ <span class="sa">u</span><span class="s1">&#39;PRODUCT_VERSION_ID&#39;</span><span class="p">,</span>
+ <span class="sa">u</span><span class="s1">&#39;PRODUCT_CREATION_TIME&#39;</span><span class="p">,</span>
+<span class="c1">#  u&#39;PRODUCT_TYPE&#39;,</span>
+<span class="c1">#  u&#39;SOFTWARE_NAME&#39;,</span>
+<span class="c1">#  u&#39;SOFTWARE_VERSION_ID&#39;,</span>
+<span class="c1">#  u&#39;INSTRUMENT_HOST_NAME&#39;,</span>
+<span class="c1">#  u&#39;INSTRUMENT_NAME&#39;,</span>
+<span class="c1">#  u&#39;INSTRUMENT_ID&#39;,</span>
+ <span class="sa">u</span><span class="s1">&#39;DETECTOR_ID&#39;</span><span class="p">,</span>
+<span class="c1">#  u&#39;DATA_SET_ID&#39;,</span>
+ <span class="sa">u</span><span class="s1">&#39;STANDARD_DATA_PRODUCT_ID&#39;</span><span class="p">,</span>
+ <span class="sa">u</span><span class="s1">&#39;MISSION_PHASE_NAME&#39;</span><span class="p">,</span>
+ <span class="sa">u</span><span class="s1">&#39;TARGET_NAME&#39;</span><span class="p">,</span>
+ <span class="sa">u</span><span class="s1">&#39;SITE_ID&#39;</span><span class="p">,</span>
+ <span class="sa">u</span><span class="s1">&#39;START_TIME&#39;</span><span class="p">,</span>
+ <span class="sa">u</span><span class="s1">&#39;STOP_TIME&#39;</span><span class="p">,</span>
+ <span class="sa">u</span><span class="s1">&#39;SPACECRAFT_CLOCK_START_COUNT&#39;</span><span class="p">,</span>
+ <span class="sa">u</span><span class="s1">&#39;SPACECRAFT_CLOCK_STOP_COUNT&#39;</span><span class="p">,</span>
+<span class="c1">#  u&#39;^TABLE&#39;,   </span>
+<span class="p">]</span>
+
+<span class="c1">### SELECT the keyword to retain for the output structure for SINGLE spectrum</span>
+<span class="n">table_data_outkeys</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="s1">&#39;ACROSS_TRACK_FOOTPRINT_SIZE&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ALONG_TRACK_FOOTPRINT_SIZE&#39;</span><span class="p">,</span>
+<span class="c1"># &#39;BINNING&#39;,</span>
+<span class="c1">#          &#39;CHANNEL_WAVELENGTHS&#39;, # ARRAY</span>
+<span class="c1"># &#39;DARK_FREQ&#39;,</span>
+ <span class="s1">&#39;DATA_QUALITY_INDEX&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;EMISSION_ANGLE&#39;</span><span class="p">,</span>
+<span class="c1"># &#39;END_PIXEL&#39;,</span>
+ <span class="s1">&#39;INCIDENCE_ANGLE&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;INT_COUNT&#39;</span><span class="p">,</span>
+<span class="c1"># &#39;INT_TIME&#39;,</span>
+<span class="c1">#          &#39;IOF_NOISE_SPECTRUM_DATA&#39;, # ARRAY</span>
+<span class="c1">#          &#39;IOF_SPECTRUM_DATA&#39;, # ARRAY</span>
+ <span class="s1">&#39;PACKET_SUBSECONDS&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;PHASE_ANGLE&#39;</span><span class="p">,</span>
+<span class="c1">#          &#39;PHOTOM_IOF_NOISE_SPECTRUM_DATA&#39;, # ARRAY</span>
+<span class="c1">#          &#39;PHOTOM_IOF_SPECTRUM_DATA&#39;, # ARRAY</span>
+ <span class="s1">&#39;SC_TIME&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;SOFTWARE_VERSION&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;SOLAR_DISTANCE&#39;</span><span class="p">,</span>
+<span class="c1"># &#39;SPARE_1&#39;,</span>
+<span class="c1"># &#39;SPARE_2&#39;,</span>
+<span class="c1"># &#39;SPARE_3&#39;,</span>
+<span class="c1"># &#39;SPARE_4&#39;,</span>
+<span class="c1"># &#39;SPARE_5&#39;</span>
+ <span class="s1">&#39;SPECTRUM_MET&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;SPECTRUM_NUMBER&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;SPECTRUM_SUBSECONDS&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;SPECTRUM_UTC_TIME&#39;</span><span class="p">,</span>
+<span class="c1"># &#39;START_PIXEL&#39;,</span>
+<span class="c1">#          &#39;TARGET_LATITUDE_SET&#39;,</span>
+<span class="c1">#          &#39;TARGET_LONGITUDE_SET&#39;,</span>
+ <span class="s1">&#39;TEMP_2&#39;</span><span class="p">,</span>
+<span class="p">]</span> <span class="o">+</span> <span class="n">outputkeys</span> <span class="o">+</span> <span class="p">[</span>
+<span class="c1"># DATA_QUALITY_INDEX</span>
+ <span class="s1">&#39;Dark_Scan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Temperature_1&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Temperature_2&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Grating_Temperature&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anomalous_Pixels&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Partial_Data&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Saturation&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Low_Signal_Level&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Low_VIS_Wavelength_Uncertainty&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;High_VIS_Wavelength_Uncertainty&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;UVVS_Operating&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;UVVS_Noise_Spike&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;SPICE_Version_Epoch&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dark_Saturation&#39;</span><span class="p">,</span>
+<span class="c1">#  &#39;SpareO&#39;,</span>
+<span class="c1">#  &#39;SpareP&#39;,</span>
+<span class="p">]</span> <span class="o">+</span> <span class="p">[</span>
+    <span class="c1"># spectral data</span>
+    <span class="s1">&#39;photom_iof_sp_2nm&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;iof_sp_2nm&#39;</span>
+    <span class="p">]</span> <span class="o">+</span> <span class="p">[</span>
+<span class="c1"># geometry</span>
+    <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="s1">&#39;fov&#39;</span><span class="p">]</span>
+
+<span class="c1">### INPUTS</span>
+
+<span class="c1">##### test data</span>
+<span class="c1"># base path untile messmas_2101</span>
+<span class="n">rootdir_input</span> <span class="o">=</span> <span class="s1">&#39;../../data/raw/test/mess-e_v_h-mascs-3-virs-cdr-caldata-v1/messmas_2101/&#39;</span>
+<span class="c1"># # useful to limit to a single ORBIT</span>
+<span class="c1"># datadir_input = &#39;data/ddr/orb/virs/mascs20110717&#39;</span>
+<span class="c1"># this include all mission pahses!!!</span>
+<span class="n">datadir_input</span> <span class="o">=</span> <span class="s1">&#39;data/ddr/&#39;</span>
+
+<span class="c1">### WARNING ###</span>
+<span class="c1"># check the location of FMT file! local symlink is OK</span>
+<span class="c1">### WARNING ###</span>
+<span class="c1">### ToDo : Use a cached value, we&#39;ll be using the same file over and over, no need to read it everytime.</span>
+<span class="c1"># Example :</span>
+<span class="c1"># create an empy dicty</span>
+<span class="n">format_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1">### PROCESS</span>
+<span class="n">root_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">rootdir_input</span><span class="p">)</span>
+<span class="n">datadir_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">/</span> <span class="n">datadir_input</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Filter only <code class="docutils literal notranslate"><span class="pre">virsvd*.lbl</span></code> files, only VIRS detector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### FIND THE FILES: this could take long time</span>
+<span class="n">lbl_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">datadir_path</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s1">&#39;virsvd*.lbl&#39;</span><span class="p">))</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">[{</span>
+      <span class="s1">&#39;phase&#39;</span><span class="p">:</span><span class="n">e</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+      <span class="s1">&#39;detector&#39;</span><span class="p">:</span><span class="n">e</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+      <span class="s1">&#39;orbit&#39;</span><span class="p">:</span><span class="n">e</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+      <span class="s1">&#39;filename&#39;</span><span class="p">:</span><span class="n">e</span><span class="o">.</span><span class="n">stem</span><span class="p">,</span>
+      <span class="s1">&#39;size (MB): &#39;</span><span class="p">:</span><span class="n">e</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s1">&#39;.dat&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span><span class="o">.</span><span class="n">st_size</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="mi">20</span><span class="p">}</span> 
+     <span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lbl_files</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>phase</th>
+      <th>detector</th>
+      <th>orbit</th>
+      <th>filename</th>
+      <th>size (MB):</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ob2</td>
+      <td>virs</td>
+      <td>mascs20130220</td>
+      <td>virsvd_ob2_13051_143720</td>
+      <td>1.13</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ob4</td>
+      <td>virs</td>
+      <td>mascs20141222</td>
+      <td>virsvd_ob4_14356_141214</td>
+      <td>6.89</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orb</td>
+      <td>virs</td>
+      <td>mascs20120204</td>
+      <td>virsvd_orb_12035_083953</td>
+      <td>5.96</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>orb</td>
+      <td>virs</td>
+      <td>mascs20110812</td>
+      <td>virsvd_orb_11224_214005</td>
+      <td>4.20</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><a class="reference external" href="https://github.com/planetarypy/pvl/issues/new?assignees=&amp;labels=&amp;template=bug-report---.md&amp;title=">New Issue · planetarypy/pvl</a></p>
+<p><strong>Describe the bug</strong>
+PVL doesn’t honor the <code class="docutils literal notranslate"><span class="pre">^STRUCTURE</span></code> tag and silently goes on.
+From <a class="reference external" href="https://pds-smallbodies.astro.umd.edu/howto/understand.shtml">PDS-SBN: How To Approach a PDS Data Set</a>:</p>
+<p>label/: This directory contains label include files - the repetitive parts of labels (the data structure, typically) extracted to simplify either the labels themselves or configuration management or both. If you see a line in a label that looks like this:
+<code class="docutils literal notranslate"><span class="pre">^STRUCTURE</span> <span class="pre">=</span> <span class="pre">&quot;FILE.FMT&quot;</span></code>
+then you should find the “FILE.FMT” file in the label directory.</p>
+<p><strong>To Reproduce</strong></p>
+<p>In my case, I’m working with an <code class="docutils literal notranslate"><span class="pre">OBJECT</span>&#160; <span class="pre">=</span> <span class="pre">TABLE</span></code>
+A minimal example :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># get a minimal dataset </span>
+git clone https://github.com/epn-ml/MESSENGER-Mercury-Surface-Cassification-Unsupervised_DLR
+<span class="nb">cd</span> MESSENGER-Mercury-Surface-Cassification-Unsupervised_DLR/data/raw/test/mess-e_v_h-mascs-3-virs-cdr-caldata-v1/messmas_2101/data/ddr/ob2/virs/mascs20130220/vis
+</pre></div>
+</div>
+<p>python code :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pvl</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">pvl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39;virsvd_ob2_13051_143720.lbl&#39;</span><span class="p">))</span>
+
+</pre></div>
+</div>
+<p><strong>Expected behavior</strong>
+A clear and concise description of what you expected to happen.</p>
+<p><strong>Error logs or terminal captures</strong>
+If applicable, add examples to help explain your problem.</p>
+<p><strong>Your Environment (please complete the following information):</strong></p>
+<ul class="simple">
+<li><p>OS: (e.g. macOS, Linux, etc.)</p></li>
+<li><p>Environment information: (e.g. Python version, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pvl</span></code> Version (can find via <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pvl,</span> <span class="pre">print(pvl.__version__)</span></code>)</p></li>
+</ul>
+<p><strong>Additional context</strong>
+Add any other context about the problem here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Define the file to work on</span>
+<span class="n">lbl_file</span> <span class="o">=</span> <span class="n">lbl_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">lbl_file</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lbl_file=PosixPath(&#39;../../data/raw/test/mess-e_v_h-mascs-3-virs-cdr-caldata-v1/messmas_2101/data/ddr/ob2/virs/mascs20130220/vis/virsvd_ob2_13051_143720.lbl&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### READ the label to search for the FMT</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">pvl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">lbl_file</span><span class="p">))</span>
+
+<span class="n">fmt_location</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">/</span> <span class="s1">&#39;label/&#39;</span> 
+
+<span class="c1"># # assign custom location for ^STRUCTURE VIRSVD.FMT</span>
+<span class="c1"># if label[&#39;TABLE&#39;][&#39;^STRUCTURE&#39;] not in format_files :</span>
+<span class="c1">#     format_files[label[&#39;TABLE&#39;][&#39;^STRUCTURE&#39;]] = pvl.load(str(fmt_location / label[&#39;TABLE&#39;][&#39;^STRUCTURE&#39;].lower()))</span>
+
+<span class="c1"># assign fmt from dict, if not present will be None</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="n">format_files</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="p">[</span><span class="s1">&#39;TABLE&#39;</span><span class="p">][</span><span class="s1">&#39;^STRUCTURE&#39;</span><span class="p">])</span>
+
+<span class="c1"># print(label[&#39;TABLE&#39;][&#39;^STRUCTURE&#39;])</span>
+<span class="c1"># print(f&#39;{fmt}&#39;)</span>
+
+<span class="n">outputdict</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">dictextractor</span><span class="p">(</span><span class="n">outputkeys</span><span class="p">,</span><span class="n">label</span><span class="p">)</span>
+
+<span class="c1"># for spacecraft_clock in [&#39;SPACECRAFT_CLOCK_START_COUNT&#39;,&#39;SPACECRAFT_CLOCK_STOP_COUNT&#39;]:</span>
+<span class="c1">#     outputdict[spacecraft_clock] =  float(outputdict[spacecraft_clock][2:])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;outputdict content:&#39;</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([(</span><span class="n">k</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">outputdict</span><span class="o">.</span><span class="n">items</span><span class="p">()],</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s2">&quot;rst&quot;</span><span class="p">,</span> <span class="n">numalign</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">floatfmt</span><span class="o">=</span><span class="s2">&quot;.4f&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outputdict content:
+============================  ========  ===========================
+name                          type      val
+============================  ========  ===========================
+PRODUCT_ID                    str       VIRSVD_OB2_13051_143720_DAT
+PRODUCT_VERSION_ID            str       V1
+PRODUCT_CREATION_TIME         datetime  2017-02-17 19:56:42+00:00
+DETECTOR_ID                   str       VIRS
+STANDARD_DATA_PRODUCT_ID      str       VIRSDVIS
+MISSION_PHASE_NAME            str       MERCURY ORBIT YEAR 2
+TARGET_NAME                   str       MERCURY
+SITE_ID                       str       N/A
+START_TIME                    datetime  2013-02-20 14:37:21+00:00
+STOP_TIME                     datetime  2013-02-20 14:45:17+00:00
+SPACECRAFT_CLOCK_START_COUNT  str       2/3695040.225
+SPACECRAFT_CLOCK_STOP_COUNT   str       2/3695516.240
+============================  ========  ===========================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### READ the actual file data with OGR</span>
+
+<span class="n">inDataSource</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">lbl_file</span><span class="p">))</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">inDataSource</span><span class="o">.</span><span class="n">GetLayer</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FeatureCount : </span><span class="si">%s</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">table</span><span class="o">.</span><span class="n">GetFeatureCount</span><span class="p">())</span>
+
+<span class="c1"># which spectra from the file?</span>
+<span class="n">table_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">layerDefinition</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">GetLayerDefn</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">layerDefinition</span><span class="o">.</span><span class="n">GetFieldCount</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FeatureCount : 113 
+33
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">sp_id</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">GetFeatureCount</span><span class="p">()),</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Features&#39;</span><span class="p">):</span>
+<span class="c1"># for sp_id in range(table.GetFeatureCount()):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">layerDefinition</span><span class="o">.</span><span class="n">GetFieldCount</span><span class="p">()):</span>
+        <span class="n">fielddef</span> <span class="o">=</span> <span class="n">layerDefinition</span><span class="o">.</span><span class="n">GetFieldDefn</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">fieldName</span> <span class="o">=</span> <span class="n">fielddef</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span>
+        <span class="n">fieldData</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="n">sp_id</span><span class="p">]</span><span class="o">.</span><span class="n">GetField</span><span class="p">(</span><span class="n">fieldName</span><span class="p">)</span>
+        <span class="c1"># transform List to numpy.array</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">fieldName</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fieldData</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fieldData</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="n">fieldData</span>
+    <span class="n">fov_coord_extracted</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">fov_coord_extractor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">shapelyze</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">geoalchemy2ize</span><span class="o">=</span><span class="kc">False</span> <span class="p">,</span><span class="n">srid</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fov_coord_extracted</span><span class="p">:</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fov_coord_extracted</span><span class="p">)</span> <span class="c1"># OUTPUT : shapely objects dict.keys = [&#39;center&#39;, &#39;fov&#39;]</span>
+
+        <span class="c1"># add LABEL level data</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">outputdict</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SPECTRUM_UTC_TIME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SPECTRUM_UTC_TIME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="s1">&#39;%y%jT%H:%M:%S&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">extract_data_quality_index</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># OUTPUT = DATA_QUALITY_INDEX dict </span>
+        <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">extract_regridded_sp</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">wav_grid_2nm</span><span class="o">.</span><span class="n">wavelenghts</span><span class="p">))</span> <span class="c1"># OUTPUT dict.keys = [&#39;photom_iof_sp_2nm&#39;, &#39;iof_sp_2nm&#39;]</span>
+        
+        <span class="n">table_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">dictextractor</span><span class="p">(</span><span class="n">table_data_outkeys</span><span class="p">,</span><span class="n">data</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nan in geoemtry </span><span class="si">{}</span><span class="s1">:</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lbl_file</span><span class="o">.</span><span class="n">stem</span><span class="p">,</span><span class="n">sp_id</span><span class="p">))</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "ef1123a1859843d7848e600a35a09e43", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nan in geoemtry virsvd_ob2_13051_143720:0
+Nan in geoemtry virsvd_ob2_13051_143720:1
+Nan in geoemtry virsvd_ob2_13051_143720:93
+Nan in geoemtry virsvd_ob2_13051_143720:94
+Nan in geoemtry virsvd_ob2_13051_143720:95
+Nan in geoemtry virsvd_ob2_13051_143720:96
+Nan in geoemtry virsvd_ob2_13051_143720:97
+Nan in geoemtry virsvd_ob2_13051_143720:98
+Nan in geoemtry virsvd_ob2_13051_143720:99
+Nan in geoemtry virsvd_ob2_13051_143720:100
+Nan in geoemtry virsvd_ob2_13051_143720:101
+Nan in geoemtry virsvd_ob2_13051_143720:102
+Nan in geoemtry virsvd_ob2_13051_143720:103
+Nan in geoemtry virsvd_ob2_13051_143720:104
+Nan in geoemtry virsvd_ob2_13051_143720:105
+Nan in geoemtry virsvd_ob2_13051_143720:106
+Nan in geoemtry virsvd_ob2_13051_143720:107
+Nan in geoemtry virsvd_ob2_13051_143720:108
+Nan in geoemtry virsvd_ob2_13051_143720:109
+Nan in geoemtry virsvd_ob2_13051_143720:110
+Nan in geoemtry virsvd_ob2_13051_143720:111
+Nan in geoemtry virsvd_ob2_13051_143720:112
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### DEBUG show type+val for a single spectrum</span>
+<span class="n">sp_id</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">table_data</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;table_data[i] content:&#39;</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span>
+    <span class="p">[(</span><span class="n">k</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">70</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">table_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()],</span>
+    <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">tablefmt</span><span class="o">=</span><span class="s2">&quot;rst&quot;</span><span class="p">,</span><span class="n">numalign</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="n">floatfmt</span><span class="o">=</span><span class="s2">&quot;.4f&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>table_data[i] content:
+===============================  ========  ======================================================================
+name                             type      val
+===============================  ========  ======================================================================
+ACROSS_TRACK_FOOTPRINT_SIZE      float     3260.064938788
+ALONG_TRACK_FOOTPRINT_SIZE       float     208999.060027425
+DATA_QUALITY_INDEX               str       0111-9110-0001-2000
+EMISSION_ANGLE                   float     70.23871869
+INCIDENCE_ANGLE                  float     72.5691979
+INT_COUNT                        int       113
+PACKET_SUBSECONDS                int       45
+PHASE_ANGLE                      float     77.82723693
+SC_TIME                          float     3695040.0
+SOFTWARE_VERSION                 float     1.0
+SOLAR_DISTANCE                   float     46581433.78593264
+SPECTRUM_MET                     float     3695048.0
+SPECTRUM_NUMBER                  int       2
+SPECTRUM_SUBSECONDS              int       725
+SPECTRUM_UTC_TIME                datetime  2013-02-20 14:37:29
+TEMP_2                           float     18.048999786376953
+PRODUCT_ID                       str       VIRSVD_OB2_13051_143720_DAT
+PRODUCT_VERSION_ID               str       V1
+PRODUCT_CREATION_TIME            datetime  2017-02-17 19:56:42+00:00
+DETECTOR_ID                      str       VIRS
+STANDARD_DATA_PRODUCT_ID         str       VIRSDVIS
+MISSION_PHASE_NAME               str       MERCURY ORBIT YEAR 2
+TARGET_NAME                      str       MERCURY
+SITE_ID                          str       N/A
+START_TIME                       datetime  2013-02-20 14:37:21+00:00
+STOP_TIME                        datetime  2013-02-20 14:45:17+00:00
+SPACECRAFT_CLOCK_START_COUNT     str       2/3695040.225
+SPACECRAFT_CLOCK_STOP_COUNT      str       2/3695516.240
+Dark_Scan                        int       0
+Temperature_1                    int       1
+Temperature_2                    int       1
+Grating_Temperature              int       1
+Anomalous_Pixels                 int       9
+Partial_Data                     int       1
+Saturation                       int       1
+Low_Signal_Level                 int       0
+Low_VIS_Wavelength_Uncertainty   int       0
+High_VIS_Wavelength_Uncertainty  int       0
+UVVS_Operating                   int       0
+UVVS_Noise_Spike                 int       1
+SPICE_Version_Epoch              int       2
+Dark_Saturation                  int       0
+photom_iof_sp_2nm                tuple     396
+iof_sp_2nm                       tuple     396
+center                           str       SRID=4326;POINT (73.09935760498047 6.726365089416504)
+fov                              str       SRID=4326;POLYGON ((72.6827163696289 4.324911594390869, 73.13733673095
+===============================  ========  ======================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### CREATE PANDAS DATAFRAME</span>
+<span class="n">table_df</span> <span class="o">=</span> <span class="n">spectral_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">table_data</span><span class="p">,</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+<span class="n">table_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">table_df</span><span class="o">.</span><span class="n">SPECTRUM_UTC_TIME</span>
+<span class="n">table_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>SPECTRUM_UTC_TIME</th>
+      <th>2013-02-20 14:37:29</th>
+      <th>2013-02-20 14:37:34</th>
+      <th>2013-02-20 14:37:38</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ACROSS_TRACK_FOOTPRINT_SIZE</th>
+      <td>3260.064939</td>
+      <td>3111.663597</td>
+      <td>2995.68922</td>
+    </tr>
+    <tr>
+      <th>ALONG_TRACK_FOOTPRINT_SIZE</th>
+      <td>208999.060027</td>
+      <td>171173.791815</td>
+      <td>155178.909494</td>
+    </tr>
+    <tr>
+      <th>DATA_QUALITY_INDEX</th>
+      <td>0111-9110-0001-2000</td>
+      <td>0111-9110-0001-2000</td>
+      <td>0111-9110-0001-2000</td>
+    </tr>
+    <tr>
+      <th>EMISSION_ANGLE</th>
+      <td>70.238719</td>
+      <td>60.199561</td>
+      <td>50.999519</td>
+    </tr>
+    <tr>
+      <th>INCIDENCE_ANGLE</th>
+      <td>72.569198</td>
+      <td>70.79224</td>
+      <td>69.347141</td>
+    </tr>
+    <tr>
+      <th>INT_COUNT</th>
+      <td>113</td>
+      <td>113</td>
+      <td>113</td>
+    </tr>
+    <tr>
+      <th>PACKET_SUBSECONDS</th>
+      <td>45</td>
+      <td>45</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>PHASE_ANGLE</th>
+      <td>77.827237</td>
+      <td>77.820374</td>
+      <td>77.819342</td>
+    </tr>
+    <tr>
+      <th>SC_TIME</th>
+      <td>3695040.0</td>
+      <td>3695040.0</td>
+      <td>3695040.0</td>
+    </tr>
+    <tr>
+      <th>SOFTWARE_VERSION</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>SOLAR_DISTANCE</th>
+      <td>46581433.785933</td>
+      <td>46581378.030838</td>
+      <td>46581336.263538</td>
+    </tr>
+    <tr>
+      <th>SPECTRUM_MET</th>
+      <td>3695048.0</td>
+      <td>3695052.0</td>
+      <td>3695057.0</td>
+    </tr>
+    <tr>
+      <th>SPECTRUM_NUMBER</th>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>SPECTRUM_SUBSECONDS</th>
+      <td>725</td>
+      <td>975</td>
+      <td>225</td>
+    </tr>
+    <tr>
+      <th>SPECTRUM_UTC_TIME</th>
+      <td>2013-02-20 14:37:29</td>
+      <td>2013-02-20 14:37:34</td>
+      <td>2013-02-20 14:37:38</td>
+    </tr>
+    <tr>
+      <th>TEMP_2</th>
+      <td>18.049</td>
+      <td>18.052999</td>
+      <td>18.059</td>
+    </tr>
+    <tr>
+      <th>PRODUCT_ID</th>
+      <td>VIRSVD_OB2_13051_143720_DAT</td>
+      <td>VIRSVD_OB2_13051_143720_DAT</td>
+      <td>VIRSVD_OB2_13051_143720_DAT</td>
+    </tr>
+    <tr>
+      <th>PRODUCT_VERSION_ID</th>
+      <td>V1</td>
+      <td>V1</td>
+      <td>V1</td>
+    </tr>
+    <tr>
+      <th>PRODUCT_CREATION_TIME</th>
+      <td>2017-02-17 19:56:42+00:00</td>
+      <td>2017-02-17 19:56:42+00:00</td>
+      <td>2017-02-17 19:56:42+00:00</td>
+    </tr>
+    <tr>
+      <th>DETECTOR_ID</th>
+      <td>VIRS</td>
+      <td>VIRS</td>
+      <td>VIRS</td>
+    </tr>
+    <tr>
+      <th>STANDARD_DATA_PRODUCT_ID</th>
+      <td>VIRSDVIS</td>
+      <td>VIRSDVIS</td>
+      <td>VIRSDVIS</td>
+    </tr>
+    <tr>
+      <th>MISSION_PHASE_NAME</th>
+      <td>MERCURY ORBIT YEAR 2</td>
+      <td>MERCURY ORBIT YEAR 2</td>
+      <td>MERCURY ORBIT YEAR 2</td>
+    </tr>
+    <tr>
+      <th>TARGET_NAME</th>
+      <td>MERCURY</td>
+      <td>MERCURY</td>
+      <td>MERCURY</td>
+    </tr>
+    <tr>
+      <th>SITE_ID</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>START_TIME</th>
+      <td>2013-02-20 14:37:21+00:00</td>
+      <td>2013-02-20 14:37:21+00:00</td>
+      <td>2013-02-20 14:37:21+00:00</td>
+    </tr>
+    <tr>
+      <th>STOP_TIME</th>
+      <td>2013-02-20 14:45:17+00:00</td>
+      <td>2013-02-20 14:45:17+00:00</td>
+      <td>2013-02-20 14:45:17+00:00</td>
+    </tr>
+    <tr>
+      <th>SPACECRAFT_CLOCK_START_COUNT</th>
+      <td>2/3695040.225</td>
+      <td>2/3695040.225</td>
+      <td>2/3695040.225</td>
+    </tr>
+    <tr>
+      <th>SPACECRAFT_CLOCK_STOP_COUNT</th>
+      <td>2/3695516.240</td>
+      <td>2/3695516.240</td>
+      <td>2/3695516.240</td>
+    </tr>
+    <tr>
+      <th>Dark_Scan</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Temperature_1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Temperature_2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Grating_Temperature</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Anomalous_Pixels</th>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>Partial_Data</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Saturation</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Low_Signal_Level</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Low_VIS_Wavelength_Uncertainty</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>High_VIS_Wavelength_Uncertainty</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>UVVS_Operating</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>UVVS_Noise_Spike</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>SPICE_Version_Epoch</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Dark_Saturation</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>photom_iof_sp_2nm</th>
+      <td>(8.857751269435402e+31, 2.473953283250548e+30,...</td>
+      <td>(8.857751269435402e+31, 2.473953283250548e+30,...</td>
+      <td>(8.857751269435402e+31, 2.473953283250548e+30,...</td>
+    </tr>
+    <tr>
+      <th>iof_sp_2nm</th>
+      <td>(8.857751269435402e+31, 2.473953283250548e+30,...</td>
+      <td>(8.857751269435402e+31, 2.473953283250548e+30,...</td>
+      <td>(8.857751269435402e+31, 2.473953283250548e+30,...</td>
+    </tr>
+    <tr>
+      <th>center</th>
+      <td>SRID=4326;POINT (73.09935760498047 6.726365089...</td>
+      <td>SRID=4326;POINT (71.41846466064453 -2.06860852...</td>
+      <td>SRID=4326;POINT (69.66071319580078 -9.76681995...</td>
+    </tr>
+    <tr>
+      <th>fov</th>
+      <td>SRID=4326;POLYGON ((72.6827163696289 4.3249115...</td>
+      <td>SRID=4326;POLYGON ((71.005615234375 -4.0308346...</td>
+      <td>SRID=4326;POLYGON ((69.21576690673828 -11.5309...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">table_df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/convert_mascs_to_db_18_0.png" src="../../../../../_images/convert_mascs_to_db_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">photom_iof_sp_2nm_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">wav_grid_2nm</span><span class="o">.</span><span class="n">wavelenghts</span><span class="p">,</span>
+    <span class="n">data</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">sp</span><span class="p">[</span><span class="s1">&#39;photom_iof_sp_2nm&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="n">table_data</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">photom_iof_sp_2nm_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;wavelenghts&#39;</span>
+
+<span class="n">iof_sp_2nm_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">wav_grid_2nm</span><span class="o">.</span><span class="n">wavelenghts</span><span class="p">,</span>
+    <span class="n">data</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">sp</span><span class="p">[</span><span class="s1">&#39;iof_sp_2nm&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="n">table_data</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">iof_sp_2nm_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;wavelenghts&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Photometrically corrected IOF (resampled to 2nm)&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">photom_iof_sp_2nm_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">264</span><span class="p">:,]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;IOF (resampled to 2nm)&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">iof_sp_2nm_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">264</span><span class="p">:,]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Photometrically corrected IOF (resampled to 2nm)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>wavelenghts</th>
+      <th>264</th>
+      <th>266</th>
+      <th>268</th>
+      <th>270</th>
+      <th>272</th>
+      <th>274</th>
+      <th>276</th>
+      <th>278</th>
+      <th>280</th>
+      <th>282</th>
+      <th>...</th>
+      <th>1032</th>
+      <th>1034</th>
+      <th>1036</th>
+      <th>1038</th>
+      <th>1040</th>
+      <th>1042</th>
+      <th>1044</th>
+      <th>1046</th>
+      <th>1048</th>
+      <th>1050</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.003844</td>
+      <td>0.004002</td>
+      <td>0.005144</td>
+      <td>0.008322</td>
+      <td>0.010796</td>
+      <td>0.00893</td>
+      <td>0.011833</td>
+      <td>0.006354</td>
+      <td>0.007108</td>
+      <td>0.00862</td>
+      <td>...</td>
+      <td>0.117563</td>
+      <td>0.144318</td>
+      <td>0.004505</td>
+      <td>0.101618</td>
+      <td>0.130817</td>
+      <td>-0.042874</td>
+      <td>-0.005571</td>
+      <td>0.134349</td>
+      <td>0.206187</td>
+      <td>0.181259</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.004605</td>
+      <td>0.005509</td>
+      <td>0.006492</td>
+      <td>0.009618</td>
+      <td>0.012767</td>
+      <td>0.01105</td>
+      <td>0.0124</td>
+      <td>0.008232</td>
+      <td>0.008485</td>
+      <td>0.010462</td>
+      <td>...</td>
+      <td>0.08875</td>
+      <td>0.098199</td>
+      <td>0.007452</td>
+      <td>0.07339</td>
+      <td>0.131645</td>
+      <td>-0.00859</td>
+      <td>0.031645</td>
+      <td>0.184585</td>
+      <td>0.267703</td>
+      <td>0.234446</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.002977</td>
+      <td>0.004008</td>
+      <td>0.005171</td>
+      <td>0.006884</td>
+      <td>0.008576</td>
+      <td>0.008753</td>
+      <td>0.009552</td>
+      <td>0.006443</td>
+      <td>0.005597</td>
+      <td>0.007425</td>
+      <td>...</td>
+      <td>0.090565</td>
+      <td>0.090493</td>
+      <td>0.033011</td>
+      <td>0.031907</td>
+      <td>0.077375</td>
+      <td>-0.057834</td>
+      <td>-0.070839</td>
+      <td>0.060081</td>
+      <td>0.142465</td>
+      <td>0.101303</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.006082</td>
+      <td>0.006189</td>
+      <td>0.007638</td>
+      <td>0.011538</td>
+      <td>0.014499</td>
+      <td>0.012459</td>
+      <td>0.015542</td>
+      <td>0.010462</td>
+      <td>0.010798</td>
+      <td>0.012228</td>
+      <td>...</td>
+      <td>0.065517</td>
+      <td>0.077899</td>
+      <td>0.022861</td>
+      <td>0.062532</td>
+      <td>0.114182</td>
+      <td>0.009983</td>
+      <td>0.041713</td>
+      <td>0.147776</td>
+      <td>0.211409</td>
+      <td>0.218133</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.002722</td>
+      <td>0.004472</td>
+      <td>0.004499</td>
+      <td>0.006357</td>
+      <td>0.00956</td>
+      <td>0.008935</td>
+      <td>0.009971</td>
+      <td>0.006298</td>
+      <td>0.006671</td>
+      <td>0.007124</td>
+      <td>...</td>
+      <td>0.138705</td>
+      <td>0.101984</td>
+      <td>0.034259</td>
+      <td>0.114386</td>
+      <td>0.120495</td>
+      <td>-0.017073</td>
+      <td>-0.023621</td>
+      <td>0.067427</td>
+      <td>0.123015</td>
+      <td>0.116134</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 394 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IOF (resampled to 2nm)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>wavelenghts</th>
+      <th>264</th>
+      <th>266</th>
+      <th>268</th>
+      <th>270</th>
+      <th>272</th>
+      <th>274</th>
+      <th>276</th>
+      <th>278</th>
+      <th>280</th>
+      <th>282</th>
+      <th>...</th>
+      <th>1032</th>
+      <th>1034</th>
+      <th>1036</th>
+      <th>1038</th>
+      <th>1040</th>
+      <th>1042</th>
+      <th>1044</th>
+      <th>1046</th>
+      <th>1048</th>
+      <th>1050</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.002744</td>
+      <td>0.002859</td>
+      <td>0.003678</td>
+      <td>0.005955</td>
+      <td>0.007728</td>
+      <td>0.006397</td>
+      <td>0.008482</td>
+      <td>0.004558</td>
+      <td>0.005102</td>
+      <td>0.006191</td>
+      <td>...</td>
+      <td>0.074674</td>
+      <td>0.091645</td>
+      <td>0.002818</td>
+      <td>0.064138</td>
+      <td>0.082352</td>
+      <td>-0.026843</td>
+      <td>-0.003551</td>
+      <td>0.083801</td>
+      <td>0.128405</td>
+      <td>0.112524</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.003112</td>
+      <td>0.003724</td>
+      <td>0.00439</td>
+      <td>0.006507</td>
+      <td>0.008639</td>
+      <td>0.00748</td>
+      <td>0.008397</td>
+      <td>0.005576</td>
+      <td>0.00575</td>
+      <td>0.007091</td>
+      <td>...</td>
+      <td>0.055956</td>
+      <td>0.061897</td>
+      <td>0.004679</td>
+      <td>0.04612</td>
+      <td>0.082623</td>
+      <td>-0.005354</td>
+      <td>0.019781</td>
+      <td>0.115338</td>
+      <td>0.167131</td>
+      <td>0.146143</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.00197</td>
+      <td>0.002654</td>
+      <td>0.003424</td>
+      <td>0.004559</td>
+      <td>0.00568</td>
+      <td>0.005798</td>
+      <td>0.006327</td>
+      <td>0.004268</td>
+      <td>0.003708</td>
+      <td>0.00492</td>
+      <td>...</td>
+      <td>0.057703</td>
+      <td>0.057643</td>
+      <td>0.021016</td>
+      <td>0.020304</td>
+      <td>0.049215</td>
+      <td>-0.036759</td>
+      <td>-0.045021</td>
+      <td>0.038141</td>
+      <td>0.090452</td>
+      <td>0.064276</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.004002</td>
+      <td>0.004072</td>
+      <td>0.005025</td>
+      <td>0.007589</td>
+      <td>0.009537</td>
+      <td>0.008195</td>
+      <td>0.010222</td>
+      <td>0.006881</td>
+      <td>0.007101</td>
+      <td>0.008041</td>
+      <td>...</td>
+      <td>0.042412</td>
+      <td>0.05043</td>
+      <td>0.014803</td>
+      <td>0.040493</td>
+      <td>0.073949</td>
+      <td>0.006464</td>
+      <td>0.027024</td>
+      <td>0.095743</td>
+      <td>0.136982</td>
+      <td>0.141358</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.001791</td>
+      <td>0.002943</td>
+      <td>0.00296</td>
+      <td>0.004182</td>
+      <td>0.006288</td>
+      <td>0.005876</td>
+      <td>0.006556</td>
+      <td>0.00414</td>
+      <td>0.004385</td>
+      <td>0.004682</td>
+      <td>...</td>
+      <td>0.091261</td>
+      <td>0.067122</td>
+      <td>0.022569</td>
+      <td>0.075374</td>
+      <td>0.079441</td>
+      <td>-0.011275</td>
+      <td>-0.015584</td>
+      <td>0.044541</td>
+      <td>0.081274</td>
+      <td>0.076782</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 394 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">photom_iof_sp_2nm_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(396,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">photom_iof_sp_2nm_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#aa0000&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span><span class="mi">8</span><span class="p">]);</span>
+<span class="n">photom_iof_sp_2nm_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#ff0000&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">iof_sp_2nm_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#0000aa&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.075</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
+<span class="n">iof_sp_2nm_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#0000ff&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">270</span><span class="p">,</span><span class="mi">1050</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 0.1)
+</pre></div>
+</div>
+<img alt="../../../../../_images/convert_mascs_to_db_22_1.png" src="../../../../../_images/convert_mascs_to_db_22_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">table_df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">crs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;epsg:4269&#39;</span><span class="p">})</span>
+<span class="n">gdf</span><span class="p">[:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;TEMP_2&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rainbow&#39;</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/kidpixo/miniconda3/envs/datascience/lib/python3.8/site-packages/pyproj/crs/crs.py:131: FutureWarning: &#39;+init=&lt;authority&gt;:&lt;code&gt;&#39; syntax is deprecated. &#39;&lt;authority&gt;:&lt;code&gt;&#39; is the preferred initialization method. When making the change, be mindful of axis order changes: https://pyproj4.github.io/pyproj/stable/gotchas.html#axis-order-changes-in-proj-6
+  in_crs_string = _prepare_from_proj_string(in_crs_string)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [78],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">table_df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">crs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;epsg:4269&#39;</span><span class="p">})</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">gdf</span><span class="p">[:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;TEMP_2&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rainbow&#39;</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/datascience/lib/python3.8/site-packages/geopandas/geodataframe.py:184,</span> in <span class="ni">GeoDataFrame.__init__</span><span class="nt">(self, data, geometry, crs, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="n">_crs_mismatch_warning</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>         <span class="c1"># TODO: raise error in 0.9 or 0.10.</span>
+<span class="ne">--&gt; </span><span class="mi">184</span>     <span class="bp">self</span><span class="o">.</span><span class="n">set_geometry</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">geometry</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">crs</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>         <span class="s2">&quot;Assigning CRS to a GeoDataFrame without a geometry column is now &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="s2">&quot;deprecated and will not be supported in the future.&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>     <span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/datascience/lib/python3.8/site-packages/geopandas/geodataframe.py:318,</span> in <span class="ni">GeoDataFrame.set_geometry</span><span class="nt">(self, col, drop, inplace, crs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">315</span>     <span class="n">level</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="n">crs</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="c1"># Check that we are using a listlike of geometries</span>
+<span class="ne">--&gt; </span><span class="mi">318</span> <span class="n">level</span> <span class="o">=</span> <span class="n">_ensure_geometry</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span> <span class="n">index</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">index</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span> <span class="n">frame</span><span class="p">[</span><span class="n">geo_column_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">level</span>
+
+<span class="nn">File ~/miniconda3/envs/datascience/lib/python3.8/site-packages/geopandas/geodataframe.py:43,</span> in <span class="ni">_ensure_geometry</span><span class="nt">(data, crs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">43</span>         <span class="n">out</span> <span class="o">=</span> <span class="n">from_shapely</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="k">return</span> <span class="n">GeoSeries</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~/miniconda3/envs/datascience/lib/python3.8/site-packages/geopandas/array.py:151,</span> in <span class="ni">from_shapely</span><span class="nt">(data, crs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">def</span> <span class="nf">from_shapely</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span><span class="sd">     Convert a list or array of shapely objects to a GeometryArray.</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">151</span>     <span class="k">return</span> <span class="n">GeometryArray</span><span class="p">(</span><span class="n">vectorized</span><span class="o">.</span><span class="n">from_shapely</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/datascience/lib/python3.8/site-packages/geopandas/_vectorized.py:136,</span> in <span class="ni">from_shapely</span><span class="nt">(data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">136</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Input must be valid geometry objects: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geom</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">if</span> <span class="n">compat</span><span class="o">.</span><span class="n">USE_PYGEOS</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: Input must be valid geometry objects: SRID=4326;POINT (73.09935760498047 6.726365089416504)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">table_df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s1">&#39;fov&#39;</span><span class="p">,</span><span class="n">crs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;epsg:4269&#39;</span><span class="p">})</span>
+<span class="n">gdf</span><span class="p">[</span><span class="mi">780</span><span class="p">:</span><span class="mi">800</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;TEMP_2&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rainbow&#39;</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1105e2f98&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/convert_mascs_to_db_24_1.png" src="../../../../../_images/convert_mascs_to_db_24_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find_nearest</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">array</span><span class="p">,</span> <span class="n">value</span> <span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">array</span> <span class="o">-</span> <span class="n">value</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+
+<span class="n">find_nearest</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="mi">750</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>245
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength_idx</span> <span class="o">=</span> <span class="n">find_nearest</span><span class="p">(</span><span class="n">wav_grid_2nm</span><span class="p">,</span><span class="mi">800</span><span class="p">)</span>
+
+<span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;refl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">iof_sp_2nm</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">wavelength_idx</span><span class="p">])</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;photom_refl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">photom_iof_sp_2nm</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">wavelength_idx</span><span class="p">])</span>
+<span class="c1"># gdf[[&#39;TEMP_2&#39;,&#39;refl&#39;,&#39;photom_refl&#39;]][gdf[&#39;refl&#39;] &lt; 0.3 ].plot.scatter(x=&#39;TEMP_2&#39;,y=&#39;refl&#39;, figsize=[20,8])</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">scatter_matrix</span><span class="p">(</span>
+    <span class="n">gdf</span><span class="p">[[</span><span class="s1">&#39;TEMP_2&#39;</span><span class="p">,</span><span class="s1">&#39;refl&#39;</span><span class="p">,</span><span class="s1">&#39;photom_refl&#39;</span><span class="p">,</span> <span class="s1">&#39;PHASE_ANGLE&#39;</span><span class="p">]][</span>
+        <span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;photom_refl&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;photom_refl&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="p">],</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span>
+        <span class="n">diagonal</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/convert_mascs_to_db_26_0.png" src="../../../../../_images/convert_mascs_to_db_26_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="define-a-db">
+<h2>Define a DB<a class="headerlink" href="#define-a-db" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">postgresql_connection_string</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># declarative_base is used for the mapping local key &lt;&gt; pg columns name</span>
+
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">Float</span><span class="p">,</span> <span class="n">DateTime</span>
+<span class="kn">from</span> <span class="nn">geoalchemy2</span> <span class="kn">import</span> <span class="n">Geometry</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.ext.declarative</span> <span class="kn">import</span> <span class="n">declarative_base</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.dialects</span> <span class="kn">import</span> <span class="n">postgresql</span>
+
+<span class="n">Base</span> <span class="o">=</span> <span class="n">declarative_base</span><span class="p">(</span><span class="n">metadata</span><span class="o">=</span><span class="n">MetaData</span><span class="p">())</span>
+
+<span class="k">class</span> <span class="nc">MASCSData</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;mascsdata&#39;</span>
+
+    <span class="n">pid</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">SOFTWARE_VERSION</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;software_version&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">SPACECRAFT_CLOCK_START_COUNT</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;spacecraft_clock_start_count&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">ALONG_TRACK_FOOTPRINT_SIZE</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;along_track_footprint_size&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">PACKET_SUBSECONDS</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;packet_subseconds&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">Partial_Data</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;partial_data&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">Temperature_2</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;temperature_2&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">TEMP_2</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;temp_2&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">SPICE_Version_Epoch</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;spice_version_epoch&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">STANDARD_DATA_PRODUCT_ID</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;standard_data_product_id&#39;</span><span class="p">,</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">SPACECRAFT_CLOCK_STOP_COUNT</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;spacecraft_clock_stop_count&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">Saturation</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;saturation&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">START_TIME</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;start_time&#39;</span><span class="p">,</span><span class="n">DateTime</span><span class="p">)</span>
+    <span class="n">ACROSS_TRACK_FOOTPRINT_SIZE</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;across_track_footprint_size&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">Temperature_1</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;temperature_1&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">photom_iof_sp_2nm</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;photom_iof_sp_2nm&#39;</span><span class="p">,</span> <span class="n">postgresql</span><span class="o">.</span><span class="n">ARRAY</span><span class="p">(</span><span class="n">Float</span><span class="p">))</span>
+    <span class="n">Low_VIS_Wavelength_Uncertainty</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;low_vis_wavelength_uncertainty&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">INCIDENCE_ANGLE</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;incidence_angle&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">PHASE_ANGLE</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;phase_angle&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">iof_sp_2nm</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;iof_sp_2nm&#39;</span><span class="p">,</span> <span class="n">postgresql</span><span class="o">.</span><span class="n">ARRAY</span><span class="p">(</span><span class="n">Float</span><span class="p">))</span>
+    <span class="n">Anomalous_Pixels</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;anomalous_pixels&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">STOP_TIME</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;stop_time&#39;</span><span class="p">,</span><span class="n">DateTime</span><span class="p">)</span>
+    <span class="n">Dark_Saturation</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;dark_saturation&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">SC_TIME</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;sc_time&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">UVVS_Noise_Spike</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;uvvs_noise_spike&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">SPECTRUM_MET</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;spectrum_met&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">PRODUCT_ID</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;product_id&#39;</span><span class="p">,</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">SPECTRUM_SUBSECONDS</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;spectrum_subseconds&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">SPECTRUM_NUMBER</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;spectrum_number&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">PRODUCT_CREATION_TIME</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;product_creation_time&#39;</span><span class="p">,</span><span class="n">DateTime</span><span class="p">)</span>
+    <span class="n">EMISSION_ANGLE</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;emission_angle&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">SITE_ID</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;site_id&#39;</span><span class="p">,</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">INT_COUNT</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;int_count&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">UVVS_Operating</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;uvvs_operating&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">DETECTOR_ID</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;detector_id&#39;</span><span class="p">,</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">High_VIS_Wavelength_Uncertainty</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;high_vis_wavelength_uncertainty&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">SPECTRUM_UTC_TIME</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;spectrum_utc_time&#39;</span><span class="p">,</span><span class="n">DateTime</span><span class="p">)</span>
+    <span class="n">SOLAR_DISTANCE</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;solar_distance&#39;</span><span class="p">,</span><span class="n">Float</span><span class="p">)</span>
+    <span class="n">TARGET_NAME</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;target_name&#39;</span><span class="p">,</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">Low_Signal_Level</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;low_signal_level&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">MISSION_PHASE_NAME</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;mission_phase_name&#39;</span><span class="p">,</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">PRODUCT_VERSION_ID</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;product_version_id&#39;</span><span class="p">,</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">Dark_Scan</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;dark_scan&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">DATA_QUALITY_INDEX</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;data_quality_index&#39;</span><span class="p">,</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">Grating_Temperature</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;grating_temperature&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">fov</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;fov&#39;</span><span class="p">,</span><span class="n">Geometry</span><span class="p">(</span><span class="n">geometry_type</span><span class="o">=</span><span class="s1">&#39;POLYGON&#39;</span><span class="p">,</span> <span class="n">srid</span><span class="o">=</span><span class="mi">4326</span><span class="p">))</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">Geometry</span><span class="p">(</span><span class="n">geometry_type</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">srid</span><span class="o">=</span><span class="mi">4326</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;&lt;pid=&#39;</span><span class="si">%s</span><span class="s2">&#39;, START_TIME=&#39;</span><span class="si">%s</span><span class="s2">&#39;, STOP_TIME=&#39;</span><span class="si">%s</span><span class="s2">&#39;&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">START_TIME</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">STOP_TIME</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">sessionmaker</span>
+<span class="n">Session</span> <span class="o">=</span> <span class="n">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Base</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">sessionmaker</span>
+<span class="n">Session</span> <span class="o">=</span> <span class="n">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="n">mascsdata_instance</span> <span class="o">=</span> <span class="p">[</span><span class="n">MASCSData</span><span class="p">(</span><span class="o">**</span><span class="n">tbl</span><span class="p">)</span> <span class="k">for</span> <span class="n">tbl</span> <span class="ow">in</span> <span class="n">table_data</span><span class="p">]</span>
+
+<span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="c1"># session.add(mascsdata_instance[100])</span>
+<span class="n">session</span><span class="o">.</span><span class="n">add_all</span><span class="p">(</span><span class="n">mascsdata_instance</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># {&#39;file&#39;:lbl_file.stem,&#39;inserted&#39;:len(mascsdata_instance),&#39;last_pk&#39;:max([lk.pid for lk in mascsdata_instance])}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sql</span> postgresql_connection_string
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Line magic function `%sql` not found.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">lk</span><span class="o">.</span><span class="n">pid</span> <span class="k">for</span> <span class="n">lk</span> <span class="ow">in</span> <span class="n">mascsdata_instance</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ 5,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/src/data"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Durch The Europlanet ML Team<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

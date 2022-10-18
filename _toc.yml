@@ -21,6 +21,8 @@ parts:
   numbered: True
   chapters:
   - file: Part_2/Chapter_2_MercuryBoundaries/Introduction
+  - file: Part_2/Chapter_2_MercuryBoundaries/DataPreparation/README
+  - file: Part_2/Chapter_2_MercuryBoundaries/DataPreparation/master-interactive
   - file: Part_2/Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer
   - file: Part_2/Chapter_2_MercuryBoundaries/Summary
 - caption: 5. Automatic Detection of Boundaries around Earth
@@ -60,6 +62,7 @@ parts:
   numbered: True
   chapters:
   - file: Part_2/Chapter_9_MercurySurfaceClassification/Introduction
+  - file: Part_2/Chapter_9_MercurySurfaceClassification/Tutorial/README
   - file: Part_2/Chapter_9_MercurySurfaceClassification/Summary
 - caption: 12. Mineral Identification
   numbered: True

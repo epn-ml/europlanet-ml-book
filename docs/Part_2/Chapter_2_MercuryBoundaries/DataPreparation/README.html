@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Data preparation &#8212; The Europlanet Machine Learning Book</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="master-interactive.html" />
+    <link rel="prev" title="1. Introduction" href="../Introduction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/Europlanet_Machine_Learning_Logo_Standard.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Europlanet Machine Learning Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Foreword.html">
+   The Europlanet Machine Learning Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1. Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Chapter_1_Introduction/Content.html">
+   1. Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2. Basic Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification.html">
+   2. Supervised classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html">
+   3. Supervised regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3. Automatic Detection of ICMEs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline.html">
+   2. Machine Learning Pipeline for Automated Detection of ICMEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  4. Automatic Detection of Boundaries around Mercury
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Data preparation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tutorial-MercuryBoundaries/Magnetometer.html">
+   3. Machine learning pipeline for detection of boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Summary.html">
+   4. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  5. Automatic Detection of Boundaries around Earth
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline.html">
+   2. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  6. Image Segmentation for Detecting Mounds on Mars
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_4_MarsMounds/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation.html">
+   2. Mound Classification in DTMs from Mars Arabia Terra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_4_MarsMounds/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  7. Landforms Detection on Mars (Pits)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_5_MarsPits/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_5_MarsPits/Tutorial-DeepLandforms/Tutorial_readme.html">
+   2.
+   <strong>
+    DeepLandforms tutorial
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_5_MarsPits/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  8. Mars Pits Shadow Extractor (MAPS)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_6_MarsPitsShadowExtractor/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_6_MarsPitsShadowExtractor/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  9. Chorus Waves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_7_ChorusWaves/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_7_ChorusWaves/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  10. Classification of Meteors based on Lightcurves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_8_MeteorClassification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_8_MeteorClassification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  11. Mercury Surface Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_9_MercurySurfaceClassification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_9_MercurySurfaceClassification/Tutorial/README.html">
+   2. ML pipeline for classification of Mercury surface composition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_9_MercurySurfaceClassification/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  12. Mineral Identification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_10_MineralIdentification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_10_MineralIdentification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../References/bibliography.html">
+   1. References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Part_2/Chapter_2_MercuryBoundaries/DataPreparation/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up">
+   2.2. Setting up
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage">
+   2.3. Usage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-format-description">
+   2.4. Data format description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference-frame-and-coordinate-systems">
+   2.5. Reference frame and coordinate systems
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data preparation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up">
+   2.2. Setting up
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage">
+   2.3. Usage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-format-description">
+   2.4. Data format description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference-frame-and-coordinate-systems">
+   2.5. Reference frame and coordinate systems
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-preparation">
+<h1><span class="section-number">2. </span>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h1>
+<p>Link to prepared dataset:</p>
+<p><a class="reference external" href="https://zenodo.org/record/6417492#.YsQsK9JByEL">https://zenodo.org/record/6417492#.YsQsK9JByEL</a></p>
+<div class="section" id="introduction">
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The goal of this project is to provide a framework for acquiring and pre-processing magnetic field data collected by the MESSENGER mission to Mercury in 2011-2015, and make this data suitable for analytical analysis and machine learning projects.</p>
+<p>The original datasets and the accompanying metadata files are hosted by <a class="reference external" href="https://pds-ppi.igpp.ucla.edu/search/view/?f=yes&amp;id=pds://PPI/MESS-E_V_H_SW-MAG-4-SUMM-CALIBRATED-V1.0/DATA/MSO">NASA PDS PPI</a>.</p>
+<p>The following pre-processing steps are performed by the present project:</p>
+<ul class="simple">
+<li><p>Elimination of calibration signals. As a part of maintenance procedures, the MESSENGER magnetometer needed to be occasionally calibrated. However, the measurements of the magnetometer collected while a calibration signal was applied to it are still present in the original datasets. These signals are located and removed by us so that subsequent analysis is not biased by them.</p></li>
+<li><p>Enrichment with Mercury information. For a number of scientific purposes it may be useful to possess information not only on the magnetic field and the position of the spacecraft in the space around Mercury, but also information on the position of the planet around the Sun. We acquire this information from the <a class="reference external" href="https://ssd.jpl.nasa.gov/horizons/">NASA Horizons</a> application and merge it with the main dataset.</p></li>
+<li><p>Restructurization. The original data files are split according to UTC-based day boundaries. However, for many scientific purposes it is preferable to possess data split according to orbit boundaries. We use MESSENGER orbit apoapsis points as markers to separate individual orbits. We also enumerate the orbits in the same manner as <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JA027544">Philpott et al., 2020</a>; this enumeration has some differences from the enumeration of orbits as calculated according to the orbital correction maneuver table.</p></li>
+<li><p>Enrichment with auxiliary information. To simplify subsequent analysis, we also include the estimated planetary dipole magnetic field contribution for each point, planetocentric distance of the spacecraft and several other items explained in detail further.</p></li>
+</ul>
+</div>
+<div class="section" id="setting-up">
+<h2><span class="section-number">2.2. </span>Setting up<a class="headerlink" href="#setting-up" title="Permalink to this headline">¶</a></h2>
+<p>To initialize the workspace, simply run <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">setup.sh</span></code> in the project directory. This will initialize the Python virtual environment, download and unpack the magnetic field files, Mercury orbital information and magnetometer checkout information.</p>
+</div>
+<div class="section" id="usage">
+<h2><span class="section-number">2.3. </span>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>The main workload is performed by the <code class="docutils literal notranslate"><span class="pre">master.py</span></code> Python script. First, activate the Python virtual environment in the project’s directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> venv/bin/activate
+</pre></div>
+</div>
+<p>This will ensure that the dependencies installed during setup are available to it.
+Now, simply run the main script as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 master.py <span class="o">[</span>RESOLUTION<span class="o">]</span> <span class="o">[</span>YEAR<span class="o">]</span> <span class="o">[</span>DOY_START<span class="o">]</span> <span class="o">[</span>DOY_END<span class="o">]</span>
+</pre></div>
+</div>
+<p>Here:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RESOLUTION</span></code> is the temporal resolution of the magnetometer data that you are interested in (valid options are 1, 5, 10, 60 seconds; default is 60)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">YEAR</span></code> is the year to process (when not provided, process all years by default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOY_START</span></code> is the first day of the year to process (Jan.1st  by default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOY_END</span></code> is the last day of the year to process (Dec.31st by default)</p></li>
+</ul>
+</div>
+<div class="section" id="data-format-description">
+<h2><span class="section-number">2.4. </span>Data format description<a class="headerlink" href="#data-format-description" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>DATE</p></li>
+<li><p>TIME_TAG: A derived value for the timetag associated with the center time of the averaging interval of the Bx,By,Bz samples in each record. The derived value is created by the following formula: <code class="docutils literal notranslate"><span class="pre">MET</span> <span class="pre">+</span> <span class="pre">0.05</span> <span class="pre">*</span> <span class="pre">delta_ts</span> <span class="pre">+</span> <span class="pre">(dt_sample)*(I-1)</span> <span class="pre">-</span> <span class="pre">latency</span></code>. MET is the mission elapsed time for the entire science packet. <code class="docutils literal notranslate"><span class="pre">delta_ts</span></code> is the delta time in seconds between the MET and the first sample in the downloaded science packet. <code class="docutils literal notranslate"><span class="pre">dt_sample</span></code> is the time between samples in seconds and given by <code class="docutils literal notranslate"><span class="pre">dt_sample</span> <span class="pre">=</span> <span class="pre">1/sample_rate</span></code> where sample_rate is the reported sample rate in samples per second. <code class="docutils literal notranslate"><span class="pre">I</span></code> is the incremental counter for each data sample in the science packet. <code class="docutils literal notranslate"><span class="pre">I=1</span></code> is the first sample in the packet. <code class="docutils literal notranslate"><span class="pre">Latency</span></code> is the sample rate-dependent delay of the time stamp  recording relative to the actual time of observation.</p></li>
+<li><p>NAVG: Number of samples in averaging interval</p></li>
+<li><p>X_MSO: Average X position of MESSENGER in Mercury solar orbital (MSO) coordinates (km)</p></li>
+<li><p>Y_MSO: Average Y position of MESSENGER in Mercury solar orbital (MSO) coordinates (km)</p></li>
+<li><p>Z_MSO: Average Z position of MESSENGER in Mercury solar orbital (MSO) coordinates (km)</p></li>
+<li><p>BX_MSO: Average X axis magnetic field value in Mercury solar orbital (MSO) coordinates (nanoTesla)</p></li>
+<li><p>BY_MSO: Average Y axis magnetic field value in Mercury solar orbital (MSO) coordinates (nanoTesla)</p></li>
+<li><p>BZ_MSO: Average Z axis magnetic field value in Mercury solar orbital (MSO) coordinates (nanoTesla)</p></li>
+<li><p>DBX_MSO: Standard deviation of X axis magnetic field values in Mercury solar orbital (MSO) coordinates (nanoTesla)</p></li>
+<li><p>DBY_MSO: Standard deviation of Y axis magnetic field values in Mercury solar orbital (MSO) coordinates (nanoTesla)</p></li>
+<li><p>DBZ_MSO: Standard deviation of Z axis magnetic field values in Mercury solar orbital (MSO) coordinates (nanoTesla)</p></li>
+<li><p>RHO_DIPOLE: Radial distance of MESSENGER’s position vector (km) wrt the position of the planetary magnetic dipole</p></li>
+<li><p>PHI_DIPOLE: Polar angle of MESSENGER’s position vector (km)</p></li>
+<li><p>THETA_DIPOLE: Azimuthal angle of MESSENGER’s position vector (km)</p></li>
+<li><p>BABS_DIPOLE: Magnitude of the estimated planetary dipole field (nanoTesla)</p></li>
+<li><p>BX_DIPOLE: X axis magnetic field value of the estimated planetary dipole field in Mercury solar orbital (MSO) coordinates (nanoTesla)</p></li>
+<li><p>BY_DIPOLE: Y axis magnetic field value of the estimated planetary dipole field in Mercury solar orbital (MSO) coordinates (nanoTesla)</p></li>
+<li><p>BZ_DIPOLE: Z axis magnetic field value of the estimated planetary dipole field in Mercury solar orbital (MSO) coordinates (nanoTesla)</p></li>
+<li><p>RHO: Planetocentric distance of MESSENGER (km)</p></li>
+<li><p>RXY: MESSENGER planetocentric distance projection magnitude onto the <code class="docutils literal notranslate"><span class="pre">XY</span></code> plane (km)</p></li>
+<li><p>X: X-component of Mercury’s position vector (km)</p></li>
+<li><p>Y: Y-component of Mercury’s position vector (km)</p></li>
+<li><p>Z: Z-component of Mercury’s position vector (km)</p></li>
+<li><p>VX: X-component of Mercury’s velocity vector (km/sec)</p></li>
+<li><p>VY: Y-component of Mercury’s velocity vector (km/sec)</p></li>
+<li><p>VZ: Z-component of Mercury’s velocity vector (km/sec)</p></li>
+<li><p>VABS: Magnitude of Mercury’s velocity vector (km/sec)</p></li>
+<li><p>D: Magnitude of Mercury’s position vector (km)</p></li>
+<li><p>COSALPHA: <code class="docutils literal notranslate"><span class="pre">cos</span></code> of the angle between the MESSENGER orbital plane projection onto the <code class="docutils literal notranslate"><span class="pre">XY</span></code> plane and the <code class="docutils literal notranslate"><span class="pre">X</span></code> axis in Mercury solar orbital (MSO) coordinates</p></li>
+<li><p>EXTREMA: Flag value. <code class="docutils literal notranslate"><span class="pre">2</span></code> at the apoapsis of MESSENGER orbit; <code class="docutils literal notranslate"><span class="pre">-2</span></code> at the periapsis of MESSENGER orbit; <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">-1</span></code> at the extrema of MESSENGER planetocentric distance projection onto the <code class="docutils literal notranslate"><span class="pre">XY</span></code> plane, <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise.</p></li>
+<li><p>X_AB: Average X position of MESSENGER in aberrated Mercury solar orbital (MSO) coordinates in units of kilometers</p></li>
+<li><p>Y_AB: Average Y position of MESSENGER in aberrated Mercury solar orbital (MSO) coordinates in units of kilometers</p></li>
+<li><p>Z_AB: Average Z position of MESSENGER in aberrated Mercury solar orbital (MSO) coordinates in units of kilometers</p></li>
+<li><p>BX_AB: Average X axis magnetic field value in aberrated Mercury solar orbital (MSO) coordinates in units of nano-Tesla</p></li>
+<li><p>BY_AB: Average Y axis magnetic field value in aberrated Mercury solar orbital (MSO) coordinates in units of nano-Tesla</p></li>
+<li><p>BZ_AB: Average Z axis magnetic field value in aberrated Mercury solar orbital (MSO) coordinates in units of nano-Tesla</p></li>
+<li><p>DBX_AB: Standard deviation of X axis magnetic field values in aberrated Mercury solar orbital (MSO) coordinates and units of nano-Tesla</p></li>
+<li><p>DBY_AB: Standard deviation of Y axis magnetic field values in aberrated Mercury solar orbital (MSO) coordinates and units of nano-Tesla</p></li>
+<li><p>DBZ_AB: Standard deviation of Z axis magnetic field values in aberrated Mercury solar orbital (MSO) coordinates and units of nano-Tesla</p></li>
+<li><p>RHO_AB: <code class="docutils literal notranslate"><span class="pre">&lt;ignore&gt;</span></code></p></li>
+<li><p>RXY_AB: <code class="docutils literal notranslate"><span class="pre">&lt;ignore&gt;</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="reference-frame-and-coordinate-systems">
+<h2><span class="section-number">2.5. </span>Reference frame and coordinate systems<a class="headerlink" href="#reference-frame-and-coordinate-systems" title="Permalink to this headline">¶</a></h2>
+<p>The Mercury Solar Orbital (MSO) coordinate system centered at Mercury’s centre of mass, where the <code class="docutils literal notranslate"><span class="pre">+x</span></code> axis is pointing to the Sun, the <code class="docutils literal notranslate"><span class="pre">+y</span></code> axis is opposite to the orbital motion of Mercury and points toward dusk, and the <code class="docutils literal notranslate"><span class="pre">+z</span></code> axis is pointing to the north (normal to the <code class="docutils literal notranslate"><span class="pre">xy</span></code>-plane) and completes the right-handed coordinate system.</p>
+<p>Mercury coordinates are specified as follows:</p>
+<ul class="simple">
+<li><p>Reference epoch: J2000.0</p></li>
+<li><p>X-Y plane: adopted Earth orbital plane at the reference epoch (Note: IAU76 obliquity of 84381.448 arcseconds wrt ICRF X-Y plane)</p></li>
+<li><p>X-axis   : ICRF</p></li>
+<li><p>Z-axis   : perpendicular to the X-Y plane in the directional (+ or -) sense of Earth’s north pole at the reference epoch.</p></li>
+</ul>
+<p>Mercury’s position is calculated at the specified time points of the Barycentric Dynamical Time, or TDB. This continuous relativistic coordinate time is equivalent to the relativistic proper time of a clock at rest in a reference frame comoving with the solar system barycenter but outside the system’s gravity well. It is the independent variable in the solar system relativistic equations of motion. TDB runs at a uniform rate of one SI second per second and is independent of irregularities in Earth’s rotation.</p>
+<p>The aberrated MSO coordinate system can be explained as follows. Since the magnetosphere’s orientation responds to the general direction of the solar wind arrival, we may wish to account for the fact that the solar wind does not arrive directly along the <code class="docutils literal notranslate"><span class="pre">X</span></code> axis, since the planet’s orbital velocity is non-negligible relative to the solar wind speed. Thus, if we multiply the unit vectors in the MSO coordinate system by a rotation matrix so that the solar wind arrives along the <code class="docutils literal notranslate"><span class="pre">X</span></code> axis, the resulting unit vectors will define the aberrated MSO system. While we make a very rough approximation and take solar wind velocity as a constant 350km/s, we take into account that Mercury’s velocity varies widely over time due to its highly elliptical orbit.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Part_2/Chapter_2_MercuryBoundaries/DataPreparation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../Introduction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="master-interactive.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Durch The Europlanet ML Team<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

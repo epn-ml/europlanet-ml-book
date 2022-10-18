@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Summary and Discussion" href="Summary.html" />
+    <link rel="next" title="2. 05-MESSENGER-MERCURY-SURFACE-CLASSIFICATION-UNSUPERVISED_DLR" href="Tutorial/README.html" />
     <link rel="prev" title="2. Summary and Discussion" href="../Chapter_8_MeteorClassification/Summary.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -230,8 +230,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../Chapter_5_MarsPits/Tutorial-DeepLandforms/Tutorial_readme.html">
+   2.
+   <strong>
+    DeepLandforms tutorial
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Chapter_5_MarsPits/Summary.html">
-   2. Summary and Discussion
+   3. Summary and Discussion
   </a>
  </li>
 </ul>
@@ -298,8 +306,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial/README.html">
+   2. 05-MESSENGER-MERCURY-SURFACE-CLASSIFICATION-UNSUPERVISED_DLR
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Summary.html">
-   2. Summary and Discussion
+   3. Summary and Discussion
   </a>
  </li>
 </ul>
@@ -310,8 +323,13 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Chapter_10_MineralIdentification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Chapter_10_MineralIdentification/Summary.html">
-   1. Summary and Discussion
+   2. Summary and Discussion
   </a>
  </li>
 </ul>
@@ -403,8 +421,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataset">
-   1.2. Dataset
+  <a class="reference internal nav-link" href="#brief-summary-of-our-approach">
+   1.2. Brief summary of our approach
   </a>
  </li>
 </ul>
@@ -433,8 +451,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataset">
-   1.2. Dataset
+  <a class="reference internal nav-link" href="#brief-summary-of-our-approach">
+   1.2. Brief summary of our approach
   </a>
  </li>
 </ul>
@@ -448,11 +466,25 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
 <h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This chapter is about the science case proposed by the Deutsches Zentrum für Luft- und Raumfahrt (DLR), entitled “Classification of surface composition on the surface of Mercury”.</p>
+<p>The ML pipeline can be found on <a class="reference external" href="https://github.com/epn-ml/MESSENGER-Mercury-Surface-Cassification-Unsupervised_DLR">GitHub</a>.</p>
 <div class="section" id="description-of-the-science-case">
 <h2><span class="section-number">1.1. </span>Description of the science case<a class="headerlink" href="#description-of-the-science-case" title="Permalink to this headline">¶</a></h2>
+<p>Data returned from space missions has grown immensely in the last decade. Our goal is to understand the composition and evolution of planetary surfaces. We plan to extract the underlying information from this huge data set using unsupervised classification spectral data, chemical composition, and ages from the surface of Mercury.</p>
+<p>We would like to have an assessment if current remote sensing data from NASA/MESSENGER could resolve different surface regions of Mercury an ideas on the potential of upcoming ESA/BepiColombo mission for improvement. The ultimate goal would be to have a classifciation of Mercury’s surface regions with uncertainty assessments, matching with laboratory measurements.</p>
+<p>The sheer amount of data returned by scientific missions aimed at exploring the solar system and observing exoplanets in recent decades overwhelms classical methods to explore and discover important scientific aspects of the target body.
+As an example, the Mercury data return for Mariner 10 was less than 100 MB, while MESSENGER delivered about 23 TB. Future missions are expected to exceed this limit. In addition, there is a trend of increasing complexity in the data itself, e.g., going from the of Mariner-10 to the hyperspectral datasets expected from BepiColombo. This situation clearly indicates that some form of automated analysis would be beneficial, provided it is able to save time without a loss of the information content of the data.</p>
+<p>Keeping the focus on hyperspectral remote sensing data, the typical approach for analysing this kind of data is to model the observed radiation with a forward radiative model (like Hapke, as in Hamilton et al., 2005) or attempt to reproduce the observed radiation by setting up relevant samples in a laboratory setting using chemical and/or geomorphological context information (e.g., Helbert et al., 2013). Complex forward models that are able to take into account the relevant physics are typically computationally intensive and difficult to use to investigate the very large parameter space covered by hyperspectral data. This consideration is even more relevant for laboratory investigations: Physical simulation needs the target to be physically fabricated, hence more and and more parameters means more experiments and more time. Models need computational power to be calculated in a reasonable amount of time, but could be distributed on several machines to overcome this limitation. This workaround is not effective for laboratory experiment, because most only few places meets of the environment needed for space sample simulation, like high-vacuum, -temperature, -radiation and so on. Without a way to efficiently and rapidly explore large amounts of complex data, it is likely that valuable information will be missed in large hyperspectral data sets. Geological maps are the gold standard for remote planetary surface studies, but producing them is an extremely time-consuming task.
+This process can suffer from user bias and typically only uses a few data points (e.g., 3-channel images) to describe different units. For example, Denevi et al. (2009) mapped the distribution and extent of major terrain types of Mercury using MESSENGER Mercury Dual Imaging System (MDIS) camera observations of Mercury. While the camera has 11 spectral bands, the maps typically used for the terrain differentiation are RGB, where 3 representative spectral bands are mapped onto the three image color channels. Geomorphological maps take in account additional features like surface roughness and crater density as a proxy for the age, where the correlation between age and crater density are derived from models (e.g., Bland, 2003; Kerr, 2006).</p>
+<p>Automated techniques are becoming more common in planetary science applications, and the aim of this case is to illustrate how to apply unsupervised learning techniques to remote sensing data. This approach requires minimal user interaction and yields scientifically interesting products like classification maps that can be directly compared with geomorphological maps and models.</p>
 </div>
-<div class="section" id="dataset">
-<h2><span class="section-number">1.2. </span>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="brief-summary-of-our-approach">
+<h2><span class="section-number">1.2. </span>Brief summary of our approach<a class="headerlink" href="#brief-summary-of-our-approach" title="Permalink to this headline">¶</a></h2>
+<p>In this science case, Mercury surface reflectance data from the MASCS instrument onboard the NASA/MESSENGER mission is analysed.</p>
+<p>First, NASA/PDS data is converted in a relational DB (PostgreSQL). Then the data is regridded with custom Postgis/PostgreSQL spatial queries. This produces a global hyperspectral data cube image of normalized MASCS visible (VIS) detector spectra, from the first Earth year of the orbital mission. The cube contains some anomalies, in regions of low coverage or from high levels of spectral variation within a single pixel.</p>
+<p>Thus, data artifacts, instrumental and photometric residual effects are all removed. The resulting data cube has several hundred features that are compressed via blind signal demixing with Independent Component Analysis (ICA). Initial results show that four components reconstruct the original dataset within the measurement estimated error. The four features were embedded in a two-dimensional space via Uniform Manifold Approximation and Projection (UMAP). No significant small-scale morphology was found after exploring UMAP hyperparameters.</p>
+<p>Finally, the 2D maps were partitioned with hierarchical agglomerative clustering . Dendrogram gap analysis shows a big gap between data partition in three and four clusters, and three clusters have been chosen as a significant data segregation. At this initial stage, the existence of two large and spectrally distinct regions have been found, which have been designated the polar spectral unit and the equatorial spectral unit.</p>
+<p>The spatial extent of the polar unit in the northern hemisphere generally correlates well with that of the northern volcanic plains and partially to the surface highest temperature models in the equatorial region. This may indicate an interaction between mineral composition and structure and surface temperature, because Mercury reaches a diurnal temperature above 700 K. Chemical data spatial distribution from X-ray and Gamma ray spectrometers show no apparent correlation with the clusters. This could indicate that chemical composition produces no distinctive mineral phases for the instrument or that those phases were altered enough to be indistinguishable by the harsh space environment around Mercury. Further analysis indicates the presence of smaller sub-units that lie near the boundaries of these large regions and may be transitional areas of intermediate spectral characters.</p>
 </div>
 </div>
 
@@ -488,10 +520,10 @@
             <p class="prev-next-title"><span class="section-number">2. </span>Summary and Discussion</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Summary.html" title="next page">
+    <a class='right-next' id="next-link" href="Tutorial/README.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Summary and Discussion</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>05-MESSENGER-MERCURY-SURFACE-CLASSIFICATION-UNSUPERVISED_DLR</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
