@@ -23,7 +23,7 @@ In the dataset for the machine learning project, we use the magnetic field data 
 
 ```{figure} ./images/shock_example.png
 ---
-height: 350px
+width: 600px
 name: shockExample
 ---
 An example of a shock crossing in the data from the Cluster spacecraft. From the top to bottom, Electric field spectrogram from WHISPER, magnetic field magnitude, ion density and ion bulk flow velocity from the CIS HIA instrument, and Ion energy spectrum from CIS.

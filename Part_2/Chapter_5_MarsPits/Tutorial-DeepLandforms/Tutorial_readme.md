@@ -24,7 +24,7 @@ ________________________________________________________________________________
 
 ```{figure} ../Images/Figure-3-flowchart.png
 ---
-height: 250px
+width: 600px
 name: DeepLandformsWorkflow
 ---
 ```
@@ -84,7 +84,7 @@ See the red boxes in below image.
 
 ```{figure} ./Tutorial_images/Terminal.png
 ---
-height: 250px
+width: 600px
 name: terminal
 ---
 Docker-compose up --build
@@ -121,7 +121,7 @@ Then just execute all the cells.
 
 ```{figure} ./Tutorial_images/IPU.png
 ---
-height: 250px
+width: 600px
 name: ipu
 ---
 IPU
@@ -131,7 +131,7 @@ IPU
 
 ```{figure} ./Tutorial_images/labelme.png
 ---
-height: 250px
+width: 600px
 name: labelme
 ---
 LabelMe
@@ -143,7 +143,7 @@ See official tutorial [here](https://github.com/wkentaro/labelme/tree/main/examp
 
 ```{figure} ./Tutorial_images/training.png
 ---
-height: 250px
+width: 600px
 name: training
 ---
 IPU
@@ -178,7 +178,7 @@ Then in cell 14 **CONFIGS - edit befor run**
 
 ```{figure} ./Tutorial_images/inference.png
 ---
-height: 250px
+width: 600px
 name: inference
 ---
 Inference
@@ -219,7 +219,7 @@ Go to ***localhost:TENSORBOARD_PORT***
 
 ```{figure} ./Tutorial_images/tensorboard_interface.png
 ---
-height: 250px
+width: 600px
 name: tensorboard
 ---
 Tensorboard

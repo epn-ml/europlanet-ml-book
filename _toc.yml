@@ -39,6 +39,7 @@ parts:
   numbered: True
   chapters:
   - file: Part_2/Chapter_5_MarsPits/Introduction
+  - file: Part_2/Chapter_5_MarsPits/Tutorial-DeepLandforms/Tutorial_readme
   - file: Part_2/Chapter_5_MarsPits/Summary
 - caption: 8. Mars Pits Shadow Extractor (MAPS)
   numbered: True
