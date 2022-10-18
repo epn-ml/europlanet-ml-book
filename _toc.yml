@@ -63,7 +63,7 @@ parts:
 - caption: 12. Mineral Identification
   numbered: True
   chapters:
-  - file: Part_2/Chapter_10_MineralIdentificationIntroduction
+  - file: Part_2/Chapter_10_MineralIdentification/Introduction
   - file: Part_2/Chapter_10_MineralIdentification/Summary
 - caption: References
   numbered: True
