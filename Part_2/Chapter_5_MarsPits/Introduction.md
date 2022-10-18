@@ -2,6 +2,10 @@
 
 This chapter is about the science case proposed "Landform classification and mapping using Machine Learning", proposed by the GMAP work package of Europlanet 2024 RI.
 
+The ML pipeline is open source and can be found on [GitHub](https://github.com/epn-ml/DeepLandforms).
+
+In the following, we present a tutorial for the pipeline, which can also be found on [GitHub](https://github.com/epn-ml/DeepLandforms/tree/main/Tutorial).
+
 ## Description of the science case
 
 This science case is focused on the detection and mapping of sinkhole-like depressions on Mars and the Moon through Deep Learning Object Detection and Instance Segmentation.
