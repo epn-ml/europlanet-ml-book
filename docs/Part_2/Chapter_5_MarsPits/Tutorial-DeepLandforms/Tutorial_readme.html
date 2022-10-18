@@ -1,0 +1,960 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. DeepLandforms tutorial &#8212; The Europlanet Machine Learning Book</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3. Summary and Discussion" href="../Summary.html" />
+    <link rel="prev" title="1. Introduction" href="../Introduction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/Europlanet_Machine_Learning_Logo_Standard.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Europlanet Machine Learning Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Foreword.html">
+   The Europlanet Machine Learning Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1. Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Chapter_1_Introduction/Content.html">
+   1. Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2. Basic Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Chapter_1_SupervisedClassification/Tutorial_SupervisedClassification.html">
+   2. Supervised classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Part_1/Chapter_2_SupervisedRegression/Tutorial_SupervisedRegression.html">
+   3. Supervised regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3. Automatic Detection of ICMEs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Tutorial-ICMEs/MachineLearningPipeline.html">
+   2. Machine Learning Pipeline for Automated Detection of ICMEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_1_ICMEsDetection/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  4. Automatic Detection of Boundaries around Mercury
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/Tutorial-MercuryBoundaries/Magnetometer.html">
+   2. Machine learning pipeline for detection of boundaries around Mercury
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_2_MercuryBoundaries/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  5. Automatic Detection of Boundaries around Earth
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/Tutorial-EarthBoundaries/IAP_Pipeline.html">
+   2. Machine Learning Pipeline for Automatic Detection of Magnetospheric Boundaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_3_EarthBoundaries/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  6. Image Segmentation for Detecting Mounds on Mars
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_4_MarsMounds/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_4_MarsMounds/Tutorial-MarsMounds/Workshop-Mound-Segmentation.html">
+   2. Mound Classification in DTMs from Mars Arabia Terra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_4_MarsMounds/Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  7. Landforms Detection on Mars (Pits)
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2.
+   <strong>
+    DeepLandforms tutorial
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Summary.html">
+   3. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  8. Mars Pits Shadow Extractor (MAPS)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_6_MarsPitsShadowExtractor/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_6_MarsPitsShadowExtractor/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  9. Chorus Waves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_7_ChorusWaves/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_7_ChorusWaves/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  10. Classification of Meteors based on Lightcurves
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_8_MeteorClassification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_8_MeteorClassification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  11. Mercury Surface Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_9_MercurySurfaceClassification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_9_MercurySurfaceClassification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  12. Mineral Identification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_10_MineralIdentification/Introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Chapter_10_MineralIdentification/Summary.html">
+   2. Summary and Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../References/bibliography.html">
+   1. References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Part_2/Chapter_5_MarsPits/Tutorial-DeepLandforms/Tutorial_readme.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workflow">
+   2.1. Workflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requirements">
+   2.2. Requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   2.3. Installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#env-file">
+     2.3.1. ENV FILE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docker-compose">
+     2.3.2. docker-compose
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imageprocessingutils-ipu">
+     2.3.3. ImageProcessingUtils (IPU)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#labelme">
+     2.3.4. LabelMe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deeplandforms-training">
+     2.3.5. DeepLandforms-Training
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#then-in-cell-14-configs-edit-befor-run">
+   2.4. Then in cell 14
+   <strong>
+    CONFIGS - edit befor run
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deeplandforms-inference">
+     2.4.1. DeepLandforms-Inference
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tensorboard">
+     2.4.2. Tensorboard
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-scripts-for-data-augmentation">
+   2.5. Additional Scripts for Data Augmentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lbl2gpkg">
+     2.5.1. LBL2GPKG
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lbl-replicator">
+     2.5.2. lbl-replicator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jsonfilter">
+     2.5.3. JSONFILTER
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>DeepLandforms tutorial</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workflow">
+   2.1. Workflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requirements">
+   2.2. Requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   2.3. Installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#env-file">
+     2.3.1. ENV FILE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docker-compose">
+     2.3.2. docker-compose
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imageprocessingutils-ipu">
+     2.3.3. ImageProcessingUtils (IPU)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#labelme">
+     2.3.4. LabelMe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deeplandforms-training">
+     2.3.5. DeepLandforms-Training
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#then-in-cell-14-configs-edit-befor-run">
+   2.4. Then in cell 14
+   <strong>
+    CONFIGS - edit befor run
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deeplandforms-inference">
+     2.4.1. DeepLandforms-Inference
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tensorboard">
+     2.4.2. Tensorboard
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-scripts-for-data-augmentation">
+   2.5. Additional Scripts for Data Augmentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lbl2gpkg">
+     2.5.1. LBL2GPKG
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lbl-replicator">
+     2.5.2. lbl-replicator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jsonfilter">
+     2.5.3. JSONFILTER
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="deeplandforms-tutorial">
+<h1><span class="section-number">2. </span><strong>DeepLandforms tutorial</strong><a class="headerlink" href="#deeplandforms-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Author: <a class="reference external" href="mailto:giacomo&#46;nodjoumi&#37;&#52;&#48;hyranet&#46;info">giacomo<span>&#46;</span>nodjoumi<span>&#64;</span>hyranet<span>&#46;</span>info</a> - <a class="reference external" href="mailto:g&#46;nodjoumi&#37;&#52;&#48;jacobs-university&#46;de">g<span>&#46;</span>nodjoumi<span>&#64;</span>jacobs-university<span>&#46;</span>de</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="#--deeplandforms-tutorial--"><strong>DeepLandforms tutorial</strong></a></p>
+<ul>
+<li><p><a class="reference external" href="#workflow">Workflow</a></p></li>
+<li><p><a class="reference external" href="#requirements">Requirements</a></p></li>
+<li><p><a class="reference external" href="#installation">Installation</a></p>
+<ul>
+<li><p><a class="reference external" href="#env-file">ENV FILE</a></p></li>
+<li><p><a class="reference external" href="#docker-compose">docker-compose</a></p></li>
+<li><p><a class="reference external" href="#imageprocessingutils--ipu-">ImageProcessingUtils (IPU)</a></p></li>
+<li><p><a class="reference external" href="#labelme">LabelMe</a></p></li>
+<li><p><a class="reference external" href="#deeplandforms-training">DeepLandforms-Training</a></p></li>
+<li><p><a class="reference external" href="#deeplandforms-inference">DeepLandforms-Inference</a></p></li>
+<li><p><a class="reference external" href="#tensorboard">Tensorboard</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#additional-scripts-for-data-augmentation">Additional Scripts for Data Augmentation</a></p>
+<ul>
+<li><p><a class="reference external" href="#lbl2gpkg">LBL2GPKG</a></p></li>
+<li><p><a class="reference external" href="#lbl-replicator">lbl-replicator</a></p></li>
+<li><p><a class="reference external" href="#jsonfilter">JSONFILTER</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="workflow">
+<h2><span class="section-number">2.1. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="deeplandformsworkflow">
+<a class="reference internal image-reference" href="../../../_images/Figure-3-flowchart.png"><img alt="../../../_images/Figure-3-flowchart.png" src="../../../_images/Figure-3-flowchart.png" style="height: 250px;" /></a>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2><span class="section-number">2.2. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>25 GB of free disk space</p></li>
+<li><p>Ubuntu OS or other distro</p></li>
+<li><p>Docker -&gt; <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Installation</a></p></li>
+<li><p>Nvidia-docker -&gt; <a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html">Installation</a></p></li>
+<li><p>Nvidia GPU</p></li>
+<li><p>16GB RAM (more is better, especially when processing very high-resolution images)</p></li>
+<li><p>8+ cpu cores</p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2><span class="section-number">2.3. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="env-file">
+<h3><span class="section-number">2.3.1. </span>ENV FILE<a class="headerlink" href="#env-file" title="Permalink to this headline">¶</a></h3>
+<p><strong>Location:</strong> <em>Dockerbuild</em> folder</p>
+<p>Once the requirements are fulfilled, the first step is to edit the .env file that contains all the configuration parameters to build and execute correctly <em>DeepLandforms</em>.</p>
+<p>This file is a hidden file (docker constrain) in the <em>Dockerbuild</em> folder and contain the following text.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DATA_DIR</span><span class="o">=</span> <span class="n">EXAMPLE_PATH_TO_DATA_DIRECTORY</span> <span class="c1"># path on the host where data is stored</span>
+
+<span class="o">**</span><span class="n">Edit</span> <span class="n">below</span> <span class="n">only</span> <span class="k">if</span> <span class="n">necessary</span> <span class="n">of</span> <span class="ow">in</span> <span class="n">case</span> <span class="n">of</span> <span class="n">port</span> <span class="n">conflicts</span> <span class="k">with</span> <span class="n">other</span> <span class="n">services</span><span class="o">**</span>
+
+<span class="n">DL_JUPYTER_PORT</span><span class="o">=</span><span class="mi">8888</span>
+<span class="n">DL_JUPYTER_TOKEN</span><span class="o">=</span><span class="mi">123456</span>
+<span class="n">DL_JUPYTER_DIR</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">DeepLandforms</span>               <span class="c1"># DO NOT EDIT</span>
+<span class="n">DL_DIR</span> <span class="o">=</span> <span class="o">./</span><span class="n">DL</span>
+<span class="n">IPU_JUPYTER_PORT</span><span class="o">=</span><span class="mi">8787</span>
+<span class="n">IPU_JUPYTER_TOKEN</span><span class="o">=</span><span class="mi">123456</span>
+<span class="n">IPU_JUPYTER_DIR</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">DeepLandforms</span>               <span class="c1"># DO NOT EDIT</span>
+<span class="n">IPU_DIR</span> <span class="o">=</span> <span class="o">./</span><span class="n">IPU</span>
+<span class="n">TENSORBOARD_PORT</span><span class="o">=</span><span class="mi">8989</span>
+<span class="n">TENSORBOARD_DIR</span><span class="o">=/</span><span class="n">logdir</span>                <span class="c1"># DO NOT EDIT</span>
+<span class="n">UID</span><span class="o">=</span><span class="mi">1000</span> <span class="c1"># edit to match yout current user. use command id -u</span>
+<span class="n">GID</span><span class="o">=</span><span class="mi">1000</span> <span class="c1"># edit to match yout current group. use command id -g</span>
+<span class="n">UNAME</span><span class="o">=</span><span class="n">user</span> <span class="c1"># optional</span>
+<span class="n">PASSWORD</span><span class="o">=</span><span class="mi">123456</span> <span class="c1"># optional</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="docker-compose">
+<h3><span class="section-number">2.3.2. </span>docker-compose<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h3>
+<p>Open a terminal and move to the <em>Dockerbuild</em> folder, then run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">--</span><span class="n">build</span>
+</pre></div>
+</div>
+<p>This command will build and run all components (docker containers)
+At the end of the build:</p>
+<ul class="simple">
+<li><p>LabelME window will pop-up</p></li>
+<li><p>In the terminal will be displayed the local urls (including access tokens) <em>ImageProcessingUtils</em> and <em>DeepLandforms</em> component.
+See the red boxes in below image.</p></li>
+</ul>
+<div class="figure align-default" id="terminal">
+<a class="reference internal image-reference" href="../../../_images/Terminal.png"><img alt="../../../_images/Terminal.png" src="../../../_images/Terminal.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Docker-compose up –build</span><a class="headerlink" href="#terminal" title="Permalink to this image">¶</a></p>
+</div>
+<p>By left-clicking on both the urls, the browser will open displaying the notebooks.</p>
+<p>For Tensorboard the url will always be localhost:port where the port is defined in the .env file (TENSORBOARD_PORT=8989)</p>
+</div>
+<div class="section" id="imageprocessingutils-ipu">
+<h3><span class="section-number">2.3.3. </span>ImageProcessingUtils (IPU)<a class="headerlink" href="#imageprocessingutils-ipu" title="Permalink to this headline">¶</a></h3>
+<p>IPU configurations is pretty straightforward</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">&#39;PATH&#39;</span><span class="p">:</span><span class="s2">&quot;../data/MARSPIT_v2/test_pit&quot;</span><span class="p">,</span>  <span class="n">path</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">notebook</span> <span class="n">where</span> <span class="n">data</span> <span class="ow">is</span>
+<span class="s1">&#39;DST_PATH&#39;</span><span class="p">:</span><span class="s2">&quot;../data/MARSPIT_v2/test_pit&quot;</span><span class="p">,</span> <span class="n">path</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">notebook</span> <span class="n">where</span> <span class="n">data</span> <span class="n">will</span> <span class="n">be</span> <span class="n">saved</span>
+<span class="s1">&#39;IXT&#39;</span><span class="p">:</span><span class="s1">&#39;jp2&#39;</span><span class="p">,</span> <span class="n">Input</span> <span class="n">file</span> <span class="n">eXTension</span>
+<span class="s1">&#39;OXT&#39;</span><span class="p">:</span><span class="s1">&#39;tiff&#39;</span><span class="p">,</span> <span class="n">Output</span> <span class="n">file</span> <span class="n">eXTension</span>
+<span class="s1">&#39;BC&#39;</span><span class="p">:</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">Border</span> <span class="n">Crop</span> <span class="o">-&gt;</span> <span class="n">yes</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">remove</span> <span class="n">black</span> <span class="n">borders</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">image</span>
+<span class="s1">&#39;SQCRP&#39;</span><span class="p">:</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">SQuare</span> <span class="n">CRoP</span> <span class="o">-&gt;</span> <span class="n">yes</span> <span class="n">you</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">crop</span> <span class="n">the</span> <span class="n">image</span> <span class="k">with</span> <span class="n">a</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span> <span class="n">aspect</span> <span class="n">ratio</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">center</span>
+<span class="s1">&#39;RES&#39;</span><span class="p">:</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">RESize</span> <span class="o">-&gt;</span> <span class="n">yes</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">change</span> <span class="n">the</span> <span class="n">cell</span> <span class="n">size</span>
+<span class="s1">&#39;CELL_SIZE&#39;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span> <span class="n">Integer</span> <span class="n">value</span><span class="p">,</span> <span class="n">only</span> <span class="n">necessary</span> <span class="k">if</span> <span class="n">RES</span> <span class="ow">is</span> <span class="n">yes</span>
+<span class="s1">&#39;LIM&#39;</span><span class="p">:</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">LIMit</span> <span class="n">widht</span><span class="o">/</span><span class="n">height</span> <span class="n">under</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">value</span><span class="o">.</span> <span class="o">-&gt;</span> <span class="n">Yes</span> <span class="n">will</span> <span class="n">create</span> <span class="n">TILES</span> <span class="k">with</span> <span class="nb">max</span> <span class="n">width</span> <span class="ow">or</span> <span class="nb">max</span> <span class="n">height</span> <span class="n">based</span> <span class="n">on</span> <span class="n">LIM_SIZE</span><span class="o">.</span>
+<span class="s1">&#39;LIM_SIZE&#39;</span><span class="p">:</span><span class="mi">8000</span><span class="p">,</span>
+<span class="s1">&#39;COG&#39;</span><span class="p">:</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">yes</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">the</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">CloudOptimized</span> <span class="n">GeoTiff</span>
+<span class="s1">&#39;8bit&#39;</span><span class="p">:</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">yes</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">convert</span> <span class="n">to</span> <span class="mi">8</span><span class="n">bit</span>
+<span class="s1">&#39;dem&#39;</span><span class="p">:</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">yes</span> <span class="k">if</span> <span class="n">the</span> <span class="nb">input</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">DEM</span> <span class="p">(</span><span class="n">this</span> <span class="n">will</span> <span class="n">limit</span> <span class="n">some</span> <span class="n">internal</span> <span class="n">functions</span><span class="p">)</span>
+<span class="s1">&#39;overlap&#39;</span><span class="p">:</span><span class="mi">5</span> <span class="n">Integer</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">percentage</span> <span class="n">of</span> <span class="n">overlap</span> <span class="n">between</span> <span class="n">tiles</span><span class="p">,</span> <span class="n">only</span> <span class="n">works</span> <span class="n">when</span> <span class="n">LIM</span> <span class="ow">is</span> <span class="n">yes</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then just execute all the cells.</p>
+<div class="figure align-default" id="ipu">
+<a class="reference internal image-reference" href="../../../_images/IPU.png"><img alt="../../../_images/IPU.png" src="../../../_images/IPU.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">IPU</span><a class="headerlink" href="#ipu" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="labelme">
+<h3><span class="section-number">2.3.4. </span>LabelMe<a class="headerlink" href="#labelme" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/labelme.png"><img alt="../../../_images/labelme.png" src="../../../_images/labelme.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">LabelMe</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>See official tutorial <a class="reference external" href="https://github.com/wkentaro/labelme/tree/main/examples/instance_segmentation">here</a></p>
+</div>
+<div class="section" id="deeplandforms-training">
+<h3><span class="section-number">2.3.5. </span>DeepLandforms-Training<a class="headerlink" href="#deeplandforms-training" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="training">
+<a class="reference internal image-reference" href="../../../_images/training.png"><img alt="../../../_images/training.png" src="../../../_images/training.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">IPU</span><a class="headerlink" href="#training" title="Permalink to this image">¶</a></p>
+</div>
+<p><em><strong>Usage</strong></em></p>
+<p>Edit the following parameters (if necessary)</p>
+<p>In cell N*4</p>
+<p>basepath = ‘MARSPIT_v2/MixRes/filtered_in/’
+home_dir = ‘/home/user/data/’</p>
+</div>
+</div>
+<div class="section" id="then-in-cell-14-configs-edit-befor-run">
+<h2><span class="section-number">2.4. </span>Then in cell 14 <strong>CONFIGS - edit befor run</strong><a class="headerlink" href="#then-in-cell-14-configs-edit-befor-run" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameter</strong></p></th>
+<th class="head"><p><strong>Function</strong></p></th>
+<th class="head"><p><strong>Common Values</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>cfg.merge_from_file(model_zoo.get_config_file(“”))</strong></p></td>
+<td><p>Model Architecture</p></td>
+<td><p>MASK-R-CNN in this work</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>cfg.TEST.EVAL_PERIOD</strong></p></td>
+<td><p>N° of epochs after an evaluation is performed</p></td>
+<td><p>depending on SOLVER.MAX_ITER, usually every 1/10 of ITER, e.g. every 1000 on a 10000 iter</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>cfg.DATALOADER.NUM_WORKERS</strong></p></td>
+<td><p>Number of workers for dataloader</p></td>
+<td><p>usually correspond to cpu cores</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>cfg.MODEL.WEIGHTS</strong></p></td>
+<td><p>model_zoo.get_checkpoint_url(“”)</p></td>
+<td><p>Optional but advised to start from a pretrained model from the model zoo, MUST be of the same architecture of the get_config_file. see default values as example.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>cfg.SOLVER.IMS_PER_BATCH</strong></p></td>
+<td><p>How many image to be ingested, depends on the performance of the GPU, especiall VRAM</p></td>
+<td><p>up to 8 for 8GB VRAM</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>cfg.SOLVER.BASE_LR</strong></p></td>
+<td><p>learning rate</p></td>
+<td><p>0.0002 is a good starting point</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>cfg.SOLVER.MAX_ITER</strong></p></td>
+<td><p>N° of epochs</p></td>
+<td><p>Rise up for low mAP, lower to prevent overfitting</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE</strong></p></td>
+<td><p>parameter to sample a subset of proposals coming out of RPN to calculate cls and reg loss during training.</p></td>
+<td><p>multiple of 2, commonly 64</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><em><strong>Then just execute all the cells.</strong></em></p>
+<div class="section" id="deeplandforms-inference">
+<h3><span class="section-number">2.4.1. </span>DeepLandforms-Inference<a class="headerlink" href="#deeplandforms-inference" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="inference">
+<a class="reference internal image-reference" href="../../../_images/inference.png"><img alt="../../../_images/inference.png" src="../../../_images/inference.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Inference</span><a class="headerlink" href="#inference" title="Permalink to this image">¶</a></p>
+</div>
+<p><em><strong>Usage</strong></em></p>
+<ul class="simple">
+<li><p>Put or link the dataset into the <strong>DeepLandforms</strong> <em>.env</em> file</p></li>
+<li><p>Run docker-compose up</p></li>
+<li><p>Edit the <em>configs</em> section by editing the following parameters:</p></li>
+</ul>
+<hr class="docutils" />
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameter</strong></p></th>
+<th class="head"><p><strong>Function</strong></p></th>
+<th class="head"><p><strong>Common Values</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>batch_size</strong></p></td>
+<td><p>N° of images to be processed at once</p></td>
+<td><p>Depending on VRAM and image size, up to 8 per 8GB VRAM</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>geopackage_name</strong></p></td>
+<td><p>Name of the final geopackage</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>proj_geopackage_name</strong></p></td>
+<td><p>Name of the final geopackage in custom projection</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>model_path</strong></p></td>
+<td><p>local path and name of the model</p></td>
+<td><p>it should start with /pre-trained_models/</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>model_yaml</strong></p></td>
+<td><p>Model Architecture</p></td>
+<td><p>MASK-R-CNN in this work</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>dst_crs</strong></p></td>
+<td><p>CRS of the geopackage</p></td>
+<td><p>provide as WKT or proj4</p></td>
+</tr>
+</tbody>
+</table>
+<p>and eventuall in cell 6</p>
+<p>cfg = get_cfg()
+cfg.merge_from_file(model_zoo.get_config_file(model_yaml))
+cfg.MODEL.ROI_HEADS.NUM_CLASSES =  len(classes)
+cfg.MODEL.WEIGHTS = model_path
+cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.2
+cfg.SOLVER.IMS_PER_BATCH = batch_size
+cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE =  1024
+cfg.SOLVER.AMP.ENABLED=True</p>
+<hr class="docutils" />
+<p><em><strong>Then just execute all the cells.</strong></em></p>
+</div>
+<div class="section" id="tensorboard">
+<h3><span class="section-number">2.4.2. </span>Tensorboard<a class="headerlink" href="#tensorboard" title="Permalink to this headline">¶</a></h3>
+<p>Go to <em><strong>localhost:TENSORBOARD_PORT</strong></em></p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/tensorboard_interface.png"><img alt="../../../_images/tensorboard_interface.png" src="../../../_images/tensorboard_interface.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.6 </span><span class="caption-text">Tensorboard</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="additional-scripts-for-data-augmentation">
+<h2><span class="section-number">2.5. </span>Additional Scripts for Data Augmentation<a class="headerlink" href="#additional-scripts-for-data-augmentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lbl2gpkg">
+<h3><span class="section-number">2.5.1. </span>LBL2GPKG<a class="headerlink" href="#lbl2gpkg" title="Permalink to this headline">¶</a></h3>
+<p>This scripts read the json file and image from a folder and extract each label from the image and save as separate file+json.
+It simply crop out all label contained in an image and saves into separate images + json label.
+Then save image name, class and shape (geometry) into a geodataframe.</p>
+<p>To run it, open through jupyter lab and edit:</p>
+<p>src_dir = local path to data (e.g., ../data/data)
+ssize = 0.5</p>
+<p>This script works only with the folder and file naming convention of IPU, later versions will be generalized.</p>
+</div>
+<div class="section" id="lbl-replicator">
+<h3><span class="section-number">2.5.2. </span>lbl-replicator<a class="headerlink" href="#lbl-replicator" title="Permalink to this headline">¶</a></h3>
+<p>This script read the geopackage created by LBL2GPGK and using both file name and geometry field, extract the same labels from different versions of the same image. e.g., same image at different cell resolution</p>
+<p>This script works only with the folder and file naming convention of IPU, later versions will be generalized.</p>
+<p>To run it, open through jupyter lab and edit:</p>
+<p>src_dir = local path to src data (e.g., ../data/data)
+ssize = 0.5</p>
+<p>dst_dir = local path to dst data (images variant)
+dsize = 1</p>
+</div>
+<div class="section" id="jsonfilter">
+<h3><span class="section-number">2.5.3. </span>JSONFILTER<a class="headerlink" href="#jsonfilter" title="Permalink to this headline">¶</a></h3>
+<p>This script read a folder containing image + labels and upon editing a list of valid and non-valid labels it filters in and out in two separated folders</p>
+<p>This script works only with the folder and file naming convention of IPU, later versions will be generalized.</p>
+<p>To run it, open through jupyter lab and edit:</p>
+<p>src_dir = local path to src data (e.g., ../data/data)
+valid_classes = [list of valid classes]</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Part_2/Chapter_5_MarsPits/Tutorial-DeepLandforms"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../Introduction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Summary.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Summary and Discussion</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Durch The Europlanet ML Team<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
