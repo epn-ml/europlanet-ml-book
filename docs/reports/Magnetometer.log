@@ -53,7 +53,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/x3/2bzh843n0tv469w6l6sd8sq00000gn/T/ipykernel_10341/2753096250.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/x3/2bzh843n0tv469w6l6sd8sq00000gn/T/ipykernel_23905/2753096250.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     12[0m [0;34m[0m[0m
 [1;32m     13[0m [0;31m### pytorch imports[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 14[0;31m [0;32mimport[0m [0mtorch[0m[0;34m[0m[0;34m[0m[0m

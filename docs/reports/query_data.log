@@ -31,7 +31,7 @@ pd.set_option('max_colwidth',150)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/x3/2bzh843n0tv469w6l6sd8sq00000gn/T/ipykernel_10379/4223395724.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/x3/2bzh843n0tv469w6l6sd8sq00000gn/T/ipykernel_23946/4223395724.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0;32mimport[0m [0mgeopandas[0m [0;32mas[0m [0mgpd[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0;32mfrom[0m [0mshapely[0m[0;34m.[0m[0mgeometry[0m [0;32mimport[0m [0mPolygon[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m [0;32mimport[0m [0mfiona[0m[0;34m[0m[0;34m[0m[0m

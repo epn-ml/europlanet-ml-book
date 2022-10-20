@@ -17,7 +17,7 @@ The developed tool can be trained on rich datasets from the terrestrial magnetos
 
 ## Dataset
 
-We will use a unique dataset of bow shock crossings encountered by the Cluster spacecraft over its 20 years of operation in the project. The training dataset includes 1941 bow shock crossings identified by visual inspection in magnetic field measurements from Cluster 2 between 2001 and 2013. The collection of shock crossing is a basis of a publication [Kruparova et al., 2019] where the authors present an analysis of various shock parameters calculated from the data.
+We will use a unique dataset of bow shock crossings encountered by the Cluster spacecraft over its 20 years of operation in the project. The training dataset includes 1941 bow shock crossings identified by visual inspection in magnetic field measurements from Cluster 2 between 2001 and 2013. The collection of shock crossing is a basis of a publication {cite:p}`kruparova2019` where the authors present an analysis of various shock parameters calculated from the data.
 
 In the dataset for the machine learning project, we use the magnetic field data from the FGM instrument and electric field spectrograms from the WHISPER instrument, and ion energy spectrograms and plasma moments from the CIS instrument. A combination of the multiple datasets, both in image and time-series form, shall allow for unambiguous identification. An example of the above data from a shock crossing is shown in {numref}`shockExample`.
 
@@ -26,7 +26,7 @@ In the dataset for the machine learning project, we use the magnetic field data 
 width: 600px
 name: shockExample
 ---
-An example of a shock crossing in the data from the Cluster spacecraft. From the top to bottom, Electric field spectrogram from WHISPER, magnetic field magnitude, ion density and ion bulk flow velocity from the CIS HIA instrument, and Ion energy spectrum from CIS.
+An example of a shock crossing in the data from the Cluster spacecraft. From the top to bottom: electric field spectrogram from WHISPER, magnetic field magnitude, ion density and ion bulk flow velocity from the CIS HIA instrument, and ion energy spectrum from CIS.
 ```
 
 Since Cluster is a four-spacecraft mission, the same discontinuity is crossed by multiple spacecraft in different places, and the profile is often not identical. However, the objective of the presented project is to obtain consistent timing even in the presence of some variation between the spacecraft.

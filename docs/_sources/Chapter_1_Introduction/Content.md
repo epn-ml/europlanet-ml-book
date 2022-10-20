@@ -1,6 +1,6 @@
 # Introduction
 
-## Table of content (in progress)
+## Table of contents (in progress)
 
 * Chapter 1: Introduction
 * Chapter 2: Basic Tutorials
